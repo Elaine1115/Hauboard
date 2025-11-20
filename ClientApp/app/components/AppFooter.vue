@@ -43,9 +43,7 @@ const { t } = useI18n();
               </li>
               <li class="flex items-center gap-2">
                 <PhoneIcon class="w-5 h-5 text-gray-400 flex-shrink-0" />
-                <a :href="`tel:${t('footer.phone')}`" class="hover:text-white transition-colors">
-                  {{ t('footer.phone') }}
-                </a>
+                <span>{{ t('footer.phone') }}</span>
               </li>
               <li class="flex items-center gap-2">
                 <PrinterIcon class="w-5 h-5 text-gray-400 flex-shrink-0" />
