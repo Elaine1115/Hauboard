@@ -42,7 +42,7 @@ export default defineNuxtConfig({
       { code: 'en', name: 'English', file: 'en.json' },
       { code: 'zh', name: '中文', file: 'zh.json' },
     ],
-    defaultLocale: 'en',
+    defaultLocale: 'zh',
     strategy: 'no_prefix',
     langDir: 'locales',
   },

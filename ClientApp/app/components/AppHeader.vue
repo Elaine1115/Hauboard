@@ -3,6 +3,7 @@ const { t, locale, setLocale } = useI18n()
 
 const isOpen = ref(false)
 const expandedItems = ref<string[]>([])
+const scrollOpacity = ref(0)
 
 const toggleExpand = (path: string) => {
   if (expandedItems.value.includes(path)) {
@@ -11,6 +12,29 @@ const toggleExpand = (path: string) => {
     expandedItems.value.push(path)
   }
 }
+
+const handleScroll = () => {
+  if (typeof window !== 'undefined') {
+    // Calculate opacity based on scroll position (0 to 1)
+    // Full opacity at 200px scroll
+    const scrollPosition = window.scrollY
+    const maxScroll = 200
+    scrollOpacity.value = Math.min(scrollPosition / maxScroll, 1)
+  }
+}
+
+onMounted(() => {
+  if (typeof window !== 'undefined') {
+    handleScroll() // Check initial state
+    window.addEventListener('scroll', handleScroll, { passive: true })
+  }
+})
+
+onBeforeUnmount(() => {
+  if (typeof window !== 'undefined') {
+    window.removeEventListener('scroll', handleScroll)
+  }
+})
 
 const menuItems = computed(() => [
   { label: t('nav.aboutUs'), path: '/about-us' },
@@ -31,7 +55,14 @@ const menuItems = computed(() => [
 </script>
 
 <template>
-  <header class="p-4 md:p-6 overflow-visible">
+  <header
+    class="fixed top-0 left-0 right-0 z-50 p-4 md:p-6 overflow-visible transition-all duration-300"
+    :style="{
+      backgroundColor: `rgba(3, 7, 18, ${scrollOpacity * 0.7})`,
+      backdropFilter: `blur(${scrollOpacity * 16}px)`,
+      boxShadow: scrollOpacity > 0.2 ? '0 4px 6px -1px rgba(0, 0, 0, 0.3)' : 'none'
+    }"
+  >
     <nav
       class="mx-auto flex max-w-6xl flex-col justify-between py-2 md:flex-row md:items-center font-medium text-white overflow-visible"
       aria-label="Main"

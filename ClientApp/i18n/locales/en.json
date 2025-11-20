@@ -16,5 +16,17 @@
     "home": "Home",
     "learnMore": "Learn More",
     "contactUs": "Contact Us"
+  },
+  "footer": {
+    "description": "Hau Board focuses on high-quality interior system furniture and building materials, representing European MFC particleboard. We are committed to providing durable and aesthetically pleasing products, serving the design needs of residential and commercial spaces.",
+    "contactTitle": "Contact Us",
+    "followTitle": "Follow Us",
+    "companyName": "HAU BOARD Co., Ltd.",
+    "address": "No. 181, Dalin Rd., Daya Dist., Taichung City, Taiwan",
+    "phone": "04-2565-4955",
+    "fax": "04-2569-3235",
+    "email": "hau.board{'@'}hinent.net",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service"
   }
 }
