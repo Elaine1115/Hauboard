@@ -1,0 +1,20 @@
+{
+  "nav": {
+    "aboutUs": "About Us",
+    "news": "News",
+    "provider": "Provider",
+    "product": "Product",
+    "quality": "Quality",
+    "faq": "FAQ"
+  },
+  "product": {
+    "woodGrain": "Wood Grain",
+    "marble": "Marble",
+    "solid": "Solid"
+  },
+  "common": {
+    "home": "Home",
+    "learnMore": "Learn More",
+    "contactUs": "Contact Us"
+  }
+}

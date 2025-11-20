@@ -1,0 +1,201 @@
+<script lang="ts" setup>
+const { t, locale, setLocale } = useI18n()
+
+const isOpen = ref(false)
+const expandedItems = ref<string[]>([])
+
+const toggleExpand = (path: string) => {
+  if (expandedItems.value.includes(path)) {
+    expandedItems.value = expandedItems.value.filter(p => p !== path)
+  } else {
+    expandedItems.value.push(path)
+  }
+}
+
+const menuItems = computed(() => [
+  { label: t('nav.aboutUs'), path: '/about-us' },
+  { label: t('nav.news'), path: '/news' },
+  { label: t('nav.provider'), path: '/vendor-introduction' },
+  {
+    label: t('nav.product'),
+    path: '/product-introduction',
+    children: [
+      { label: t('product.woodGrain'), path: '/product/wood-grain' },
+      { label: t('product.marble'), path: '/product/marble' },
+      { label: t('product.solid'), path: '/product/solid' },
+    ]
+  },
+  { label: t('nav.quality'), path: '/quality-standards' },
+  { label: t('nav.faq'), path: '/faq' },
+])
+</script>
+
+<template>
+  <header class="p-4 md:p-6 overflow-visible">
+    <nav
+      class="mx-auto flex max-w-6xl flex-col justify-between py-2 md:flex-row md:items-center font-medium text-white overflow-visible"
+      aria-label="Main"
+    >
+      <div class="flex items-center justify-between">
+        <NuxtLink to="/" class="z-50" @click="isOpen = false">
+          <img src="/assets/hauboard_logo.png" alt="Logo" class="h-8" />
+          <span class="sr-only">Home page</span>
+        </NuxtLink>
+
+        <button
+          type="button"
+          class="block md:hidden p-2 text-3xl text-white"
+          :aria-expanded="isOpen"
+          @click="isOpen = true"
+        >
+          <Icon name="ph:list-bold" />
+        </button>
+      </div>
+
+      <!-- Mobile Nav -->
+      <div
+        class="md:hidden fixed inset-0 z-40 flex flex-col items-end bg-gray-950 pr-4 pt-6 pb-6 transition-transform duration-300 ease-in-out"
+        :class="isOpen ? 'translate-x-0' : 'translate-x-[100%]'"
+      >
+        <button
+          :aria-expanded="isOpen"
+          type="button"
+          class="block md:hidden p-2 text-xl text-white"
+          @click="isOpen = false"
+        >
+          <Icon name="ph:x-bold" />
+        </button>
+        <ul class="grid justify-items-end gap-4">
+          <li v-for="item in menuItems" :key="item.path">
+            <div class="flex items-center justify-end gap-2 first:mt-8">
+              <!-- Items without children - navigate -->
+              <NuxtLink
+                v-if="!item.children"
+                :to="item.path"
+                class="block min-h-11 px-3 text-3xl transition-all hover:text-emerald-400 hover:-translate-y-0.5"
+                @click="isOpen = false"
+              >
+                {{ item.label }}
+              </NuxtLink>
+              <!-- Items with children - toggle dropdown -->
+              <button
+                v-else
+                type="button"
+                class="block min-h-11 px-3 text-3xl transition-all hover:text-emerald-400 hover:-translate-y-0.5"
+                :class="expandedItems.includes(item.path) ? 'text-emerald-400' : 'text-white'"
+                @click="toggleExpand(item.path)"
+              >
+                {{ item.label }}
+              </button>
+              <button
+                v-if="item.children"
+                type="button"
+                class="p-2 text-2xl transition-transform"
+                :class="expandedItems.includes(item.path) ? 'rotate-180' : ''"
+                @click="toggleExpand(item.path)"
+              >
+                <Icon name="ph:caret-down" />
+              </button>
+            </div>
+            <!-- Mobile submenu -->
+            <ul
+              v-if="item.children && expandedItems.includes(item.path)"
+              class="mt-4 space-y-3"
+            >
+              <li v-for="child in item.children" :key="child.path">
+                <NuxtLink
+                  :to="child.path"
+                  class="block px-3 text-xl text-gray-400 hover:text-emerald-400 transition-colors"
+                  @click="isOpen = false"
+                >
+                  {{ child.label }}
+                </NuxtLink>
+              </li>
+            </ul>
+          </li>
+        </ul>
+
+        <!-- Language Switcher (Mobile) -->
+        <div class="mt-auto flex items-center gap-1 text-lg">
+          <button
+            type="button"
+            class="px-2 py-1 transition-colors"
+            :class="locale === 'en' ? 'text-emerald-400' : 'text-white hover:text-emerald-400'"
+            @click="setLocale('en')"
+          >
+            En
+          </button>
+          <span class="text-gray-500">|</span>
+          <button
+            type="button"
+            class="px-2 py-1 transition-colors"
+            :class="locale === 'zh' ? 'text-emerald-400' : 'text-white hover:text-emerald-400'"
+            @click="setLocale('zh')"
+          >
+            中文
+          </button>
+        </div>
+      </div>
+
+      <!-- Desktop Nav -->
+      <ul class="hidden gap-10 md:flex">
+        <li v-for="item in menuItems" :key="item.path" class="relative group">
+          <!-- Items without children - navigate -->
+          <NuxtLink
+            v-if="!item.children"
+            :to="item.path"
+            class="inline-flex min-h-11 items-center transition-all hover:text-emerald-400 hover:-translate-y-0.5"
+          >
+            {{ item.label }}
+          </NuxtLink>
+          <!-- Items with children - no navigation, just hover dropdown -->
+          <span
+            v-else
+            class="inline-flex min-h-11 items-center transition-all hover:text-emerald-400 hover:-translate-y-0.5 cursor-pointer"
+          >
+            {{ item.label }}
+            <Icon name="ph:caret-down" class="ml-1 text-sm" />
+          </span>
+
+          <!-- Dropdown -->
+          <div
+            v-if="item.children"
+            class="absolute left-0 top-full pt-2 pb-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50"
+          >
+          <ul class="min-w-40 rounded-lg bg-gray-900 py-3 shadow-lg pointer-events-auto">
+            <li v-for="child in item.children" :key="child.path">
+              <NuxtLink
+                :to="child.path"
+                class="block px-4 py-3 text-sm hover:bg-gray-800 hover:text-emerald-400 transition-colors"
+              >
+                {{ child.label }}
+              </NuxtLink>
+            </li>
+          </ul>
+          </div>
+        </li>
+      </ul>
+
+      <!-- Language Switcher (Desktop) -->
+      <div class="hidden md:flex items-center gap-1 text-sm">
+        <button
+          type="button"
+          class="px-2 py-1 transition-colors"
+          :class="locale === 'en' ? 'text-emerald-400' : 'text-white hover:text-emerald-400'"
+          @click="setLocale('en')"
+        >
+          En
+        </button>
+        <span class="text-gray-500">|</span>
+        <button
+          type="button"
+          class="px-2 py-1 transition-colors"
+          :class="locale === 'zh' ? 'text-emerald-400' : 'text-white hover:text-emerald-400'"
+          @click="setLocale('zh')"
+        >
+          中文
+        </button>
+      </div>
+    </nav>
+  </header>
+</template>
