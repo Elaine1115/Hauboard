@@ -67,14 +67,24 @@ const initGallery = async () => {
       download: true,
       counter: true,
       selector: '.gallery-item',
-      mode: 'lg-fade'
+      mode: 'lg-fade',
+      dynamic: false
     })
   }
 }
 
 const refreshGallery = async () => {
   if (galleryInstance) {
-    galleryInstance.destroy()
+    try {
+      // Close the gallery if it's open
+      galleryInstance.closeGallery()
+      // Wait a bit for the close animation
+      await new Promise(resolve => setTimeout(resolve, 100))
+      // Destroy the instance completely
+      galleryInstance.destroy(true)
+    } catch (e) {
+      console.error('Error destroying gallery:', e)
+    }
     galleryInstance = null
   }
   await nextTick()
@@ -82,8 +92,8 @@ const refreshGallery = async () => {
 }
 
 // Watch for category changes to refresh gallery
-watch(selectedCategory, () => {
-  refreshGallery()
+watch(selectedCategory, async () => {
+  await refreshGallery()
 })
 
 // Watch for URL query parameter changes

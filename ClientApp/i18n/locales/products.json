@@ -96,39 +96,44 @@
       {
         "src": "/assets/images/products/A01-艾奇莫青銅-Mikali.jpg",
         "alt": "A01-艾奇莫青銅-Mikali",
-        "category": "special"
+        "category": "classic"
       },
       {
         "src": "/assets/images/products/A02-艾奇莫鉑金-Mikali.jpg",
         "alt": "A02-艾奇莫鉑金-Mikali",
-        "category": "special"
+        "category": "classic"
       },
       {
         "src": "/assets/images/products/AZ3-艾奇莫古銅-Mikali.jpg",
         "alt": "AZ3-艾奇莫古銅-Mikali",
-        "category": "special"
+        "category": "classic"
       },
       {
         "src": "/assets/images/products/B06-艾奇莫臻綠-Mikali.jpg",
         "alt": "B06-艾奇莫臻綠-Mikali",
-        "category": "special"
-      },      {
+        "category": "classic"
+      },
+      {
         "src": "/assets/images/products/29H-波特蘭砂岩-PORTLAND.jpg",
         "alt": "29H-波特蘭砂岩-PORTLAND",
         "category": "marble"
-      },{
+      },
+      {
         "src": "/assets/images/products/TTY-藍鵲板岩-PORTLAND.jpg",
         "alt": "TTY-藍鵲板岩-PORTLAND",
         "category": "marble"
-      },{
+      },
+      {
         "src": "/assets/images/products/49M-亞麻灰布織-CALICOT.jpg",
         "alt": "49M-亞麻灰布織-CALICOT",
         "category": "fabric"
-      },{
+      },
+      {
         "src": "/assets/images/products/03H-亞麻米布織-CALICOT.jpg",
         "alt": "03H-亞麻米布織-CALICOT",
         "category": "fabric"
-      },{
+      },
+      {
         "src": "/assets/images/products/X7R-亞麻黑布織-CALICOT.jpg",
         "alt": "X7R-亞麻黑布織-CALICOT",
         "category": "fabric"
@@ -149,7 +154,7 @@
       "subtitle": "Click on images to view full size"
     },
     "images": [
-            {
+      {
         "src": "/assets/images/products/0K8-陶瓷米-TOPMATT.jpg",
         "alt": "0K8-陶瓷米-TOPMATT",
         "category": "solid"
@@ -243,23 +248,28 @@
         "src": "/assets/images/products/B06-艾奇莫臻綠-Mikali.jpg",
         "alt": "B06-艾奇莫臻綠-Mikali",
         "category": "special"
-      },      {
+      },
+      {
         "src": "/assets/images/products/29H-波特蘭砂岩-PORTLAND.jpg",
         "alt": "29H-波特蘭砂岩-PORTLAND",
         "category": "marble"
-      },{
+      },
+      {
         "src": "/assets/images/products/TTY-藍鵲板岩-PORTLAND.jpg",
         "alt": "TTY-藍鵲板岩-PORTLAND",
         "category": "marble"
-      },{
+      },
+      {
         "src": "/assets/images/products/49M-亞麻灰布織-CALICOT.jpg",
         "alt": "49M-亞麻灰布織-CALICOT",
         "category": "fabric"
-      },{
+      },
+      {
         "src": "/assets/images/products/03H-亞麻米布織-CALICOT.jpg",
         "alt": "03H-亞麻米布織-CALICOT",
         "category": "fabric"
-      },{
+      },
+      {
         "src": "/assets/images/products/X7R-亞麻黑布織-CALICOT.jpg",
         "alt": "X7R-亞麻黑布織-CALICOT",
         "category": "fabric"

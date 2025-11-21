@@ -24,6 +24,10 @@ export const menuZh = [
         path: "/products?category=fabric",
       },
       {
+        label: "經典",
+        path: "/products?category=classic",
+      },
+      {
         label: "大理石",
         path: "/products?category=marble",
       },
@@ -67,6 +71,10 @@ export const menuEn = [
       {
         label: "Fabric",
         path: "/products?category=fabric",
+      },
+      {
+        label: "Classic",
+        path: "/products?category=classic",
       },
       {
         label: "Marble",
