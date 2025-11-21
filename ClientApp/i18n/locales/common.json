@@ -1,0 +1,72 @@
+{
+  "zh": {
+    "nav": {
+      "aboutUs": "關於我們",
+      "news": "最新消息",
+      "provider": "供應商",
+      "product": "產品",
+      "quality": "品質",
+      "faq": "常見問題"
+    },
+    "product": {
+      "woodGrain": "木紋",
+      "fabric": "布紋",
+      "marble": "大理石",
+      "solid": "素色",
+      "special": "特殊紋理"
+    },
+    "common": {
+      "home": "首頁",
+      "learnMore": "了解更多",
+      "contactUs": "聯繫我們",
+      "allProducts": "所有產品"
+    },
+    "footer": {
+      "description": "Hau Board專注於高品質室內系統傢俱與建材，代理歐洲 MFC 粒片板，致力於提供耐用且美觀的產品，服務住宅與商業空間的設計需求。",
+      "contactTitle": "聯絡我們",
+      "followTitle": "關注我們",
+      "companyName": "豪板實業有限公司",
+      "address": "台中市大雅區大林路181號",
+      "phone": "04-2565-4955",
+      "fax": "04-2569-3235",
+      "email": "hau.board@hinent.net",
+      "privacy": "隱私權政策",
+      "terms": "服務條款"
+    }
+  },
+  "en": {
+    "nav": {
+      "aboutUs": "About Us",
+      "news": "News",
+      "provider": "Provider",
+      "product": "Product",
+      "quality": "Quality",
+      "faq": "FAQ"
+    },
+    "product": {
+      "woodGrain": "Wood Grain",
+      "fabric": "Fabric",
+      "marble": "Marble",
+      "solid": "Solid",
+      "special": "Special Texture"
+    },
+    "common": {
+      "home": "Home",
+      "learnMore": "Learn More",
+      "contactUs": "Contact Us",
+      "allProducts": "All Products"
+    },
+    "footer": {
+      "description": "Hau Board focuses on high-quality interior system furniture and building materials, representing European MFC particleboard. We are committed to providing durable and aesthetically pleasing products, serving the design needs of residential and commercial spaces.",
+      "contactTitle": "Contact Us",
+      "followTitle": "Follow Us",
+      "companyName": "HAU BOARD Co., Ltd.",
+      "address": "No. 181, Dalin Rd., Daya Dist., Taichung City, Taiwan",
+      "phone": "04-2565-4955",
+      "fax": "04-2569-3235",
+      "email": "hau.board@hinent.net",
+      "privacy": "Privacy Policy",
+      "terms": "Terms of Service"
+    }
+  }
+}
