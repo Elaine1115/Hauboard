@@ -79,9 +79,16 @@ const refreshGallery = async () => {
       // Close the gallery if it's open
       galleryInstance.closeGallery()
       // Wait a bit for the close animation
-      await new Promise(resolve => setTimeout(resolve, 100))
+      await new Promise(resolve => setTimeout(resolve, 150))
       // Destroy the instance completely
       galleryInstance.destroy(true)
+
+      // Manually remove any leftover lightGallery elements from DOM
+      const lgElements = document.querySelectorAll('.lg-container, .lg-backdrop, .lg-outer, .lg-on')
+      lgElements.forEach(el => el.remove())
+
+      // Remove lg-on class from body
+      document.body.classList.remove('lg-on')
     } catch (e) {
       console.error('Error destroying gallery:', e)
     }
