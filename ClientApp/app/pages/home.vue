@@ -3,7 +3,19 @@ import homeData from '../../i18n/locales/home.json'
 
 const { t, locale } = useI18n()
 
-const home = computed(() => homeData[locale.value as 'zh' | 'en'])
+const home = computed(() => {
+  const langData = homeData[locale.value as 'zh' | 'en']
+  return {
+    ...langData,
+    hero: {
+      ...langData.hero,
+      ...homeData.common.hero
+    },
+    cta: {
+      ...homeData.common.cta
+    }
+  }
+})
 
 useSeoMeta({
   title: computed(() => home.value.seo.title),

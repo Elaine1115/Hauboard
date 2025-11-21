@@ -1,4 +1,12 @@
 {
+  "common": {
+    "hero": {
+      "backgroundImage": "/assets/images/home-banner.jpg"
+    },
+    "cta": {
+      "image": "/assets/images/home-footer.png"
+    }
+  },
   "zh": {
     "seo": {
       "title": "Hauboard - 高品質裝飾板材專家",
@@ -8,7 +16,6 @@
       "title": "高品質裝飾板材",
       "subtitle": "打造理想空間",
       "description": "Hauboard 提供多樣化的裝飾板材解決方案，為您的空間增添獨特魅力。",
-      "backgroundImage": "/assets/images/home-banner.jpg",
       "buttons": {
         "browseProducts": "瀏覽產品",
         "aboutUs": "關於我們"
@@ -71,9 +78,6 @@
           "image": "🎯"
         }
       ]
-    },
-    "cta": {
-      "image": "/assets/images/home-footer.png"
     }
   },
   "en": {
@@ -85,7 +89,6 @@
       "title": "Premium Decorative Panels",
       "subtitle": "Create Your Ideal Space",
       "description": "Hauboard provides diverse decorative panel solutions to add unique charm to your space.",
-      "backgroundImage": "/assets/images/home-banner.jpg",
       "buttons": {
         "browseProducts": "Browse Products",
         "aboutUs": "About Us"
@@ -148,9 +151,6 @@
           "image": "🎯"
         }
       ]
-    },
-    "cta": {
-      "image": "/assets/images/home-footer.png"
     }
   }
 }

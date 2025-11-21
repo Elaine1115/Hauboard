@@ -1,0 +1,173 @@
+{
+  "common": {
+    "hero": {
+      "backgroundImage": "/assets/gradient.png"
+    }
+  },
+  "zh": {
+    "seo": {
+      "title": "關於我們 - Hauboard",
+      "description": "了解豪板實業的故事、使命與願景，我們致力於提供高品質的裝飾板材解決方案。"
+    },
+    "hero": {
+      "title": "關於我們",
+      "subtitle": "打造優質生活空間的專業夥伴"
+    },
+    "introduction": {
+      "title": "公司簡介",
+      "subtitle": "豪板實業有限公司成立於台灣台中，專注於高品質室內系統傢俱與建材。",
+      "content": [
+        "豪板實業有限公司是一家專業的裝飾板材供應商，我們代理歐洲優質 MFC 粒片板，致力於為客戶提供耐用且美觀的產品。",
+        "多年來，我們服務住宅與商業空間的設計需求，累積了豐富的經驗與專業知識，成為業界值得信賴的合作夥伴。",
+        "我們堅持品質第一的原則，從產品選材到售後服務，每個環節都力求完美，確保客戶獲得最佳的使用體驗。"
+      ]
+    },
+    "mission": {
+      "title": "我們的使命",
+      "content": [
+        "提供最優質的裝飾板材產品，滿足客戶多樣化的設計需求。",
+        "堅持環保理念，選用符合國際標準的環保材料。",
+        "提供專業的諮詢服務，協助客戶實現理想空間。"
+      ]
+    },
+    "values": {
+      "title": "核心價值",
+      "items": [
+        {
+          "title": "品質至上",
+          "description": "嚴格把關每一片板材的品質，確保達到最高標準。"
+        },
+        {
+          "title": "客戶第一",
+          "description": "以客戶需求為出發點，提供量身訂製的解決方案。"
+        },
+        {
+          "title": "持續創新",
+          "description": "不斷引進新技術與新產品，保持市場領先地位。"
+        },
+        {
+          "title": "環保責任",
+          "description": "重視環境保護，選用環保材料，為永續發展盡一份心力。"
+        }
+      ]
+    },
+    "contact": {
+      "title": "聯絡我們",
+      "description": "歡迎與我們聯繫，讓我們為您提供專業的服務。"
+    },
+    "timeline": {
+      "title": "發展歷程",
+      "subtitle": "見證我們的成長與進步",
+      "events": [
+        {
+          "year": "2010",
+          "title": "公司成立",
+          "description": "豪板實業在台中成立，開始專注於高品質裝飾板材領域。"
+        },
+        {
+          "year": "2013",
+          "title": "歐洲合作夥伴",
+          "description": "與多家歐洲頂級板材製造商建立長期合作關係。"
+        },
+        {
+          "year": "2016",
+          "title": "業務擴展",
+          "description": "服務範圍擴展至全台，成為業界知名品牌。"
+        },
+        {
+          "year": "2019",
+          "title": "品質認證",
+          "description": "獲得多項國際品質認證，確保產品符合最高標準。"
+        },
+        {
+          "year": "2023",
+          "title": "持續創新",
+          "description": "引進最新技術與產品，為客戶提供更多元的選擇。"
+        }
+      ]
+    }
+  },
+  "en": {
+    "seo": {
+      "title": "About Us - Hauboard",
+      "description": "Learn about Hauboard's story, mission, and vision. We are committed to providing high-quality decorative panel solutions."
+    },
+    "hero": {
+      "title": "About Us",
+      "subtitle": "Your Professional Partner in Creating Quality Living Spaces"
+    },
+    "introduction": {
+      "title": "Company Introduction",
+      "subtitle": "HAU BOARD Co., Ltd. was established in Taichung, Taiwan, specializing in high-quality interior system furniture and building materials.",
+      "content": [
+        "HAU BOARD Co., Ltd. is a professional decorative panel supplier. We represent premium European MFC particleboard, committed to providing durable and aesthetically pleasing products to our customers.",
+        "Over the years, we have served the design needs of residential and commercial spaces, accumulating rich experience and professional knowledge to become a trusted partner in the industry.",
+        "We adhere to the principle of quality first. From product selection to after-sales service, we strive for perfection in every aspect to ensure customers receive the best experience."
+      ]
+    },
+    "mission": {
+      "title": "Our Mission",
+      "content": [
+        "Provide the highest quality decorative panel products to meet diverse customer design needs.",
+        "Adhere to environmental principles by selecting eco-friendly materials that meet international standards.",
+        "Provide professional consultation services to help customers realize their ideal spaces."
+      ]
+    },
+    "values": {
+      "title": "Core Values",
+      "items": [
+        {
+          "title": "Quality First",
+          "description": "Strictly control the quality of every panel to ensure the highest standards."
+        },
+        {
+          "title": "Customer First",
+          "description": "Start with customer needs and provide tailored solutions."
+        },
+        {
+          "title": "Continuous Innovation",
+          "description": "Continuously introduce new technologies and products to maintain market leadership."
+        },
+        {
+          "title": "Environmental Responsibility",
+          "description": "Value environmental protection, select eco-friendly materials, and contribute to sustainable development."
+        }
+      ]
+    },
+    "contact": {
+      "title": "Contact Us",
+      "description": "Feel free to contact us and let us provide you with professional services."
+    },
+    "timeline": {
+      "title": "Our Journey",
+      "subtitle": "Witness our growth and progress",
+      "events": [
+        {
+          "year": "2010",
+          "title": "Company Established",
+          "description": "HAU BOARD was founded in Taichung, focusing on high-quality decorative panels."
+        },
+        {
+          "year": "2013",
+          "title": "European Partnerships",
+          "description": "Established long-term partnerships with top European panel manufacturers."
+        },
+        {
+          "year": "2016",
+          "title": "Business Expansion",
+          "description": "Extended services nationwide, becoming a well-known brand in the industry."
+        },
+        {
+          "year": "2019",
+          "title": "Quality Certifications",
+          "description": "Obtained multiple international quality certifications to ensure highest standards."
+        },
+        {
+          "year": "2023",
+          "title": "Continuous Innovation",
+          "description": "Introduced latest technologies and products to offer more diverse choices."
+        }
+      ]
+    }
+  }
+}
