@@ -1,0 +1,98 @@
+{
+  "zh": {
+    "seo": {
+      "title": "品質標準 - Hauboard",
+      "description": "查看我們的品質認證文件和標準"
+    },
+    "hero": {
+      "title": "品質標準",
+      "subtitle": "我們的產品符合國際品質標準與認證"
+    },
+    "documents": {
+      "title": "認證文件",
+      "subtitle": "點擊檢視或下載我們的品質認證文件",
+      "view": "檢視",
+      "download": "下載"
+    },
+    "files": [
+      {
+        "title": "4Stars_Mortara",
+        "filename": "4Stars_Mortara.pdf",
+        "url": "/assets/documents/4Stars_Mortara_2027_12_31.pdf",
+        "size": "2.5 MB"
+      },
+      {
+        "title": "4Stars_Viadana",
+        "filename": "4Stars_Viadana.pdf",
+        "url": "/assets/documents/4Stars_Viadana_2027_12_31.pdf",
+        "size": "1.8 MB"
+      },
+      {
+        "title": "FSC",
+        "filename": "FSC_MauroSaviola.pdf",
+        "url": "/assets/documents/FSC_2029_11_24.pdf",
+        "size": "1.2 MB"
+      },
+      {
+        "title": "PEFC",
+        "filename": "PEFC_MauroSaviola.pdf",
+        "url": "/assets/documents/PEFC_2026_12_20.pdf",
+        "size": "1.2 MB"
+      },
+      {
+        "title": "Remade In Italy",
+        "filename": "RemadeInItaly_MauroSaviola.pdf",
+        "url": "/assets/documents/RemadeInitaly_2027_11_17.pdf",
+        "size": "1.2 MB"
+      }
+    ]
+  },
+  "en": {
+    "seo": {
+      "title": "Quality Standards - Hauboard",
+      "description": "View our quality certification documents and standards"
+    },
+    "hero": {
+      "title": "Quality Standards",
+      "subtitle": "Our products meet international quality standards and certifications"
+    },
+    "documents": {
+      "title": "Certification Documents",
+      "subtitle": "Click to view or download our quality certification documents",
+      "view": "View",
+      "download": "Download"
+    },
+    "files": [
+      {
+        "title": "4Stars_Mortara",
+        "filename": "4Stars_Mortara.pdf",
+        "url": "/assets/documents/4Stars_Mortara_2027_12_31.pdf",
+        "size": "2.5 MB"
+      },
+      {
+        "title": "4Stars_Viadana",
+        "filename": "4Stars_Viadana.pdf",
+        "url": "/assets/documents/4Stars_Viadana_2027_12_31.pdf",
+        "size": "1.8 MB"
+      },
+      {
+        "title": "FSC",
+        "filename": "FSC_MauroSaviola.pdf",
+        "url": "/assets/documents/FSC_2029_11_24.pdf",
+        "size": "1.2 MB"
+      },
+      {
+        "title": "PEFC",
+        "filename": "PEFC_MauroSaviola.pdf",
+        "url": "/assets/documents/PEFC_2026_12_20.pdf",
+        "size": "1.2 MB"
+      },
+      {
+        "title": "Remade In Italy",
+        "filename": "RemadeInItaly_MauroSaviola.pdf",
+        "url": "/assets/documents/RemadeInitaly_2027_11_17.pdf",
+        "size": "1.2 MB"
+      }
+    ]
+  }
+}
