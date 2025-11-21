@@ -37,10 +37,11 @@ useSeoMeta({
       :subtitle="products.gallery.subtitle"
       bg-class="bg-gray-900/30"
     >
-      <ProductGallery
-        :images="products.images"
-        :categories="products.categories"
-      />
+      <ClientOnly>
+        <Gallery
+          :images="products.images"
+        />
+      </ClientOnly>
     </SectionContainer>
   </main>
 </template>

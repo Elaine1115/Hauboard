@@ -17,24 +17,6 @@
       "title": "產品圖庫",
       "subtitle": "點擊圖片查看完整尺寸"
     },
-    "categories": [
-      {
-        "label": "木紋板",
-        "value": "woodgrain"
-      },
-      {
-        "label": "大理石紋板",
-        "value": "marble"
-      },
-      {
-        "label": "純色板",
-        "value": "solid"
-      },
-      {
-        "label": "特殊紋理",
-        "value": "special"
-      }
-    ],
     "images": [
       {
         "src": "/assets/images/products/0K8-陶瓷米-TOPMATT.jpg",
@@ -166,24 +148,6 @@
       "title": "Product Gallery",
       "subtitle": "Click on images to view full size"
     },
-    "categories": [
-      {
-        "label": "Wood Grain",
-        "value": "woodgrain"
-      },
-      {
-        "label": "Marble",
-        "value": "marble"
-      },
-      {
-        "label": "Solid Color",
-        "value": "solid"
-      },
-      {
-        "label": "Special Texture",
-        "value": "special"
-      }
-    ],
     "images": [
             {
         "src": "/assets/images/products/0K8-陶瓷米-TOPMATT.jpg",

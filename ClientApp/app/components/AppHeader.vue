@@ -46,11 +46,11 @@ const menuItems = computed(() => [
   { label: t('nav.provider'), path: '/vendor-introduction' },
   {
     label: t('nav.product'),
-    path: '/product-introduction',
+    path: '/products',
     children: [
-      { label: t('product.woodGrain'), path: '/product/wood-grain' },
-      { label: t('product.marble'), path: '/product/marble' },
-      { label: t('product.solid'), path: '/product/solid' },
+      { label: t('product.woodGrain'), path: '/products?category=woodgrain' },
+      { label: t('product.marble'), path: '/products?category=marble' },
+      { label: t('product.solid'), path: '/products?category=solid' },
     ]
   },
   { label: t('nav.quality'), path: '/quality-standards' },
@@ -89,16 +89,16 @@ const menuItems = computed(() => [
           >
             {{ item.label }}
           </NuxtLink>
-          <!-- Items with children - toggle dropdown -->
-          <button
+          <!-- Items with children - navigate and toggle dropdown -->
+          <NuxtLink
             v-else
-            type="button"
+            :to="item.path"
             class="block px-3 py-2 text-lg transition-colors hover:text-emerald-400 hover:-translate-y-0.5 text-left flex-1"
             :style="{ color: openDropdown === item.path ? '#34d399' : '#ffffff' }"
-            @click="toggleExpand(item.path)"
+            @click="isOpen = false"
           >
             {{ item.label }}
-          </button>
+          </NuxtLink>
           <button
             v-if="item.children"
             type="button"
@@ -188,14 +188,15 @@ const menuItems = computed(() => [
           >
             {{ item.label }}
           </NuxtLink>
-          <!-- Items with children - no navigation, just hover dropdown -->
-          <span
+          <!-- Items with children - navigate and show dropdown -->
+          <NuxtLink
             v-else
-            class="inline-flex min-h-11 items-center transition-all hover:text-emerald-400 hover:-translate-y-0.5 cursor-pointer"
+            :to="item.path"
+            class="inline-flex min-h-11 items-center transition-all hover:text-emerald-400 hover:-translate-y-0.5"
           >
             {{ item.label }}
             <Icon name="ph:caret-down" class="ml-1 text-sm" />
-          </span>
+          </NuxtLink>
 
           <!-- Dropdown -->
           <div

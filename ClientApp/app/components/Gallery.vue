@@ -10,14 +10,34 @@ interface GalleryImage {
 
 interface Props {
   images: GalleryImage[]
-  categories: { label: string; value: string }[]
 }
 
 const props = defineProps<Props>()
+const route = useRoute()
+const router = useRouter()
+const { t } = useI18n()
+
+// Generate categories from i18n translations
+const categories = computed(() => [
+  { label: t('product.woodGrain'), value: 'woodgrain' },
+  { label: t('product.fabric'), value: 'fabric' },
+  { label: t('product.marble'), value: 'marble' },
+  { label: t('product.solid'), value: 'solid' },
+  { label: t('product.special'), value: 'special' },
+])
 
 const selectedCategory = ref('all')
 const galleryContainer = ref<HTMLElement | null>(null)
 let galleryInstance: any = null
+
+// Function to update category via URL (let the watch handle selectedCategory)
+const setCategory = (category: string) => {
+  if (category === 'all') {
+    router.push({ query: {} })
+  } else {
+    router.push({ query: { category } })
+  }
+}
 
 const filteredImages = computed(() => {
   if (selectedCategory.value === 'all') {
@@ -54,9 +74,19 @@ const refreshGallery = async () => {
   await initGallery()
 }
 
+// Watch for category changes to refresh gallery
 watch(selectedCategory, () => {
   refreshGallery()
 })
+
+// Watch for URL query parameter changes
+watch(() => route.query.category, (newCategory) => {
+  if (newCategory && typeof newCategory === 'string') {
+    selectedCategory.value = newCategory
+  } else {
+    selectedCategory.value = 'all'
+  }
+}, { immediate: true })
 
 onMounted(() => {
   initGallery()
@@ -74,7 +104,7 @@ onBeforeUnmount(() => {
     <!-- Category Filters -->
     <div class="flex flex-wrap gap-3 mb-8 justify-center">
       <button
-        @click="selectedCategory = 'all'"
+        @click="setCategory('all')"
         :class="[
           'px-6 py-3 rounded-lg font-medium transition-all duration-300',
           selectedCategory === 'all'
@@ -82,12 +112,12 @@ onBeforeUnmount(() => {
             : 'bg-gray-800/50 text-gray-300 hover:bg-gray-700/50 border border-gray-700/50'
         ]"
       >
-        All Products
+        {{ t('common.allProducts') }}
       </button>
       <button
         v-for="cat in categories"
         :key="cat.value"
-        @click="selectedCategory = cat.value"
+        @click="setCategory(cat.value)"
         :class="[
           'px-6 py-3 rounded-lg font-medium transition-all duration-300',
           selectedCategory === cat.value

@@ -9,13 +9,16 @@
   },
   "product": {
     "woodGrain": "Wood Grain",
+    "fabric": "Fabric",
     "marble": "Marble",
-    "solid": "Solid"
+    "solid": "Solid",
+    "special": "Special Texture"
   },
   "common": {
     "home": "Home",
     "learnMore": "Learn More",
-    "contactUs": "Contact Us"
+    "contactUs": "Contact Us",
+    "allProducts": "All Products"
   },
   "footer": {
     "description": "Hau Board focuses on high-quality interior system furniture and building materials, representing European MFC particleboard. We are committed to providing durable and aesthetically pleasing products, serving the design needs of residential and commercial spaces.",
