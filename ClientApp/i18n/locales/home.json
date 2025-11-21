@@ -1,0 +1,156 @@
+{
+  "zh": {
+    "seo": {
+      "title": "Hauboard - 高品質裝飾板材專家",
+      "description": "提供多樣化的裝飾板材解決方案，包括木紋板、大理石紋板及純色板，滿足您的設計需求。"
+    },
+    "hero": {
+      "title": "高品質裝飾板材",
+      "subtitle": "打造理想空間",
+      "description": "Hauboard 提供多樣化的裝飾板材解決方案，為您的空間增添獨特魅力。",
+      "backgroundImage": "/assets/images/home-banner.jpg",
+      "buttons": {
+        "browseProducts": "瀏覽產品",
+        "aboutUs": "關於我們"
+      }
+    },
+    "features": {
+      "title": "為什麼選擇 Hauboard？",
+      "subtitle": "我們致力於提供最優質的裝飾板材產品與服務。",
+      "items": [
+        {
+          "icon": "🎨",
+          "title": "多樣化設計",
+          "description": "提供木紋、大理石紋及純色等多種款式，滿足各種設計需求。"
+        },
+        {
+          "icon": "✨",
+          "title": "卓越品質",
+          "description": "嚴格的品質控管流程，確保每一片板材都達到最高標準。"
+        },
+        {
+          "icon": "🌍",
+          "title": "環保材料",
+          "description": "採用環保材料製造，符合國際環保標準，為地球盡一份心力。"
+        },
+        {
+          "icon": "🔧",
+          "title": "易於安裝",
+          "description": "設計簡便的安裝系統，大幅縮短施工時間，降低成本。"
+        },
+        {
+          "icon": "💪",
+          "title": "耐用堅固",
+          "description": "高強度材質，耐磨、防潮、抗變形，使用壽命長。"
+        },
+        {
+          "icon": "🤝",
+          "title": "專業服務",
+          "description": "專業團隊提供完整的售前諮詢與售後服務支持。"
+        }
+      ]
+    },
+    "products": {
+      "title": "產品系列",
+      "subtitle": "探索我們精心設計的裝飾板材系列。",
+      "learnMore": "了解更多",
+      "items": [
+        {
+          "title": "木紋板",
+          "description": "自然木紋質感，打造溫馨舒適的空間氛圍。",
+          "image": "🌳"
+        },
+        {
+          "title": "大理石紋板",
+          "description": "奢華大理石紋理，展現高雅品味與質感。",
+          "image": "💎"
+        },
+        {
+          "title": "純色板",
+          "description": "簡約純色設計，適合現代極簡風格空間。",
+          "image": "🎯"
+        }
+      ]
+    },
+    "cta": {
+      "image": "/assets/images/home-footer.png"
+    }
+  },
+  "en": {
+    "seo": {
+      "title": "Hauboard - Premium Decorative Panels",
+      "description": "Providing diverse decorative panel solutions including wood grain, marble, and solid color panels to meet your design needs."
+    },
+    "hero": {
+      "title": "Premium Decorative Panels",
+      "subtitle": "Create Your Ideal Space",
+      "description": "Hauboard provides diverse decorative panel solutions to add unique charm to your space.",
+      "backgroundImage": "/assets/images/home-banner.jpg",
+      "buttons": {
+        "browseProducts": "Browse Products",
+        "aboutUs": "About Us"
+      }
+    },
+    "features": {
+      "title": "Why Choose Hauboard?",
+      "subtitle": "We are committed to providing the finest decorative panel products and services.",
+      "items": [
+        {
+          "icon": "🎨",
+          "title": "Diverse Designs",
+          "description": "Offering wood grain, marble, and solid color options to meet various design requirements."
+        },
+        {
+          "icon": "✨",
+          "title": "Superior Quality",
+          "description": "Rigorous quality control processes ensuring every panel meets the highest standards."
+        },
+        {
+          "icon": "🌍",
+          "title": "Eco-Friendly",
+          "description": "Manufactured with eco-friendly materials meeting international environmental standards."
+        },
+        {
+          "icon": "🔧",
+          "title": "Easy Installation",
+          "description": "Simple installation system significantly reducing construction time and costs."
+        },
+        {
+          "icon": "💪",
+          "title": "Durable & Strong",
+          "description": "High-strength materials that are wear-resistant, moisture-proof, and deformation-resistant."
+        },
+        {
+          "icon": "🤝",
+          "title": "Professional Service",
+          "description": "Professional team providing comprehensive pre-sales consultation and after-sales support."
+        }
+      ]
+    },
+    "products": {
+      "title": "Product Range",
+      "subtitle": "Explore our carefully designed decorative panel collections.",
+      "learnMore": "Learn More",
+      "items": [
+        {
+          "title": "Wood Grain Panels",
+          "description": "Natural wood grain texture creating warm and comfortable spaces.",
+          "image": "🌳"
+        },
+        {
+          "title": "Marble Panels",
+          "description": "Luxurious marble patterns showcasing elegant taste and quality.",
+          "image": "💎"
+        },
+        {
+          "title": "Solid Color Panels",
+          "description": "Minimalist solid colors perfect for modern minimalist spaces.",
+          "image": "🎯"
+        }
+      ]
+    },
+    "cta": {
+      "image": "/assets/images/home-footer.png"
+    }
+  }
+}
