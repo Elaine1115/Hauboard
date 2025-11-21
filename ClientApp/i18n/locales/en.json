@@ -1,19 +1,4 @@
 {
-  "nav": {
-    "aboutUs": "About Us",
-    "news": "News",
-    "provider": "Provider",
-    "product": "Product",
-    "quality": "Quality",
-    "faq": "FAQ"
-  },
-  "product": {
-    "woodGrain": "Wood Grain",
-    "fabric": "Fabric",
-    "marble": "Marble",
-    "solid": "Solid",
-    "special": "Special Texture"
-  },
   "common": {
     "home": "Home",
     "learnMore": "Learn More",

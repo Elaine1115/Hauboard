@@ -1,4 +1,6 @@
 <script lang="ts" setup>
+import { getMenuItems } from '~/config/menu'
+
 const { t, locale, setLocale } = useI18n()
 
 const isOpen = ref(false)
@@ -40,22 +42,7 @@ onBeforeUnmount(() => {
   }
 })
 
-const menuItems = computed(() => [
-  { label: t('nav.aboutUs'), path: '/about-us' },
-  { label: t('nav.news'), path: '/news' },
-  { label: t('nav.provider'), path: '/vendor-introduction' },
-  {
-    label: t('nav.product'),
-    path: '/products',
-    children: [
-      { label: t('product.woodGrain'), path: '/products?category=woodgrain' },
-      { label: t('product.marble'), path: '/products?category=marble' },
-      { label: t('product.solid'), path: '/products?category=solid' },
-    ]
-  },
-  { label: t('nav.quality'), path: '/quality-standards' },
-  { label: t('nav.faq'), path: '/faq' },
-])
+const menuItems = computed(() => getMenuItems(locale.value))
 </script>
 
 <template>

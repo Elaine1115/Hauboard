@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { ref, computed, onMounted, onBeforeUnmount, nextTick, watch } from 'vue'
+import { getMenuItems } from '~/config/menu'
 
 interface GalleryImage {
   src: string
@@ -15,16 +16,22 @@ interface Props {
 const props = defineProps<Props>()
 const route = useRoute()
 const router = useRouter()
-const { t } = useI18n()
+const { t, locale } = useI18n()
 
-// Generate categories from i18n translations
-const categories = computed(() => [
-  { label: t('product.woodGrain'), value: 'woodgrain' },
-  { label: t('product.fabric'), value: 'fabric' },
-  { label: t('product.marble'), value: 'marble' },
-  { label: t('product.solid'), value: 'solid' },
-  { label: t('product.special'), value: 'special' },
-])
+// Generate categories from menu.ts product children
+const categories = computed(() => {
+  const menuItems = getMenuItems(locale.value)
+  const productMenu = menuItems.find(item => item.path === '/products')
+
+  if (productMenu && productMenu.children) {
+    return productMenu.children.map(child => ({
+      label: child.label,
+      value: new URLSearchParams(child.path.split('?')[1]).get('category') || ''
+    }))
+  }
+
+  return []
+})
 
 const selectedCategory = ref('all')
 const galleryContainer = ref<HTMLElement | null>(null)
@@ -143,7 +150,7 @@ onBeforeUnmount(() => {
           :alt="image.alt"
           class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
         />
-        <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent">
           <div class="absolute bottom-0 left-0 right-0 p-4">
             <p class="text-white text-sm font-medium">{{ image.alt }}</p>
           </div>

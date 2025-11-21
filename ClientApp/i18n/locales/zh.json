@@ -1,26 +1,11 @@
 {
-  "nav": {
-    "aboutUs": "關於我們",
-    "news": "最新消息",
-    "provider": "供應商",
-    "product": "產品",
-    "quality": "品質",
-    "faq": "常見問題"
-  },
-  "product": {
-    "woodGrain": "木紋",
-    "fabric": "布紋",
-    "marble": "大理石",
-    "solid": "素色",
-    "special": "特殊紋理"
-  },
   "common": {
     "home": "首頁",
     "learnMore": "了解更多",
     "contactUs": "聯繫我們",
     "allProducts": "所有產品"
   },
-    "footer": {
+  "footer": {
     "description": "Hau Board專注於高品質室內系統傢俱與建材，代理歐洲 MFC 粒片板，致力於提供耐用且美觀的產品，服務住宅與商業空間的設計需求。",
     "contactTitle": "聯絡我們",
     "followTitle": "關注我們",
