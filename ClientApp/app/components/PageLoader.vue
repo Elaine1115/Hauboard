@@ -19,14 +19,12 @@ if (import.meta.client) {
 
 <template>
   <Transition
-    enter-active-class="transition-opacity duration-200"
     leave-active-class="transition-opacity duration-300"
-    enter-from-class="opacity-0"
     leave-to-class="opacity-0"
   >
     <div
       v-if="isLoading"
-      class="fixed inset-0 z-[9999] flex items-center justify-center bg-gray-950/80 backdrop-blur-sm"
+      class="fixed inset-0 z-[9999] flex items-center justify-center bg-gray-950"
     >
       <div class="flex flex-col items-center gap-4">
         <!-- Spinner -->
