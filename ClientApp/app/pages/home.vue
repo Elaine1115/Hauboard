@@ -67,48 +67,9 @@ const getThumbnail = (videoId: string) => {
             :key="feature.title"
             class="bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 rounded-xl p-6 hover:border-emerald-500/50 transition-all duration-300 hover:transform hover:-translate-y-1"
           >
-            <div class="text-5xl mb-4">{{ feature.icon }}</div>
+            <Icon :name="feature.icon" class="h-12 w-12 text-emerald-400 mb-4" />
             <h3 class="text-xl font-semibold text-white mb-3">{{ feature.title }}</h3>
             <p class="text-gray-300 leading-relaxed">{{ feature.description }}</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Products Section -->
-    <section class="py-20">
-      <div class="mx-auto max-w-6xl px-4 md:px-6">
-        <div class="text-center mb-16">
-          <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">
-            {{ home.products.title }}
-          </h2>
-          <p class="text-lg text-gray-300 max-w-2xl mx-auto">
-            {{ home.products.subtitle }}
-          </p>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div
-            v-for="product in home.products.items"
-            :key="product.title"
-            class="group relative overflow-hidden rounded-xl bg-gray-800/30 backdrop-blur-sm border border-gray-700/50 hover:border-emerald-500/50 transition-all duration-300"
-          >
-            <div class="p-8">
-              <div class="text-6xl mb-6 text-center">{{ product.image }}</div>
-              <h3 class="text-2xl font-semibold text-white mb-3 text-center">{{ product.title }}</h3>
-              <p class="text-gray-300 text-center mb-6">{{ product.description }}</p>
-              <div class="text-center">
-                <NuxtLink
-                  :to="`/product/${product.title.toLowerCase().replace(/\s+/g, '-')}`"
-                  class="inline-flex items-center text-emerald-400 hover:text-emerald-300 font-medium transition-colors"
-                >
-                  {{ home.products.learnMore }}
-                  <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
-                  </svg>
-                </NuxtLink>
-              </div>
-            </div>
           </div>
         </div>
       </div>
@@ -143,9 +104,7 @@ const getThumbnail = (videoId: string) => {
                 <!-- Play Button -->
                 <div class="absolute inset-0 flex items-center justify-center">
                   <div class="flex h-20 w-20 items-center justify-center rounded-full bg-red-600 text-white shadow-lg transition-all duration-300 group-hover:scale-110 group-hover:bg-red-500">
-                    <svg class="h-8 w-8 ml-1" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M8 5v14l11-7z"/>
-                    </svg>
+                    <Icon name="ph:play-fill" class="h-8 w-8 ml-1" />
                   </div>
                 </div>
               </div>

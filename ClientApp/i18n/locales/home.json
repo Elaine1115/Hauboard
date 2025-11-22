@@ -29,32 +29,32 @@
       "subtitle": "我們致力於提供最優質的裝飾板材產品與服務。",
       "items": [
         {
-          "icon": "🎨",
+          "icon": "ph:palette-duotone",
           "title": "多樣化設計",
           "description": "提供木紋、大理石紋及純色等多種款式，滿足各種設計需求。"
         },
         {
-          "icon": "✨",
+          "icon": "ph:star-duotone",
           "title": "卓越品質",
           "description": "嚴格的品質控管流程，確保每一片板材都達到最高標準。"
         },
         {
-          "icon": "🌍",
+          "icon": "ph:globe-duotone",
           "title": "環保材料",
           "description": "採用環保材料製造，符合國際環保標準，為地球盡一份心力。"
         },
         {
-          "icon": "🔧",
+          "icon": "ph:wrench-duotone",
           "title": "易於安裝",
           "description": "設計簡便的安裝系統，大幅縮短施工時間，降低成本。"
         },
         {
-          "icon": "💪",
+          "icon": "ph:shield-check-duotone",
           "title": "耐用堅固",
           "description": "高強度材質，耐磨、防潮、抗變形，使用壽命長。"
         },
         {
-          "icon": "🤝",
+          "icon": "ph:handshake-duotone",
           "title": "專業服務",
           "description": "專業團隊提供完整的售前諮詢與售後服務支持。"
         }
@@ -68,17 +68,17 @@
         {
           "title": "木紋板",
           "description": "自然木紋質感，打造溫馨舒適的空間氛圍。",
-          "image": "🌳"
+          "icon": "ph:tree-duotone"
         },
         {
           "title": "大理石紋板",
           "description": "奢華大理石紋理，展現高雅品味與質感。",
-          "image": "💎"
+          "icon": "ph:diamond-duotone"
         },
         {
           "title": "純色板",
           "description": "簡約純色設計，適合現代極簡風格空間。",
-          "image": "🎯"
+          "icon": "ph:squares-four-duotone"
         }
       ]
     }
@@ -102,32 +102,32 @@
       "subtitle": "We are committed to providing the finest decorative panel products and services.",
       "items": [
         {
-          "icon": "🎨",
+          "icon": "ph:palette-duotone",
           "title": "Diverse Designs",
           "description": "Offering wood grain, marble, and solid color options to meet various design requirements."
         },
         {
-          "icon": "✨",
+          "icon": "ph:star-duotone",
           "title": "Superior Quality",
           "description": "Rigorous quality control processes ensuring every panel meets the highest standards."
         },
         {
-          "icon": "🌍",
+          "icon": "ph:globe-duotone",
           "title": "Eco-Friendly",
           "description": "Manufactured with eco-friendly materials meeting international environmental standards."
         },
         {
-          "icon": "🔧",
+          "icon": "ph:wrench-duotone",
           "title": "Easy Installation",
           "description": "Simple installation system significantly reducing construction time and costs."
         },
         {
-          "icon": "💪",
+          "icon": "ph:shield-check-duotone",
           "title": "Durable & Strong",
           "description": "High-strength materials that are wear-resistant, moisture-proof, and deformation-resistant."
         },
         {
-          "icon": "🤝",
+          "icon": "ph:handshake-duotone",
           "title": "Professional Service",
           "description": "Professional team providing comprehensive pre-sales consultation and after-sales support."
         }
@@ -141,17 +141,17 @@
         {
           "title": "Wood Grain Panels",
           "description": "Natural wood grain texture creating warm and comfortable spaces.",
-          "image": "🌳"
+          "icon": "ph:tree-duotone"
         },
         {
           "title": "Marble Panels",
           "description": "Luxurious marble patterns showcasing elegant taste and quality.",
-          "image": "💎"
+          "icon": "ph:diamond-duotone"
         },
         {
           "title": "Solid Color Panels",
           "description": "Minimalist solid colors perfect for modern minimalist spaces.",
-          "image": "🎯"
+          "icon": "ph:squares-four-duotone"
         }
       ]
     }
