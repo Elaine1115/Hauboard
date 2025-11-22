@@ -23,37 +23,23 @@ useSeoMeta({
   description: computed(() => home.value.seo.description),
   ogDescription: computed(() => home.value.seo.description),
 });
+
+// Track which videos have been activated (clicked to play)
+const activeVideos = ref<Set<number>>(new Set())
+
+const playVideo = (index: number) => {
+  activeVideos.value.add(index)
+}
+
+const isVideoActive = (index: number) => {
+  return activeVideos.value.has(index)
+}
+
+// Get YouTube thumbnail URL
+const getThumbnail = (videoId: string) => {
+  return `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`
+}
 </script>
-
-<style scoped>
-.bubble {
-  position: absolute;
-  bottom: -150px;
-  background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.3), rgba(200, 200, 200, 0.15));
-  border-radius: 50%;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  animation: bubbleFloat linear infinite;
-  opacity: 0.7;
-  backdrop-filter: blur(2px);
-}
-
-@keyframes bubbleFloat {
-  0% {
-    transform: translateY(0) translateX(0) scale(1);
-    opacity: 0;
-  }
-  10% {
-    opacity: 0.6;
-  }
-  90% {
-    opacity: 0.6;
-  }
-  100% {
-    transform: translateY(-600px) translateX(50px) scale(1.2);
-    opacity: 0;
-  }
-}
-</style>
 
 <template>
   <main class="min-h-screen">
@@ -128,25 +114,55 @@ useSeoMeta({
       </div>
     </section>
 
-    <!-- CTA Section -->
-    <section class="relative w-full h-[300px] md:h-[450px] overflow-hidden">
-      <img
-        :src="home.cta.image"
-        alt=""
-        class="w-full h-full object-cover"
-      />
-      <!-- Animated bubbles overlay -->
-      <div class="absolute inset-0 overflow-hidden">
-        <div class="bubble" v-for="n in 15" :key="n" :style="(() => {
-          const size = 60 + Math.random() * 80;
-          return {
-            left: `${Math.random() * 100}%`,
-            animationDelay: `${Math.random() * 8}s`,
-            animationDuration: `${8 + Math.random() * 6}s`,
-            width: `${size}px`,
-            height: `${size}px`
-          };
-        })()"></div>
+    <!-- Video Section -->
+    <section class="py-20 bg-gradient-to-b from-gray-900/50 to-gray-950">
+      <div class="mx-auto max-w-6xl px-4 md:px-6">
+        <!-- Video Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+          <div
+            v-for="(videoId, index) in home.cta.videos"
+            :key="index"
+            class="group relative overflow-hidden rounded-2xl bg-gray-800/50 border border-gray-700/50 hover:border-emerald-500/30 transition-all duration-300 shadow-xl shadow-black/20 hover:shadow-emerald-500/10"
+          >
+            <!-- Video Container with 16:9 Aspect Ratio -->
+            <div class="relative w-full aspect-video">
+              <!-- Thumbnail Preview (before click) -->
+              <div
+                v-if="!isVideoActive(index)"
+                @click="playVideo(index)"
+                class="absolute inset-0 cursor-pointer"
+              >
+                <!-- Thumbnail Image -->
+                <img
+                  :src="getThumbnail(videoId)"
+                  :alt="`Video ${index + 1}`"
+                  class="w-full h-full object-cover rounded-2xl"
+                />
+                <!-- Dark Overlay -->
+                <div class="absolute inset-0 bg-black/30 rounded-2xl transition-all duration-300 group-hover:bg-black/20"></div>
+                <!-- Play Button -->
+                <div class="absolute inset-0 flex items-center justify-center">
+                  <div class="flex h-20 w-20 items-center justify-center rounded-full bg-red-600 text-white shadow-lg transition-all duration-300 group-hover:scale-110 group-hover:bg-red-500">
+                    <svg class="h-8 w-8 ml-1" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M8 5v14l11-7z"/>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+              <!-- Actual Video (after click) -->
+              <iframe
+                v-else
+                :src="`https://www.youtube.com/embed/${videoId}?autoplay=1`"
+                :title="`Video ${index + 1}`"
+                class="absolute inset-0 w-full h-full rounded-2xl"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen
+              ></iframe>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   </main>

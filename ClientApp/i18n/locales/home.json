@@ -4,7 +4,10 @@
       "backgroundImage": "/assets/images/home-banner.jpg"
     },
     "cta": {
-      "image": "/assets/images/home-footer.png"
+      "videos": [
+        "51QXM7Ysx-g",
+        "L-Tg7b6suNk"
+      ]
     }
   },
   "zh": {
