@@ -64,15 +64,20 @@ const categoryColors = [
   { bg: 'bg-purple-500/20', text: 'text-purple-400' },
 ]
 
-const getCategoryColor = (category: string) => {
+const getCategoryColor = (category: string): { bg: string; text: string } => {
   // Use category string hash to get consistent color for same category
   let hash = 0
   for (let i = 0; i < category.length; i++) {
     hash = category.charCodeAt(i) + ((hash << 5) - hash)
   }
   const index = Math.abs(hash) % categoryColors.length
-  return categoryColors[index]
+  return categoryColors[index] ?? { bg: 'bg-emerald-500/20', text: 'text-emerald-400' }
 }
+
+// Get category color for current news item
+const currentCategoryColor = computed(() => {
+  return getCategoryColor(newsItem.value?.category || '')
+})
 
 // Format date
 const formatDate = (dateStr: string) => {
@@ -110,11 +115,11 @@ useSeoMeta({
               <span
                 :class="[
                   'mb-4 inline-block rounded-full px-3 py-1 text-sm font-medium',
-                  getCategoryColor(newsItem.category).bg,
-                  getCategoryColor(newsItem.category).text
+                  currentCategoryColor.bg,
+                  currentCategoryColor.text
                 ]"
               >
-                {{ newsItem.category }}
+                {{ newsItem?.category }}
               </span>
 
               <!-- Title -->
