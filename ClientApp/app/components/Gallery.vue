@@ -57,9 +57,20 @@ const initGallery = async () => {
   if (galleryContainer.value && !galleryInstance) {
     // Import CSS
     await import('lightgallery/css/lightgallery.css')
+    await import('lightgallery/css/lg-zoom.css')
+    await import('lightgallery/css/lg-rotate.css')
+    await import('lightgallery/css/lg-fullscreen.css')
+    await import('lightgallery/css/lg-thumbnail.css')
+    await import('lightgallery/css/lg-autoplay.css')
 
-    // Dynamically import lightGallery
+    // Dynamically import lightGallery and plugins
     const lightGalleryModule = await import('lightgallery')
+    const lgZoom = await import('lightgallery/plugins/zoom')
+    const lgRotate = await import('lightgallery/plugins/rotate')
+    const lgFullscreen = await import('lightgallery/plugins/fullscreen')
+    const lgThumbnail = await import('lightgallery/plugins/thumbnail')
+    const lgAutoplay = await import('lightgallery/plugins/autoplay')
+
     const lightGallery = lightGalleryModule.default
 
     galleryInstance = lightGallery(galleryContainer.value, {
@@ -68,7 +79,32 @@ const initGallery = async () => {
       counter: true,
       selector: '.gallery-item',
       mode: 'lg-fade',
-      dynamic: false
+      dynamic: false,
+      plugins: [
+        lgZoom.default,
+        lgRotate.default,
+        lgFullscreen.default,
+        lgThumbnail.default,
+        lgAutoplay.default
+      ],
+      // Zoom settings
+      scale: 1,
+      actualSize: true,
+      // Rotate settings
+      rotateLeft: true,
+      rotateRight: true,
+      flipHorizontal: true,
+      flipVertical: true,
+      // Thumbnail settings
+      thumbnail: true,
+      thumbWidth: 100,
+      thumbHeight: '80px',
+      thumbMargin: 5,
+      // Autoplay settings
+      autoplay: true,
+      slideShowAutoplay: false,
+      slideShowInterval: 3000,
+      progressBar: true
     })
   }
 }

@@ -38,12 +38,12 @@ export const menuZh = [
     ],
   },
   {
-    label: "品質",
-    path: "/quality-standards",
+    label: "虛擬設計",
+    path: "/virtual-design",
   },
   {
-    label: "常見問題",
-    path: "/faq",
+    label: "品質認證",
+    path: "/quality-standards",
   },
 ];
 
@@ -87,12 +87,12 @@ export const menuEn = [
     ],
   },
   {
-    label: "Quality",
-    path: "/quality-standards",
+    label: "Virtaul Design",
+    path: "/virtual-design",
   },
   {
-    label: "FAQ",
-    path: "/faq",
+    label: "Quality",
+    path: "/quality-standards",
   },
 ];
 
