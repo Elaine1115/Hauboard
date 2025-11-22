@@ -1,51 +1,67 @@
 <script setup lang="ts">
-import { ref, computed, onMounted, onBeforeUnmount, nextTick } from 'vue'
+import { ref, computed, onMounted, onBeforeUnmount, nextTick, watch } from 'vue'
+import virtualDesignData from '../../i18n/locales/virtual-design.json'
 
 const { locale } = useI18n()
 
-// Sample images data - you can replace this with your actual data
-const images = ref([
-  {
-    src: '/assets/images/products/0K8-陶瓷米-TOPMATT.jpg',
-    alt: '0K8-陶瓷米-TOPMATT',
-  },
-  {
-    src: '/assets/images/products/797-石墨灰-TOPMATT.jpg',
-    alt: '797-石墨灰-TOPMATT',
-  },
-  {
-    src: '/assets/images/products/AP2-陶瓷可可-TOPMATT.jpg',
-    alt: 'AP2-陶瓷可可-TOPMATT',
-  },
-  {
-    src: '/assets/images/products/37M-原切枯木-LARIX.jpg',
-    alt: '37M-原切枯木-LARIX',
-  },
-  {
-    src: '/assets/images/products/43M-原切相思木-LARIX.jpg',
-    alt: '43M-原切相思木-LARIX',
-  },
-  {
-    src: '/assets/images/products/D17-龐貝原杉-EVO.jpg',
-    alt: 'D17-龐貝原杉-EVO',
-  },
-  {
-    src: '/assets/images/products/D18-龐貝棕杉-EVO.jpg',
-    alt: 'D18-龐貝棕杉-EVO',
-  },
-  {
-    src: '/assets/images/products/D19-龐貝黑杉-EVO.jpg',
-    alt: 'D19-龐貝黑杉-EVO',
-  },
-])
+// Get data based on locale
+const data = computed(() => {
+  return locale.value === 'zh' ? virtualDesignData.zh : virtualDesignData.en
+})
+
+const allImages = computed(() => data.value.images)
+
+// Pagination settings - 4 rows × 5 columns = 20 images per page
+const imagesPerPage = 20
+const currentPage = ref(1)
+
+const totalPages = computed(() => Math.ceil(allImages.value.length / imagesPerPage))
+
+const paginatedImages = computed(() => {
+  const start = (currentPage.value - 1) * imagesPerPage
+  const end = start + imagesPerPage
+  return allImages.value.slice(start, end)
+})
+
+const goToPage = (page: number) => {
+  if (page >= 1 && page <= totalPages.value) {
+    currentPage.value = page
+    // Scroll to gallery section
+    window.scrollTo({ top: 400, behavior: 'smooth' })
+  }
+}
+
+const prevPage = () => goToPage(currentPage.value - 1)
+const nextPage = () => goToPage(currentPage.value + 1)
+
+// Generate visible page numbers
+const visiblePages = computed(() => {
+  const pages: number[] = []
+  const total = totalPages.value
+  const current = currentPage.value
+
+  if (total <= 7) {
+    for (let i = 1; i <= total; i++) pages.push(i)
+  } else {
+    if (current <= 3) {
+      pages.push(1, 2, 3, 4, 5, -1, total)
+    } else if (current >= total - 2) {
+      pages.push(1, -1, total - 4, total - 3, total - 2, total - 1, total)
+    } else {
+      pages.push(1, -1, current - 1, current, current + 1, -1, total)
+    }
+  }
+
+  return pages
+})
 
 const galleryContainer = ref<HTMLElement | null>(null)
 let galleryInstance: any = null
 
 // SEO
 useSeoMeta({
-  title: locale.value === 'zh' ? '虛擬設計 - Hauboard' : 'Virtual Design - Hauboard',
-  description: locale.value === 'zh' ? '探索我們的虛擬設計作品集' : 'Explore our virtual design portfolio',
+  title: computed(() => data.value.seo.title),
+  description: computed(() => data.value.seo.description),
 })
 
 const initGallery = async () => {
@@ -104,6 +120,30 @@ const initGallery = async () => {
   }
 }
 
+const refreshGallery = async () => {
+  if (galleryInstance) {
+    try {
+      galleryInstance.closeGallery()
+      await new Promise(resolve => setTimeout(resolve, 150))
+      galleryInstance.destroy(true)
+
+      const lgElements = document.querySelectorAll('.lg-container, .lg-backdrop, .lg-outer, .lg-on')
+      lgElements.forEach(el => el.remove())
+      document.body.classList.remove('lg-on')
+    } catch (e) {
+      console.error('Error destroying gallery:', e)
+    }
+    galleryInstance = null
+  }
+  await nextTick()
+  await initGallery()
+}
+
+// Watch for page changes to refresh gallery
+watch(currentPage, async () => {
+  await refreshGallery()
+})
+
 onMounted(() => {
   initGallery()
 })
@@ -138,10 +178,10 @@ onBeforeUnmount(() => {
           <h1
             class="mb-6 bg-gradient-to-r from-emerald-400 to-cyan-400 bg-clip-text text-4xl font-bold tracking-tight text-transparent md:text-6xl"
           >
-            {{ locale === 'zh' ? '虛擬設計' : 'Virtual Design' }}
+            {{ data.hero.title }}
           </h1>
           <p class="text-lg text-gray-300 md:text-xl">
-            {{ locale === 'zh' ? '探索我們的虛擬設計作品集' : 'Explore our virtual design portfolio' }}
+            {{ data.hero.subtitle }}
           </p>
         </div>
       </div>
@@ -153,23 +193,18 @@ onBeforeUnmount(() => {
         <!-- Gallery Grid -->
         <div ref="galleryContainer" class="gallery-grid">
           <a
-            v-for="(image, index) in images"
+            v-for="(src, index) in paginatedImages"
             :key="index"
-            :href="image.src"
-            :data-src="image.src"
+            :href="src"
+            :data-src="src"
             class="gallery-item group relative block overflow-hidden rounded-lg cursor-pointer"
           >
             <div class="relative aspect-[4/3] overflow-hidden bg-gray-800">
               <img
-                :src="image.src"
-                :alt="image.alt"
+                :src="src"
+                alt=""
                 class="absolute inset-0 w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
               />
-              <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <div class="absolute bottom-0 left-0 right-0 p-4">
-                  <p class="text-white text-sm font-medium">{{ image.alt }}</p>
-                </div>
-              </div>
               <!-- Zoom Icon -->
               <div class="absolute top-3 right-3 w-10 h-10 rounded-full bg-white/90 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 <svg class="w-5 h-5 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -180,8 +215,51 @@ onBeforeUnmount(() => {
           </a>
         </div>
 
+        <!-- Pagination -->
+        <div v-if="totalPages > 1" class="flex items-center justify-center gap-2 mt-12">
+          <!-- Previous Button -->
+          <button
+            @click="prevPage"
+            :disabled="currentPage === 1"
+            class="flex items-center justify-center w-10 h-10 rounded-lg border border-gray-700 bg-gray-800 text-white transition-all hover:border-emerald-500 hover:bg-gray-700 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:border-gray-700 disabled:hover:bg-gray-800"
+          >
+            <Icon name="ph:caret-left" class="w-5 h-5" />
+          </button>
+
+          <!-- Page Numbers -->
+          <template v-for="(page, index) in visiblePages" :key="index">
+            <span v-if="page === -1" class="px-2 text-gray-500">...</span>
+            <button
+              v-else
+              @click="goToPage(page)"
+              :class="[
+                'flex items-center justify-center w-10 h-10 rounded-lg font-medium transition-all',
+                currentPage === page
+                  ? 'bg-emerald-500 text-white shadow-lg shadow-emerald-500/50'
+                  : 'border border-gray-700 bg-gray-800 text-white hover:border-emerald-500 hover:bg-gray-700'
+              ]"
+            >
+              {{ page }}
+            </button>
+          </template>
+
+          <!-- Next Button -->
+          <button
+            @click="nextPage"
+            :disabled="currentPage === totalPages"
+            class="flex items-center justify-center w-10 h-10 rounded-lg border border-gray-700 bg-gray-800 text-white transition-all hover:border-emerald-500 hover:bg-gray-700 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:border-gray-700 disabled:hover:bg-gray-800"
+          >
+            <Icon name="ph:caret-right" class="w-5 h-5" />
+          </button>
+        </div>
+
+        <!-- Page Info -->
+        <div v-if="totalPages > 1" class="text-center mt-4 text-gray-400 text-sm">
+          {{ locale === 'zh' ? `第 ${currentPage} 頁，共 ${totalPages} 頁` : `Page ${currentPage} of ${totalPages}` }}
+        </div>
+
         <!-- Empty State -->
-        <div v-if="images.length === 0" class="text-center py-20">
+        <div v-if="allImages.length === 0" class="text-center py-20">
           <p class="text-gray-400 text-lg">No images available.</p>
         </div>
       </div>
