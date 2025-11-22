@@ -1,10 +1,22 @@
 <script setup lang="ts">
+// Start with false to avoid SSR mismatch
 const isLoading = ref(false)
+const isInitialLoad = ref(true)
 
-// Listen to page navigation events
-if (import.meta.client) {
+onMounted(() => {
+  // Show loader immediately on mount for initial load
+  if (isInitialLoad.value) {
+    isLoading.value = true
+    // Hide after a short delay to allow content to render
+    setTimeout(() => {
+      isLoading.value = false
+      isInitialLoad.value = false
+    }, 500)
+  }
+
   const nuxtApp = useNuxtApp()
 
+  // Show loader during page navigation
   nuxtApp.hook('page:start', () => {
     isLoading.value = true
   })
@@ -14,7 +26,7 @@ if (import.meta.client) {
       isLoading.value = false
     }, 300)
   })
-}
+})
 </script>
 
 <template>

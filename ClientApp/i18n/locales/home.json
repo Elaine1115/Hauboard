@@ -81,6 +81,95 @@
           "icon": "ph:squares-four-duotone"
         }
       ]
+    },
+    "applications": {
+      "title": "日常應用",
+      "subtitle": "美耐板在各種空間中的廣泛應用，為您的生活增添品質與美感。",
+      "image": "/assets/images/home/furniture.webp",
+      "items": [
+        {
+          "icon": "ph:cooking-pot-duotone",
+          "title": "廚房櫥櫃",
+          "description": "防潮、耐熱、易清潔，是廚房空間的理想選擇。"
+        },
+        {
+          "icon": "ph:couch-duotone",
+          "title": "衣櫃與收納",
+          "description": "多樣化的木紋與色彩，打造個性化的衣物收納空間。"
+        },
+        {
+          "icon": "ph:desk-duotone",
+          "title": "辦公家具",
+          "description": "耐磨、抗刮的表面，適合高頻率使用的辦公環境。"
+        },
+        {
+          "icon": "ph:wall-duotone",
+          "title": "牆面裝飾",
+          "description": "快速施工、美觀大方，輕鬆打造風格牆面。"
+        },
+        {
+          "icon": "ph:door-duotone",
+          "title": "門片與隔間",
+          "description": "穩定性佳、不易變形，適用於各種門片與隔間設計。"
+        },
+        {
+          "icon": "ph:storefront-duotone",
+          "title": "商業空間",
+          "description": "展示架、櫃檯、店面裝潢的經濟實惠解決方案。"
+        }
+      ]
+    },
+    "specifications": {
+      "title": "常見規格",
+      "subtitle": "提供多種厚度選擇，滿足不同應用場景的需求。",
+      "image": "/assets/images/home/panel.png",
+      "items": [
+        {
+          "thickness": "8mm",
+          "title": "薄型板材",
+          "description": "適用於牆面裝飾、門片貼皮、輕量隔板等應用。",
+          "uses": ["牆面裝飾", "門片貼皮", "輕量層板"]
+        },
+        {
+          "thickness": "18mm",
+          "title": "標準板材",
+          "description": "最常用的厚度，適合大多數家具與櫥櫃製作。",
+          "uses": ["廚房櫥櫃", "衣櫃", "書櫃", "辦公桌"]
+        },
+        {
+          "thickness": "25mm",
+          "title": "加厚板材",
+          "description": "高強度與穩定性，適用於桌面與承重結構。",
+          "uses": ["桌面檯面", "承重層架", "商業櫃檯"]
+        }
+      ]
+    },
+    "gallery": {
+      "title": "精選設計",
+      "subtitle": "探索我們的精彩設計，見證板材美學的生活應用。",
+      "viewAll": "查看全部設計",
+      "items": [
+        {
+          "title": "現代辦公空間",
+          "category": "商業空間",
+          "image": "/assets/images/featured-design/49H.png"
+        },
+        {
+          "title": "豪華住宅設計",
+          "category": "住宅空間",
+          "image": "/assets/images/featured-design/DT8.png"
+        },
+        {
+          "title": "精品酒店大廳",
+          "category": "飯店空間",
+          "image": "/assets/images/featured-design/P20.png"
+        },
+        {
+          "title": "時尚零售店面",
+          "category": "商業空間",
+          "image": "/assets/images/featured-design/P53.png"
+        }
+      ]
     }
   },
   "en": {
@@ -152,6 +241,95 @@
           "title": "Solid Color Panels",
           "description": "Minimalist solid colors perfect for modern minimalist spaces.",
           "icon": "ph:squares-four-duotone"
+        }
+      ]
+    },
+    "applications": {
+      "title": "Everyday Applications",
+      "subtitle": "Discover the versatile applications of melamine chipboard in various spaces.",
+      "image": "/assets/images/home/furniture.webp",
+      "items": [
+        {
+          "icon": "ph:cooking-pot-duotone",
+          "title": "Kitchen Cabinets",
+          "description": "Moisture-resistant, heat-resistant, and easy to clean – ideal for kitchen spaces."
+        },
+        {
+          "icon": "ph:couch-duotone",
+          "title": "Wardrobes & Storage",
+          "description": "Various wood grains and colors to create personalized storage solutions."
+        },
+        {
+          "icon": "ph:desk-duotone",
+          "title": "Office Furniture",
+          "description": "Wear-resistant and scratch-proof surfaces for high-traffic office environments."
+        },
+        {
+          "icon": "ph:wall-duotone",
+          "title": "Wall Decoration",
+          "description": "Quick installation and elegant appearance for stylish wall designs."
+        },
+        {
+          "icon": "ph:door-duotone",
+          "title": "Doors & Partitions",
+          "description": "Excellent stability and deformation resistance for doors and room dividers."
+        },
+        {
+          "icon": "ph:storefront-duotone",
+          "title": "Commercial Spaces",
+          "description": "Cost-effective solutions for display shelves, counters, and retail fitouts."
+        }
+      ]
+    },
+    "specifications": {
+      "title": "Common Specifications",
+      "subtitle": "Multiple thickness options to meet different application requirements.",
+      "image": "/assets/images/home/panel.png",
+      "items": [
+        {
+          "thickness": "8mm",
+          "title": "Thin Panel",
+          "description": "Ideal for wall decoration, door veneering, and lightweight shelving.",
+          "uses": ["Wall Panels", "Door Veneers", "Light Shelves"]
+        },
+        {
+          "thickness": "18mm",
+          "title": "Standard Panel",
+          "description": "The most commonly used thickness, suitable for most furniture and cabinetry.",
+          "uses": ["Kitchen Cabinets", "Wardrobes", "Bookcases", "Desks"]
+        },
+        {
+          "thickness": "25mm",
+          "title": "Heavy-Duty Panel",
+          "description": "High strength and stability for tabletops and load-bearing structures.",
+          "uses": ["Tabletops", "Heavy Shelving", "Commercial Counters"]
+        }
+      ]
+    },
+    "gallery": {
+      "title": "Featured Designs",
+      "subtitle": "Explore our featured designs and see panels in real-world applications.",
+      "viewAll": "View All Designs",
+      "items": [
+        {
+          "title": "Modern Office Space",
+          "category": "Commercial",
+          "image": "/assets/images/featured-design/49H.png"
+        },
+        {
+          "title": "Luxury Residential Design",
+          "category": "Residential",
+          "image": "/assets/images/featured-design/DT8.png"
+        },
+        {
+          "title": "Boutique Hotel Lobby",
+          "category": "Hospitality",
+          "image": "/assets/images/featured-design/P20.png"
+        },
+        {
+          "title": "Fashion Retail Store",
+          "category": "Commercial",
+          "image": "/assets/images/featured-design/P53.png"
         }
       ]
     }
