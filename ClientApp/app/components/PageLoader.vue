@@ -4,14 +4,17 @@ const isLoading = ref(false)
 const isInitialLoad = ref(true)
 
 onMounted(() => {
+  // Remove static loader when Vue hydrates
+  const staticLoader = document.getElementById('static-loader')
+  if (staticLoader) {
+    staticLoader.classList.add('fade-out')
+    setTimeout(() => staticLoader.remove(), 300)
+  }
+
   // Show loader immediately on mount for initial load
   if (isInitialLoad.value) {
-    isLoading.value = true
-    // Hide after a short delay to allow content to render
-    setTimeout(() => {
-      isLoading.value = false
-      isInitialLoad.value = false
-    }, 500)
+    isLoading.value = false // Don't show Vue loader on initial load - static loader handles it
+    isInitialLoad.value = false
   }
 
   const nuxtApp = useNuxtApp()

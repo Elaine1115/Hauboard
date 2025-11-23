@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div v-cloak>
     <NuxtLoadingIndicator color="#10b981" />
     <PageLoader />
     <NuxtLayout>

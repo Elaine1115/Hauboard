@@ -1,3 +1,8 @@
+/* v-cloak: Hide content until Vue hydrates to prevent FOUC */
+[v-cloak] {
+  display: none !important;
+}
+
 html {
   color-scheme: dark;
 }

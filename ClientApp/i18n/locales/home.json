@@ -43,7 +43,7 @@
       "stats": [
         { "value": "100%", "label": "回收木材" },
         { "value": "50+", "label": "花色選擇" },
-        { "value": "E1", "label": "環保等級" }
+        { "value": "F1", "label": "環保等級" }
       ]
     },
     "features": {
@@ -230,7 +230,7 @@
       "stats": [
         { "value": "100%", "label": "Recycled Wood" },
         { "value": "50+", "label": "Decor Options" },
-        { "value": "E1", "label": "Emission Class" }
+        { "value": "F1", "label": "Emission Class" }
       ]
     },
     "features": {
