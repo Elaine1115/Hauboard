@@ -100,7 +100,7 @@ const getThumbnail = (videoId: string) => {
                 </div>
                 <h1
                   class="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 leading-tight"
-                  :class="themeStore.isDark ? 'text-white' : 'text-gray-900'"
+                  :class="themeStore.isDark ? 'text-white' : 'text-gray-800'"
                 >
                   {{ home.hero.title }}
                 </h1>
@@ -135,7 +135,7 @@ const getThumbnail = (videoId: string) => {
                 <div class="text-center">
                   <div
                     class="text-3xl md:text-4xl font-bold mb-1"
-                    :class="themeStore.isDark ? 'text-white' : 'text-gray-900'"
+                    :class="themeStore.isDark ? 'text-white' : 'text-gray-800'"
                   >{{ stat.value }}</div>
                   <div :class="themeStore.isDark ? 'text-gray-400' : 'text-gray-600'" class="text-sm">{{ stat.label }}</div>
                 </div>
@@ -163,7 +163,12 @@ const getThumbnail = (videoId: string) => {
                 :alt="card.title"
                 class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
               />
-              <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/40 to-transparent"></div>
+              <div
+                class="absolute inset-0"
+                :class="themeStore.isDark
+                  ? 'bg-gradient-to-t from-gray-900 via-gray-900/40 to-transparent'
+                  : 'bg-gradient-to-t from-gray-900/80 via-transparent to-transparent'"
+              ></div>
               <div :class="['absolute inset-0 flex flex-col justify-between', index === 0 ? 'p-6' : 'p-5']">
                 <span
                   :class="[
@@ -177,7 +182,7 @@ const getThumbnail = (videoId: string) => {
                 </span>
                 <div>
                   <h3 :class="['text-white font-bold', index === 0 ? 'text-xl mb-2' : 'text-lg']">{{ card.title }}</h3>
-                  <p v-if="index === 0" class="text-gray-300 text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300">{{ card.description }}</p>
+                  <p v-if="index === 0" class="text-white text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300">{{ card.description }}</p>
                 </div>
               </div>
               <div v-if="index === 0" class="absolute inset-0 bg-gradient-to-tr from-transparent via-white/10 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
