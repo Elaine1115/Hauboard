@@ -102,21 +102,9 @@ const { t } = useI18n();
 
       <!-- Divider -->
       <div class="border-t border-gray-800 mt-8 pt-8">
-        <div
-          class="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-400"
-        >
-          <p>
-            &copy; {{ new Date().getFullYear() }} {{ t('footer.companyName') }} All rights reserved.
-          </p>
-          <div class="flex gap-6">
-            <NuxtLink to="/privacy" class="hover:text-white transition-colors">
-              {{ t('footer.privacy') }}
-            </NuxtLink>
-            <NuxtLink to="/terms" class="hover:text-white transition-colors">
-              {{ t('footer.terms') }}
-            </NuxtLink>
-          </div>
-        </div>
+        <p class="text-sm text-gray-400 text-center">
+          &copy; {{ new Date().getFullYear() }} {{ t('footer.companyName') }} All rights reserved.
+        </p>
       </div>
     </div>
   </footer>

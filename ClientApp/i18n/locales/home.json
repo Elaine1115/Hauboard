@@ -14,10 +14,10 @@
     },
     "hero": {
       "title": "綠色健康傢俱建材",
-      "subtitle": "打造理想空間",
+      "subtitle": "打造居家生活理想空間",
       "description": "Hauboard 提供多樣化的裝飾板材解決方案，為您的空間增添獨特魅力。",
       "buttons": {
-        "browseProducts": "瀏覽產品",
+        "browseProducts": "精選花色",
         "aboutUs": "關於我們"
       },
       "cards": [
@@ -200,8 +200,8 @@
       "description": "Providing diverse decorative panel solutions including wood grain, marble, and solid color panels to meet your design needs."
     },
     "hero": {
-      "title": "Premium Decorative Panels",
-      "subtitle": "Create Your Ideal Space",
+      "title": "Green & Healthy Furniture Materials",
+      "subtitle": "Create an ideal living space at home",
       "description": "Hauboard provides diverse decorative panel solutions to add unique charm to your space.",
       "buttons": {
         "browseProducts": "Browse Products",
