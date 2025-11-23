@@ -35,11 +35,13 @@ const downloadDocument = (url: string, filename: string) => {
       :title="data.hero.title"
       :subtitle="data.hero.subtitle"
       background-image="/assets/gradient.png"
-      :show-scroll-indicator="false"
     />
 
     <!-- Documents Section -->
-    <section class="py-16 md:py-24">
+    <section
+      class="py-16 md:py-24"
+      :class="themeStore.isDark ? '' : 'bg-gray-50'"
+    >
       <div class="container mx-auto px-4 md:px-6">
         <div class="mx-auto max-w-4xl">
           <!-- Section Header -->

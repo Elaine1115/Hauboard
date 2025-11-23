@@ -107,7 +107,10 @@ useSeoMeta({
     <!-- News Detail -->
     <template v-if="newsItem">
       <!-- Content -->
-      <section class="py-12 md:py-16">
+      <section
+        class="py-12 md:py-16"
+        :class="themeStore.isDark ? '' : 'bg-gray-50'"
+      >
         <div class="container mx-auto px-4 md:px-6">
           <article class="mx-auto max-w-3xl">
             <!-- Header -->
@@ -239,7 +242,10 @@ useSeoMeta({
 
     <!-- Not Found -->
     <template v-else>
-      <section class="flex min-h-[60vh] items-center justify-center py-20">
+      <section
+        class="flex min-h-[60vh] items-center justify-center py-20"
+        :class="themeStore.isDark ? '' : 'bg-gray-50'"
+      >
         <div class="text-center">
           <Icon
             name="ph:newspaper"

@@ -9,7 +9,7 @@ defineProps<{
 </script>
 
 <template>
-  <section :class="['py-20 md:py-28 relative', bgClass]">
+  <section :class="['py-20 md:py-28 relative', bgClass, !bgClass && !themeStore.isDark ? 'bg-gray-50' : '']">
     <div class="mx-auto max-w-7xl px-4 md:px-6">
       <div v-if="title || subtitle" class="text-center mb-16 md:mb-20">
         <h2

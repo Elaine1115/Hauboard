@@ -187,7 +187,7 @@
         <h1 class="text-3xl md:text-6xl lg:text-8xl font-bold mb-4 md:mb-8 leading-none tracking-tight animate-fade-in">
           <span
             class="drop-shadow-2xl"
-            :class="themeStore.isDark ? 'text-white' : 'text-gray-900'"
+            :class="themeStore.isDark ? 'text-white' : 'text-emerald-900'"
           >
             {{ title }}
           </span>
@@ -196,7 +196,7 @@
         <p
           v-if="subtitle"
           class="text-base md:text-2xl max-w-3xl mx-auto leading-relaxed animate-fade-in-delay font-light px-2 md:px-0"
-          :class="themeStore.isDark ? 'text-gray-300/90' : 'text-gray-600'"
+          :class="themeStore.isDark ? 'text-gray-300/90' : 'text-emerald-700'"
         >
           {{ subtitle }}
         </p>

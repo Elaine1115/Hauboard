@@ -75,11 +75,13 @@ useSeoMeta({
       :title="data.hero.title"
       :subtitle="data.hero.subtitle"
       background-image="/assets/gradient.png"
-      :show-scroll-indicator="false"
     />
 
     <!-- News Section -->
-    <section class="py-16 md:py-24">
+    <section
+      class="py-16 md:py-24"
+      :class="themeStore.isDark ? '' : 'bg-gray-50'"
+    >
       <div class="container mx-auto px-4 md:px-6">
         <!-- News Grid -->
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

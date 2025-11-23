@@ -188,7 +188,10 @@ const getThumbnail = (videoId: string) => {
     </section>
 
     <!-- Features Section -->
-    <section class="py-20">
+    <section
+      class="py-20"
+      :class="themeStore.isDark ? '' : 'bg-gray-50'"
+    >
       <div class="mx-auto max-w-6xl px-4 md:px-6">
         <div class="text-center mb-16">
           <h2
@@ -231,7 +234,10 @@ const getThumbnail = (videoId: string) => {
     </section>
 
     <!-- Applications Section -->
-    <section class="py-20">
+    <section
+      class="py-20"
+      :class="themeStore.isDark ? '' : 'bg-gray-50'"
+    >
       <div class="mx-auto max-w-6xl px-4 md:px-6">
         <ClientOnly>
           <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
@@ -299,7 +305,10 @@ const getThumbnail = (videoId: string) => {
     </section>
 
     <!-- Specifications Section -->
-    <section class="py-20">
+    <section
+      class="py-20"
+      :class="themeStore.isDark ? '' : 'bg-gray-50'"
+    >
       <div class="mx-auto max-w-6xl px-4 md:px-6">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <!-- Content Side -->
@@ -384,7 +393,10 @@ const getThumbnail = (videoId: string) => {
     </section>
 
     <!-- Design Gallery Section -->
-    <section class="py-20">
+    <section
+      class="py-20"
+      :class="themeStore.isDark ? '' : 'bg-gray-50'"
+    >
       <div class="mx-auto max-w-6xl px-4 md:px-6">
         <div class="text-center mb-16">
           <h2
@@ -444,7 +456,10 @@ const getThumbnail = (videoId: string) => {
     </section>
 
     <!-- Video Section -->
-    <section class="py-20">
+    <section
+      class="py-20"
+      :class="themeStore.isDark ? '' : 'bg-gray-50'"
+    >
       <div class="mx-auto max-w-6xl px-4 md:px-6">
         <!-- Video Grid -->
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
