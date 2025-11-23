@@ -165,11 +165,11 @@ const menuItems = computed(() => getMenuItems(locale.value))
     :style="{
       backgroundColor: themeStore.isDark
         ? `rgba(3, 7, 18, ${scrollOpacity * 0.7})`
-        : `rgba(255, 255, 255, ${scrollOpacity * 0.9})`,
-      backdropFilter: `blur(${scrollOpacity * 16}px)`,
-      boxShadow: scrollOpacity > 0.2
-        ? (themeStore.isDark ? '0 4px 6px -1px rgba(0, 0, 0, 0.3)' : '0 4px 6px -1px rgba(0, 0, 0, 0.1)')
-        : 'none'
+        : 'rgba(255, 255, 255, 0.95)',
+      backdropFilter: themeStore.isDark ? `blur(${scrollOpacity * 16}px)` : 'blur(12px)',
+      boxShadow: themeStore.isDark
+        ? (scrollOpacity > 0.2 ? '0 4px 6px -1px rgba(0, 0, 0, 0.3)' : 'none')
+        : '0 1px 3px rgba(0, 0, 0, 0.05)'
     }"
   >
     <nav
