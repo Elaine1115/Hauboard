@@ -7,10 +7,11 @@ import {
 } from '@heroicons/vue/24/outline';
 
 const { t } = useI18n();
+const themeStore = useThemeStore();
 </script>
 
 <template>
-  <footer class="bg-gray-900 text-gray-300">
+  <footer :class="themeStore.isDark ? 'bg-gray-900 text-gray-300' : 'bg-gray-100 text-gray-700'">
     <div class="mx-auto max-w-6xl px-4 py-12 md:px-6">
       <!-- Main Footer Content -->
       <div class="flex flex-col md:flex-row justify-between gap-8">
@@ -20,7 +21,7 @@ const { t } = useI18n();
           <div>
             <NuxtLink to="/" class="inline-block mb-4">
               <img
-                src="/assets/hauboard_logo.png"
+                :src="themeStore.logo"
                 alt="Hauboard Logo"
                 class="h-10"
               />
@@ -36,22 +37,22 @@ const { t } = useI18n();
           <!-- Contact Information -->
           <div>
             <ul class="space-y-2 text-sm">
-              <li class="font-medium text-gray-300">{{ t('footer.companyName') }}</li>
+              <li :class="themeStore.isDark ? 'text-gray-300' : 'text-gray-700'" class="font-medium">{{ t('footer.companyName') }}</li>
               <li class="flex items-start gap-2">
-                <MapPinIcon class="w-5 h-5 text-gray-400 flex-shrink-0 mt-0.5" />
+                <MapPinIcon :class="themeStore.isDark ? 'text-gray-400' : 'text-gray-500'" class="w-5 h-5 flex-shrink-0 mt-0.5" />
                 <span class="whitespace-nowrap">{{ t('footer.address') }}</span>
               </li>
               <li class="flex items-center gap-2">
-                <PhoneIcon class="w-5 h-5 text-gray-400 flex-shrink-0" />
+                <PhoneIcon :class="themeStore.isDark ? 'text-gray-400' : 'text-gray-500'" class="w-5 h-5 flex-shrink-0" />
                 <span>{{ t('footer.phone') }}</span>
               </li>
               <li class="flex items-center gap-2">
-                <PrinterIcon class="w-5 h-5 text-gray-400 flex-shrink-0" />
+                <PrinterIcon :class="themeStore.isDark ? 'text-gray-400' : 'text-gray-500'" class="w-5 h-5 flex-shrink-0" />
                 <span>{{ t('footer.fax') }}</span>
               </li>
               <li class="flex items-center gap-2">
-                <EnvelopeIcon class="w-5 h-5 text-gray-400 flex-shrink-0" />
-                <a :href="`mailto:${t('footer.email')}`" class="hover:text-white transition-colors">
+                <EnvelopeIcon :class="themeStore.isDark ? 'text-gray-400' : 'text-gray-500'" class="w-5 h-5 flex-shrink-0" />
+                <a :href="`mailto:${t('footer.email')}`" :class="themeStore.isDark ? 'hover:text-white' : 'hover:text-gray-900'" class="transition-colors">
                   {{ t('footer.email') }}
                 </a>
               </li>
@@ -66,7 +67,8 @@ const { t } = useI18n();
                 href="https://www.facebook.com/HauBoard1"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-gray-700 transition-colors duration-200"
+                :class="themeStore.isDark ? 'bg-gray-800 hover:bg-gray-700' : 'bg-gray-200 hover:bg-gray-300'"
+                class="w-10 h-10 rounded-full flex items-center justify-center transition-colors duration-200"
                 aria-label="Facebook"
               >
                 <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -78,7 +80,8 @@ const { t } = useI18n();
                 href="https://www.instagram.com/saviola.ecologicalpanel/"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-gray-700 transition-colors duration-200"
+                :class="themeStore.isDark ? 'bg-gray-800 hover:bg-gray-700' : 'bg-gray-200 hover:bg-gray-300'"
+                class="w-10 h-10 rounded-full flex items-center justify-center transition-colors duration-200"
                 aria-label="Instagram"
               >
                 <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -88,7 +91,8 @@ const { t } = useI18n();
               <!-- Line -->
               <a
                 href="#"
-                class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-gray-700 transition-colors duration-200"
+                :class="themeStore.isDark ? 'bg-gray-800 hover:bg-gray-700' : 'bg-gray-200 hover:bg-gray-300'"
+                class="w-10 h-10 rounded-full flex items-center justify-center transition-colors duration-200"
                 aria-label="Line"
               >
                 <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -101,8 +105,8 @@ const { t } = useI18n();
       </div>
 
       <!-- Divider -->
-      <div class="border-t border-gray-800 mt-8 pt-8">
-        <p class="text-sm text-gray-400 text-center">
+      <div :class="themeStore.isDark ? 'border-gray-800' : 'border-gray-300'" class="border-t mt-8 pt-8">
+        <p :class="themeStore.isDark ? 'text-gray-400' : 'text-gray-500'" class="text-sm text-center">
           &copy; {{ new Date().getFullYear() }} {{ t('footer.companyName') }} All rights reserved.
         </p>
       </div>

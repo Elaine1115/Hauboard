@@ -4,6 +4,7 @@ import newsData from '../../../i18n/locales/news.json'
 
 const route = useRoute()
 const { locale } = useI18n()
+const themeStore = useThemeStore()
 
 // Get data based on locale
 const data = computed(() => {
@@ -102,7 +103,7 @@ useSeoMeta({
 </script>
 
 <template>
-  <div class="min-h-screen bg-gradient-to-b from-gray-950 via-gray-900 to-gray-950">
+  <div class="min-h-screen">
     <!-- News Detail -->
     <template v-if="newsItem">
       <!-- Content -->
@@ -110,7 +111,12 @@ useSeoMeta({
         <div class="container mx-auto px-4 md:px-6">
           <article class="mx-auto max-w-3xl">
             <!-- Header -->
-            <header class="mb-8 rounded-2xl border border-gray-800 bg-gray-900/80 p-6 backdrop-blur-sm md:p-8">
+            <header
+              class="mb-8 rounded-2xl p-6 backdrop-blur-sm md:p-8"
+              :class="themeStore.isDark
+                ? 'border border-gray-800 bg-gray-900/80'
+                : 'border border-gray-200 bg-white/80 shadow-lg'"
+            >
               <!-- Category -->
               <span
                 :class="[
@@ -123,12 +129,18 @@ useSeoMeta({
               </span>
 
               <!-- Title -->
-              <h1 class="mb-4 text-3xl font-bold text-white md:text-4xl">
+              <h1
+                class="mb-4 text-3xl font-bold md:text-4xl"
+                :class="themeStore.isDark ? 'text-white' : 'text-gray-900'"
+              >
                 {{ newsItem.title }}
               </h1>
 
               <!-- Meta -->
-              <div class="flex items-center gap-4 text-gray-400">
+              <div
+                class="flex items-center gap-4"
+                :class="themeStore.isDark ? 'text-gray-400' : 'text-gray-500'"
+              >
                 <div class="flex items-center gap-2">
                   <Icon name="ph:calendar" class="h-5 w-5" />
                   <time :datetime="newsItem.date">{{ formatDate(newsItem.date) }}</time>
@@ -138,7 +150,10 @@ useSeoMeta({
 
             <!-- Image Carousel -->
             <div v-if="newsImages.length > 0" class="mb-8">
-              <div class="relative overflow-hidden rounded-2xl bg-gray-800">
+              <div
+                class="relative overflow-hidden rounded-2xl"
+                :class="themeStore.isDark ? 'bg-gray-800' : 'bg-gray-100'"
+              >
                 <!-- Image -->
                 <img
                   :src="newsImages[currentImageIndex]"
@@ -181,15 +196,20 @@ useSeoMeta({
                     'h-2 rounded-full transition-all',
                     currentImageIndex === index
                       ? 'w-6 bg-emerald-500'
-                      : 'w-2 bg-gray-600 hover:bg-gray-500'
+                      : themeStore.isDark
+                        ? 'w-2 bg-gray-600 hover:bg-gray-500'
+                        : 'w-2 bg-gray-300 hover:bg-gray-400'
                   ]"
                 />
               </div>
             </div>
 
             <!-- Article Content -->
-            <div class="prose prose-invert prose-emerald max-w-none">
-              <div class="space-y-4 text-gray-300 leading-relaxed">
+            <div :class="themeStore.isDark ? 'prose prose-invert prose-emerald' : 'prose prose-emerald'" class="max-w-none">
+              <div
+                class="space-y-4 leading-relaxed"
+                :class="themeStore.isDark ? 'text-gray-300' : 'text-gray-600'"
+              >
                 <p v-for="(paragraph, index) in formattedContent" :key="index" class="text-lg">
                   {{ paragraph }}
                 </p>
@@ -197,10 +217,16 @@ useSeoMeta({
             </div>
 
             <!-- Back to News -->
-            <div class="mt-12 border-t border-gray-800 pt-8">
+            <div
+              class="mt-12 pt-8"
+              :class="themeStore.isDark ? 'border-t border-gray-800' : 'border-t border-gray-200'"
+            >
               <NuxtLink
                 to="/news"
-                class="inline-flex items-center gap-2 rounded-lg border border-gray-700 bg-gray-800 px-6 py-3 font-medium text-white transition-all hover:border-emerald-500 hover:bg-gray-700"
+                class="inline-flex items-center gap-2 rounded-lg px-6 py-3 font-medium transition-all hover:border-emerald-500"
+                :class="themeStore.isDark
+                  ? 'border border-gray-700 bg-gray-800 text-white hover:bg-gray-700'
+                  : 'border border-gray-300 bg-white text-gray-700 hover:bg-gray-100'"
               >
                 <Icon name="ph:arrow-left" class="h-5 w-5" />
                 {{ data.detail.backToNews }}
@@ -215,9 +241,19 @@ useSeoMeta({
     <template v-else>
       <section class="flex min-h-[60vh] items-center justify-center py-20">
         <div class="text-center">
-          <Icon name="ph:newspaper" class="mx-auto mb-6 h-24 w-24 text-gray-600" />
-          <h1 class="mb-4 text-3xl font-bold text-white">{{ data.detail.notFound }}</h1>
-          <p class="mb-8 text-gray-400">{{ data.detail.notFoundDesc }}</p>
+          <Icon
+            name="ph:newspaper"
+            class="mx-auto mb-6 h-24 w-24"
+            :class="themeStore.isDark ? 'text-gray-600' : 'text-gray-400'"
+          />
+          <h1
+            class="mb-4 text-3xl font-bold"
+            :class="themeStore.isDark ? 'text-white' : 'text-gray-900'"
+          >{{ data.detail.notFound }}</h1>
+          <p
+            class="mb-8"
+            :class="themeStore.isDark ? 'text-gray-400' : 'text-gray-500'"
+          >{{ data.detail.notFoundDesc }}</p>
           <NuxtLink
             to="/news"
             class="inline-flex items-center gap-2 rounded-lg bg-emerald-500 px-6 py-3 font-medium text-white transition-all hover:bg-emerald-600"

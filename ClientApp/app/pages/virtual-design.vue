@@ -3,6 +3,7 @@ import { ref, computed } from 'vue'
 import virtualDesignData from '../../i18n/locales/virtual-design.json'
 
 const { locale } = useI18n()
+const themeStore = useThemeStore()
 
 // Get data based on locale
 const data = computed(() => {
@@ -36,7 +37,7 @@ useSeoMeta({
 </script>
 
 <template>
-  <div class="min-h-screen bg-gradient-to-b from-gray-950 via-gray-900 to-gray-950">
+  <div class="min-h-screen">
     <!-- Hero Section -->
     <PageHero
       :title="data.hero.title"
@@ -65,7 +66,7 @@ useSeoMeta({
 
         <!-- Empty State -->
         <div v-if="allImages.length === 0" class="text-center py-20">
-          <p class="text-gray-400 text-lg">No images available.</p>
+          <p class="text-lg" :class="themeStore.isDark ? 'text-gray-400' : 'text-gray-500'">No images available.</p>
         </div>
       </div>
     </section>

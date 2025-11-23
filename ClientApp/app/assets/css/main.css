@@ -3,28 +3,214 @@
   display: none !important;
 }
 
-html {
+/* Dark mode (default) */
+html.dark {
   color-scheme: dark;
 }
 
-body {
-  @apply grid bg-gray-950 bg-repeat text-gray-50;
+html.dark body {
+  display: grid;
+  background-color: #030712;
+  background-repeat: repeat;
+  color: #f9fafb;
   font-family: 'DM Sans', sans-serif;
   background-image: url('/assets/noise-texture.svg');
 }
 
-.buttonLink {
-  @apply relative inline-flex h-fit w-fit rounded-full px-4 py-2;
-  @apply border border-sky-100/20 bg-sky-200/10 text-sky-200 outline-none ring-teal-300;
-  @apply after:absolute after:inset-0 after:-z-10 after:animate-pulse after:rounded-full after:bg-teal-100 after:bg-opacity-0 after:blur-md;
-  @apply transition-colors hover:border-teal-200/40 hover:text-teal-300 after:transition-all after:duration-500 after:hover:bg-opacity-15 focus:ring-2;
+/* Light mode */
+html.light {
+  color-scheme: light;
 }
 
-.glass-container {
+html.light body {
+  display: grid;
+  background: linear-gradient(135deg, #ecfdf5 0%, #ffffff 50%, #f0fdfa 100%);
+  background-attachment: fixed;
+  color: #111827;
+  font-family: 'DM Sans', sans-serif;
+  min-height: 100vh;
+}
+
+/* Default state (before JS loads) - dark mode */
+html:not(.light):not(.dark) {
+  color-scheme: dark;
+}
+
+html:not(.light):not(.dark) body {
+  display: grid;
+  background-color: #030712;
+  background-repeat: repeat;
+  color: #f9fafb;
+  font-family: 'DM Sans', sans-serif;
+  background-image: url('/assets/noise-texture.svg');
+}
+
+/* ==========================================
+   Light Mode Automatic Overrides
+   ========================================== */
+
+/* Background overrides */
+html.light .bg-gray-950 { background-color: #ffffff !important; }
+html.light .bg-gray-900 { background-color: #f3f4f6 !important; }
+html.light .bg-gray-900\/50 { background-color: rgba(243, 244, 246, 0.5) !important; }
+html.light .bg-gray-800 { background-color: #e5e7eb !important; }
+html.light .bg-gray-800\/50 { background-color: rgba(229, 231, 235, 0.5) !important; }
+html.light .bg-gray-800\/30 { background-color: rgba(229, 231, 235, 0.3) !important; }
+html.light .bg-gray-700 { background-color: #d1d5db !important; }
+html.light .bg-gray-700\/50 { background-color: rgba(209, 213, 219, 0.5) !important; }
+
+/* Text overrides */
+html.light .text-white { color: #111827 !important; }
+html.light .text-gray-50 { color: #111827 !important; }
+html.light .text-gray-100 { color: #1f2937 !important; }
+html.light .text-gray-200 { color: #374151 !important; }
+html.light .text-gray-300 { color: #4b5563 !important; }
+html.light .text-gray-400 { color: #6b7280 !important; }
+
+/* Border overrides */
+html.light .border-gray-700 { border-color: #d1d5db !important; }
+html.light .border-gray-700\/50 { border-color: rgba(209, 213, 219, 0.5) !important; }
+html.light .border-gray-800 { border-color: #e5e7eb !important; }
+
+/* Gradient overrides for sections */
+html.light .from-gray-950 { --tw-gradient-from: #f8fafc !important; }
+html.light .via-gray-900 { --tw-gradient-via: #f1f5f9 !important; }
+html.light .to-gray-950 { --tw-gradient-to: #f8fafc !important; }
+html.light .from-gray-900 { --tw-gradient-from: #f1f5f9 !important; }
+html.light .to-gray-900 { --tw-gradient-to: #f1f5f9 !important; }
+html.light .from-gray-900\/90 { --tw-gradient-from: rgba(241, 245, 249, 0.9) !important; }
+html.light .via-gray-900\/40 { --tw-gradient-via: rgba(241, 245, 249, 0.4) !important; }
+
+/* Card and container backgrounds */
+html.light .from-gray-800\/80 { --tw-gradient-from: rgba(243, 244, 246, 0.9) !important; }
+html.light .to-gray-900\/80 { --tw-gradient-to: rgba(241, 245, 249, 0.9) !important; }
+
+/* Emerald/teal gradient backgrounds for cards - keep them similar but lighter */
+html.light .from-emerald-900\/40 { --tw-gradient-from: rgba(16, 185, 129, 0.1) !important; }
+html.light .to-teal-900\/40 { --tw-gradient-to: rgba(20, 184, 166, 0.1) !important; }
+
+/* Backdrop blur containers */
+html.light .backdrop-blur-sm {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+/* Shadow adjustments */
+html.light .shadow-lg { --tw-shadow-color: rgba(209, 213, 219, 0.5) !important; }
+html.light .shadow-xl { --tw-shadow-color: rgba(209, 213, 219, 0.5) !important; }
+
+/* Hover states */
+html.light .hover\:bg-gray-800:hover { background-color: #e5e7eb !important; }
+html.light .hover\:bg-gray-700:hover { background-color: #d1d5db !important; }
+html.light .hover\:text-white:hover { color: #111827 !important; }
+
+/* Keep accent colors - emerald-500 (#10B981) stays the same in both modes */
+html.light .text-emerald-400 { color: #34d399 !important; }
+/* .text-emerald-500 and .bg-emerald-500 keep their original #10B981 color */
+html.light .text-teal-400 { color: #2dd4bf !important; }
+html.light .hover\:text-emerald-400:hover { color: #34d399 !important; }
+html.light .hover\:text-emerald-300:hover { color: #6ee7b7 !important; }
+
+/* PageHero section - keep white text for contrast on dark hero backgrounds */
+html.light section.relative.overflow-hidden .text-white {
+  color: #ffffff !important;
+}
+
+/* ==========================================
+   Button Styles
+   ========================================== */
+
+/* Button styles - Dark mode */
+html.dark .buttonLink,
+html:not(.light):not(.dark) .buttonLink {
+  position: relative;
+  display: inline-flex;
+  height: fit-content;
+  width: fit-content;
+  border-radius: 9999px;
+  padding: 0.5rem 1rem;
+  border: 1px solid rgba(224, 242, 254, 0.2);
+  background-color: rgba(186, 230, 253, 0.1);
+  color: #bae6fd;
+  outline: none;
+  transition: all 0.2s;
+}
+
+html.dark .buttonLink:hover,
+html:not(.light):not(.dark) .buttonLink:hover {
+  border-color: rgba(153, 246, 228, 0.4);
+  color: #5eead4;
+}
+
+/* Button styles - Light mode */
+html.light .buttonLink {
+  position: relative;
+  display: inline-flex;
+  height: fit-content;
+  width: fit-content;
+  border-radius: 9999px;
+  padding: 0.5rem 1rem;
+  border: 1px solid rgba(5, 150, 105, 0.3);
+  background-color: #d1fae5;
+  color: #047857;
+  outline: none;
+  transition: all 0.2s;
+}
+
+html.light .buttonLink:hover {
+  border-color: #10b981;
+  color: #059669;
+  background-color: #a7f3d0;
+}
+
+/* ==========================================
+   Glass Container
+   ========================================== */
+
+/* Glass container - Dark mode */
+html.dark .glass-container,
+html:not(.light):not(.dark) .glass-container {
   position: relative;
 }
 
-.glass-container::before {
-  @apply absolute -inset-[10px] -z-10 rounded-xl border border-gray-100/20 bg-gray-200/10 backdrop-blur-md;
+html.dark .glass-container::before,
+html:not(.light):not(.dark) .glass-container::before {
   content: '';
+  position: absolute;
+  inset: -10px;
+  z-index: -10;
+  border-radius: 0.75rem;
+  border: 1px solid rgba(243, 244, 246, 0.2);
+  background-color: rgba(229, 231, 235, 0.1);
+  backdrop-filter: blur(12px);
+}
+
+/* Glass container - Light mode */
+html.light .glass-container {
+  position: relative;
+}
+
+html.light .glass-container::before {
+  content: '';
+  position: absolute;
+  inset: -10px;
+  z-index: -10;
+  border-radius: 0.75rem;
+  border: 1px solid rgba(209, 213, 219, 0.5);
+  background-color: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+}
+
+/* ==========================================
+   Theme Transition
+   ========================================== */
+
+body,
+body * {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Disable transitions on page load to prevent flash */
+html:not(.theme-ready) body,
+html:not(.theme-ready) body * {
+  transition: none !important;
 }

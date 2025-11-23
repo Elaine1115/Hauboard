@@ -2,6 +2,7 @@
 import homeData from '../../i18n/locales/home.json'
 
 const { locale } = useI18n()
+const themeStore = useThemeStore()
 
 const home = computed(() => {
   const langData = homeData[locale.value as 'zh' | 'en']
@@ -40,53 +41,73 @@ const getThumbnail = (videoId: string) => {
 <template>
   <main class="min-h-screen">
     <!-- Hero Section - Bento Grid -->
-    <section class="-mt-20 md:-mt-24 pt-20 md:pt-24 relative overflow-hidden bg-gray-950">
+    <section
+      class="-mt-20 md:-mt-24 pt-20 md:pt-24 relative overflow-hidden"
+      :class="themeStore.isDark ? 'bg-gray-950' : 'bg-gradient-to-br from-emerald-50 via-white to-teal-50'"
+    >
       <div class="max-w-7xl mx-auto px-4 md:px-6 py-16 md:py-24 w-full">
         <!-- Two Column Layout -->
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-5">
           <!-- Left Column: Content + Stats -->
           <div class="flex flex-col gap-4 md:gap-5">
             <!-- Content Card -->
-            <div class="flex-1 relative rounded-3xl bg-gradient-to-br from-gray-800/80 to-gray-900/80 backdrop-blur-sm border border-gray-700/50 p-8 md:p-10 flex flex-col justify-center overflow-hidden group">
+            <div
+              class="flex-1 relative rounded-3xl backdrop-blur-sm p-8 md:p-10 flex flex-col justify-center overflow-hidden group"
+              :class="themeStore.isDark
+                ? 'bg-gradient-to-br from-gray-800/80 to-gray-900/80 border border-gray-700/50'
+                : 'bg-white/80 border border-gray-200 shadow-xl shadow-emerald-500/10'"
+            >
               <!-- PageHero-style decorative background -->
               <div class="absolute inset-0 overflow-hidden pointer-events-none">
                 <!-- Grid pattern -->
-                <div class="absolute inset-0 opacity-[0.03]" style="background-image: linear-gradient(rgba(255,255,255,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.5) 1px, transparent 1px); background-size: 40px 40px;"></div>
+                <div
+                  class="absolute inset-0"
+                  :class="themeStore.isDark ? 'opacity-[0.03]' : 'opacity-[0.5]'"
+                  :style="themeStore.isDark
+                    ? 'background-image: linear-gradient(rgba(255,255,255,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.5) 1px, transparent 1px); background-size: 40px 40px;'
+                    : 'background-image: linear-gradient(rgba(16,185,129,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(16,185,129,0.1) 1px, transparent 1px); background-size: 40px 40px;'"
+                ></div>
 
                 <!-- Ring shape top-right -->
-                <div class="absolute -top-16 -right-16 w-48 h-48 rounded-full border-2 border-emerald-400/20"></div>
-                <div class="absolute -top-12 -right-12 w-40 h-40 rounded-full border border-emerald-400/10"></div>
+                <div :class="themeStore.isDark ? 'border-emerald-400/20' : 'border-emerald-500/30'" class="absolute -top-16 -right-16 w-48 h-48 rounded-full border-2"></div>
+                <div :class="themeStore.isDark ? 'border-emerald-400/10' : 'border-emerald-500/20'" class="absolute -top-12 -right-12 w-40 h-40 rounded-full border"></div>
 
                 <!-- Ring shape bottom-left -->
-                <div class="absolute -bottom-20 -left-20 w-56 h-56 rounded-full border-2 border-teal-400/15"></div>
-                <div class="absolute -bottom-16 -left-16 w-48 h-48 rounded-full border border-teal-400/10"></div>
+                <div :class="themeStore.isDark ? 'border-teal-400/15' : 'border-teal-500/25'" class="absolute -bottom-20 -left-20 w-56 h-56 rounded-full border-2"></div>
+                <div :class="themeStore.isDark ? 'border-teal-400/10' : 'border-teal-500/15'" class="absolute -bottom-16 -left-16 w-48 h-48 rounded-full border"></div>
 
                 <!-- Diagonal lines -->
                 <svg class="absolute inset-0 w-full h-full" preserveAspectRatio="none">
-                  <line x1="0%" y1="100%" x2="40%" y2="0%" stroke="rgba(52, 211, 153, 0.15)" stroke-width="1" />
-                  <line x1="60%" y1="100%" x2="100%" y2="20%" stroke="rgba(45, 212, 191, 0.1)" stroke-width="1" />
+                  <line x1="0%" y1="100%" x2="40%" y2="0%" :stroke="themeStore.isDark ? 'rgba(52, 211, 153, 0.15)' : 'rgba(16, 185, 129, 0.2)'" stroke-width="1" />
+                  <line x1="60%" y1="100%" x2="100%" y2="20%" :stroke="themeStore.isDark ? 'rgba(45, 212, 191, 0.1)' : 'rgba(20, 184, 166, 0.15)'" stroke-width="1" />
                 </svg>
 
                 <!-- Small floating dots -->
-                <div class="absolute top-[15%] right-[20%] w-2 h-2 rounded-full bg-emerald-400/40"></div>
-                <div class="absolute top-[60%] right-[15%] w-1.5 h-1.5 rounded-full bg-teal-400/50"></div>
-                <div class="absolute bottom-[25%] left-[25%] w-2 h-2 rounded-full bg-emerald-400/30"></div>
-                <div class="absolute top-[30%] left-[10%] w-1 h-1 rounded-full bg-white/40"></div>
+                <div :class="themeStore.isDark ? 'bg-emerald-400/40' : 'bg-emerald-500/50'" class="absolute top-[15%] right-[20%] w-2 h-2 rounded-full"></div>
+                <div :class="themeStore.isDark ? 'bg-teal-400/50' : 'bg-teal-500/60'" class="absolute top-[60%] right-[15%] w-1.5 h-1.5 rounded-full"></div>
+                <div :class="themeStore.isDark ? 'bg-emerald-400/30' : 'bg-emerald-500/40'" class="absolute bottom-[25%] left-[25%] w-2 h-2 rounded-full"></div>
+                <div :class="themeStore.isDark ? 'bg-white/40' : 'bg-emerald-600/30'" class="absolute top-[30%] left-[10%] w-1 h-1 rounded-full"></div>
 
                 <!-- Glowing orbs -->
-                <div class="absolute -top-10 -right-10 w-32 h-32 rounded-full bg-emerald-500/20 blur-3xl"></div>
-                <div class="absolute -bottom-10 -left-10 w-40 h-40 rounded-full bg-teal-500/15 blur-3xl"></div>
+                <div :class="themeStore.isDark ? 'bg-emerald-500/20' : 'bg-emerald-400/30'" class="absolute -top-10 -right-10 w-32 h-32 rounded-full blur-3xl"></div>
+                <div :class="themeStore.isDark ? 'bg-teal-500/15' : 'bg-teal-400/25'" class="absolute -bottom-10 -left-10 w-40 h-40 rounded-full blur-3xl"></div>
               </div>
 
               <div class="relative z-10">
                 <div class="flex items-center gap-3 mb-6">
                   <div class="h-px w-8 bg-emerald-500"></div>
-                  <span class="text-emerald-400 text-sm font-medium tracking-widest uppercase">Saviola Group</span>
+                  <span :class="themeStore.isDark ? 'text-emerald-400' : 'text-emerald-600'" class="text-sm font-medium tracking-widest uppercase">Saviola Group</span>
                 </div>
-                <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 leading-tight">
+                <h1
+                  class="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 leading-tight"
+                  :class="themeStore.isDark ? 'text-white' : 'text-gray-900'"
+                >
                   {{ home.hero.title }}
                 </h1>
-                <p class="text-base md:text-lg text-gray-300 mb-8 max-w-md leading-relaxed">
+                <p
+                  class="text-base md:text-lg mb-8 max-w-md leading-relaxed"
+                  :class="themeStore.isDark ? 'text-gray-300' : 'text-gray-600'"
+                >
                   {{ home.hero.subtitle }}
                 </p>
                 <div class="flex flex-wrap gap-3">
@@ -100,17 +121,29 @@ const getThumbnail = (videoId: string) => {
                 </div>
               </div>
               <!-- Hover glow -->
-              <div class="absolute -bottom-20 -right-20 w-40 h-40 bg-emerald-500/20 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div :class="themeStore.isDark ? 'bg-emerald-500/20' : 'bg-emerald-400/30'" class="absolute -bottom-20 -right-20 w-40 h-40 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
             </div>
 
             <!-- Stats Card -->
-            <div class="relative rounded-3xl bg-gradient-to-r from-emerald-900/40 to-teal-900/40 backdrop-blur-sm border border-emerald-500/20 p-6 flex items-center justify-around overflow-hidden">
+            <div
+              class="relative rounded-3xl backdrop-blur-sm p-6 flex items-center justify-around overflow-hidden"
+              :class="themeStore.isDark
+                ? 'bg-gradient-to-r from-emerald-900/40 to-teal-900/40 border border-emerald-500/20'
+                : 'bg-gradient-to-r from-emerald-100/80 to-teal-100/80 border border-emerald-200'"
+            >
               <template v-for="(stat, index) in home.hero.stats" :key="stat.value">
                 <div class="text-center">
-                  <div class="text-3xl md:text-4xl font-bold text-white mb-1">{{ stat.value }}</div>
-                  <div class="text-sm text-gray-400">{{ stat.label }}</div>
+                  <div
+                    class="text-3xl md:text-4xl font-bold mb-1"
+                    :class="themeStore.isDark ? 'text-white' : 'text-gray-900'"
+                  >{{ stat.value }}</div>
+                  <div :class="themeStore.isDark ? 'text-gray-400' : 'text-gray-600'" class="text-sm">{{ stat.label }}</div>
                 </div>
-                <div v-if="index < home.hero.stats.length - 1" class="w-px h-12 bg-gray-700"></div>
+                <div
+                  v-if="index < home.hero.stats.length - 1"
+                  class="w-px h-12"
+                  :class="themeStore.isDark ? 'bg-gray-700' : 'bg-emerald-300'"
+                ></div>
               </template>
             </div>
           </div>
@@ -121,7 +154,7 @@ const getThumbnail = (videoId: string) => {
               v-for="(card, index) in home.hero.cards"
               :key="card.title"
               :class="[
-                'relative rounded-3xl overflow-hidden group cursor-pointer',
+                'relative rounded-3xl overflow-hidden group cursor-pointer shadow-lg',
                 index === 0 ? 'row-span-2' : ''
               ]"
             >
@@ -155,13 +188,19 @@ const getThumbnail = (videoId: string) => {
     </section>
 
     <!-- Features Section -->
-    <section class="py-20 bg-gray-900/50">
+    <section class="py-20">
       <div class="mx-auto max-w-6xl px-4 md:px-6">
         <div class="text-center mb-16">
-          <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">
+          <h2
+            class="text-3xl md:text-4xl font-bold mb-4"
+            :class="themeStore.isDark ? 'text-white' : 'text-gray-900'"
+          >
             {{ home.features.title }}
           </h2>
-          <p class="text-lg text-gray-300 max-w-2xl mx-auto">
+          <p
+            class="text-lg max-w-2xl mx-auto"
+            :class="themeStore.isDark ? 'text-gray-300' : 'text-gray-600'"
+          >
             {{ home.features.subtitle }}
           </p>
         </div>
@@ -170,13 +209,22 @@ const getThumbnail = (videoId: string) => {
           <div
             v-for="feature in home.features.items"
             :key="feature.title"
-            class="bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 rounded-xl p-6 hover:border-emerald-500/50 transition-all duration-300 hover:transform hover:-translate-y-1"
+            class="backdrop-blur-sm rounded-xl p-6 hover:border-emerald-500/50 transition-all duration-300 hover:transform hover:-translate-y-1"
+            :class="themeStore.isDark
+              ? 'bg-gray-800/50 border border-gray-700/50'
+              : 'bg-white/80 border border-gray-200 shadow-lg'"
           >
             <div class="h-12 w-12 mb-4">
-              <Icon :name="feature.icon" class="h-12 w-12 text-emerald-400" />
+              <Icon :name="feature.icon" class="h-12 w-12 text-emerald-500" />
             </div>
-            <h3 class="text-xl font-semibold text-white mb-3">{{ feature.title }}</h3>
-            <p class="text-gray-300 leading-relaxed">{{ feature.description }}</p>
+            <h3
+              class="text-xl font-semibold mb-3"
+              :class="themeStore.isDark ? 'text-white' : 'text-gray-900'"
+            >{{ feature.title }}</h3>
+            <p
+              class="leading-relaxed"
+              :class="themeStore.isDark ? 'text-gray-300' : 'text-gray-600'"
+            >{{ feature.description }}</p>
           </div>
         </div>
       </div>
@@ -189,7 +237,10 @@ const getThumbnail = (videoId: string) => {
           <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
             <!-- Image Side -->
             <div class="relative">
-              <div class="relative aspect-[4/3] rounded-2xl overflow-hidden bg-gray-800">
+              <div
+                class="relative aspect-[4/3] rounded-2xl overflow-hidden"
+                :class="themeStore.isDark ? 'bg-gray-800' : 'bg-gray-100'"
+              >
                 <img
                   :src="home.applications.image"
                   alt="Melamine Chipboard Applications"
@@ -204,10 +255,16 @@ const getThumbnail = (videoId: string) => {
 
             <!-- Content Side -->
             <div>
-              <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">
+              <h2
+                class="text-3xl md:text-4xl font-bold mb-4"
+                :class="themeStore.isDark ? 'text-white' : 'text-gray-900'"
+              >
                 {{ home.applications.title }}
               </h2>
-              <p class="text-lg text-gray-300 mb-8">
+              <p
+                class="text-lg mb-8"
+                :class="themeStore.isDark ? 'text-gray-300' : 'text-gray-600'"
+              >
                 {{ home.applications.subtitle }}
               </p>
 
@@ -215,14 +272,23 @@ const getThumbnail = (videoId: string) => {
                 <div
                   v-for="app in home.applications.items"
                   :key="app.title"
-                  class="flex items-center gap-4 p-4 rounded-xl bg-gray-800/30 border border-gray-700/50 hover:border-emerald-500/30 transition-colors"
+                  class="flex items-center gap-4 p-4 rounded-xl transition-colors hover:border-emerald-500/30"
+                  :class="themeStore.isDark
+                    ? 'bg-gray-800/30 border border-gray-700/50'
+                    : 'bg-white/80 border border-gray-200 shadow'"
                 >
                   <div class="flex-shrink-0 h-8 w-8">
-                    <Icon :name="app.icon" class="h-8 w-8 text-emerald-400" />
+                    <Icon :name="app.icon" class="h-8 w-8 text-emerald-500" />
                   </div>
                   <div>
-                    <h3 class="text-white font-semibold mb-1">{{ app.title }}</h3>
-                    <p class="text-gray-400 text-sm">{{ app.description }}</p>
+                    <h3
+                      class="font-semibold mb-1"
+                      :class="themeStore.isDark ? 'text-white' : 'text-gray-900'"
+                    >{{ app.title }}</h3>
+                    <p
+                      class="text-sm"
+                      :class="themeStore.isDark ? 'text-gray-400' : 'text-gray-500'"
+                    >{{ app.description }}</p>
                   </div>
                 </div>
               </div>
@@ -233,15 +299,21 @@ const getThumbnail = (videoId: string) => {
     </section>
 
     <!-- Specifications Section -->
-    <section class="py-20 bg-gray-900/50">
+    <section class="py-20">
       <div class="mx-auto max-w-6xl px-4 md:px-6">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <!-- Content Side -->
           <div class="order-2 lg:order-1">
-            <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">
+            <h2
+              class="text-3xl md:text-4xl font-bold mb-4"
+              :class="themeStore.isDark ? 'text-white' : 'text-gray-900'"
+            >
               {{ home.specifications.title }}
             </h2>
-            <p class="text-lg text-gray-300 mb-8">
+            <p
+              class="text-lg mb-8"
+              :class="themeStore.isDark ? 'text-gray-300' : 'text-gray-600'"
+            >
               {{ home.specifications.subtitle }}
             </p>
 
@@ -249,7 +321,10 @@ const getThumbnail = (videoId: string) => {
               <div
                 v-for="spec in home.specifications.items"
                 :key="spec.thickness"
-                class="relative p-6 rounded-xl bg-gray-800/50 border border-gray-700/50 hover:border-emerald-500/30 transition-colors"
+                class="relative p-6 rounded-xl transition-colors hover:border-emerald-500/30"
+                :class="themeStore.isDark
+                  ? 'bg-gray-800/50 border border-gray-700/50'
+                  : 'bg-white/80 border border-gray-200 shadow-lg'"
               >
                 <!-- Thickness Badge -->
                 <div class="absolute -top-3 left-6">
@@ -259,15 +334,24 @@ const getThumbnail = (videoId: string) => {
                 </div>
 
                 <div class="mt-2">
-                  <h3 class="text-xl font-semibold text-white mb-2">{{ spec.title }}</h3>
-                  <p class="text-gray-400 mb-4">{{ spec.description }}</p>
+                  <h3
+                    class="text-xl font-semibold mb-2"
+                    :class="themeStore.isDark ? 'text-white' : 'text-gray-900'"
+                  >{{ spec.title }}</h3>
+                  <p
+                    class="mb-4"
+                    :class="themeStore.isDark ? 'text-gray-400' : 'text-gray-500'"
+                  >{{ spec.description }}</p>
 
                   <!-- Use Cases Tags -->
                   <div class="flex flex-wrap gap-2">
                     <span
                       v-for="use in spec.uses"
                       :key="use"
-                      class="px-3 py-1 bg-gray-700/50 text-gray-300 text-sm rounded-full"
+                      class="px-3 py-1 text-sm rounded-full"
+                      :class="themeStore.isDark
+                        ? 'bg-gray-700/50 text-gray-300'
+                        : 'bg-gray-100 text-gray-600'"
                     >
                       {{ use }}
                     </span>
@@ -279,7 +363,10 @@ const getThumbnail = (videoId: string) => {
 
           <!-- Image Side -->
           <div class="relative order-1 lg:order-2">
-            <div class="relative aspect-[4/3] rounded-2xl overflow-hidden bg-gray-800">
+            <div
+              class="relative aspect-[4/3] rounded-2xl overflow-hidden"
+              :class="themeStore.isDark ? 'bg-gray-800' : 'bg-gray-100'"
+            >
               <img
                 :src="home.specifications.image"
                 alt="Panel Specifications"
@@ -300,10 +387,16 @@ const getThumbnail = (videoId: string) => {
     <section class="py-20">
       <div class="mx-auto max-w-6xl px-4 md:px-6">
         <div class="text-center mb-16">
-          <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">
+          <h2
+            class="text-3xl md:text-4xl font-bold mb-4"
+            :class="themeStore.isDark ? 'text-white' : 'text-gray-900'"
+          >
             {{ home.gallery.title }}
           </h2>
-          <p class="text-lg text-gray-300 max-w-2xl mx-auto">
+          <p
+            class="text-lg max-w-2xl mx-auto"
+            :class="themeStore.isDark ? 'text-gray-300' : 'text-gray-600'"
+          >
             {{ home.gallery.subtitle }}
           </p>
         </div>
@@ -316,7 +409,10 @@ const getThumbnail = (videoId: string) => {
             class="group relative overflow-hidden rounded-xl"
           >
             <!-- Design Image -->
-            <div class="aspect-[4/3] overflow-hidden bg-gray-800">
+            <div
+              class="aspect-[4/3] overflow-hidden"
+              :class="themeStore.isDark ? 'bg-gray-800' : 'bg-gray-100'"
+            >
               <img
                 :src="project.image"
                 :alt="project.title"
@@ -348,14 +444,17 @@ const getThumbnail = (videoId: string) => {
     </section>
 
     <!-- Video Section -->
-    <section class="py-20 bg-gradient-to-b from-gray-900/50 to-gray-950">
+    <section class="py-20">
       <div class="mx-auto max-w-6xl px-4 md:px-6">
         <!-- Video Grid -->
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
           <div
             v-for="(videoId, index) in home.cta.videos"
             :key="index"
-            class="group relative overflow-hidden rounded-2xl bg-gray-800/50 border border-gray-700/50 hover:border-emerald-500/30 transition-all duration-300 shadow-xl shadow-black/20 hover:shadow-emerald-500/10"
+            class="group relative overflow-hidden rounded-2xl transition-all duration-300 hover:border-emerald-500/30 shadow-xl hover:shadow-emerald-500/10"
+            :class="themeStore.isDark
+              ? 'bg-gray-800/50 border border-gray-700/50 shadow-black/20'
+              : 'bg-white/80 border border-gray-200 shadow-gray-200/50'"
           >
             <!-- Video Container with 16:9 Aspect Ratio -->
             <div class="relative w-full aspect-video">

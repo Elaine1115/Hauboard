@@ -9,6 +9,7 @@ const emit = defineEmits<{
 }>()
 
 const { locale } = useI18n()
+const themeStore = useThemeStore()
 
 // Generate visible page numbers
 const visiblePages = computed(() => {
@@ -57,14 +58,17 @@ const pageInfo = computed(() => {
       <button
         @click="prevPage"
         :disabled="currentPage === 1"
-        class="flex items-center justify-center w-10 h-10 rounded-lg border border-gray-700 bg-gray-800 text-white transition-all hover:border-emerald-500 hover:bg-gray-700 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:border-gray-700 disabled:hover:bg-gray-800"
+        class="flex items-center justify-center w-10 h-10 rounded-lg transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+        :class="themeStore.isDark
+          ? 'border border-gray-700 bg-gray-800 text-white hover:border-emerald-500 hover:bg-gray-700 disabled:hover:border-gray-700 disabled:hover:bg-gray-800'
+          : 'border border-gray-300 bg-white text-gray-700 hover:border-emerald-500 hover:bg-gray-100 disabled:hover:border-gray-300 disabled:hover:bg-white'"
       >
         <Icon name="ph:caret-left" class="w-5 h-5" />
       </button>
 
       <!-- Page Numbers -->
       <template v-for="(page, index) in visiblePages" :key="index">
-        <span v-if="page === -1" class="px-2 text-gray-500">...</span>
+        <span v-if="page === -1" class="px-2" :class="themeStore.isDark ? 'text-gray-500' : 'text-gray-400'">...</span>
         <button
           v-else
           @click="goToPage(page)"
@@ -72,7 +76,9 @@ const pageInfo = computed(() => {
             'flex items-center justify-center w-10 h-10 rounded-lg font-medium transition-all',
             currentPage === page
               ? 'bg-emerald-500 text-white shadow-lg shadow-emerald-500/50'
-              : 'border border-gray-700 bg-gray-800 text-white hover:border-emerald-500 hover:bg-gray-700'
+              : themeStore.isDark
+                ? 'border border-gray-700 bg-gray-800 text-white hover:border-emerald-500 hover:bg-gray-700'
+                : 'border border-gray-300 bg-white text-gray-700 hover:border-emerald-500 hover:bg-gray-100'
           ]"
         >
           {{ page }}
@@ -83,14 +89,17 @@ const pageInfo = computed(() => {
       <button
         @click="nextPage"
         :disabled="currentPage === totalPages"
-        class="flex items-center justify-center w-10 h-10 rounded-lg border border-gray-700 bg-gray-800 text-white transition-all hover:border-emerald-500 hover:bg-gray-700 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:border-gray-700 disabled:hover:bg-gray-800"
+        class="flex items-center justify-center w-10 h-10 rounded-lg transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+        :class="themeStore.isDark
+          ? 'border border-gray-700 bg-gray-800 text-white hover:border-emerald-500 hover:bg-gray-700 disabled:hover:border-gray-700 disabled:hover:bg-gray-800'
+          : 'border border-gray-300 bg-white text-gray-700 hover:border-emerald-500 hover:bg-gray-100 disabled:hover:border-gray-300 disabled:hover:bg-white'"
       >
         <Icon name="ph:caret-right" class="w-5 h-5" />
       </button>
     </div>
 
     <!-- Page Info -->
-    <div class="text-center mt-4 text-gray-400 text-sm">
+    <div class="text-center mt-4 text-sm" :class="themeStore.isDark ? 'text-gray-400' : 'text-gray-500'">
       {{ pageInfo }}
     </div>
   </div>

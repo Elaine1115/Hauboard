@@ -6,6 +6,7 @@ import productsData from '../../i18n/locales/products.json'
 const route = useRoute()
 const router = useRouter()
 const { t, locale } = useI18n()
+const themeStore = useThemeStore()
 
 const products = computed(() => {
   const langData = productsData[locale.value as 'zh' | 'en']
@@ -104,7 +105,6 @@ watch(() => route.query.category, (newCategory) => {
     <SectionContainer
       :title="products.gallery.title"
       :subtitle="products.gallery.subtitle"
-      bg-class="bg-gray-900/30"
     >
       <!-- Category Filters -->
       <div class="flex flex-wrap gap-3 mb-8 justify-center">
@@ -114,7 +114,9 @@ watch(() => route.query.category, (newCategory) => {
             'px-6 py-3 rounded-lg font-medium transition-all duration-300',
             selectedCategory === 'all'
               ? 'bg-emerald-500 text-white shadow-lg shadow-emerald-500/50'
-              : 'bg-gray-800/50 text-gray-300 hover:bg-gray-700/50 border border-gray-700/50'
+              : themeStore.isDark
+                ? 'bg-gray-800/50 text-gray-300 hover:bg-gray-700/50 border border-gray-700/50'
+                : 'bg-white text-gray-600 hover:bg-gray-100 border border-gray-300'
           ]"
         >
           {{ t('common.allProducts') }}
@@ -127,7 +129,9 @@ watch(() => route.query.category, (newCategory) => {
             'px-6 py-3 rounded-lg font-medium transition-all duration-300',
             selectedCategory === cat.value
               ? 'bg-emerald-500 text-white shadow-lg shadow-emerald-500/50'
-              : 'bg-gray-800/50 text-gray-300 hover:bg-gray-700/50 border border-gray-700/50'
+              : themeStore.isDark
+                ? 'bg-gray-800/50 text-gray-300 hover:bg-gray-700/50 border border-gray-700/50'
+                : 'bg-white text-gray-600 hover:bg-gray-100 border border-gray-300'
           ]"
         >
           {{ cat.label }}
@@ -153,7 +157,7 @@ watch(() => route.query.category, (newCategory) => {
 
       <!-- Empty State -->
       <div v-if="filteredImages.length === 0" class="text-center py-20">
-        <p class="text-gray-400 text-lg">No products found in this category.</p>
+        <p class="text-lg" :class="themeStore.isDark ? 'text-gray-400' : 'text-gray-500'">No products found in this category.</p>
       </div>
     </SectionContainer>
   </main>

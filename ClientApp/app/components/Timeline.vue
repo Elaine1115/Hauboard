@@ -1,6 +1,6 @@
 <template>
   <div class="timeline-container">
-    <div class="timeline-wrapper">
+    <div class="timeline-wrapper" :class="themeStore.isDark ? 'timeline-dark' : 'timeline-light'">
       <!-- Timeline events -->
       <div
         v-for="(event, index) in events"
@@ -12,17 +12,17 @@
 
         <!-- Event marker (dot) -->
         <div class="timeline-marker">
-          <span class="timeline-marker-icon"></span>
+          <span class="timeline-marker-icon" :class="themeStore.isDark ? 'marker-dark' : 'marker-light'"></span>
         </div>
 
         <!-- Event content card -->
         <div class="timeline-content">
-          <div class="timeline-card">
+          <div class="timeline-card" :class="themeStore.isDark ? 'card-dark' : 'card-light'">
             <div v-if="event.year || event.date" class="timeline-date">
               {{ event.year || event.date }}
             </div>
-            <h3 class="timeline-title">{{ event.title }}</h3>
-            <p class="timeline-description">{{ event.description }}</p>
+            <h3 class="timeline-title" :class="themeStore.isDark ? 'text-white' : 'text-gray-900'">{{ event.title }}</h3>
+            <p class="timeline-description" :class="themeStore.isDark ? 'text-gray-300' : 'text-gray-600'">{{ event.description }}</p>
           </div>
         </div>
       </div>
@@ -31,6 +31,8 @@
 </template>
 
 <script setup lang="ts">
+const themeStore = useThemeStore()
+
 interface TimelineEvent {
   title: string
   description: string
@@ -122,9 +124,16 @@ defineProps<{
   height: 1rem;
   border-radius: 50%;
   background: linear-gradient(135deg, #10b981 0%, #059669 100%);
-  border: 3px solid #111827;
   box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.2);
   transition: all 0.3s ease;
+}
+
+.timeline-marker-icon.marker-dark {
+  border: 3px solid #111827;
+}
+
+.timeline-marker-icon.marker-light {
+  border: 3px solid #ffffff;
 }
 
 .timeline-marker-icon:hover {
@@ -157,12 +166,21 @@ defineProps<{
 }
 
 .timeline-card {
-  background: linear-gradient(135deg, rgba(31, 41, 55, 0.6) 0%, rgba(17, 24, 39, 0.6) 100%);
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(75, 85, 99, 0.4);
   border-radius: 1rem;
   padding: 2rem;
   transition: all 0.3s ease;
+}
+
+.timeline-card.card-dark {
+  background: linear-gradient(135deg, rgba(31, 41, 55, 0.6) 0%, rgba(17, 24, 39, 0.6) 100%);
+  border: 1px solid rgba(75, 85, 99, 0.4);
+}
+
+.timeline-card.card-light {
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(229, 231, 235, 1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
 }
 
 .timeline-card:hover {
@@ -181,7 +199,6 @@ defineProps<{
 }
 
 .timeline-title {
-  color: white;
   font-size: 1.5rem;
   font-weight: bold;
   margin-bottom: 1rem;
@@ -193,7 +210,6 @@ defineProps<{
 }
 
 .timeline-description {
-  color: #d1d5db;
   line-height: 1.7;
   font-size: 1.125rem;
 }

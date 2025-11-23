@@ -2,6 +2,7 @@
 import qualityData from '../../i18n/locales/quality.json'
 
 const { locale } = useI18n()
+const themeStore = useThemeStore()
 
 const data = computed(() => {
   return locale.value === 'zh' ? qualityData.zh : qualityData.en
@@ -28,7 +29,7 @@ const downloadDocument = (url: string, filename: string) => {
 </script>
 
 <template>
-  <div class="min-h-screen bg-gradient-to-b from-gray-950 via-gray-900 to-gray-950">
+  <div class="min-h-screen">
     <!-- Hero Section -->
     <PageHero
       :title="data.hero.title"
@@ -43,10 +44,13 @@ const downloadDocument = (url: string, filename: string) => {
         <div class="mx-auto max-w-4xl">
           <!-- Section Header -->
           <div class="mb-12 text-center">
-            <h2 class="mb-4 text-3xl font-bold text-white md:text-4xl">
+            <h2
+              class="mb-4 text-3xl font-bold md:text-4xl"
+              :class="themeStore.isDark ? 'text-white' : 'text-gray-900'"
+            >
               {{ data.documents.title }}
             </h2>
-            <p class="text-gray-400">
+            <p :class="themeStore.isDark ? 'text-gray-400' : 'text-gray-600'">
               {{ data.documents.subtitle }}
             </p>
           </div>
@@ -56,7 +60,10 @@ const downloadDocument = (url: string, filename: string) => {
             <div
               v-for="(file, index) in data.files"
               :key="index"
-              class="group relative overflow-hidden rounded-xl border border-gray-800 bg-gray-900/50 p-6 backdrop-blur-sm transition-all duration-300 hover:border-emerald-500/50 hover:bg-gray-800/50"
+              class="group relative overflow-hidden rounded-xl p-6 backdrop-blur-sm transition-all duration-300 hover:border-emerald-500/50"
+              :class="themeStore.isDark
+                ? 'border border-gray-800 bg-gray-900/50 hover:bg-gray-800/50'
+                : 'border border-gray-200 bg-white/80 shadow-lg hover:bg-white'"
             >
               <div class="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
                 <!-- File Info -->
@@ -74,10 +81,16 @@ const downloadDocument = (url: string, filename: string) => {
 
                   <!-- File Details -->
                   <div class="flex-1 min-w-0">
-                    <h3 class="mb-1 text-lg font-semibold text-white group-hover:text-emerald-400 transition-colors">
+                    <h3
+                      class="mb-1 text-lg font-semibold transition-colors group-hover:text-emerald-500"
+                      :class="themeStore.isDark ? 'text-white' : 'text-gray-900'"
+                    >
                       {{ file.title }}
                     </h3>
-                    <div class="flex flex-wrap items-center gap-3 text-sm text-gray-400">
+                    <div
+                      class="flex flex-wrap items-center gap-3 text-sm"
+                      :class="themeStore.isDark ? 'text-gray-400' : 'text-gray-500'"
+                    >
                       <span class="flex items-center gap-1">
                         <Icon name="ph:file-pdf" class="h-4 w-4" />
                         {{ file.filename }}
@@ -100,7 +113,10 @@ const downloadDocument = (url: string, filename: string) => {
                   <!-- Download Button -->
                   <button
                     @click="downloadDocument(file.url, file.filename)"
-                    class="flex items-center gap-2 rounded-lg border border-gray-700 bg-gray-800 px-4 py-2.5 text-sm font-medium text-white transition-all hover:border-emerald-500 hover:bg-gray-700"
+                    class="flex items-center gap-2 rounded-lg px-4 py-2.5 text-sm font-medium transition-all hover:border-emerald-500"
+                    :class="themeStore.isDark
+                      ? 'border border-gray-700 bg-gray-800 text-white hover:bg-gray-700'
+                      : 'border border-gray-300 bg-gray-100 text-gray-700 hover:bg-gray-200'"
                   >
                     <Icon name="ph:download-simple" class="h-5 w-5" />
                     {{ data.documents.download }}
@@ -112,8 +128,8 @@ const downloadDocument = (url: string, filename: string) => {
 
           <!-- Empty State (if no files) -->
           <div v-if="data.files.length === 0" class="py-20 text-center">
-            <Icon name="ph:file-x" class="mx-auto mb-4 h-16 w-16 text-gray-600" />
-            <p class="text-lg text-gray-400">No documents available</p>
+            <Icon name="ph:file-x" class="mx-auto mb-4 h-16 w-16" :class="themeStore.isDark ? 'text-gray-600' : 'text-gray-400'" />
+            <p class="text-lg" :class="themeStore.isDark ? 'text-gray-400' : 'text-gray-500'">No documents available</p>
           </div>
         </div>
       </div>

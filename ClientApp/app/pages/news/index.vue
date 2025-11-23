@@ -3,6 +3,7 @@ import { ref, computed } from 'vue'
 import newsData from '../../../i18n/locales/news.json'
 
 const { locale } = useI18n()
+const themeStore = useThemeStore()
 
 // Get data based on locale
 const data = computed(() => {
@@ -68,7 +69,7 @@ useSeoMeta({
 </script>
 
 <template>
-  <div class="min-h-screen bg-gradient-to-b from-gray-950 via-gray-900 to-gray-950">
+  <div class="min-h-screen">
     <!-- Hero Section -->
     <PageHero
       :title="data.hero.title"
@@ -86,7 +87,10 @@ useSeoMeta({
             v-for="item in paginatedNews"
             :key="item.id"
             :to="`/news/${item.id}`"
-            class="group relative block overflow-hidden rounded-2xl border border-gray-800 bg-gray-900/50 backdrop-blur-sm transition-all duration-300 hover:border-emerald-500/50 hover:bg-gray-800/50 hover:shadow-xl hover:shadow-emerald-500/10"
+            class="group relative block overflow-hidden rounded-2xl backdrop-blur-sm transition-all duration-300 hover:border-emerald-500/50 hover:shadow-xl hover:shadow-emerald-500/10"
+            :class="themeStore.isDark
+              ? 'border border-gray-800 bg-gray-900/50 hover:bg-gray-800/50'
+              : 'border border-gray-200 bg-white/80 shadow-lg hover:bg-white'"
           >
             <!-- Image -->
             <div class="relative aspect-[16/9] overflow-hidden bg-gray-800">
@@ -119,23 +123,32 @@ useSeoMeta({
             <!-- Content -->
             <div class="p-6">
               <!-- Date -->
-              <div class="mb-3 flex items-center gap-2 text-sm text-gray-400">
+              <div
+                class="mb-3 flex items-center gap-2 text-sm"
+                :class="themeStore.isDark ? 'text-gray-400' : 'text-gray-500'"
+              >
                 <Icon name="ph:calendar" class="h-4 w-4" />
                 <time :datetime="item.date">{{ formatDate(item.date) }}</time>
               </div>
 
               <!-- Title -->
-              <h2 class="mb-3 text-xl font-bold text-white transition-colors group-hover:text-emerald-400">
+              <h2
+                class="mb-3 text-xl font-bold transition-colors group-hover:text-emerald-500"
+                :class="themeStore.isDark ? 'text-white' : 'text-gray-900'"
+              >
                 {{ item.title }}
               </h2>
 
               <!-- Excerpt -->
-              <p class="mb-4 text-gray-400 line-clamp-3">
+              <p
+                class="mb-4 line-clamp-3"
+                :class="themeStore.isDark ? 'text-gray-400' : 'text-gray-600'"
+              >
                 {{ item.excerpt }}
               </p>
 
               <!-- Read More -->
-              <span class="inline-flex items-center gap-2 text-sm font-medium text-emerald-400 transition-colors group-hover:text-emerald-300">
+              <span class="inline-flex items-center gap-2 text-sm font-medium text-emerald-500 transition-colors group-hover:text-emerald-600">
                 {{ data.readMore }}
                 <Icon name="ph:arrow-right" class="h-4 w-4 transition-transform group-hover:translate-x-1" />
               </span>
@@ -152,8 +165,8 @@ useSeoMeta({
 
         <!-- Empty State -->
         <div v-if="data.items.length === 0" class="text-center py-20">
-          <Icon name="ph:newspaper" class="mx-auto mb-4 h-16 w-16 text-gray-600" />
-          <p class="text-gray-400 text-lg">{{ data.noNews }}</p>
+          <Icon name="ph:newspaper" class="mx-auto mb-4 h-16 w-16" :class="themeStore.isDark ? 'text-gray-600' : 'text-gray-400'" />
+          <p class="text-lg" :class="themeStore.isDark ? 'text-gray-400' : 'text-gray-500'">{{ data.noNews }}</p>
         </div>
       </div>
     </section>
