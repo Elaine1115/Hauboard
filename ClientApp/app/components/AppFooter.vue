@@ -75,7 +75,7 @@ const { t } = useI18n();
               </a>
               <!-- Instagram -->
               <a
-                href="https://www.instagram.com/hauboard/"
+                href="https://www.instagram.com/saviola.ecologicalpanel/"
                 target="_blank"
                 rel="noopener noreferrer"
                 class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-gray-700 transition-colors duration-200"

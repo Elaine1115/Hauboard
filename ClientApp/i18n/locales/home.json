@@ -1,8 +1,5 @@
 {
   "common": {
-    "hero": {
-      "backgroundImage": "/assets/images/home-banner.jpg"
-    },
     "cta": {
       "videos": [
         "51QXM7Ysx-g",
@@ -16,13 +13,38 @@
       "description": "提供多樣化的裝飾板材解決方案，包括木紋板、大理石紋板及純色板，滿足您的設計需求。"
     },
     "hero": {
-      "title": "高品質裝飾板材",
+      "title": "綠色健康傢俱建材",
       "subtitle": "打造理想空間",
       "description": "Hauboard 提供多樣化的裝飾板材解決方案，為您的空間增添獨特魅力。",
       "buttons": {
         "browseProducts": "瀏覽產品",
         "aboutUs": "關於我們"
-      }
+      },
+      "cards": [
+        {
+          "image": "/assets/images/home/melanimici.jpg",
+          "badge": "精選",
+          "title": "塑合板",
+          "description": "系統家具的卓越選擇"
+        },
+        {
+          "image": "/assets/images/home/bordi.jpg",
+          "badge": "封邊",
+          "title": "封邊條",
+          "description": "完美的收邊處理"
+        },
+        {
+          "image": "/assets/images/home/grezzi.jpg",
+          "badge": "素板",
+          "title": "素板",
+          "description": "工業級面板"
+        }
+      ],
+      "stats": [
+        { "value": "100%", "label": "回收木材" },
+        { "value": "50+", "label": "花色選擇" },
+        { "value": "E1", "label": "環保等級" }
+      ]
     },
     "features": {
       "title": "為什麼選擇 Hauboard？",
@@ -184,7 +206,32 @@
       "buttons": {
         "browseProducts": "Browse Products",
         "aboutUs": "About Us"
-      }
+      },
+      "cards": [
+        {
+          "image": "/assets/images/home/melanimici.jpg",
+          "badge": "Premium",
+          "title": "Melamine Panels",
+          "description": "Decorative excellence for modern interiors"
+        },
+        {
+          "image": "/assets/images/home/bordi.jpg",
+          "badge": "Edges",
+          "title": "Edge Banding",
+          "description": "Perfect finishing touch"
+        },
+        {
+          "image": "/assets/images/home/grezzi.jpg",
+          "badge": "Raw",
+          "title": "Raw Chipboard",
+          "description": "Industrial grade panels"
+        }
+      ],
+      "stats": [
+        { "value": "100%", "label": "Recycled Wood" },
+        { "value": "50+", "label": "Decor Options" },
+        { "value": "E1", "label": "Emission Class" }
+      ]
     },
     "features": {
       "title": "Why Choose Hauboard?",

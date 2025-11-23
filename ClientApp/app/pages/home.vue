@@ -1,16 +1,12 @@
 <script setup lang="ts">
 import homeData from '../../i18n/locales/home.json'
 
-const { t, locale } = useI18n()
+const { locale } = useI18n()
 
 const home = computed(() => {
   const langData = homeData[locale.value as 'zh' | 'en']
   return {
     ...langData,
-    hero: {
-      ...langData.hero,
-      ...homeData.common.hero
-    },
     cta: {
       ...homeData.common.cta
     }
@@ -43,10 +39,119 @@ const getThumbnail = (videoId: string) => {
 
 <template>
   <main class="min-h-screen">
-    <!-- Hero Section -->
-    <section class="relative h-[50vh] md:h-screen bg-cover bg-center bg-no-repeat" :style="{ backgroundImage: `url(${home.hero.backgroundImage})` }">
-      <!-- Overlay with 10% opacity (90% background visibility) -->
-      <div class="absolute inset-0 bg-black/10"></div>
+    <!-- Hero Section - Bento Grid -->
+    <section class="-mt-20 md:-mt-24 pt-20 md:pt-24 relative overflow-hidden bg-gray-950">
+      <div class="max-w-7xl mx-auto px-4 md:px-6 py-16 md:py-24 w-full">
+        <!-- Two Column Layout -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-5">
+          <!-- Left Column: Content + Stats -->
+          <div class="flex flex-col gap-4 md:gap-5">
+            <!-- Content Card -->
+            <div class="flex-1 relative rounded-3xl bg-gradient-to-br from-gray-800/80 to-gray-900/80 backdrop-blur-sm border border-gray-700/50 p-8 md:p-10 flex flex-col justify-center overflow-hidden group">
+              <!-- PageHero-style decorative background -->
+              <div class="absolute inset-0 overflow-hidden pointer-events-none">
+                <!-- Grid pattern -->
+                <div class="absolute inset-0 opacity-[0.03]" style="background-image: linear-gradient(rgba(255,255,255,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.5) 1px, transparent 1px); background-size: 40px 40px;"></div>
+
+                <!-- Ring shape top-right -->
+                <div class="absolute -top-16 -right-16 w-48 h-48 rounded-full border-2 border-emerald-400/20"></div>
+                <div class="absolute -top-12 -right-12 w-40 h-40 rounded-full border border-emerald-400/10"></div>
+
+                <!-- Ring shape bottom-left -->
+                <div class="absolute -bottom-20 -left-20 w-56 h-56 rounded-full border-2 border-teal-400/15"></div>
+                <div class="absolute -bottom-16 -left-16 w-48 h-48 rounded-full border border-teal-400/10"></div>
+
+                <!-- Diagonal lines -->
+                <svg class="absolute inset-0 w-full h-full" preserveAspectRatio="none">
+                  <line x1="0%" y1="100%" x2="40%" y2="0%" stroke="rgba(52, 211, 153, 0.15)" stroke-width="1" />
+                  <line x1="60%" y1="100%" x2="100%" y2="20%" stroke="rgba(45, 212, 191, 0.1)" stroke-width="1" />
+                </svg>
+
+                <!-- Small floating dots -->
+                <div class="absolute top-[15%] right-[20%] w-2 h-2 rounded-full bg-emerald-400/40"></div>
+                <div class="absolute top-[60%] right-[15%] w-1.5 h-1.5 rounded-full bg-teal-400/50"></div>
+                <div class="absolute bottom-[25%] left-[25%] w-2 h-2 rounded-full bg-emerald-400/30"></div>
+                <div class="absolute top-[30%] left-[10%] w-1 h-1 rounded-full bg-white/40"></div>
+
+                <!-- Glowing orbs -->
+                <div class="absolute -top-10 -right-10 w-32 h-32 rounded-full bg-emerald-500/20 blur-3xl"></div>
+                <div class="absolute -bottom-10 -left-10 w-40 h-40 rounded-full bg-teal-500/15 blur-3xl"></div>
+              </div>
+
+              <div class="relative z-10">
+                <div class="flex items-center gap-3 mb-6">
+                  <div class="h-px w-8 bg-emerald-500"></div>
+                  <span class="text-emerald-400 text-sm font-medium tracking-widest uppercase">Saviola Group</span>
+                </div>
+                <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 leading-tight">
+                  {{ home.hero.title }}
+                </h1>
+                <p class="text-base md:text-lg text-gray-300 mb-8 max-w-md leading-relaxed">
+                  {{ home.hero.subtitle }}
+                </p>
+                <div class="flex flex-wrap gap-3">
+                  <NuxtLink
+                    to="/products"
+                    class="inline-flex items-center gap-2 px-6 py-3 bg-emerald-500 hover:bg-emerald-600 text-white font-medium rounded-xl transition-all duration-300 hover:shadow-lg hover:shadow-emerald-500/30"
+                  >
+                    {{ home.hero.buttons.browseProducts }}
+                    <Icon name="ph:arrow-right" class="h-5 w-5" />
+                  </NuxtLink>
+                </div>
+              </div>
+              <!-- Hover glow -->
+              <div class="absolute -bottom-20 -right-20 w-40 h-40 bg-emerald-500/20 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            </div>
+
+            <!-- Stats Card -->
+            <div class="relative rounded-3xl bg-gradient-to-r from-emerald-900/40 to-teal-900/40 backdrop-blur-sm border border-emerald-500/20 p-6 flex items-center justify-around overflow-hidden">
+              <template v-for="(stat, index) in home.hero.stats" :key="stat.value">
+                <div class="text-center">
+                  <div class="text-3xl md:text-4xl font-bold text-white mb-1">{{ stat.value }}</div>
+                  <div class="text-sm text-gray-400">{{ stat.label }}</div>
+                </div>
+                <div v-if="index < home.hero.stats.length - 1" class="w-px h-12 bg-gray-700"></div>
+              </template>
+            </div>
+          </div>
+
+          <!-- Right Column: Image Cards -->
+          <div class="grid grid-cols-2 gap-4 md:gap-5 auto-rows-[180px] md:auto-rows-[200px]">
+            <div
+              v-for="(card, index) in home.hero.cards"
+              :key="card.title"
+              :class="[
+                'relative rounded-3xl overflow-hidden group cursor-pointer',
+                index === 0 ? 'row-span-2' : ''
+              ]"
+            >
+              <img
+                :src="card.image"
+                :alt="card.title"
+                class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/40 to-transparent"></div>
+              <div :class="['absolute inset-0 flex flex-col justify-between', index === 0 ? 'p-6' : 'p-5']">
+                <span
+                  :class="[
+                    'self-start backdrop-blur-sm text-white text-xs font-semibold rounded-full',
+                    index === 0 ? 'px-3 py-1.5 bg-emerald-500/90' : 'px-3 py-1',
+                    index === 1 ? 'bg-teal-500/90' : '',
+                    index === 2 ? 'bg-cyan-500/90' : ''
+                  ]"
+                >
+                  {{ card.badge }}
+                </span>
+                <div>
+                  <h3 :class="['text-white font-bold', index === 0 ? 'text-xl mb-2' : 'text-lg']">{{ card.title }}</h3>
+                  <p v-if="index === 0" class="text-gray-300 text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300">{{ card.description }}</p>
+                </div>
+              </div>
+              <div v-if="index === 0" class="absolute inset-0 bg-gradient-to-tr from-transparent via-white/10 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Features Section -->

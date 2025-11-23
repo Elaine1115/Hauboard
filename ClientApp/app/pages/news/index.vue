@@ -70,22 +70,12 @@ useSeoMeta({
 <template>
   <div class="min-h-screen bg-gradient-to-b from-gray-950 via-gray-900 to-gray-950">
     <!-- Hero Section -->
-    <section class="relative overflow-hidden py-20 md:py-32">
-      <div class="absolute inset-0 bg-[url('/assets/gradient.png')] bg-cover bg-center opacity-20"></div>
-
-      <div class="container relative mx-auto px-4 md:px-6">
-        <div class="mx-auto max-w-4xl text-center">
-          <h1
-            class="mb-6 bg-gradient-to-r from-emerald-400 to-cyan-400 bg-clip-text text-4xl font-bold tracking-tight text-transparent md:text-6xl"
-          >
-            {{ data.hero.title }}
-          </h1>
-          <p class="text-lg text-gray-300 md:text-xl">
-            {{ data.hero.subtitle }}
-          </p>
-        </div>
-      </div>
-    </section>
+    <PageHero
+      :title="data.hero.title"
+      :subtitle="data.hero.subtitle"
+      background-image="/assets/gradient.png"
+      :show-scroll-indicator="false"
+    />
 
     <!-- News Section -->
     <section class="py-16 md:py-24">
