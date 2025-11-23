@@ -41,14 +41,14 @@ const categoryColors = [
   { bg: 'bg-purple-500/90', text: 'text-white' },
 ]
 
-const getCategoryColor = (category: string) => {
+const getCategoryColor = (category: string): { bg: string; text: string } => {
   // Use category string hash to get consistent color for same category
   let hash = 0
   for (let i = 0; i < category.length; i++) {
     hash = category.charCodeAt(i) + ((hash << 5) - hash)
   }
   const index = Math.abs(hash) % categoryColors.length
-  return categoryColors[index]
+  return categoryColors[index]!
 }
 
 // Format date
@@ -114,10 +114,11 @@ useSeoMeta({
               <!-- Category Badge -->
               <div class="absolute left-4 top-4">
                 <span
+                  v-if="item.category"
                   :class="[
                     'rounded-full px-3 py-1 text-xs font-medium backdrop-blur-sm',
-                    getCategoryColor(item.category).bg,
-                    getCategoryColor(item.category).text
+                    getCategoryColor(item.category ?? '').bg,
+                    getCategoryColor(item.category ?? '').text
                   ]"
                 >
                   {{ item.category }}
