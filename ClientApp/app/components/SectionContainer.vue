@@ -15,10 +15,13 @@ defineProps<{
         <h2
           v-if="title"
           class="text-4xl md:text-5xl font-bold mb-6 relative inline-block"
-          :class="themeStore.isDark ? 'text-white' : 'text-gray-900'"
+          :class="themeStore.isDark ? 'text-white' : 'text-emerald-900'"
         >
           {{ title }}
-          <div class="absolute -bottom-3 left-1/2 -translate-x-1/2 w-24 h-1 bg-gradient-to-r from-emerald-400 via-emerald-500 to-emerald-400 rounded-full"></div>
+          <div class="absolute -bottom-4 left-0 right-0 flex flex-col gap-1.5 items-center">
+            <div class="w-32 h-1 bg-gradient-to-r from-transparent via-emerald-500 to-transparent rounded-full"></div>
+            <div class="w-20 h-0.5 bg-gradient-to-r from-transparent via-teal-400 to-transparent rounded-full"></div>
+          </div>
         </h2>
         <p
           v-if="subtitle"

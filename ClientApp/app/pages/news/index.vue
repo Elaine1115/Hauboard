@@ -82,7 +82,7 @@ useSeoMeta({
       class="py-16 md:py-24"
       :class="themeStore.isDark ? '' : 'bg-gray-50'"
     >
-      <div class="container mx-auto px-4 md:px-6">
+      <div class="mx-auto max-w-6xl px-4 md:px-6">
         <!-- News Grid -->
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           <NuxtLink
@@ -95,15 +95,25 @@ useSeoMeta({
               : 'border border-gray-200 bg-white/80 shadow-lg hover:bg-white'"
           >
             <!-- Image -->
-            <div class="relative aspect-[16/9] overflow-hidden bg-gray-800">
+            <div
+              class="relative aspect-[16/9] overflow-hidden"
+              :class="themeStore.isDark ? 'bg-gray-800' : 'bg-white'"
+            >
               <img
                 v-if="getFirstImage(item)"
                 :src="getFirstImage(item)"
                 :alt="item.title"
                 class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
               />
-              <div v-else class="flex h-full w-full items-center justify-center bg-gradient-to-br from-gray-800 via-gray-850 to-gray-900">
-                <div class="flex h-16 w-16 items-center justify-center rounded-full bg-gray-700/50">
+              <div
+                v-else
+                class="flex h-full w-full items-center justify-center"
+                :class="themeStore.isDark ? 'bg-gradient-to-br from-gray-800 via-gray-850 to-gray-900' : 'bg-gray-100'"
+              >
+                <div
+                  class="flex h-16 w-16 items-center justify-center rounded-full"
+                  :class="themeStore.isDark ? 'bg-gray-700/50' : 'bg-gray-100'"
+                >
                   <Icon name="ph:article-duotone" class="h-8 w-8 text-emerald-500/70" />
                 </div>
               </div>
@@ -112,7 +122,7 @@ useSeoMeta({
                 <span
                   v-if="item.category"
                   :class="[
-                    'rounded-full px-3 py-1 text-xs font-medium backdrop-blur-sm',
+                    'rounded-full px-3 py-1 text-xs font-medium',
                     getCategoryColor(item.category ?? '').bg,
                     getCategoryColor(item.category ?? '').text
                   ]"

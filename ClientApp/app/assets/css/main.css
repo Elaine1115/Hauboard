@@ -115,6 +115,26 @@ html.light section.relative.overflow-hidden .text-white {
   color: #ffffff !important;
 }
 
+/* Keep white text on colored badge backgrounds */
+html.light .bg-emerald-500.text-white,
+html.light .bg-emerald-500\/90.text-white,
+html.light .bg-teal-500\/90.text-white,
+html.light .bg-cyan-500\/90.text-white,
+html.light .bg-blue-500\/90.text-white,
+html.light .bg-purple-500\/90.text-white {
+  color: #ffffff !important;
+}
+
+/* Gallery section title - keep white */
+html.light .gallery-title {
+  color: #ffffff !important;
+}
+
+/* Video play button - keep white */
+html.light .play-button {
+  color: #ffffff !important;
+}
+
 /* ==========================================
    Button Styles
    ========================================== */
@@ -213,4 +233,49 @@ body * {
 html:not(.theme-ready) body,
 html:not(.theme-ready) body * {
   transition: none !important;
+}
+
+/* ==========================================
+   LightGallery Overlay
+   ========================================== */
+
+/* Hide scrollbar when gallery is open */
+html.lg-on,
+body.lg-on {
+  overflow: hidden !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  height: 100% !important;
+}
+
+/* Ensure gallery covers entire viewport including scrollbar area */
+.lg-backdrop {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  z-index: 10000 !important;
+}
+
+.lg-outer {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  z-index: 10001 !important;
+}
+
+.lg-container {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  z-index: 10000 !important;
 }

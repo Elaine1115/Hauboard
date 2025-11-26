@@ -58,6 +58,37 @@ const goToImage = (index: number) => {
   currentImageIndex.value = index
 }
 
+// Touch/swipe support for mobile
+const touchStartX = ref(0)
+const touchEndX = ref(0)
+
+const handleTouchStart = (e: TouchEvent) => {
+  touchStartX.value = e.touches[0].clientX
+}
+
+const handleTouchMove = (e: TouchEvent) => {
+  touchEndX.value = e.touches[0].clientX
+}
+
+const handleTouchEnd = () => {
+  const swipeThreshold = 50
+  const diff = touchStartX.value - touchEndX.value
+
+  if (Math.abs(diff) > swipeThreshold) {
+    if (diff > 0) {
+      // Swiped left - go to next image
+      nextImage()
+    } else {
+      // Swiped right - go to previous image
+      prevImage()
+    }
+  }
+
+  // Reset values
+  touchStartX.value = 0
+  touchEndX.value = 0
+}
+
 // Category color rotation (3 colors)
 const categoryColors = [
   { bg: 'bg-emerald-500/20', text: 'text-emerald-400' },
@@ -112,7 +143,7 @@ useSeoMeta({
         :class="themeStore.isDark ? '' : 'bg-gray-50'"
       >
         <div class="container mx-auto px-4 md:px-6">
-          <article class="mx-auto max-w-3xl">
+          <article class="mx-auto max-w-6xl">
             <!-- Header -->
             <header
               class="mb-8 rounded-2xl p-6 backdrop-blur-sm md:p-8"
@@ -154,14 +185,17 @@ useSeoMeta({
             <!-- Image Carousel -->
             <div v-if="newsImages.length > 0" class="mb-8">
               <div
-                class="relative overflow-hidden rounded-2xl"
+                class="relative overflow-hidden rounded-2xl touch-pan-y"
                 :class="themeStore.isDark ? 'bg-gray-800' : 'bg-gray-100'"
+                @touchstart="handleTouchStart"
+                @touchmove="handleTouchMove"
+                @touchend="handleTouchEnd"
               >
                 <!-- Image -->
                 <img
                   :src="newsImages[currentImageIndex]"
                   :alt="`${newsItem.title} - ${currentImageIndex + 1}`"
-                  class="w-full h-auto aspect-video object-cover"
+                  class="w-full h-auto aspect-video object-cover select-none pointer-events-none"
                 />
 
                 <!-- Navigation Arrows (overlay on image) -->

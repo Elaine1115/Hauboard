@@ -35,7 +35,6 @@ useSeoMeta({
     <!-- Introduction Section -->
     <SectionContainer
       :title="about.introduction.title"
-      :subtitle="about.introduction.subtitle"
     >
       <div class="max-w-4xl mx-auto">
         <div
@@ -48,10 +47,7 @@ useSeoMeta({
             <p
               v-for="(paragraph, index) in about.introduction.content"
               :key="index"
-              :class="[
-                themeStore.isDark ? 'text-gray-300' : 'text-gray-600',
-                index === 0 ? (themeStore.isDark ? 'text-xl text-gray-200' : 'text-xl text-gray-700') : ''
-              ]"
+              :class="themeStore.isDark ? 'text-gray-300' : 'text-gray-600'"
             >
               {{ paragraph }}
             </p>

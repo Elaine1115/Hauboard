@@ -129,7 +129,7 @@ const getThumbnail = (videoId: string) => {
               class="relative rounded-3xl backdrop-blur-sm p-6 flex items-center justify-around overflow-hidden"
               :class="themeStore.isDark
                 ? 'bg-gradient-to-r from-emerald-900/40 to-teal-900/40 border border-emerald-500/20'
-                : 'bg-gradient-to-r from-emerald-100/80 to-teal-100/80 border border-emerald-200'"
+                : 'bg-gradient-to-r from-emerald-50/60 to-teal-50/60 border border-emerald-200'"
             >
               <template v-for="(stat, index) in home.hero.stats" :key="stat.value">
                 <div class="text-center">
@@ -172,7 +172,7 @@ const getThumbnail = (videoId: string) => {
               <div :class="['absolute inset-0 flex flex-col justify-between', index === 0 ? 'p-6' : 'p-5']">
                 <span
                   :class="[
-                    'self-start backdrop-blur-sm text-white text-xs font-semibold rounded-full',
+                    'self-start text-white text-xs font-semibold rounded-full',
                     index === 0 ? 'px-3 py-1.5 bg-emerald-500/90' : 'px-3 py-1',
                     index === 1 ? 'bg-teal-500/90' : '',
                     index === 2 ? 'bg-cyan-500/90' : ''
@@ -405,8 +405,7 @@ const getThumbnail = (videoId: string) => {
       <div class="mx-auto max-w-6xl px-4 md:px-6">
         <div class="text-center mb-16">
           <h2
-            class="text-3xl md:text-4xl font-bold mb-4"
-            :class="themeStore.isDark ? 'text-white' : 'text-gray-900'"
+            class="text-3xl md:text-4xl font-bold mb-4 text-white"
           >
             {{ home.gallery.title }}
           </h2>
@@ -423,26 +422,36 @@ const getThumbnail = (videoId: string) => {
           <div
             v-for="(project, index) in home.gallery.items"
             :key="index"
-            class="group relative overflow-hidden rounded-xl"
+            class="group overflow-hidden rounded-xl"
+            :class="themeStore.isDark ? 'bg-gray-800' : 'bg-white shadow-md'"
           >
             <!-- Design Image -->
-            <div
-              class="aspect-[4/3] overflow-hidden"
-              :class="themeStore.isDark ? 'bg-gray-800' : 'bg-gray-100'"
-            >
+            <div class="relative aspect-[4/3] overflow-hidden">
               <img
                 :src="project.image"
                 :alt="project.title"
-                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                class="w-full h-full object-cover"
                 @error="($event.target as HTMLImageElement).src = 'https://placehold.co/400x300/1f2937/6b7280?text=Project'"
               />
+              <!-- Overlay (dark mode only) -->
+              <div
+                v-if="themeStore.isDark"
+                class="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/40 to-transparent opacity-60 group-hover:opacity-40 transition-opacity duration-300"
+              ></div>
             </div>
-            <!-- Overlay -->
-            <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/40 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-300"></div>
             <!-- Content -->
-            <div class="absolute inset-0 flex flex-col justify-end p-4">
-              <span class="text-emerald-400 text-sm font-medium mb-1">{{ project.category }}</span>
-              <h3 class="text-white font-semibold text-lg group-hover:text-emerald-300 transition-colors">{{ project.title }}</h3>
+            <div
+              class="px-4 py-3"
+              :class="themeStore.isDark ? 'bg-gray-800' : 'bg-white/80'"
+            >
+              <span
+                class="text-xs font-medium"
+                :class="themeStore.isDark ? 'text-emerald-400' : 'text-emerald-600'"
+              >{{ project.category }}</span>
+              <h3
+                class="font-semibold text-sm group-hover:text-emerald-500 transition-colors truncate"
+                :class="themeStore.isDark ? 'text-white' : 'text-gray-900'"
+              >{{ project.title }}</h3>
             </div>
           </div>
         </div>
@@ -494,7 +503,7 @@ const getThumbnail = (videoId: string) => {
                 <div class="absolute inset-0 bg-black/30 rounded-2xl transition-all duration-300 group-hover:bg-black/20"></div>
                 <!-- Play Button -->
                 <div class="absolute inset-0 flex items-center justify-center">
-                  <div class="flex h-20 w-20 items-center justify-center rounded-full bg-red-600 text-white shadow-lg transition-all duration-300 group-hover:scale-110 group-hover:bg-red-500">
+                  <div class="flex h-20 w-20 items-center justify-center rounded-full bg-red-600 text-white play-button shadow-lg transition-all duration-300 group-hover:scale-110 group-hover:bg-red-500">
                     <Icon name="ph:play-fill" class="h-8 w-8 ml-1" />
                   </div>
                 </div>

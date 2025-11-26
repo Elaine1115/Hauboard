@@ -87,6 +87,16 @@ const initGallery = async () => {
       slideShowInterval: 3000,
       progressBar: true
     })
+
+    // Add lg-on class to html when gallery opens
+    galleryContainer.value?.addEventListener('lgBeforeOpen', () => {
+      document.documentElement.classList.add('lg-on')
+    })
+
+    // Remove lg-on class from html when gallery closes
+    galleryContainer.value?.addEventListener('lgAfterClose', () => {
+      document.documentElement.classList.remove('lg-on')
+    })
   }
 }
 
@@ -161,11 +171,11 @@ const aspectClass = computed(() => {
           :alt="image.alt || ''"
           class="absolute inset-0 w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
         />
-        <!-- Alt text overlay -->
-        <div v-if="showAlt && image.alt" class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent">
-          <div class="absolute bottom-0 left-0 right-0 p-4">
-            <p class="text-white text-sm font-medium">{{ image.alt }}</p>
-          </div>
+        <!-- Alt text badge -->
+        <div v-if="showAlt && image.alt" class="absolute bottom-3 left-3">
+          <span class="inline-block px-3 py-1.5 rounded-lg bg-black/70 backdrop-blur-sm text-white text-sm font-medium shadow-lg">
+            {{ image.alt }}
+          </span>
         </div>
         <!-- Zoom Icon -->
         <div class="absolute top-3 right-3 w-10 h-10 rounded-full bg-white/90 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
