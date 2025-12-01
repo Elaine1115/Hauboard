@@ -4,195 +4,131 @@
       "backgroundImage": "/assets/gradient.png"
     }
   },
-  "zh": {
-    "seo": {
-      "title": "供應商介紹 | Hauboard",
-      "description": "了解我們的合作夥伴與供應商，提供歐洲優質 MFC 粒片板與裝飾板材。"
-    },
-    "hero": {
-      "title": "供應商介紹",
-      "subtitle": "與世界級品牌合作，提供優質產品"
-    },
-    "introduction": {
-      "title": "我們的供應商",
-      "subtitle": "我們與歐洲知名品牌合作，確保提供最優質的裝飾板材產品。",
-      "content": [
-        "豪板實業與多家歐洲頂尖板材製造商建立了長期穩定的合作關係，確保產品品質與供應穩定性。",
-        "我們的供應商均符合國際環保標準，產品通過多項認證，包括 FSC、CARB 等國際認證。",
-        "透過與優質供應商的合作，我們能夠為客戶提供多樣化的產品選擇，滿足不同設計需求。"
-      ]
-    },
-    "partners": {
-      "title": "主要合作夥伴",
-      "items": [
-        {
-          "name": "歐洲 MFC 板材供應商",
-          "description": "提供高品質的密集板與粒片板，具有優異的耐用性與美觀性。",
-          "features": [
-            "符合 E1 環保標準",
-            "多樣化表面處理選擇",
-            "優異的防潮性能",
-            "穩定的供應鏈"
-          ]
-        }
-      ]
-    },
-    "story": {
-      "title": "品牌故事",
-      "subtitle": "我們與供應商攜手共創的品質承諾",
-      "items": [
-        {
-          "image": "/assets/images/partner/gms-1.webp",
-          "title": "大規模生產設備",
-          "description": "合作夥伴擁有現代化的大型生產設備，每日可生產數千片高品質板材。專業的生產團隊與先進的自動化設備，確保每一片板材都符合嚴格的品質標準。"
-        },
-        {
-          "image": "/assets/images/partner/gms-2.jpg",
-          "title": "先進生產線",
-          "description": "採用歐洲最先進的全自動化生產線，從原料處理到成品加工，全程電腦監控。精密的製程控制確保產品穩定性，大幅提升生產效率與品質一致性。"
-        },
-        {
-          "image": "/assets/images/partner/gms-3.webp",
-          "title": "嚴格品質檢測",
-          "description": "每一片板材都經過嚴格的品質檢測流程，使用精密儀器測量厚度、密度與表面平整度。專業的品管團隊確保所有產品都符合國際標準，為客戶提供最可靠的品質保證。"
-        },
-        {
-          "image": "/assets/images/partner/gms-4.jpg",
-          "title": "Gruppo Mauro Saviola 合作夥伴",
-          "description": "與義大利知名板材製造商 Gruppo Mauro Saviola 建立長期合作關係。擁有完整的物流配送系統與專業的運輸團隊，確保產品安全快速地送達全球各地客戶手中。"
-        },
-        {
-          "image": "/assets/images/partner/gms-5.webp",
-          "title": "國際展會參展",
-          "description": "積極參與世界各大國際建材與家具展覽會，展示最新的板材產品與技術創新。透過國際展會平台，與全球客戶交流，了解市場趨勢，持續提升產品競爭力與品牌知名度。"
-        }
-      ]
-    },
-    "certifications": {
-      "title": "認證標準",
-      "items": [
-        {
-          "title": "FSC 森林管理委員會認證",
-          "description": "確保木材來源符合永續森林管理標準。"
-        },
-        {
-          "title": "CARB 加州空氣資源委員會認證",
-          "description": "甲醛釋放量符合嚴格的環保標準。"
-        },
-        {
-          "title": "CE 歐洲合格認證",
-          "description": "產品符合歐盟安全、健康與環保要求。"
-        },
-        {
-          "title": "ISO 國際標準認證",
-          "description": "品質管理系統符合國際標準。"
-        }
-      ]
-    }
+  "seo": {
+    "title_zh": "供應商介紹 | Hauboard",
+    "title_en": "Vendor Introduction - Hauboard",
+    "description_zh": "了解我們的合作夥伴與供應商，提供歐洲優質 MFC 粒片板與裝飾板材。",
+    "description_en": "Learn about our partners and suppliers providing premium European MFC particleboard and decorative panels."
   },
-  "en": {
-    "seo": {
-      "title": "Vendor Introduction - Hauboard",
-      "description": "Learn about our partners and suppliers providing premium European MFC particleboard and decorative panels."
-    },
-    "hero": {
-      "title": "Vendor Introduction",
-      "subtitle": "Partnering with World-Class Brands for Quality Products"
-    },
-    "introduction": {
-      "title": "Our Suppliers",
-      "subtitle": "We partner with renowned European brands to ensure the highest quality decorative panel products.",
-      "content": [
-        "Hauboard has established long-term stable partnerships with several top European panel manufacturers, ensuring product quality and supply stability.",
-        "Our suppliers all comply with international environmental standards, with products certified by FSC, CARB, and other international certifications.",
-        "Through partnerships with quality suppliers, we can offer customers diverse product choices to meet different design needs."
-      ]
-    },
-    "partners": {
-      "title": "Main Partners",
-      "items": [
-        {
-          "name": "European MFC Panel Suppliers",
-          "description": "Providing high-quality MDF and particleboard with excellent durability and aesthetics.",
-          "features": [
-            "Meets E1 environmental standards",
-            "Diverse surface treatment options",
-            "Excellent moisture resistance",
-            "Stable supply chain"
-          ]
-        },
-        {
-          "name": "Decorative Surface Suppliers",
-          "description": "Offering rich wood grain, marble, and solid color surface options.",
-          "features": [
-            "Realistic texture effects",
-            "Scratch and wear-resistant surface",
-            "UV fade resistant",
-            "Easy to clean and maintain"
-          ]
-        }
-      ]
-    },
-    "quality": {
-      "title": "Quality Assurance",
-      "subtitle": "Our suppliers adhere to the highest quality standards",
-      "content": [
-        "All products undergo rigorous quality testing to ensure compliance with international standards.",
-        "Regular product testing and quality audits to maintain consistent product quality.",
-        "Provide complete product certification documents and test reports."
-      ]
-    },
-    "story": {
-      "title": "Our Story",
-      "subtitle": "Our commitment to quality through partnerships with suppliers",
-      "items": [
-        {
-          "image": "/assets/images/partner/gms-1.webp",
-          "title": "Large-Scale Production Facilities",
-          "description": "Our partners operate state-of-the-art large-scale production facilities capable of producing thousands of high-quality panels daily. Professional production teams and advanced automated equipment ensure every panel meets strict quality standards."
-        },
-        {
-          "image": "/assets/images/partner/gms-2.jpg",
-          "title": "Advanced Production Lines",
-          "description": "Utilizing Europe's most advanced fully automated production lines, from raw material processing to finished product manufacturing, all controlled by computer monitoring. Precise process control ensures product stability, significantly enhancing production efficiency and quality consistency."
-        },
-        {
-          "image": "/assets/images/partner/gms-3.webp",
-          "title": "Rigorous Quality Testing",
-          "description": "Every panel undergoes rigorous quality testing procedures, with precision instruments measuring thickness, density, and surface flatness. Professional quality control teams ensure all products meet international standards, providing customers with the most reliable quality assurance."
-        },
-        {
-          "image": "/assets/images/partner/gms-4.jpg",
-          "title": "Gruppo Mauro Saviola Partnership",
-          "description": "Established long-term cooperation with Italy's renowned panel manufacturer Gruppo Mauro Saviola. With a complete logistics distribution system and professional transportation team, ensuring products are delivered safely and quickly to customers worldwide."
-        },
-        {
-          "image": "/assets/images/partner/gms-5.webp",
-          "title": "International Exhibition Participation",
-          "description": "Actively participating in major international building materials and furniture exhibitions worldwide, showcasing the latest panel products and technological innovations. Through international exhibition platforms, we engage with global clients, understand market trends, and continuously enhance product competitiveness and brand recognition."
-        }
-      ]
-    },
-    "certifications": {
-      "title": "Certification Standards",
-      "items": [
-        {
-          "title": "FSC Forest Stewardship Council Certification",
-          "description": "Ensures wood sources meet sustainable forest management standards."
-        },
-        {
-          "title": "CARB California Air Resources Board Certification",
-          "description": "Formaldehyde emissions meet strict environmental standards."
-        },
-        {
-          "title": "CE European Conformity Certification",
-          "description": "Products meet EU safety, health, and environmental requirements."
-        },
-        {
-          "title": "ISO International Standards Certification",
-          "description": "Quality management systems comply with international standards."
-        }
-      ]
-    }
+  "hero": {
+    "title_zh": "供應商介紹",
+    "title_en": "Vendor Introduction",
+    "subtitle_zh": "與歐洲品牌合作，提供優質產品",
+    "subtitle_en": "Partnering with World-Class Brands for Quality Products"
+  },
+  "introduction": {
+    "title_en": "Our Suppliers",
+    "subtitle_en": "We partner with renowned European brands to ensure the highest quality decorative panel products.",
+    "content_en": [
+      "Hauboard has established long-term stable partnerships with several top European panel manufacturers, ensuring product quality and supply stability.",
+      "Our suppliers all comply with international environmental standards, with products certified by FSC, CARB, and other international certifications.",
+      "Through partnerships with quality suppliers, we can offer customers diverse product choices to meet different design needs."
+    ]
+  },
+  "partners": {
+    "title_zh": "GRUPPO MAURO SAVIOLA",
+    "title_en": "GRUPPO MAURO SAVIOLA",
+    "items": [
+      {
+        "name_zh": "歐洲 MFC 板材供應商",
+        "name_en": "European MFC Panel Suppliers",
+        "description_zh": "提供高品質的塑合板，具有優異的耐用性與美觀性",
+        "description_en": "Providing high-quality MDF and particleboard with excellent durability and aesthetics.",
+        "features_zh": [
+          "符合中華民國國家標準（CNS） F1 甲醛釋出標準",
+          "多樣化表面壓紋可供選擇",
+          "防潮、防焰的優質板材性能",
+          "友善環境的再生技術"
+        ],
+        "features_en": [
+          "Complies with Taiwan CNS F1 formaldehyde emission standards",
+          "A variety of surface textures available",
+          "Moisture-resistant and flame-retardant high-performance panels",
+          "Environmentally friendly recycled material technology"
+        ]
+      }
+    ]
+  },
+  "quality": {
+    "title_en": "Quality Assurance",
+    "subtitle_en": "Our suppliers adhere to the highest quality standards",
+    "content_en": [
+      "All products undergo rigorous quality testing to ensure compliance with international standards.",
+      "Regular product testing and quality audits to maintain consistent product quality.",
+      "Provide complete product certification documents and test reports."
+    ]
+  },
+  "story": {
+    "title_zh": "品牌故事",
+    "title_en": "Brand Story",
+    "subtitle_zh": "我們與供應商攜手共創的品質承諾",
+    "subtitle_en": "Our commitment to quality through partnerships with suppliers",
+    "items": [
+      {
+        "image": "/assets/images/partner/gms-1.webp",
+        "title_zh": "大規模生產設備",
+        "title_en": "Large-Scale Production Facilities",
+        "description_zh": "Mauro Saviola擁有現代化的大型生產設備，每日可生產數千片高品質板材。專業的生產團隊與先進的自動化設備，確保每一片板材都符合嚴格的品質標準。",
+        "description_en": "Our partners operate state-of-the-art large-scale production facilities capable of producing thousands of high-quality panels daily. Professional production teams and advanced automated equipment ensure every panel meets strict quality standards."
+      },
+      {
+        "image": "/assets/images/partner/gms-2.jpg",
+        "title_zh": "先進生產線",
+        "title_en": "Advanced Production Lines",
+        "description_zh": "採用歐洲最先進的全自動化生產線，從原料處理到成品加工，全程電腦監控。精密的製程控制確保產品穩定性，大幅提升生產效率與品質一致性。",
+        "description_en": "Utilizing Europe's most advanced fully automated production lines, from raw material processing to finished product manufacturing, all controlled by computer monitoring. Precise process control ensures product stability, significantly enhancing production efficiency and quality consistency."
+      },
+      {
+        "image": "/assets/images/partner/gms-3.webp",
+        "title_zh": "嚴格品質檢測",
+        "title_en": "Rigorous Quality Testing",
+        "description_zh": "每一片板材都經過嚴格的品質檢測流程，使用精密儀器測量厚度、密度與表面平整度。專業的品管團隊確保所有產品都符合國際標準，為客戶提供最可靠的品質保證。",
+        "description_en": "Every panel undergoes rigorous quality testing procedures, with precision instruments measuring thickness, density, and surface flatness. Professional quality control teams ensure all products meet international standards, providing customers with the most reliable quality assurance."
+      },
+      {
+        "image": "/assets/images/partner/gms-4.jpg",
+        "title_zh": "完整運輸系統",
+        "title_en": "Complete Transportation System",
+        "description_zh": "擁有完整的物流配送系統與專業的運輸團隊，確保產品安全快速地送達全球各地客戶手中。",
+        "description_en": "With a complete logistics distribution system and professional transportation team, ensuring products are delivered safely and quickly to customers worldwide."
+      },
+      {
+        "image": "/assets/images/partner/gms-5.webp",
+        "title_zh": "參加國際大型展覽",
+        "title_en": "International Exhibition Participation",
+        "description_zh": "積極參與世界各大國際建材與家具展覽會，展示最新的板材產品與技術創新。透過國際展會平台，與全球客戶交流，了解市場趨勢，持續提升產品競爭力與品牌知名度。",
+        "description_en": "Actively participating in major international building materials and furniture exhibitions worldwide, showcasing the latest panel products and technological innovations. Through international exhibition platforms, we engage with global clients, understand market trends, and continuously enhance product competitiveness and brand recognition."
+      }
+    ]
+  },
+  "certifications": {
+    "title_zh": "認證標準",
+    "title_en": "Certification Standards",
+    "items": [
+      {
+        "title_zh": "FSC 森林管理委員會認證",
+        "title_en": "FSC Forest Stewardship Council Certification",
+        "description_zh": "確保木材來源符合永續森林管理標準",
+        "description_en": "Ensures wood sources meet sustainable forest management standards."
+      },
+      {
+        "title_zh": "CARB 加州空氣資源委員會認證",
+        "title_en": "CARB California Air Resources Board Certification",
+        "description_zh": "甲醛釋放量符合嚴格的環保標準",
+        "description_en": "Formaldehyde emissions meet strict environmental standards."
+      },
+      {
+        "title_zh": "CE 歐洲合格認證",
+        "title_en": "CE European Conformity Certification",
+        "description_zh": "產品符合歐盟安全、健康與環保要求",
+        "description_en": "Products meet EU safety, health, and environmental requirements."
+      },
+      {
+        "title_zh": "ISO 國際標準認證",
+        "title_en": "ISO International Standards Certification",
+        "description_zh": "品質管理系統符合國際標準",
+        "description_en": "Quality management systems comply with international standards."
+      }
+    ]
   }
 }

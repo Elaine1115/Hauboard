@@ -1,134 +1,97 @@
 {
-  "zh": {
-    "seo": {
-      "title": "最新消息 | Hauboard",
-      "description": "了解 Hauboard 的最新動態與公告"
-    },
-    "hero": {
-      "title": "最新消息",
-      "subtitle": "了解我們的最新動態、產品更新與行業資訊"
-    },
-    "detail": {
-      "backToNews": "返回最新消息",
-      "notFound": "找不到此消息",
-      "notFoundDesc": "您要查找的消息不存在或已被移除"
-    },
-    "readMore": "閱讀更多",
-    "noNews": "目前沒有最新消息",
-    "items": [
-      {
-        "id": "0001",
-        "title": "2024 年度產品目錄更新",
-        "date": "2024-12-15",
-        "category": "產品更新",
-        "excerpt": "我們很高興地宣布 2024 年度產品目錄已經更新，新增多款環保材質板材，滿足您的各種設計需求。",
-        "images": [
-          "/assets/images/partner/gms-1.webp",
-          "/assets/images/partner/gms-2.jpg",
-          "/assets/images/partner/gms-3.webp"
-        ],
-        "content": "我們很高興地宣布 2024 年度產品目錄已經更新，新增多款環保材質板材，滿足您的各種設計需求。\n\n本次更新包含以下亮點：\n\n• 新增 20 款環保木紋系列\n• 全新抗菌表面處理技術\n• 更多色彩選擇滿足不同設計風格\n• 改良的耐磨性能\n\n我們持續致力於為客戶提供最優質的板材產品，歡迎下載最新目錄或聯繫我們的業務團隊了解更多詳情。"
-      },
-      {
-        "id": "0002",
-        "title": "榮獲 FSC 森林認證",
-        "date": "2024-11-20",
-        "category": "公司新聞",
-        "excerpt": "Hauboard 正式獲得 FSC 森林管理委員會認證，證明我們對永續發展的承諾。",
-        "image": "/assets/images/partner/gms-1.webp",
-        "content": "Hauboard 正式獲得 FSC 森林管理委員會認證，證明我們對永續發展的承諾。\n\nFSC（Forest Stewardship Council）森林管理委員會是一個國際性的非營利組織，致力於推動負責任的森林管理。\n\n獲得此認證代表：\n\n• 我們的原材料來源可追溯且合法\n• 生產過程符合環境保護標準\n• 支持永續森林經營\n• 產品可獲得 FSC 標籤\n\n我們將繼續堅持環保理念，為地球的永續發展貢獻心力。"
-      },
-      {
-        "id": "0003",
-        "title": "參加 2024 國際建材展",
-        "date": "2024-10-05",
-        "category": "展覽活動",
-        "excerpt": "Hauboard 將於 10 月參加國際建材展覽會，歡迎蒞臨我們的展位參觀最新產品。",
-        "image": "/assets/images/partner/gms-1.webp",
-        "content": "Hauboard 將於 10 月參加國際建材展覽會，歡迎蒞臨我們的展位參觀最新產品。\n\n展覽資訊：\n\n• 日期：2024 年 10 月 15-18 日\n• 地點：台北南港展覽館\n• 攤位號碼：A區 125 號\n\n現場展示內容：\n\n• 最新木紋系列樣品\n• 環保材質產品線\n• 虛擬設計應用展示\n• 專業諮詢服務\n\n誠摯邀請您蒞臨參觀，我們的專業團隊將為您提供詳細的產品介紹與解決方案。"
-      },
-      {
-        "id": "0004",
-        "title": "新款木紋系列上市",
-        "date": "2024-09-18",
-        "category": "產品更新",
-        "excerpt": "全新木紋系列產品正式上市，提供更自然、更細緻的紋理選擇。",
-        "image": "/assets/images/partner/gms-1.webp",
-        "content": "全新木紋系列產品正式上市，提供更自然、更細緻的紋理選擇。\n\n新系列特色：\n\n• 採用先進印刷技術，紋理更逼真\n• 同步壓紋工藝，觸感更自然\n• 豐富的色系選擇\n• 優異的耐候性能\n\n適用範圍：\n\n• 室內裝潢\n• 傢俱製造\n• 商業空間設計\n• 展示櫃製作\n\n歡迎索取樣品或聯繫我們的業務團隊了解更多資訊。"
-      },
-      {
-        "id": "0005",
-        "title": "環保生產線升級完成",
-        "date": "2024-08-10",
-        "category": "公司新聞",
-        "excerpt": "我們的生產線已完成環保升級，減少 30% 碳排放，為地球盡一份心力。",
-        "image": "",
-        "content": "我們的生產線已完成環保升級，減少 30% 碳排放，為地球盡一份心力。\n\n升級內容包括：\n\n• 引進節能設備，降低能源消耗\n• 優化生產流程，減少原料浪費\n• 安裝廢氣處理系統\n• 實施水資源回收再利用\n\n環保成效：\n\n• 碳排放減少 30%\n• 能源消耗降低 25%\n• 廢料回收率提升至 95%\n• 水資源使用效率提升 40%\n\n我們將持續投入環保設施的升級，為永續發展貢獻更多心力。"
-      }
-    ]
+  "seo": {
+    "title_zh": "最新消息 | Hauboard",
+    "title_en": "News - Hauboard",
+    "description_zh": "了解 Hauboard 的最新動態與公告",
+    "description_en": "Stay updated with Hauboard's latest news and announcements"
   },
-  "en": {
-    "seo": {
-      "title": "News - Hauboard",
-      "description": "Stay updated with Hauboard's latest news and announcements"
+  "hero": {
+    "title_zh": "最新消息",
+    "title_en": "Latest News",
+    "subtitle_zh": "了解我們的最新動態、產品更新與行業資訊",
+    "subtitle_en": "Stay updated with our latest news, product updates and industry insights"
+  },
+  "detail": {
+    "backToNews_zh": "返回最新消息",
+    "backToNews_en": "Back to News",
+    "notFound_zh": "找不到此消息",
+    "notFound_en": "News Not Found",
+    "notFoundDesc_zh": "您要查找的消息不存在或已被移除",
+    "notFoundDesc_en": "The news article you are looking for does not exist or has been removed"
+  },
+  "readMore_zh": "閱讀更多",
+  "readMore_en": "Read More",
+  "noNews_zh": "目前沒有最新消息",
+  "noNews_en": "No news available at the moment",
+  "items": [
+    {
+      "id": "0001",
+      "date": "2024-12-15",
+      "title_zh": "2024 年度產品目錄更新",
+      "title_en": "2024 Product Catalog Update",
+      "category_zh": "產品更新",
+      "category_en": "Product Update",
+      "excerpt_zh": "我們很高興地宣布 2024 年度產品目錄已經更新，新增多款環保材質板材，滿足您的各種設計需求。",
+      "excerpt_en": "We are pleased to announce that our 2024 product catalog has been updated with new eco-friendly materials to meet your various design needs.",
+      "images": [
+        "/assets/images/partner/gms-1.webp",
+        "/assets/images/partner/gms-2.jpg",
+        "/assets/images/partner/gms-3.webp"
+      ],
+      "content_zh": "我們很高興地宣布 2024 年度產品目錄已經更新，新增多款環保材質板材，滿足您的各種設計需求。\n\n本次更新包含以下亮點：\n\n• 新增 20 款環保木紋系列\n• 全新抗菌表面處理技術\n• 更多色彩選擇滿足不同設計風格\n• 改良的耐磨性能\n\n我們持續致力於為客戶提供最優質的板材產品，歡迎下載最新目錄或聯繫我們的業務團隊了解更多詳情。",
+      "content_en": "We are pleased to announce that our 2024 product catalog has been updated with new eco-friendly materials to meet your various design needs.\n\nThis update includes the following highlights:\n\n• 20 new eco-friendly woodgrain series\n• New antibacterial surface treatment technology\n• More color options to meet different design styles\n• Improved wear resistance\n\nWe are committed to providing our customers with the highest quality board products. Feel free to download the latest catalog or contact our sales team for more details."
     },
-    "hero": {
-      "title": "Latest News",
-      "subtitle": "Stay updated with our latest news, product updates and industry insights"
+    {
+      "id": "0002",
+      "date": "2024-11-20",
+      "title_zh": "榮獲 FSC 森林認證",
+      "title_en": "FSC Certification Achieved",
+      "category_zh": "公司新聞",
+      "category_en": "Company News",
+      "excerpt_zh": "Hauboard 正式獲得 FSC 森林管理委員會認證，證明我們對永續發展的承諾。",
+      "excerpt_en": "Hauboard has officially received FSC Forest Stewardship Council certification, demonstrating our commitment to sustainability.",
+      "image": "/assets/images/partner/gms-1.webp",
+      "content_zh": "Hauboard 正式獲得 FSC 森林管理委員會認證，證明我們對永續發展的承諾。\n\nFSC（Forest Stewardship Council）森林管理委員會是一個國際性的非營利組織，致力於推動負責任的森林管理。\n\n獲得此認證代表：\n\n• 我們的原材料來源可追溯且合法\n• 生產過程符合環境保護標準\n• 支持永續森林經營\n• 產品可獲得 FSC 標籤\n\n我們將繼續堅持環保理念，為地球的永續發展貢獻心力。",
+      "content_en": "Hauboard has officially received FSC Forest Stewardship Council certification, demonstrating our commitment to sustainability.\n\nFSC (Forest Stewardship Council) is an international non-profit organization dedicated to promoting responsible forest management.\n\nThis certification represents:\n\n• Our raw materials are traceable and legally sourced\n• Production processes meet environmental protection standards\n• Support for sustainable forest management\n• Products can obtain FSC labels\n\nWe will continue to adhere to environmental principles and contribute to the sustainable development of our planet."
     },
-    "detail": {
-      "backToNews": "Back to News",
-      "notFound": "News Not Found",
-      "notFoundDesc": "The news article you are looking for does not exist or has been removed"
+    {
+      "id": "0003",
+      "date": "2024-10-05",
+      "title_zh": "參加 2024 國際建材展",
+      "title_en": "Attending 2024 International Building Materials Exhibition",
+      "category_zh": "展覽活動",
+      "category_en": "Exhibition",
+      "excerpt_zh": "Hauboard 將於 10 月參加國際建材展覽會，歡迎蒞臨我們的展位參觀最新產品。",
+      "excerpt_en": "Hauboard will participate in the International Building Materials Exhibition in October. Welcome to visit our booth to see our latest products.",
+      "image": "/assets/images/partner/gms-1.webp",
+      "content_zh": "Hauboard 將於 10 月參加國際建材展覽會，歡迎蒞臨我們的展位參觀最新產品。\n\n展覽資訊：\n\n• 日期：2024 年 10 月 15-18 日\n• 地點：台北南港展覽館\n• 攤位號碼：A區 125 號\n\n現場展示內容：\n\n• 最新木紋系列樣品\n• 環保材質產品線\n• 虛擬設計應用展示\n• 專業諮詢服務\n\n誠摯邀請您蒞臨參觀，我們的專業團隊將為您提供詳細的產品介紹與解決方案。",
+      "content_en": "Hauboard will participate in the International Building Materials Exhibition in October. Welcome to visit our booth to see our latest products.\n\nExhibition Information:\n\n• Date: October 15-18, 2024\n• Venue: Taipei Nangang Exhibition Center\n• Booth Number: Zone A, No. 125\n\nOn-site Display:\n\n• Latest woodgrain series samples\n• Eco-friendly material product line\n• Virtual design application showcase\n• Professional consultation services\n\nWe sincerely invite you to visit. Our professional team will provide you with detailed product introductions and solutions."
     },
-    "readMore": "Read More",
-    "noNews": "No news available at the moment",
-    "items": [
-      {
-        "id": "0001",
-        "title": "2024 Product Catalog Update",
-        "date": "2024-12-15",
-        "category": "Product Update",
-        "excerpt": "We are pleased to announce that our 2024 product catalog has been updated with new eco-friendly materials to meet your various design needs.",
-        "image": "/assets/images/partner/gms-1.webp",
-        "content": "We are pleased to announce that our 2024 product catalog has been updated with new eco-friendly materials to meet your various design needs.\n\nThis update includes the following highlights:\n\n• 20 new eco-friendly woodgrain series\n• New antibacterial surface treatment technology\n• More color options to meet different design styles\n• Improved wear resistance\n\nWe are committed to providing our customers with the highest quality board products. Feel free to download the latest catalog or contact our sales team for more details."
-      },
-      {
-        "id": "0002",
-        "title": "FSC Certification Achieved",
-        "date": "2024-11-20",
-        "category": "Company News",
-        "excerpt": "Hauboard has officially received FSC Forest Stewardship Council certification, demonstrating our commitment to sustainability.",
-        "image": "/assets/images/partner/gms-1.webp",
-        "content": "Hauboard has officially received FSC Forest Stewardship Council certification, demonstrating our commitment to sustainability.\n\nFSC (Forest Stewardship Council) is an international non-profit organization dedicated to promoting responsible forest management.\n\nThis certification represents:\n\n• Our raw materials are traceable and legally sourced\n• Production processes meet environmental protection standards\n• Support for sustainable forest management\n• Products can obtain FSC labels\n\nWe will continue to adhere to environmental principles and contribute to the sustainable development of our planet."
-      },
-      {
-        "id": "0003",
-        "title": "Attending 2024 International Building Materials Exhibition",
-        "date": "2024-10-05",
-        "category": "Exhibition",
-        "excerpt": "Hauboard will participate in the International Building Materials Exhibition in October. Welcome to visit our booth to see our latest products.",
-        "image": "/assets/images/partner/gms-1.webp",
-        "content": "Hauboard will participate in the International Building Materials Exhibition in October. Welcome to visit our booth to see our latest products.\n\nExhibition Information:\n\n• Date: October 15-18, 2024\n• Venue: Taipei Nangang Exhibition Center\n• Booth Number: Zone A, No. 125\n\nOn-site Display:\n\n• Latest woodgrain series samples\n• Eco-friendly material product line\n• Virtual design application showcase\n• Professional consultation services\n\nWe sincerely invite you to visit. Our professional team will provide you with detailed product introductions and solutions."
-      },
-      {
-        "id": "0004",
-        "title": "New Woodgrain Series Launch",
-        "date": "2024-09-18",
-        "category": "Product Update",
-        "excerpt": "Our new woodgrain series is now available, offering more natural and refined texture options.",
-        "image": "/assets/images/partner/gms-1.webp",
-        "content": "Our new woodgrain series is now available, offering more natural and refined texture options.\n\nNew Series Features:\n\n• Advanced printing technology for more realistic textures\n• Synchronized embossing process for a more natural feel\n• Rich color options\n• Excellent weather resistance\n\nApplications:\n\n• Interior decoration\n• Furniture manufacturing\n• Commercial space design\n• Display cabinet production\n\nFeel free to request samples or contact our sales team for more information."
-      },
-      {
-        "id": "0005",
-        "title": "Eco-friendly Production Line Upgrade Complete",
-        "date": "2024-08-10",
-        "category": "Company News",
-        "excerpt": "Our production line has completed an eco-friendly upgrade, reducing carbon emissions by 30%.",
-        "image": "",
-        "content": "Our production line has completed an eco-friendly upgrade, reducing carbon emissions by 30%.\n\nUpgrade Contents:\n\n• Introduced energy-saving equipment to reduce energy consumption\n• Optimized production processes to reduce material waste\n• Installed exhaust gas treatment systems\n• Implemented water resource recycling\n\nEnvironmental Results:\n\n• 30% reduction in carbon emissions\n• 25% reduction in energy consumption\n• Waste recycling rate increased to 95%\n• 40% improvement in water resource efficiency\n\nWe will continue to invest in environmental facility upgrades and contribute more to sustainable development."
-      }
-    ]
-  }
+    {
+      "id": "0004",
+      "date": "2024-09-18",
+      "title_zh": "新款木紋系列上市",
+      "title_en": "New Woodgrain Series Launch",
+      "category_zh": "產品更新",
+      "category_en": "Product Update",
+      "excerpt_zh": "全新木紋系列產品正式上市，提供更自然、更細緻的紋理選擇。",
+      "excerpt_en": "Our new woodgrain series is now available, offering more natural and refined texture options.",
+      "image": "/assets/images/partner/gms-1.webp",
+      "content_zh": "全新木紋系列產品正式上市，提供更自然、更細緻的紋理選擇。\n\n新系列特色：\n\n• 採用先進印刷技術，紋理更逼真\n• 同步壓紋工藝，觸感更自然\n• 豐富的色系選擇\n• 優異的耐候性能\n\n適用範圍：\n\n• 室內裝潢\n• 傢俱製造\n• 商業空間設計\n• 展示櫃製作\n\n歡迎索取樣品或聯繫我們的業務團隊了解更多資訊。",
+      "content_en": "Our new woodgrain series is now available, offering more natural and refined texture options.\n\nNew Series Features:\n\n• Advanced printing technology for more realistic textures\n• Synchronized embossing process for a more natural feel\n• Rich color options\n• Excellent weather resistance\n\nApplications:\n\n• Interior decoration\n• Furniture manufacturing\n• Commercial space design\n• Display cabinet production\n\nFeel free to request samples or contact our sales team for more information."
+    },
+    {
+      "id": "0005",
+      "date": "2024-08-10",
+      "title_zh": "環保生產線升級完成",
+      "title_en": "Eco-friendly Production Line Upgrade Complete",
+      "category_zh": "公司新聞",
+      "category_en": "Company News",
+      "excerpt_zh": "我們的生產線已完成環保升級，減少 30% 碳排放，為地球盡一份心力。",
+      "excerpt_en": "Our production line has completed an eco-friendly upgrade, reducing carbon emissions by 30%.",
+      "image": "",
+      "content_zh": "我們的生產線已完成環保升級，減少 30% 碳排放，為地球盡一份心力。\n\n升級內容包括：\n\n• 引進節能設備，降低能源消耗\n• 優化生產流程，減少原料浪費\n• 安裝廢氣處理系統\n• 實施水資源回收再利用\n\n環保成效：\n\n• 碳排放減少 30%\n• 能源消耗降低 25%\n• 廢料回收率提升至 95%\n• 水資源使用效率提升 40%\n\n我們將持續投入環保設施的升級，為永續發展貢獻更多心力。",
+      "content_en": "Our production line has completed an eco-friendly upgrade, reducing carbon emissions by 30%.\n\nUpgrade Contents:\n\n• Introduced energy-saving equipment to reduce energy consumption\n• Optimized production processes to reduce material waste\n• Installed exhaust gas treatment systems\n• Implemented water resource recycling\n\nEnvironmental Results:\n\n• 30% reduction in carbon emissions\n• 25% reduction in energy consumption\n• Waste recycling rate increased to 95%\n• 40% improvement in water resource efficiency\n\nWe will continue to invest in environmental facility upgrades and contribute more to sustainable development."
+    }
+  ]
 }

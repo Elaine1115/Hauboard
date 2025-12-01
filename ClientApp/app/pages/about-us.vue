@@ -5,12 +5,46 @@ const { locale } = useI18n()
 const themeStore = useThemeStore()
 
 const about = computed(() => {
-  const langData = aboutData[locale.value as 'zh' | 'en']
+  const lang = locale.value as 'zh' | 'en'
+  const suffix = `_${lang}`
+
   return {
-    ...langData,
+    seo: {
+      title: aboutData.seo[`title${suffix}` as keyof typeof aboutData.seo] as string,
+      description: aboutData.seo[`description${suffix}` as keyof typeof aboutData.seo] as string
+    },
     hero: {
-      ...langData.hero,
-      ...aboutData.common.hero
+      title: aboutData.hero[`title${suffix}` as keyof typeof aboutData.hero] as string,
+      subtitle: aboutData.hero[`subtitle${suffix}` as keyof typeof aboutData.hero] as string,
+      backgroundImage: aboutData.common.hero.backgroundImage
+    },
+    introduction: {
+      title: aboutData.introduction[`title${suffix}` as keyof typeof aboutData.introduction] as string,
+      content: aboutData.introduction[`content${suffix}` as keyof typeof aboutData.introduction] as string[]
+    },
+    mission: {
+      title: aboutData.mission[`title${suffix}` as keyof typeof aboutData.mission] as string,
+      content: aboutData.mission[`content${suffix}` as keyof typeof aboutData.mission] as string[]
+    },
+    values: {
+      title: aboutData.values[`title${suffix}` as keyof typeof aboutData.values] as string,
+      items: aboutData.values.items.map(item => ({
+        title: item[`title${suffix}` as keyof typeof item] as string,
+        description: item[`description${suffix}` as keyof typeof item] as string
+      }))
+    },
+    contact: {
+      title: aboutData.contact[`title${suffix}` as keyof typeof aboutData.contact] as string,
+      description: aboutData.contact[`description${suffix}` as keyof typeof aboutData.contact] as string
+    },
+    timeline: {
+      title: aboutData.timeline[`title${suffix}` as keyof typeof aboutData.timeline] as string,
+      subtitle: aboutData.timeline[`subtitle${suffix}` as keyof typeof aboutData.timeline] as string,
+      events: aboutData.timeline.events.map(event => ({
+        year: event.year,
+        title: event[`title${suffix}` as keyof typeof event] as string,
+        description: event[`description${suffix}` as keyof typeof event] as string
+      }))
     }
   }
 })

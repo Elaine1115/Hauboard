@@ -7,7 +7,20 @@ const themeStore = useThemeStore()
 
 // Get data based on locale
 const data = computed(() => {
-  return locale.value === 'zh' ? virtualDesignData.zh : virtualDesignData.en
+  const lang = locale.value as 'zh' | 'en'
+  const suffix = `_${lang}`
+
+  return {
+    seo: {
+      title: virtualDesignData.seo[`title${suffix}` as keyof typeof virtualDesignData.seo] as string,
+      description: virtualDesignData.seo[`description${suffix}` as keyof typeof virtualDesignData.seo] as string
+    },
+    hero: {
+      title: virtualDesignData.hero[`title${suffix}` as keyof typeof virtualDesignData.hero] as string,
+      subtitle: virtualDesignData.hero[`subtitle${suffix}` as keyof typeof virtualDesignData.hero] as string
+    },
+    images: virtualDesignData.common.images
+  }
 })
 
 const allImages = computed(() => data.value.images)

@@ -5,12 +5,41 @@ const { locale } = useI18n()
 const themeStore = useThemeStore()
 
 const vendor = computed(() => {
-  const langData = vendorData[locale.value as 'zh' | 'en']
+  const isZh = locale.value === 'zh'
+
   return {
-    ...langData,
+    seo: {
+      title: isZh ? vendorData.seo.title_zh : vendorData.seo.title_en,
+      description: isZh ? vendorData.seo.description_zh : vendorData.seo.description_en
+    },
     hero: {
-      ...langData.hero,
-      ...vendorData.common.hero
+      title: isZh ? vendorData.hero.title_zh : vendorData.hero.title_en,
+      subtitle: isZh ? vendorData.hero.subtitle_zh : vendorData.hero.subtitle_en,
+      backgroundImage: vendorData.common.hero.backgroundImage
+    },
+    partners: {
+      title: isZh ? vendorData.partners.title_zh : vendorData.partners.title_en,
+      items: vendorData.partners.items.map(item => ({
+        name: isZh ? item.name_zh : item.name_en,
+        description: isZh ? item.description_zh : item.description_en,
+        features: isZh ? item.features_zh : item.features_en
+      }))
+    },
+    story: {
+      title: isZh ? vendorData.story.title_zh : vendorData.story.title_en,
+      subtitle: isZh ? vendorData.story.subtitle_zh : vendorData.story.subtitle_en,
+      items: vendorData.story.items.map(item => ({
+        title: isZh ? item.title_zh : item.title_en,
+        description: isZh ? item.description_zh : item.description_en,
+        image: item.image
+      }))
+    },
+    certifications: {
+      title: isZh ? vendorData.certifications.title_zh : vendorData.certifications.title_en,
+      items: vendorData.certifications.items.map(item => ({
+        title: isZh ? item.title_zh : item.title_en,
+        description: isZh ? item.description_zh : item.description_en
+      }))
     }
   }
 })
@@ -31,34 +60,6 @@ useSeoMeta({
       :subtitle="vendor.hero.subtitle"
       :background-image="vendor.hero.backgroundImage"
     />
-
-    <!-- Introduction Section -->
-    <SectionContainer
-      :title="vendor.introduction.title"
-      :subtitle="vendor.introduction.subtitle"
-    >
-      <div class="max-w-4xl mx-auto">
-        <div
-          class="backdrop-blur-sm rounded-2xl p-8 md:p-12 shadow-2xl"
-          :class="themeStore.isDark
-            ? 'bg-gradient-to-br from-gray-800/40 to-gray-900/40 border border-gray-700/30'
-            : 'bg-white/80 border border-gray-200'"
-        >
-          <div class="space-y-6 text-lg leading-relaxed">
-            <p
-              v-for="(paragraph, index) in vendor.introduction.content"
-              :key="index"
-              :class="[
-                themeStore.isDark ? 'text-gray-300' : 'text-gray-600',
-                index === 0 ? (themeStore.isDark ? 'text-xl text-gray-200' : 'text-xl text-gray-700') : ''
-              ]"
-            >
-              {{ paragraph }}
-            </p>
-          </div>
-        </div>
-      </div>
-    </SectionContainer>
 
     <!-- Partners Section -->
     <SectionContainer
@@ -85,7 +86,7 @@ useSeoMeta({
               >{{ partner.name }}</h3>
             </div>
             <p
-              class="text-xl mb-8 leading-relaxed"
+              class="text-vxl mb-8 leading-relaxed"
               :class="themeStore.isDark ? 'text-gray-200' : 'text-gray-600'"
             >{{ partner.description }}</p>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-5">

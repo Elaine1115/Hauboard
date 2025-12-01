@@ -1,13 +1,5 @@
 {
-  "zh": {
-    "seo": {
-      "title": "虛擬設計 | Hauboard",
-      "description": "探索我們的虛擬設計作品集"
-    },
-    "hero": {
-      "title": "虛擬設計",
-      "subtitle": "探索我們的虛擬設計作品集"
-    },
+  "common": {
     "images": [
       "/assets/images/virtual-design/0K8.png",
       "/assets/images/virtual-design/20M.png",
@@ -67,72 +59,16 @@
       "/assets/images/virtual-design/WM7.png"
     ]
   },
-  "en": {
-    "seo": {
-      "title": "Virtual Design - Hauboard",
-      "description": "Explore our virtual design portfolio"
-    },
-    "hero": {
-      "title": "Virtual Design",
-      "subtitle": "Explore our virtual design portfolio"
-    },
-    "images": [
-      "/assets/images/virtual-design/0K8.png",
-      "/assets/images/virtual-design/20M.png",
-      "/assets/images/virtual-design/308.png",
-      "/assets/images/virtual-design/49H.png",
-      "/assets/images/virtual-design/49M.png",
-      "/assets/images/virtual-design/797.png",
-      "/assets/images/virtual-design/AP2.png",
-      "/assets/images/virtual-design/D06.png",
-      "/assets/images/virtual-design/D13.png",
-      "/assets/images/virtual-design/D14.png",
-      "/assets/images/virtual-design/D18.png",
-      "/assets/images/virtual-design/D19.png",
-      "/assets/images/virtual-design/D72.png",
-      "/assets/images/virtual-design/D90.png",
-      "/assets/images/virtual-design/DA1.png",
-      "/assets/images/virtual-design/DA4.png",
-      "/assets/images/virtual-design/DB1.png",
-      "/assets/images/virtual-design/DB2.png",
-      "/assets/images/virtual-design/DB4.png",
-      "/assets/images/virtual-design/DM6.png",
-      "/assets/images/virtual-design/DN4.png",
-      "/assets/images/virtual-design/DN6.png",
-      "/assets/images/virtual-design/DN8.png",
-      "/assets/images/virtual-design/DN9.png",
-      "/assets/images/virtual-design/DP8.png",
-      "/assets/images/virtual-design/DR1.png",
-      "/assets/images/virtual-design/DR3.png",
-      "/assets/images/virtual-design/DS2.png",
-      "/assets/images/virtual-design/DS4.png",
-      "/assets/images/virtual-design/DT8.png",
-      "/assets/images/virtual-design/DU2.png",
-      "/assets/images/virtual-design/DU4.png",
-      "/assets/images/virtual-design/DV4.png",
-      "/assets/images/virtual-design/DV6.png",
-      "/assets/images/virtual-design/OSS.png",
-      "/assets/images/virtual-design/P01.png",
-      "/assets/images/virtual-design/P05.png",
-      "/assets/images/virtual-design/P08.png",
-      "/assets/images/virtual-design/P20.png",
-      "/assets/images/virtual-design/P22.png",
-      "/assets/images/virtual-design/P23.png",
-      "/assets/images/virtual-design/P24.png",
-      "/assets/images/virtual-design/P25.png",
-      "/assets/images/virtual-design/P48.png",
-      "/assets/images/virtual-design/P49.png",
-      "/assets/images/virtual-design/P50.png",
-      "/assets/images/virtual-design/P52.png",
-      "/assets/images/virtual-design/P53.png",
-      "/assets/images/virtual-design/P54.png",
-      "/assets/images/virtual-design/P55.png",
-      "/assets/images/virtual-design/TO8.png",
-      "/assets/images/virtual-design/TO9.png",
-      "/assets/images/virtual-design/TR9.png",
-      "/assets/images/virtual-design/U51.png",
-      "/assets/images/virtual-design/WD3.png",
-      "/assets/images/virtual-design/WM7.png"
-    ]
+  "seo": {
+    "title_zh": "虛擬設計 | Hauboard",
+    "title_en": "Virtual Design - Hauboard",
+    "description_zh": "探索我們的虛擬設計作品集",
+    "description_en": "Explore our virtual design portfolio"
+  },
+  "hero": {
+    "title_zh": "虛擬設計",
+    "title_en": "Virtual Design",
+    "subtitle_zh": "探索我們的虛擬設計作品集",
+    "subtitle_en": "Explore our virtual design portfolio"
   }
 }

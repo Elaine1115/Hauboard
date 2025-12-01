@@ -5,7 +5,26 @@ const { locale } = useI18n()
 const themeStore = useThemeStore()
 
 const data = computed(() => {
-  return locale.value === 'zh' ? qualityData.zh : qualityData.en
+  const lang = locale.value as 'zh' | 'en'
+  const suffix = `_${lang}`
+
+  return {
+    seo: {
+      title: qualityData.seo[`title${suffix}` as keyof typeof qualityData.seo] as string,
+      description: qualityData.seo[`description${suffix}` as keyof typeof qualityData.seo] as string
+    },
+    hero: {
+      title: qualityData.hero[`title${suffix}` as keyof typeof qualityData.hero] as string,
+      subtitle: qualityData.hero[`subtitle${suffix}` as keyof typeof qualityData.hero] as string
+    },
+    documents: {
+      title: qualityData.documents[`title${suffix}` as keyof typeof qualityData.documents] as string,
+      subtitle: qualityData.documents[`subtitle${suffix}` as keyof typeof qualityData.documents] as string,
+      view: qualityData.documents[`view${suffix}` as keyof typeof qualityData.documents] as string,
+      download: qualityData.documents[`download${suffix}` as keyof typeof qualityData.documents] as string
+    },
+    files: qualityData.common.files
+  }
 })
 
 // SEO

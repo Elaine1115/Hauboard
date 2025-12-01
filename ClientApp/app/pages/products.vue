@@ -9,13 +9,24 @@ const { t, locale } = useI18n()
 const themeStore = useThemeStore()
 
 const products = computed(() => {
-  const langData = productsData[locale.value as 'zh' | 'en']
+  const lang = locale.value as 'zh' | 'en'
+  const suffix = `_${lang}`
+
   return {
-    ...langData,
+    seo: {
+      title: productsData.seo[`title${suffix}` as keyof typeof productsData.seo] as string,
+      description: productsData.seo[`description${suffix}` as keyof typeof productsData.seo] as string
+    },
     hero: {
-      ...langData.hero,
-      ...productsData.common.hero
-    }
+      title: productsData.hero[`title${suffix}` as keyof typeof productsData.hero] as string,
+      subtitle: productsData.hero[`subtitle${suffix}` as keyof typeof productsData.hero] as string,
+      backgroundImage: productsData.common.hero.backgroundImage
+    },
+    gallery: {
+      title: productsData.gallery[`title${suffix}` as keyof typeof productsData.gallery] as string,
+      subtitle: productsData.gallery[`subtitle${suffix}` as keyof typeof productsData.gallery] as string
+    },
+    images: productsData.common.images
   }
 })
 

@@ -7,7 +7,36 @@ const themeStore = useThemeStore()
 
 // Get data based on locale
 const data = computed(() => {
-  return locale.value === 'zh' ? newsData.zh : newsData.en
+  const lang = locale.value as 'zh' | 'en'
+  const suffix = `_${lang}`
+
+  return {
+    seo: {
+      title: newsData.seo[`title${suffix}` as keyof typeof newsData.seo] as string,
+      description: newsData.seo[`description${suffix}` as keyof typeof newsData.seo] as string
+    },
+    hero: {
+      title: newsData.hero[`title${suffix}` as keyof typeof newsData.hero] as string,
+      subtitle: newsData.hero[`subtitle${suffix}` as keyof typeof newsData.hero] as string
+    },
+    detail: {
+      backToNews: newsData.detail[`backToNews${suffix}` as keyof typeof newsData.detail] as string,
+      notFound: newsData.detail[`notFound${suffix}` as keyof typeof newsData.detail] as string,
+      notFoundDesc: newsData.detail[`notFoundDesc${suffix}` as keyof typeof newsData.detail] as string
+    },
+    readMore: newsData[`readMore${suffix}` as keyof typeof newsData] as string,
+    noNews: newsData[`noNews${suffix}` as keyof typeof newsData] as string,
+    items: newsData.items.map(item => ({
+      id: item.id,
+      date: item.date,
+      title: item[`title${suffix}` as keyof typeof item] as string,
+      category: item[`category${suffix}` as keyof typeof item] as string,
+      excerpt: item[`excerpt${suffix}` as keyof typeof item] as string,
+      content: item[`content${suffix}` as keyof typeof item] as string,
+      image: item.image,
+      images: item.images
+    }))
+  }
 })
 
 // Pagination settings

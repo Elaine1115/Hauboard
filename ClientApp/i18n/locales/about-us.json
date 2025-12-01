@@ -4,166 +4,121 @@
       "backgroundImage": "/assets/gradient.png"
     }
   },
-  "zh": {
-    "seo": {
-      "title": "關於我們 | Hauboard",
-      "description": "了解豪板實業的故事、使命與願景，我們致力於提供高品質的裝飾板材解決方案。"
-    },
-    "hero": {
-      "title": "關於我們",
-      "subtitle": "打造優質生活空間的專業夥伴"
-    },
-    "introduction": {
-      "title": "公司簡介",
-      "content": [
-        "近年來社會快速變遷，各產業蓬勃發展，地球資源也隨之日益匱乏。因此，永續利用與環保意識愈加受到重視，鼓勵人們降低對自然環境的負擔。對多數民眾而言，傳統實木家具具備質感與風味，但在環保趨勢的推動下，愈來愈多人選擇以再生木材製成的系統家具。",
-        "豪板自 2003 年成立至今已超過 15 年，我們始終堅持使用環保建材，使品牌得以穩健成長。同時，我們也積極掌握設計潮流，推出符合大眾需求與風格的產品。目前豪板為義大利 Gruppo Mauro Saviola 的台灣總代理，產品為歐洲原裝進口的系統家具專用板材，並於台灣獨家銷售。所有板材皆採用低甲醛、無毒、防潮、防焰的環保配方，並通過歐盟 IDROLEB、日本 JIS F★★★★、台灣 SGS 等多項認證。"
-      ]
-    },
-    "mission": {
-      "title": "我們的使命",
-      "content": [
-        "提供最優質的裝飾板材產品，滿足客戶多樣化的設計需求。",
-        "堅持環保理念，選用符合國際標準的環保材料。",
-        "提供專業的諮詢服務，協助客戶實現理想空間。"
-      ]
-    },
-    "values": {
-      "title": "核心價值",
-      "items": [
-        {
-          "title": "品質至上",
-          "description": "嚴格把關每一片板材的品質，確保達到最高標準。"
-        },
-        {
-          "title": "客戶第一",
-          "description": "以客戶需求為出發點，提供量身訂製的解決方案。"
-        },
-        {
-          "title": "持續創新",
-          "description": "不斷引進新技術與新產品，保持市場領先地位。"
-        },
-        {
-          "title": "環保責任",
-          "description": "重視環境保護，選用環保材料，為永續發展盡一份心力。"
-        }
-      ]
-    },
-    "contact": {
-      "title": "聯絡我們",
-      "description": "歡迎與我們聯繫，讓我們為您提供專業的服務。"
-    },
-    "timeline": {
-      "title": "發展歷程",
-      "subtitle": "見證我們的成長與進步",
-      "events": [
-        {
-          "year": "2003",
-          "title": "公司成立",
-          "description": "HAU BOARD在台中成立，開始獨家代理進口的系統家具專用板材"
-        },
-        {
-          "year": "2011",
-          "title": "歐洲合作夥伴",
-          "description": "獨家代理歐洲進口的系統家具專用 - 塑合板材"
-        },
-        {
-          "year": "2016",
-          "title": "業務擴展",
-          "description": "服務範圍擴展至全台，成為業界知名品牌"
-        },
-        {
-          "year": "2017",
-          "title": "品質認證",
-          "description": "Mauro Saviola獲得多項國際認證，包含FSC、PEFC、4STARS"
-        },
-        {
-          "year": "2024",
-          "title": "持續創新",
-          "description": "引進最新壓模技術的產品，為客戶提供更多元的選擇"
-        }
-      ]
-    }
+  "seo": {
+    "title_zh": "關於我們 | Hauboard",
+    "title_en": "About Us - Hauboard",
+    "description_zh": "了解豪板實業的故事、使命與願景，我們致力於提供高品質的裝飾板材解決方案。",
+    "description_en": "Learn about Hauboard's story, mission, and vision. We are committed to providing high-quality decorative panel solutions."
   },
-  "en": {
-    "seo": {
-      "title": "About Us - Hauboard",
-      "description": "Learn about Hauboard's story, mission, and vision. We are committed to providing high-quality decorative panel solutions."
-    },
-    "hero": {
-      "title": "About Us",
-      "subtitle": "Your Professional Partner in Creating Quality Living Spaces"
-    },
-    "introduction": {
-      "title": "Company Introduction",
-      "content": [
-        "In recent years, rapid social changes and industrial growth have led to increasing depletion of global resources. As a result, sustainable resource use and environmental protection have become key concerns, encouraging society to reduce its impact on nature. While traditional solid-wood furniture is valued for its texture and character, the rising awareness of environmental sustainability has prompted many consumers to choose system furniture made from recycled wood materials.",
-        "Since its establishment in 2003, Hauboard has grown steadily for more than 15 years, driven by our commitment to environmentally friendly building materials. We continue to stay aligned with design trends, offering products that meet modern lifestyle needs. Hauboard is currently the exclusive distributor in Taiwan for Italy’s Gruppo Mauro Saviola, providing system-furniture panels that are fully manufactured in Europe and exclusively sold in Taiwan. Our materials feature low formaldehyde, non-toxic, moisture-resistant, and flame-retardant properties, and are certified by leading international standards including the EU IDROLEB, Japan’s JIS F★★★★, and Taiwan’s SGS."
-      ]
-    },
-    "mission": {
-      "title": "Our Mission",
-      "content": [
-        "Provide the highest quality decorative panel products to meet diverse customer design needs.",
-        "Adhere to environmental principles by selecting eco-friendly materials that meet international standards.",
-        "Provide professional consultation services to help customers realize their ideal spaces."
-      ]
-    },
-    "values": {
-      "title": "Core Values",
-      "items": [
-        {
-          "title": "Quality First",
-          "description": "Strictly control the quality of every panel to ensure the highest standards."
-        },
-        {
-          "title": "Customer First",
-          "description": "Start with customer needs and provide tailored solutions."
-        },
-        {
-          "title": "Continuous Innovation",
-          "description": "Continuously introduce new technologies and products to maintain market leadership."
-        },
-        {
-          "title": "Environmental Responsibility",
-          "description": "Value environmental protection, select eco-friendly materials, and contribute to sustainable development."
-        }
-      ]
-    },
-    "contact": {
-      "title": "Contact Us",
-      "description": "Feel free to contact us and let us provide you with professional services."
-    },
-    "timeline": {
-      "title": "Our Journey",
-      "subtitle": "Witness our growth and progress",
-      "events": [
-        {
-          "year": "2003",
-          "title": "Company Founded",
-          "description": "HAU BOARD was established in Taichung, and became the exclusive agent of imported system furniture panels."
-        },
-        {
-          "year": "2011",
-          "title": "European Partnership",
-          "description": "Became the exclusive agent of European imported system furniture panels - laminated boards."
-        },
-        {
-          "year": "2016",
-          "title": "Business Expansion",
-          "description": "Service coverage expanded nationwide, becoming a well-known brand in the industry."
-        },
-        {
-          "year": "2017",
-          "title": "Quality Certification",
-          "description": "Mauro Saviola obtained multiple international certifications, including FSC, PEFC, and 4STARS."
-        },
-        {
-          "year": "2024",
-          "title": "Continuous Innovation",
-          "description": "Introduced products with the latest embossing technology, providing customers with more diverse options."
-        }
-      ]
-    }
+  "hero": {
+    "title_zh": "關於我們",
+    "title_en": "About Us",
+    "subtitle_zh": "打造優質生活空間的專業夥伴",
+    "subtitle_en": "Your Professional Partner in Creating Quality Living Spaces"
+  },
+  "introduction": {
+    "title_zh": "公司簡介",
+    "title_en": "Company Introduction",
+    "content_zh": [
+      "近年來社會快速變遷，各產業蓬勃發展，地球資源也隨之日益匱乏。因此，永續利用與環保意識愈加受到重視，鼓勵人們降低對自然環境的負擔。對多數民眾而言，傳統實木家具具備質感與風味，但在環保趨勢的推動下，愈來愈多人選擇以再生木材製成的系統家具。",
+      "豪板自 2003 年成立至今已超過 15 年，我們始終堅持使用環保建材，使品牌得以穩健成長。同時，我們也積極掌握設計潮流，推出符合大眾需求與風格的產品。目前豪板為義大利 Gruppo Mauro Saviola 的台灣總代理，產品為歐洲原裝進口的系統家具專用板材，並於台灣獨家銷售。所有板材皆採用低甲醛、無毒、防潮、防焰的環保配方，並通過歐盟 IDROLEB、日本 JIS F★★★★、台灣 SGS 等多項認證。"
+    ],
+    "content_en": [
+      "In recent years, rapid social changes and industrial growth have led to increasing depletion of global resources. As a result, sustainable resource use and environmental protection have become key concerns, encouraging society to reduce its impact on nature. While traditional solid-wood furniture is valued for its texture and character, the rising awareness of environmental sustainability has prompted many consumers to choose system furniture made from recycled wood materials.",
+      "Since its establishment in 2003, Hauboard has grown steadily for more than 15 years, driven by our commitment to environmentally friendly building materials. We continue to stay aligned with design trends, offering products that meet modern lifestyle needs. Hauboard is currently the exclusive distributor in Taiwan for Italy's Gruppo Mauro Saviola, providing system-furniture panels that are fully manufactured in Europe and exclusively sold in Taiwan. Our materials feature low formaldehyde, non-toxic, moisture-resistant, and flame-retardant properties, and are certified by leading international standards including the EU IDROLEB, Japan's JIS F★★★★, and Taiwan's SGS."
+    ]
+  },
+  "mission": {
+    "title_zh": "我們的使命",
+    "title_en": "Our Mission",
+    "content_zh": [
+      "提供最優質的裝飾板材產品，滿足客戶多樣化的設計需求。",
+      "堅持環保理念，選用符合國際標準的環保材料。",
+      "提供專業的諮詢服務，協助客戶實現理想空間。"
+    ],
+    "content_en": [
+      "Provide the highest quality decorative panel products to meet diverse customer design needs.",
+      "Adhere to environmental principles by selecting eco-friendly materials that meet international standards.",
+      "Provide professional consultation services to help customers realize their ideal spaces."
+    ]
+  },
+  "values": {
+    "title_zh": "核心價值",
+    "title_en": "Core Values",
+    "items": [
+      {
+        "title_zh": "品質至上",
+        "title_en": "Quality First",
+        "description_zh": "嚴格把關每一片板材的品質，確保達到最高標準。",
+        "description_en": "Strictly control the quality of every panel to ensure the highest standards."
+      },
+      {
+        "title_zh": "客戶第一",
+        "title_en": "Customer First",
+        "description_zh": "以客戶需求為出發點，提供量身訂製的解決方案。",
+        "description_en": "Start with customer needs and provide tailored solutions."
+      },
+      {
+        "title_zh": "持續創新",
+        "title_en": "Continuous Innovation",
+        "description_zh": "不斷引進新技術與新產品，保持市場領先地位。",
+        "description_en": "Continuously introduce new technologies and products to maintain market leadership."
+      },
+      {
+        "title_zh": "環保責任",
+        "title_en": "Environmental Responsibility",
+        "description_zh": "重視環境保護，選用環保材料，為永續發展盡一份心力。",
+        "description_en": "Value environmental protection, select eco-friendly materials, and contribute to sustainable development."
+      }
+    ]
+  },
+  "contact": {
+    "title_zh": "聯絡我們",
+    "title_en": "Contact Us",
+    "description_zh": "歡迎與我們聯繫，讓我們為您提供專業的服務。",
+    "description_en": "Feel free to contact us and let us provide you with professional services."
+  },
+  "timeline": {
+    "title_zh": "發展歷程",
+    "title_en": "Our Journey",
+    "subtitle_zh": "見證我們的成長與進步",
+    "subtitle_en": "Witness our growth and progress",
+    "events": [
+      {
+        "year": "2003",
+        "title_zh": "公司成立",
+        "title_en": "Company Founded",
+        "description_zh": "HAU BOARD在台中成立，開始獨家代理進口的系統家具專用板材",
+        "description_en": "HAU BOARD was established in Taichung, and became the exclusive agent of imported system furniture panels."
+      },
+      {
+        "year": "2011",
+        "title_zh": "歐洲合作夥伴",
+        "title_en": "European Partnership",
+        "description_zh": "獨家代理歐洲進口的系統家具專用 - 塑合板材",
+        "description_en": "Became the exclusive agent of European imported system furniture panels - laminated boards."
+      },
+      {
+        "year": "2016",
+        "title_zh": "業務擴展",
+        "title_en": "Business Expansion",
+        "description_zh": "服務範圍擴展至全台，成為業界知名品牌",
+        "description_en": "Service coverage expanded nationwide, becoming a well-known brand in the industry."
+      },
+      {
+        "year": "2017",
+        "title_zh": "品質認證",
+        "title_en": "Quality Certification",
+        "description_zh": "Mauro Saviola獲得多項國際認證，包含FSC、PEFC、4STARS",
+        "description_en": "Mauro Saviola obtained multiple international certifications, including FSC, PEFC, and 4STARS."
+      },
+      {
+        "year": "2024",
+        "title_zh": "持續創新",
+        "title_en": "Continuous Innovation",
+        "description_zh": "引進最新壓模技術的產品，為客戶提供更多元的選擇",
+        "description_en": "Introduced products with the latest embossing technology, providing customers with more diverse options."
+      }
+    ]
   }
 }

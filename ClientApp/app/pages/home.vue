@@ -5,11 +5,75 @@ const { locale } = useI18n()
 const themeStore = useThemeStore()
 
 const home = computed(() => {
-  const langData = homeData[locale.value as 'zh' | 'en']
+  const lang = locale.value as 'zh' | 'en'
+  const suffix = `_${lang}`
+
   return {
-    ...langData,
+    seo: {
+      title: homeData.seo[`title${suffix}` as keyof typeof homeData.seo] as string,
+      description: homeData.seo[`description${suffix}` as keyof typeof homeData.seo] as string
+    },
+    hero: {
+      title: homeData.hero[`title${suffix}` as keyof typeof homeData.hero] as string,
+      subtitle: homeData.hero[`subtitle${suffix}` as keyof typeof homeData.hero] as string,
+      description: homeData.hero[`description${suffix}` as keyof typeof homeData.hero] as string,
+      buttons: {
+        browseProducts: homeData.hero.buttons[`browseProducts${suffix}` as keyof typeof homeData.hero.buttons] as string,
+        aboutUs: homeData.hero.buttons[`aboutUs${suffix}` as keyof typeof homeData.hero.buttons] as string
+      },
+      cards: homeData.hero.cards.map((card, index) => ({
+        image: homeData.common.hero.cards[index].image,
+        badge: card[`badge${suffix}` as keyof typeof card] as string,
+        title: card[`title${suffix}` as keyof typeof card] as string,
+        description: card[`description${suffix}` as keyof typeof card] as string
+      })),
+      stats: homeData.hero.stats.map((stat, index) => ({
+        value: homeData.common.hero.stats[index].value,
+        label: stat[`label${suffix}` as keyof typeof stat] as string
+      }))
+    },
+    features: {
+      title: homeData.features[`title${suffix}` as keyof typeof homeData.features] as string,
+      subtitle: homeData.features[`subtitle${suffix}` as keyof typeof homeData.features] as string,
+      items: homeData.features.items.map(item => ({
+        icon: item.icon,
+        title: item[`title${suffix}` as keyof typeof item] as string,
+        description: item[`description${suffix}` as keyof typeof item] as string
+      }))
+    },
+    applications: {
+      title: homeData.applications[`title${suffix}` as keyof typeof homeData.applications] as string,
+      subtitle: homeData.applications[`subtitle${suffix}` as keyof typeof homeData.applications] as string,
+      image: homeData.common.applications.image,
+      items: homeData.applications.items.map(item => ({
+        icon: item.icon,
+        title: item[`title${suffix}` as keyof typeof item] as string,
+        description: item[`description${suffix}` as keyof typeof item] as string
+      }))
+    },
+    specifications: {
+      title: homeData.specifications[`title${suffix}` as keyof typeof homeData.specifications] as string,
+      subtitle: homeData.specifications[`subtitle${suffix}` as keyof typeof homeData.specifications] as string,
+      image: homeData.common.specifications.image,
+      items: homeData.specifications.items.map(item => ({
+        thickness: item.thickness,
+        title: item[`title${suffix}` as keyof typeof item] as string,
+        description: item[`description${suffix}` as keyof typeof item] as string,
+        uses: item[`uses${suffix}` as keyof typeof item] as string[]
+      }))
+    },
+    gallery: {
+      title: homeData.gallery[`title${suffix}` as keyof typeof homeData.gallery] as string,
+      subtitle: homeData.gallery[`subtitle${suffix}` as keyof typeof homeData.gallery] as string,
+      viewAll: homeData.gallery[`viewAll${suffix}` as keyof typeof homeData.gallery] as string,
+      items: homeData.gallery.items.map((item, index) => ({
+        image: homeData.common.gallery.items[index].image,
+        title: item[`title${suffix}` as keyof typeof item] as string,
+        category: item[`category${suffix}` as keyof typeof item] as string
+      }))
+    },
     cta: {
-      ...homeData.common.cta
+      videos: homeData.common.cta.videos
     }
   }
 })

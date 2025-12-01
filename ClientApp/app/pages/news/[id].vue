@@ -8,7 +8,26 @@ const themeStore = useThemeStore()
 
 // Get data based on locale
 const data = computed(() => {
-  return locale.value === 'zh' ? newsData.zh : newsData.en
+  const lang = locale.value as 'zh' | 'en'
+  const suffix = `_${lang}`
+
+  return {
+    detail: {
+      backToNews: newsData.detail[`backToNews${suffix}` as keyof typeof newsData.detail] as string,
+      notFound: newsData.detail[`notFound${suffix}` as keyof typeof newsData.detail] as string,
+      notFoundDesc: newsData.detail[`notFoundDesc${suffix}` as keyof typeof newsData.detail] as string
+    },
+    items: newsData.items.map(item => ({
+      id: item.id,
+      date: item.date,
+      title: item[`title${suffix}` as keyof typeof item] as string,
+      category: item[`category${suffix}` as keyof typeof item] as string,
+      excerpt: item[`excerpt${suffix}` as keyof typeof item] as string,
+      content: item[`content${suffix}` as keyof typeof item] as string,
+      image: item.image,
+      images: item.images
+    }))
+  }
 })
 
 // Find the news item by ID
