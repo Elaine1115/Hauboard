@@ -15,18 +15,28 @@ const data = computed(() => {
     detail: {
       backToNews: newsData.detail[`backToNews${suffix}` as keyof typeof newsData.detail] as string,
       notFound: newsData.detail[`notFound${suffix}` as keyof typeof newsData.detail] as string,
-      notFoundDesc: newsData.detail[`notFoundDesc${suffix}` as keyof typeof newsData.detail] as string
+      notFoundDesc: newsData.detail[`notFoundDesc${suffix}` as keyof typeof newsData.detail] as string,
+      downloadTitle: newsData.detail[`downloadTitle${suffix}` as keyof typeof newsData.detail] as string,
+      downloadDesc: newsData.detail[`downloadDesc${suffix}` as keyof typeof newsData.detail] as string
     },
-    items: newsData.items.map(item => ({
-      id: item.id,
-      date: item.date,
-      title: item[`title${suffix}` as keyof typeof item] as string,
-      category: item[`category${suffix}` as keyof typeof item] as string,
-      excerpt: item[`excerpt${suffix}` as keyof typeof item] as string,
-      content: item[`content${suffix}` as keyof typeof item] as string,
-      image: item.image,
-      images: item.images
-    }))
+    items: newsData.items
+      .filter(item => !item.isHide)
+      .map(item => ({
+        id: item.id,
+        date: item.date,
+        title: item[`title${suffix}` as keyof typeof item] as string,
+        category: item[`category${suffix}` as keyof typeof item] as string,
+        excerpt: item[`excerpt${suffix}` as keyof typeof item] as string,
+        content: item[`content${suffix}` as keyof typeof item] as string,
+        image: item.image,
+        images: item.images,
+        downloads: (item as any).downloads?.map((download: any) => ({
+          name: download[`name${suffix}`],
+          url: download.url,
+          size: download.size,
+          type: download.type
+        })) || []
+      }))
   }
 })
 
@@ -82,11 +92,11 @@ const touchStartX = ref(0)
 const touchEndX = ref(0)
 
 const handleTouchStart = (e: TouchEvent) => {
-  touchStartX.value = e.touches[0].clientX
+  touchStartX.value = e.touches[0]?.clientX || 0
 }
 
 const handleTouchMove = (e: TouchEvent) => {
-  touchEndX.value = e.touches[0].clientX
+  touchEndX.value = e.touches[0]?.clientX || 0
 }
 
 const handleTouchEnd = () => {
@@ -137,6 +147,26 @@ const formatDate = (dateStr: string) => {
     return date.toLocaleDateString('zh-TW', { year: 'numeric', month: 'long', day: 'numeric' })
   }
   return date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })
+}
+
+// Get file icon based on type
+const getFileIcon = (fileType: string) => {
+  const type = fileType.toUpperCase()
+  const imageTypes = ['WEBP', 'JPG', 'JPEG', 'PNG', 'GIF', 'SVG', 'BMP']
+
+  if (imageTypes.includes(type)) {
+    return 'ph:file-image'
+  } else if (type === 'PDF') {
+    return 'ph:file-pdf'
+  } else if (['DOC', 'DOCX'].includes(type)) {
+    return 'ph:file-doc'
+  } else if (['XLS', 'XLSX'].includes(type)) {
+    return 'ph:file-xls'
+  } else if (['ZIP', 'RAR', '7Z'].includes(type)) {
+    return 'ph:file-zip'
+  } else {
+    return 'ph:file'
+  }
 }
 
 // Format content with line breaks
@@ -269,6 +299,81 @@ useSeoMeta({
                 <p v-for="(paragraph, index) in formattedContent" :key="index" class="text-lg">
                   {{ paragraph }}
                 </p>
+              </div>
+            </div>
+
+            <!-- Downloads Section -->
+            <div v-if="newsItem.downloads && newsItem.downloads.length > 0" class="mt-12">
+              <div
+                class="rounded-2xl p-6 md:p-8"
+                :class="themeStore.isDark
+                  ? 'border border-gray-800 bg-gray-900/80'
+                  : 'border border-gray-200 bg-white shadow-lg'"
+              >
+                <div class="mb-6">
+                  <h2
+                    class="mb-2 text-2xl font-bold"
+                    :class="themeStore.isDark ? 'text-white' : 'text-gray-900'"
+                  >
+                    {{ data.detail.downloadTitle }}
+                  </h2>
+                  <p
+                    class="text-sm"
+                    :class="themeStore.isDark ? 'text-gray-400' : 'text-gray-500'"
+                  >
+                    {{ data.detail.downloadDesc }}
+                  </p>
+                </div>
+
+                <div class="space-y-3">
+                  <a
+                    v-for="(download, index) in newsItem.downloads"
+                    :key="index"
+                    :href="download.url"
+                    :download="download.name"
+                    class="flex items-center gap-4 rounded-lg p-4 transition-all hover:scale-[1.02]"
+                    :class="themeStore.isDark
+                      ? 'bg-gray-800/50 hover:bg-gray-800 border border-gray-700'
+                      : 'bg-gray-50 hover:bg-gray-100 border border-gray-200'"
+                  >
+                    <!-- File Icon -->
+                    <div
+                      class="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-lg"
+                      :class="themeStore.isDark ? 'bg-emerald-500/20' : 'bg-emerald-100'"
+                    >
+                      <Icon
+                        :name="getFileIcon(download.type)"
+                        class="h-6 w-6"
+                        :class="themeStore.isDark ? 'text-emerald-400' : 'text-emerald-600'"
+                      />
+                    </div>
+
+                    <!-- File Info -->
+                    <div class="flex-1 min-w-0">
+                      <p
+                        class="font-medium truncate"
+                        :class="themeStore.isDark ? 'text-white' : 'text-gray-900'"
+                      >
+                        {{ download.name }}
+                      </p>
+                      <p
+                        class="text-sm"
+                        :class="themeStore.isDark ? 'text-gray-400' : 'text-gray-500'"
+                      >
+                        {{ download.type }} · {{ download.size }}
+                      </p>
+                    </div>
+
+                    <!-- Download Icon -->
+                    <div class="flex-shrink-0">
+                      <Icon
+                        name="ph:download-simple"
+                        class="h-5 w-5"
+                        :class="themeStore.isDark ? 'text-gray-400' : 'text-gray-500'"
+                      />
+                    </div>
+                  </a>
+                </div>
               </div>
             </div>
 

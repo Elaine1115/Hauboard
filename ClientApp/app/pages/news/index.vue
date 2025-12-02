@@ -26,16 +26,18 @@ const data = computed(() => {
     },
     readMore: newsData[`readMore${suffix}` as keyof typeof newsData] as string,
     noNews: newsData[`noNews${suffix}` as keyof typeof newsData] as string,
-    items: newsData.items.map(item => ({
-      id: item.id,
-      date: item.date,
-      title: item[`title${suffix}` as keyof typeof item] as string,
-      category: item[`category${suffix}` as keyof typeof item] as string,
-      excerpt: item[`excerpt${suffix}` as keyof typeof item] as string,
-      content: item[`content${suffix}` as keyof typeof item] as string,
-      image: item.image,
-      images: item.images
-    }))
+    items: newsData.items
+      .filter(item => !item.isHide)
+      .map(item => ({
+        id: item.id,
+        date: item.date,
+        title: item[`title${suffix}` as keyof typeof item] as string,
+        category: item[`category${suffix}` as keyof typeof item] as string,
+        excerpt: item[`excerpt${suffix}` as keyof typeof item] as string,
+        content: item[`content${suffix}` as keyof typeof item] as string,
+        image: item.image,
+        images: item.images
+      }))
   }
 })
 
