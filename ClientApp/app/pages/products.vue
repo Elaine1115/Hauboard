@@ -19,8 +19,7 @@ const products = computed(() => {
     },
     hero: {
       title: productsData.hero[`title${suffix}` as keyof typeof productsData.hero] as string,
-      subtitle: productsData.hero[`subtitle${suffix}` as keyof typeof productsData.hero] as string,
-      backgroundImage: productsData.common.hero.backgroundImage
+      subtitle: productsData.hero[`subtitle${suffix}` as keyof typeof productsData.hero] as string
     },
     gallery: {
       title: productsData.gallery[`title${suffix}` as keyof typeof productsData.gallery] as string,
@@ -109,7 +108,6 @@ watch(() => route.query.category, (newCategory) => {
     <PageHero
       :title="products.hero.title"
       :subtitle="products.hero.subtitle"
-      :background-image="products.hero.backgroundImage"
     />
 
     <!-- Gallery Section -->

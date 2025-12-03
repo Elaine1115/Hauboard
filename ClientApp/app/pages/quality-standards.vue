@@ -53,7 +53,7 @@ const downloadDocument = (url: string, filename: string) => {
     <PageHero
       :title="data.hero.title"
       :subtitle="data.hero.subtitle"
-      background-image="/assets/gradient.png"
+      background-image=""
     />
 
     <!-- Documents Section -->

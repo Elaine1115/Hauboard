@@ -1,8 +1,5 @@
 {
   "common": {
-    "hero": {
-      "backgroundImage": "/assets/gradient.webp"
-    },
     "images": [
       {
         "src": "/assets/images/products/0K8.webp",

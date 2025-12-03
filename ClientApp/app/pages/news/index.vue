@@ -105,7 +105,7 @@ useSeoMeta({
     <PageHero
       :title="data.hero.title"
       :subtitle="data.hero.subtitle"
-      background-image="/assets/gradient.png"
+      background-image=""
     />
 
     <!-- News Section -->

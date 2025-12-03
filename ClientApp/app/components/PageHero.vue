@@ -5,6 +5,7 @@
   >
     <!-- Layer 1: Deep Background (slowest parallax) -->
     <div
+      v-if="backgroundImage"
       class="absolute inset-0 bg-cover bg-center bg-no-repeat scale-125 will-change-transform"
       :style="{
         backgroundImage: `url(${backgroundImage})`,
@@ -246,7 +247,7 @@ const themeStore = useThemeStore()
 const props = withDefaults(defineProps<{
   title: string
   subtitle?: string
-  backgroundImage: string
+  backgroundImage?: string
   showScrollIndicator?: boolean
 }>(), {
   showScrollIndicator: true

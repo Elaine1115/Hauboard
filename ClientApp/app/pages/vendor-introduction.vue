@@ -14,8 +14,7 @@ const vendor = computed(() => {
     },
     hero: {
       title: isZh ? vendorData.hero.title_zh : vendorData.hero.title_en,
-      subtitle: isZh ? vendorData.hero.subtitle_zh : vendorData.hero.subtitle_en,
-      backgroundImage: vendorData.common.hero.backgroundImage
+      subtitle: isZh ? vendorData.hero.subtitle_zh : vendorData.hero.subtitle_en
     },
     partners: {
       title: isZh ? vendorData.partners.title_zh : vendorData.partners.title_en,
@@ -58,7 +57,6 @@ useSeoMeta({
     <PageHero
       :title="vendor.hero.title"
       :subtitle="vendor.hero.subtitle"
-      :background-image="vendor.hero.backgroundImage"
     />
 
     <!-- Partners Section -->

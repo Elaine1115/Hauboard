@@ -15,8 +15,7 @@ const about = computed(() => {
     },
     hero: {
       title: aboutData.hero[`title${suffix}` as keyof typeof aboutData.hero] as string,
-      subtitle: aboutData.hero[`subtitle${suffix}` as keyof typeof aboutData.hero] as string,
-      backgroundImage: aboutData.common.hero.backgroundImage
+      subtitle: aboutData.hero[`subtitle${suffix}` as keyof typeof aboutData.hero] as string
     },
     introduction: {
       title: aboutData.introduction[`title${suffix}` as keyof typeof aboutData.introduction] as string,
@@ -63,7 +62,6 @@ useSeoMeta({
     <PageHero
       :title="about.hero.title"
       :subtitle="about.hero.subtitle"
-      :background-image="about.hero.backgroundImage"
     />
 
     <!-- Introduction Section -->

@@ -1,9 +1,4 @@
 {
-  "common": {
-    "hero": {
-      "backgroundImage": "/assets/gradient.webp"
-    }
-  },
   "seo": {
     "title_zh": "供應商介紹 | Hauboard",
     "title_en": "Vendor Introduction - Hauboard",

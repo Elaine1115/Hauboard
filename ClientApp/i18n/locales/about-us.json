@@ -1,9 +1,4 @@
 {
-  "common": {
-    "hero": {
-      "backgroundImage": "/assets/gradient.webp"
-    }
-  },
   "seo": {
     "title_zh": "關於我們 | Hauboard",
     "title_en": "About Us - Hauboard",

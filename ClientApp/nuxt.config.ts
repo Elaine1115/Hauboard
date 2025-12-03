@@ -1,5 +1,5 @@
 export default defineNuxtConfig({
-  ssr: false, // 關閉 SSR，生成靜態網站
+  ssr: true, // 啟用 SSR 以支援 Open Graph 標籤
   nitro: {
     preset: 'static'
   },
@@ -55,6 +55,6 @@ export default defineNuxtConfig({
     langDir: 'locales'
   },
   routeRules: {
-    '/': { redirect: '/home' }
+    '/': { prerender: true }
   }
 })
