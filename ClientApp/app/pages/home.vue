@@ -22,13 +22,13 @@ const home = computed(() => {
         aboutUs: homeData.hero.buttons[`aboutUs${suffix}` as keyof typeof homeData.hero.buttons] as string
       },
       cards: homeData.hero.cards.map((card, index) => ({
-        image: homeData.common.hero.cards[index].image,
+        image: homeData.common.hero.cards[index]?.image || '',
         badge: card[`badge${suffix}` as keyof typeof card] as string,
         title: card[`title${suffix}` as keyof typeof card] as string,
         description: card[`description${suffix}` as keyof typeof card] as string
       })),
       stats: homeData.hero.stats.map((stat, index) => ({
-        value: homeData.common.hero.stats[index].value,
+        value: homeData.common.hero.stats[index]?.value || '',
         label: stat[`label${suffix}` as keyof typeof stat] as string
       }))
     },
@@ -67,7 +67,7 @@ const home = computed(() => {
       subtitle: homeData.gallery[`subtitle${suffix}` as keyof typeof homeData.gallery] as string,
       viewAll: homeData.gallery[`viewAll${suffix}` as keyof typeof homeData.gallery] as string,
       items: homeData.gallery.items.map((item, index) => ({
-        image: homeData.common.gallery.items[index].image,
+        image: homeData.common.gallery.items[index]?.image || '',
         title: item[`title${suffix}` as keyof typeof item] as string,
         category: item[`category${suffix}` as keyof typeof item] as string
       }))

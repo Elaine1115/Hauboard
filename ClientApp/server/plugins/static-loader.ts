@@ -11,11 +11,13 @@ export default defineNitroPlugin((nitroApp) => {
           document.documentElement.classList.add(theme);
           var isDark = theme === 'dark';
           document.documentElement.style.backgroundColor = isDark ? '#030712' : '#ffffff';
-          if (isDark) {
-            document.body.style.backgroundColor = '#030712';
-          } else {
-            document.body.style.background = 'linear-gradient(135deg, #ecfdf5 0%, #ffffff 50%, #f0fdfa 100%)';
-            document.body.style.backgroundAttachment = 'fixed';
+          if (document.body) {
+            if (isDark) {
+              document.body.style.backgroundColor = '#030712';
+            } else {
+              document.body.style.background = 'linear-gradient(135deg, #ecfdf5 0%, #ffffff 50%, #f0fdfa 100%)';
+              document.body.style.backgroundAttachment = 'fixed';
+            }
           }
 
           // Update loader colors based on theme
