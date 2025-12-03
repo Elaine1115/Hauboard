@@ -23,7 +23,7 @@ export default defineNuxtConfig({
         // Open Graph tags for social media (Line, Facebook, etc.)
         { property: 'og:title', content: 'HAU BOARD INDUSTRIAL CO., LTD' },
         { property: 'og:description', content: 'HAU BOARD INDUSTRIAL CO., LTD - Professional MFC provider.' },
-        { property: 'og:image', content: 'https://hauboard.com/assets/images/logo/hauboard_icon.webp' },
+        { property: 'og:image', content: 'https://hauboard.com/assets/images/logo/hauboard_logo_black.webp' },
         { property: 'og:url', content: 'https://hauboard.com' },
         { property: 'og:type', content: 'website' },
         { property: 'og:site_name', content: 'HAU BOARD INDUSTRIAL CO., LTD' },
