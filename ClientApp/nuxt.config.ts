@@ -1,7 +1,10 @@
 export default defineNuxtConfig({
   ssr: true, // 啟用 SSR 以支援 Open Graph 標籤
   nitro: {
-    preset: 'static'
+    preset: 'static',
+    output: {
+      publicDir: 'dist'
+    }
   },
   future: {
     compatibilityVersion: 4
