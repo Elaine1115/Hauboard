@@ -279,3 +279,57 @@ body.lg-on {
   height: 100vh !important;
   z-index: 10000 !important;
 }
+
+/* Force show toolbar buttons on mobile */
+.lg-toolbar {
+  display: flex !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  justify-content: flex-end !important;
+  flex-direction: row !important;
+}
+
+/* Ensure close button is always visible on mobile */
+.lg-close,
+.lg-download {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+/* Align all toolbar items to the right */
+.lg-toolbar .lg-group {
+  margin-left: auto !important;
+  display: flex !important;
+  flex-direction: row !important;
+}
+
+/* Put download and close buttons at the far right */
+.lg-toolbar .lg-download {
+  order: 98 !important;
+}
+
+.lg-toolbar .lg-close {
+  order: 99 !important;
+}
+
+/* Make toolbar buttons larger and more touch-friendly on mobile */
+@media (max-width: 768px) {
+  .lg-toolbar .lg-icon {
+    width: 44px !important;
+    height: 44px !important;
+    font-size: 20px !important;
+    line-height: 44px !important;
+  }
+
+  .lg-actions .lg-next,
+  .lg-actions .lg-prev {
+    width: 44px !important;
+    height: 44px !important;
+  }
+
+  /* Hide counter on mobile */
+  .lg-counter {
+    display: none !important;
+  }
+}

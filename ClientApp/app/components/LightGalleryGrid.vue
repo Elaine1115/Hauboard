@@ -40,7 +40,6 @@ const initGallery = async () => {
     await import('lightgallery/css/lightgallery.css')
     await import('lightgallery/css/lg-zoom.css')
     await import('lightgallery/css/lg-rotate.css')
-    await import('lightgallery/css/lg-fullscreen.css')
     await import('lightgallery/css/lg-thumbnail.css')
     await import('lightgallery/css/lg-autoplay.css')
 
@@ -48,7 +47,6 @@ const initGallery = async () => {
     const lightGalleryModule = await import('lightgallery')
     const lgZoom = await import('lightgallery/plugins/zoom')
     const lgRotate = await import('lightgallery/plugins/rotate')
-    const lgFullscreen = await import('lightgallery/plugins/fullscreen')
     const lgThumbnail = await import('lightgallery/plugins/thumbnail')
     const lgAutoplay = await import('lightgallery/plugins/autoplay')
 
@@ -64,10 +62,16 @@ const initGallery = async () => {
       plugins: [
         lgZoom.default,
         lgRotate.default,
-        lgFullscreen.default,
         lgThumbnail.default,
         lgAutoplay.default
       ],
+      // Mobile settings - ensure toolbar is visible
+      mobileSettings: {
+        controls: true,
+        showCloseIcon: true,
+        download: true,
+        rotate: true
+      },
       // Zoom settings
       scale: 1,
       actualSize: true,
