@@ -1,24 +1,13 @@
 <script lang="ts" setup>
-const prismic = usePrismic()
-const { data: settings } = await useAsyncData("settings", () =>
-  prismic.client.getSingle('settings')
-)
-
-useSeoMeta({
-  title: settings.value?.data.site_title,
-  ogTitle: settings.value?.data.site_title,
-  description: settings.value?.data.meta_description,
-  ogDescription: settings.value?.data.meta_description,
-  ogImage: computed(() => prismic.asImageSrc(settings.value?.data.meta_image)),
-});
+// SEO meta tags can be set per-page
 </script>
 
 <template>
   <div>
-    <AppHeader :settings="settings" />
+    <AppHeader />
     <main class="pt-20 md:pt-24">
       <slot />
     </main>
-    <AppFooter :settings="settings" />
+    <AppFooter />
   </div>
 </template>

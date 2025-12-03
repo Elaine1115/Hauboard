@@ -1,5 +1,3 @@
-import { repositoryName } from './slicemachine.config.json';
-
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   future: {
@@ -30,11 +28,9 @@ export default defineNuxtConfig({
 
   modules: [
     '@nuxt/eslint',
-    '@nuxtjs/prismic',
     '@nuxtjs/tailwindcss',
     '@nuxt/fonts',
     '@nuxt/icon',
-    '@nuxthub/core',
     '@pinia/nuxt',
     '@nuxtjs/i18n',
   ],
@@ -47,28 +43,6 @@ export default defineNuxtConfig({
     defaultLocale: 'zh',
     strategy: 'no_prefix',
     langDir: 'locales',
-  },
-
-  prismic: {
-    endpoint: repositoryName,
-    preview: '/api/preview',
-    clientConfig: {
-      routes: [
-        {
-          type: 'case_study',
-          path: '/case-study/:uid',
-        },
-        {
-          type: 'page',
-          path: '/:uid',
-        },
-        {
-          type: 'page',
-          uid: 'home',
-          path: '/',
-        },
-      ]
-    }
   },
 
   compatibilityDate: '2025-01-06',
