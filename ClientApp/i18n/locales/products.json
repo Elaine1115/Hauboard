@@ -1,126 +1,126 @@
 {
   "common": {
     "hero": {
-      "backgroundImage": "/assets/gradient.png"
+      "backgroundImage": "/assets/gradient.webp"
     },
     "images": [
       {
-        "src": "/assets/images/products/0K8.jpg",
+        "src": "/assets/images/products/0K8.webp",
         "alt": "0K8-陶瓷米",
         "category": "solid"
       },
       {
-        "src": "/assets/images/products/797.jpg",
+        "src": "/assets/images/products/797.webp",
         "alt": "797-石墨灰",
         "category": "solid"
       },
       {
-        "src": "/assets/images/products/AP2.jpg",
+        "src": "/assets/images/products/AP2.webp",
         "alt": "AP2-陶瓷可可",
         "category": "solid"
       },
       {
-        "src": "/assets/images/products/37M.jpg",
+        "src": "/assets/images/products/37M.webp",
         "alt": "37M-原切枯木",
         "category": "woodgrain"
       },
       {
-        "src": "/assets/images/products/43M.jpg",
+        "src": "/assets/images/products/43M.webp",
         "alt": "43M-原切相思木",
         "category": "woodgrain"
       },
       {
-        "src": "/assets/images/products/D17.jpg",
+        "src": "/assets/images/products/D17.webp",
         "alt": "D17-龐貝原杉",
         "category": "woodgrain"
       },
       {
-        "src": "/assets/images/products/D18.jpg",
+        "src": "/assets/images/products/D18.webp",
         "alt": "D18-龐貝棕杉",
         "category": "woodgrain"
       },
       {
-        "src": "/assets/images/products/D19.jpg",
+        "src": "/assets/images/products/D19.webp",
         "alt": "D19-龐貝黑杉",
         "category": "woodgrain"
       },
       {
-        "src": "/assets/images/products/D23.jpg",
+        "src": "/assets/images/products/D23.webp",
         "alt": "D23-龐貝白杉",
         "category": "woodgrain"
       },
       {
-        "src": "/assets/images/products/D1T.jpg",
+        "src": "/assets/images/products/D1T.webp",
         "alt": "D1T-南美松木",
         "category": "woodgrain"
       },
       {
-        "src": "/assets/images/products/D9S.jpg",
+        "src": "/assets/images/products/D9S.webp",
         "alt": "D9S-和風石",
         "category": "woodgrain"
       },
       {
-        "src": "/assets/images/products/DL5.jpg",
+        "src": "/assets/images/products/DL5.webp",
         "alt": "DL5-義式胡桃",
         "category": "woodgrain"
       },
       {
-        "src": "/assets/images/products/D36.jpg",
+        "src": "/assets/images/products/D36.webp",
         "alt": "D36-亞拉里榆木",
         "category": "woodgrain"
       },
       {
-        "src": "/assets/images/products/P42.jpg",
+        "src": "/assets/images/products/P42.webp",
         "alt": "P42-諾斯灰橡",
         "category": "woodgrain"
       },
       {
-        "src": "/assets/images/products/P43.jpg",
+        "src": "/assets/images/products/P43.webp",
         "alt": "P43-諾斯白橡",
         "category": "woodgrain"
       },
       {
-        "src": "/assets/images/products/A01.jpg",
+        "src": "/assets/images/products/A01.webp",
         "alt": "A01-艾奇莫青銅",
         "category": "classic"
       },
       {
-        "src": "/assets/images/products/A02.jpg",
+        "src": "/assets/images/products/A02.webp",
         "alt": "A02-艾奇莫鉑金",
         "category": "classic"
       },
       {
-        "src": "/assets/images/products/AZ3.jpg",
+        "src": "/assets/images/products/AZ3.webp",
         "alt": "AZ3-艾奇莫古銅",
         "category": "classic"
       },
       {
-        "src": "/assets/images/products/B06.jpg",
+        "src": "/assets/images/products/B06.webp",
         "alt": "B06-艾奇莫臻綠",
         "category": "classic"
       },
       {
-        "src": "/assets/images/products/29H.jpg",
+        "src": "/assets/images/products/29H.webp",
         "alt": "29H-波特蘭砂岩",
         "category": "marble"
       },
       {
-        "src": "/assets/images/products/TTY.jpg",
+        "src": "/assets/images/products/TTY.webp",
         "alt": "TTY-藍鵲板岩",
         "category": "marble"
       },
       {
-        "src": "/assets/images/products/49M.jpg",
+        "src": "/assets/images/products/49M.webp",
         "alt": "49M-亞麻灰布織",
         "category": "fabric"
       },
       {
-        "src": "/assets/images/products/03H.jpg",
+        "src": "/assets/images/products/03H.webp",
         "alt": "03H-亞麻米布織",
         "category": "fabric"
       },
       {
-        "src": "/assets/images/products/X7R.jpg",
+        "src": "/assets/images/products/X7R.webp",
         "alt": "X7R-亞麻黑布織",
         "category": "fabric"
       }

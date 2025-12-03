@@ -1,7 +1,7 @@
 {
   "common": {
     "hero": {
-      "backgroundImage": "/assets/gradient.png"
+      "backgroundImage": "/assets/gradient.webp"
     }
   },
   "seo": {
@@ -72,7 +72,7 @@
         "description_en": "Our partners operate state-of-the-art large-scale production facilities capable of producing thousands of high-quality panels daily. Professional production teams and advanced automated equipment ensure every panel meets strict quality standards."
       },
       {
-        "image": "/assets/images/partner/gms-2.jpg",
+        "image": "/assets/images/partner/gms-2.webp",
         "title_zh": "先進生產線",
         "title_en": "Advanced Production Lines",
         "description_zh": "採用歐洲最先進的全自動化生產線，從原料處理到成品加工，全程電腦監控。精密的製程控制確保產品穩定性，大幅提升生產效率與品質一致性。",
@@ -86,7 +86,7 @@
         "description_en": "Every panel undergoes rigorous quality testing procedures, with precision instruments measuring thickness, density, and surface flatness. Professional quality control teams ensure all products meet international standards, providing customers with the most reliable quality assurance."
       },
       {
-        "image": "/assets/images/partner/gms-4.jpg",
+        "image": "/assets/images/partner/gms-4.webp",
         "title_zh": "完整運輸系統",
         "title_en": "Complete Transportation System",
         "description_zh": "擁有完整的物流配送系統與專業的運輸團隊，確保產品安全快速地送達全球各地客戶手中。",

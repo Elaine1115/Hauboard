@@ -9,8 +9,8 @@ export const useThemeStore = defineStore('theme', () => {
   // Logo paths based on theme
   const logo = computed(() => {
     return mode.value === 'dark'
-      ? '/assets/images/logo/hauboard_logo_white.png'
-      : '/assets/images/logo/hauboard_logo_black.png'
+      ? '/assets/images/logo/hauboard_logo_white.webp'
+      : '/assets/images/logo/hauboard_logo_black.webp'
   })
 
   const setTheme = (theme: ThemeMode) => {

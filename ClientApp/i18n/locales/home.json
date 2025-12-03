@@ -9,13 +9,13 @@
     "hero": {
       "cards": [
         {
-          "image": "/assets/images/home/melanimici.jpg"
+          "image": "/assets/images/home/melanimici.webp"
         },
         {
-          "image": "/assets/images/home/bordi.jpg"
+          "image": "/assets/images/home/bordi.webp"
         },
         {
-          "image": "/assets/images/home/grezzi.jpg"
+          "image": "/assets/images/home/grezzi.webp"
         }
       ],
       "stats": [
@@ -28,14 +28,14 @@
       "image": "/assets/images/home/furniture.webp"
     },
     "specifications": {
-      "image": "/assets/images/home/panel.png"
+      "image": "/assets/images/home/panel.webp"
     },
     "gallery": {
       "items": [
-        { "image": "/assets/images/featured-design/49H.png" },
-        { "image": "/assets/images/featured-design/DT8.png" },
-        { "image": "/assets/images/featured-design/P20.png" },
-        { "image": "/assets/images/featured-design/P53.png" }
+        { "image": "/assets/images/featured-design/49H.webp" },
+        { "image": "/assets/images/featured-design/DT8.webp" },
+        { "image": "/assets/images/featured-design/P20.webp" },
+        { "image": "/assets/images/featured-design/P53.webp" }
       ]
     }
   },
