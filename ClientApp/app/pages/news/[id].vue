@@ -35,6 +35,11 @@ const data = computed(() => {
           url: download.url,
           size: download.size,
           type: download.type
+        })) || [],
+        videos: (item as any).videos?.map((video: any) => ({
+          videoId: video.videoId,
+          title: video[`title${suffix}`],
+          description: video[`description${suffix}`]
         })) || []
       }))
   }
@@ -287,6 +292,54 @@ useSeoMeta({
                         : 'w-2 bg-gray-300 hover:bg-gray-400'
                   ]"
                 />
+              </div>
+            </div>
+
+            <!-- Videos Section -->
+            <div v-if="newsItem.videos && newsItem.videos.length > 0" class="mb-8">
+              <div
+                class="rounded-2xl p-6 md:p-8"
+                :class="themeStore.isDark
+                  ? 'border border-gray-800 bg-gray-900/80'
+                  : 'border border-gray-200 bg-white shadow-lg'"
+              >
+                <div class="space-y-6">
+                  <div
+                    v-for="(video, index) in newsItem.videos"
+                    :key="index"
+                    class="space-y-3"
+                  >
+                    <!-- Video Title -->
+                    <h3
+                      class="text-xl font-bold"
+                      :class="themeStore.isDark ? 'text-white' : 'text-gray-900'"
+                    >
+                      {{ video.title }}
+                    </h3>
+
+                    <!-- Video Description -->
+                    <p
+                      v-if="video.description"
+                      class="text-sm"
+                      :class="themeStore.isDark ? 'text-gray-400' : 'text-gray-500'"
+                    >
+                      {{ video.description }}
+                    </p>
+
+                    <!-- YouTube Embed -->
+                    <div class="relative w-full overflow-hidden rounded-lg" style="padding-bottom: 56.25%;">
+                      <iframe
+                        :src="`https://www.youtube.com/embed/${video.videoId}`"
+                        :title="video.title"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin"
+                        allowfullscreen
+                        class="absolute left-0 top-0 h-full w-full"
+                      ></iframe>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
 
