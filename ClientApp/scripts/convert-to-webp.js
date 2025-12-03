@@ -7,7 +7,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 // Configuration
-const publicDir = path.join(__dirname, '..', 'public', 'images');
+const publicDir = path.join(__dirname, '..', 'public', 'assets', 'images');
 const imageExtensions = ['.jpg', '.jpeg', '.png', '.gif', '.tiff', '.bmp'];
 const webpQuality = 85; // Quality for WebP (0-100)
 const deleteOriginals = false; // Set to true to delete original files after conversion
