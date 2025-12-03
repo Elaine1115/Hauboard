@@ -3,6 +3,7 @@ import { getMenuItems } from '~/config/menu'
 
 const { t, locale, setLocale } = useI18n()
 const themeStore = useThemeStore()
+const route = useRoute()
 
 // Initialize theme on mount
 onMounted(() => {
@@ -12,6 +13,48 @@ onMounted(() => {
 const isOpen = ref(false)
 const openDropdown = ref<string | null>(null)
 const scrollOpacity = ref(0)
+
+// Check if a menu item is active (including query parameters)
+const isActive = (itemPath: string) => {
+  // Handle paths with query parameters
+  if (itemPath.includes('?')) {
+    return route.fullPath === itemPath
+  }
+  return route.path === itemPath
+}
+
+// Check if a parent menu item should be active (when any of its children is active)
+const isParentActive = (item: any) => {
+  if (isActive(item.path)) return true
+  if (item.children) {
+    return item.children.some((child: any) => isActive(child.path))
+  }
+  return false
+}
+
+// Auto-expand dropdown if on a product page
+const updateDropdownState = () => {
+  const menuItems = getMenuItems(locale.value)
+
+  // Find items that should be expanded based on current route
+  const shouldExpand = menuItems.find(item => isParentActive(item))
+
+  if (shouldExpand) {
+    openDropdown.value = shouldExpand.path
+  } else {
+    openDropdown.value = null
+  }
+}
+
+// Update dropdown state when route changes
+watch(() => route.fullPath, () => {
+  updateDropdownState()
+})
+
+// Initialize dropdown state on mount
+onMounted(() => {
+  updateDropdownState()
+})
 
 const toggleExpand = (path: string) => {
   if (openDropdown.value === path) {
@@ -81,20 +124,21 @@ const menuItems = computed(() => getMenuItems(locale.value))
             v-if="!item.children"
             :to="item.path"
             class="block px-3 py-2 text-lg transition-all hover:text-emerald-500 hover:-translate-y-0.5"
+            :class="isActive(item.path) ? 'text-emerald-500' : ''"
             @click="isOpen = false"
           >
             {{ item.label }}
           </NuxtLink>
-          <!-- Items with children - navigate and toggle dropdown -->
-          <NuxtLink
+          <!-- Items with children - toggle dropdown only -->
+          <button
             v-else
-            :to="item.path"
-            class="block px-3 py-2 text-lg transition-colors hover:text-emerald-500 hover:-translate-y-0.5 text-left flex-1"
-            :style="{ color: openDropdown === item.path ? '#10b981' : undefined }"
-            @click="isOpen = false"
+            type="button"
+            class="block px-3 py-2 text-lg transition-colors text-left flex-1"
+            :class="isParentActive(item) ? 'text-emerald-500' : ''"
+            @click="toggleExpand(item.path)"
           >
             {{ item.label }}
-          </NuxtLink>
+          </button>
           <button
             v-if="item.children"
             type="button"
@@ -113,8 +157,8 @@ const menuItems = computed(() => getMenuItems(locale.value))
           <li v-for="child in item.children" :key="child.path">
             <NuxtLink
               :to="child.path"
-              :class="themeStore.isDark ? 'text-gray-400' : 'text-gray-600'"
               class="block px-3 py-1 text-lg hover:text-emerald-500 transition-colors"
+              :class="isActive(child.path) ? 'text-emerald-500' : (themeStore.isDark ? 'text-gray-400' : 'text-gray-600')"
               @click="isOpen = false"
             >
               {{ child.label }}
@@ -201,6 +245,7 @@ const menuItems = computed(() => getMenuItems(locale.value))
             v-if="!item.children"
             :to="item.path"
             class="inline-flex min-h-11 items-center transition-all hover:text-emerald-500 hover:-translate-y-0.5"
+            :class="isActive(item.path) ? 'text-emerald-500' : ''"
           >
             {{ item.label }}
           </NuxtLink>
@@ -209,6 +254,7 @@ const menuItems = computed(() => getMenuItems(locale.value))
             v-else
             :to="item.path"
             class="inline-flex min-h-11 items-center transition-all hover:text-emerald-500 hover:-translate-y-0.5"
+            :class="isParentActive(item) ? 'text-emerald-500' : ''"
           >
             {{ item.label }}
             <Icon name="ph:caret-down" class="ml-1 text-sm" />
@@ -227,7 +273,10 @@ const menuItems = computed(() => getMenuItems(locale.value))
               <NuxtLink
                 :to="child.path"
                 class="block px-4 py-3 text-sm hover:text-emerald-500 transition-colors"
-                :class="themeStore.isDark ? 'hover:bg-gray-800' : 'hover:bg-gray-100'"
+                :class="[
+                  isActive(child.path) ? 'text-emerald-500' : '',
+                  themeStore.isDark ? 'hover:bg-gray-800' : 'hover:bg-gray-100'
+                ]"
               >
                 {{ child.label }}
               </NuxtLink>
