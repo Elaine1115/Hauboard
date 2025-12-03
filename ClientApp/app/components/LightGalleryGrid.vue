@@ -172,8 +172,8 @@ const aspectClass = computed(() => {
           class="absolute inset-0 w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
         />
         <!-- Alt text badge -->
-        <div v-if="showAlt && image.alt" class="absolute bottom-3 left-3">
-          <span class="inline-block px-3 py-1.5 rounded-lg bg-black/70 backdrop-blur-sm text-white text-sm font-medium shadow-lg">
+        <div v-if="showAlt && image.alt" class="absolute bottom-3 left-3 max-w-[calc(100%-1.5rem)]">
+          <span class="inline-block px-3 py-1.5 rounded-lg bg-black/70 backdrop-blur-sm text-white text-xs md:text-sm font-medium shadow-lg break-words">
             {{ image.alt }}
           </span>
         </div>
