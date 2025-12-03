@@ -138,7 +138,7 @@ const menuItems = computed(() => getMenuItems(locale.value))
       </button>
 
       <!-- Language Switcher -->
-      <div class="flex items-center gap-1 text-sm">
+      <div class="flex items-center gap-1 text-base">
         <button
           type="button"
           class="px-2 py-1 transition-colors"
