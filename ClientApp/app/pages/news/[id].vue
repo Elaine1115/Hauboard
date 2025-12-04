@@ -257,6 +257,9 @@ useSeoMeta({
                   <!-- Previous Button -->
                   <button
                     @click="prevImage"
+                    @touchstart.stop
+                    @touchmove.stop
+                    @touchend.stop
                     class="absolute left-4 top-1/2 -translate-y-1/2 flex h-10 w-10 items-center justify-center rounded-full bg-black/50 text-white backdrop-blur-sm transition-all hover:bg-black/70"
                   >
                     <Icon name="ph:caret-left" class="h-6 w-6" />
@@ -265,6 +268,9 @@ useSeoMeta({
                   <!-- Next Button -->
                   <button
                     @click="nextImage"
+                    @touchstart.stop
+                    @touchmove.stop
+                    @touchend.stop
                     class="absolute right-4 top-1/2 -translate-y-1/2 flex h-10 w-10 items-center justify-center rounded-full bg-black/50 text-white backdrop-blur-sm transition-all hover:bg-black/70"
                   >
                     <Icon name="ph:caret-right" class="h-6 w-6" />
