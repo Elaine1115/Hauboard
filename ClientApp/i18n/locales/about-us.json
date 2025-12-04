@@ -23,6 +23,25 @@
       "Since its establishment in 2003, Hauboard has grown steadily for more than 15 years, driven by our commitment to environmentally friendly building materials. We continue to stay aligned with design trends, offering products that meet modern lifestyle needs. Hauboard is currently the exclusive distributor in Taiwan for Italy's Gruppo Mauro Saviola, providing system-furniture panels that are fully manufactured in Europe and exclusively sold in Taiwan. Our materials feature low formaldehyde, non-toxic, moisture-resistant, and flame-retardant properties, and are certified by leading international standards including the EU IDROLEB, Japan's JIS F★★★★, and Taiwan's SGS."
     ]
   },
+  "founder": {
+    "title_zh": "創辦人的話",
+    "title_en": "Message from the Founder",
+    "subtitle_zh": "MAURO SAVIOLA\n台灣總代理",
+    "subtitle_en": "MAURO SAVIOLA\nTaiwan Exclusive Distributor",
+    "content_zh": [
+      "2003 年，我決定成立豪板實業。其實在創業之前，我已在板材產業裡打滾多年，從最基層的業務做起，跑遍大小工地與設計公司，也在一次次的合作與挫折中，看清市場真正的需求。一路走來，我深刻體會到，一塊好的板材，不只是外觀漂亮而已，更關係到居住者的健康、安全與生活品質。",
+      "創業初期，我們主要代理馬來西亞 4×8 尺的板材，那時市場接受度高，但我始終覺得品質與規格仍然有進步空間。於是，我開始尋找更高階、更多元的產品線，最終把目光放在歐洲。其中，義大利 7×9 尺大板的設計、質感與穩定性，都讓我深受震撼，也更堅定了我們轉型升級的決心。",
+      "在這些年面對景氣起伏、物流挑戰與市場變化時，我始終堅持一件事：我們提供的板材一定要對人體更友善、對環境更負責。因此，多年來我們專注引進超低甲醛、具環保理念的產品，希望讓台灣的室內裝修，不僅好看、更能住得安心。",
+      "從創業到今天，這份初衷從未改變，反而成為豪板持續前進的力量。"
+    ],
+    "content_en": [
+      "In 2003, I made the decision to establish HAU Board Industrial. Before starting the company, I had already spent many years in the board materials industry, beginning from the most fundamental role as a sales representative. I visited countless construction sites and design studios, and through every collaboration and setback, I gained a clearer understanding of what the market truly needed. Throughout this journey, I realized that a good board is not just about appearance—it directly affects the health, safety, and quality of life of the people who live with it.",
+      "In the early days, we mainly distributed 4×8 Malaysian boards, which were popular in the market at the time. However, I always believed that there was still room for improvement in both quality and specifications. This pushed me to search for more advanced and diverse product lines, eventually turning my attention to Europe. Among them, the design, texture, and stability of Italian 7×9 large panels deeply impressed me and strengthened our determination to upgrade and transform.",
+      "Through years of economic fluctuations, logistical challenges, and changing market demands, I have held firmly to one belief: the materials we provide must be healthier for people and more responsible for the environment. For this reason, we have focused on importing ultra-low-formaldehyde boards and environmentally conscious products, hoping to bring Taiwan interior materials that not only look good but also allow people to live with peace of mind.",
+      "From the day I started this business until now, this belief has never changed. Instead, it has become the driving force that continues to lead HAU Board forward."
+    ],
+    "image": "/assets/images/about-us/agent_certification.webp"
+  },
   "mission": {
     "title_zh": "我們的使命",
     "title_en": "Our Mission",

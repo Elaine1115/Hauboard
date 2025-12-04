@@ -14,7 +14,7 @@ defineProps<{
       <div v-if="title || subtitle" class="text-center mb-16 md:mb-20">
         <h2
           v-if="title"
-          class="text-4xl md:text-5xl font-bold mb-6 relative inline-block"
+          class="text-4xl md:text-5xl font-bold mb-6 relative inline-block whitespace-pre-line leading-relaxed md:leading-[1.8]"
           :class="themeStore.isDark ? 'text-white' : 'text-emerald-900'"
         >
           {{ title }}
