@@ -8,7 +8,9 @@
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
-    "convert:webp": "node scripts/convert-to-webp.js"
+    "convert:webp": "node scripts/convert-to-webp.js",
+    "compress:images": "node scripts/compress-images.js",
+    "compress:restore": "node scripts/compress-images.js --restore"
   },
   "dependencies": {
     "@heroicons/vue": "^2.2.0",
