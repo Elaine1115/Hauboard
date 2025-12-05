@@ -144,6 +144,16 @@ useSeoMeta({
                   {{ paragraph }}
                 </p>
               </div>
+
+              <!-- Signature Image -->
+              <div class="flex justify-end mt-6">
+                <img
+                  src="/assets/images/about-us/signature.webp"
+                  alt="Founder Signature"
+                  class="w-40 md:w-48 lg:w-56 h-auto opacity-80 transition-all duration-300"
+                  :class="themeStore.isDark ? 'invert brightness-0' : ''"
+                />
+              </div>
             </div>
           </div>
         </div>
