@@ -1,52 +1,50 @@
 <script setup lang="ts">
-import { ref, computed } from 'vue'
-import virtualDesignData from '../../i18n/locales/virtual-design.json'
+  import virtualDesignData from "../contents/virtual-design.json";
 
-const { locale } = useI18n()
-const themeStore = useThemeStore()
+  const { t } = useI18n();
+  const themeStore = useThemeStore();
 
-// Get data based on locale
-const data = computed(() => {
-  const lang = locale.value as 'zh' | 'en'
-  const suffix = `_${lang}`
+  // Get data using i18n
+  const data = computed(() => {
+    return {
+      seo: {
+        title: t("virtualDesign.seo.title"),
+        description: t("virtualDesign.seo.description"),
+      },
+      hero: {
+        title: t("virtualDesign.hero.title"),
+        subtitle: t("virtualDesign.hero.subtitle"),
+      },
+      images: virtualDesignData.common.images,
+    };
+  });
 
-  return {
-    seo: {
-      title: virtualDesignData.seo[`title${suffix}` as keyof typeof virtualDesignData.seo] as string,
-      description: virtualDesignData.seo[`description${suffix}` as keyof typeof virtualDesignData.seo] as string
-    },
-    hero: {
-      title: virtualDesignData.hero[`title${suffix}` as keyof typeof virtualDesignData.hero] as string,
-      subtitle: virtualDesignData.hero[`subtitle${suffix}` as keyof typeof virtualDesignData.hero] as string
-    },
-    images: virtualDesignData.common.images
-  }
-})
+  const allImages = computed(() => data.value.images);
 
-const allImages = computed(() => data.value.images)
+  // Pagination settings - 4 rows × 5 columns = 20 images per page
+  const imagesPerPage = 20;
+  const currentPage = ref(1);
 
-// Pagination settings - 4 rows × 5 columns = 20 images per page
-const imagesPerPage = 20
-const currentPage = ref(1)
+  const totalPages = computed(() =>
+    Math.ceil(allImages.value.length / imagesPerPage)
+  );
 
-const totalPages = computed(() => Math.ceil(allImages.value.length / imagesPerPage))
+  const paginatedImages = computed(() => {
+    const start = (currentPage.value - 1) * imagesPerPage;
+    const end = start + imagesPerPage;
+    return allImages.value.slice(start, end);
+  });
 
-const paginatedImages = computed(() => {
-  const start = (currentPage.value - 1) * imagesPerPage
-  const end = start + imagesPerPage
-  return allImages.value.slice(start, end)
-})
+  const onPageChange = (page: number) => {
+    currentPage.value = page;
+    window.scrollTo({ top: 400, behavior: "smooth" });
+  };
 
-const onPageChange = (page: number) => {
-  currentPage.value = page
-  window.scrollTo({ top: 400, behavior: 'smooth' })
-}
-
-// SEO
-useSeoMeta({
-  title: computed(() => data.value.seo.title),
-  description: computed(() => data.value.seo.description),
-})
+  // SEO
+  useSeoMeta({
+    title: computed(() => data.value.seo.title),
+    description: computed(() => data.value.seo.description),
+  });
 </script>
 
 <template>
@@ -81,7 +79,12 @@ useSeoMeta({
 
         <!-- Empty State -->
         <div v-if="allImages.length === 0" class="text-center py-20">
-          <p class="text-lg" :class="themeStore.isDark ? 'text-gray-400' : 'text-gray-500'">No images available.</p>
+          <p
+            class="text-lg"
+            :class="themeStore.isDark ? 'text-gray-400' : 'text-gray-500'"
+          >
+            No images available.
+          </p>
         </div>
       </div>
     </section>

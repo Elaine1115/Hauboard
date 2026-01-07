@@ -1,110 +1,99 @@
 <script setup lang="ts">
-import { ref, computed } from 'vue'
-import newsData from '../../../i18n/locales/news.json'
+  import { ref, computed } from "vue";
+  import newsData from "../../contents/news.json";
 
-const { locale } = useI18n()
-const themeStore = useThemeStore()
+  const { t, locale } = useI18n();
+  const themeStore = useThemeStore();
 
-// Get data based on locale
-const data = computed(() => {
-  const lang = locale.value as 'zh' | 'en'
-  const suffix = `_${lang}`
-
-  return {
-    seo: {
-      title: newsData.seo[`title${suffix}` as keyof typeof newsData.seo] as string,
-      description: newsData.seo[`description${suffix}` as keyof typeof newsData.seo] as string
-    },
-    hero: {
-      title: newsData.hero[`title${suffix}` as keyof typeof newsData.hero] as string,
-      subtitle: newsData.hero[`subtitle${suffix}` as keyof typeof newsData.hero] as string
-    },
-    detail: {
-      backToNews: newsData.detail[`backToNews${suffix}` as keyof typeof newsData.detail] as string,
-      notFound: newsData.detail[`notFound${suffix}` as keyof typeof newsData.detail] as string,
-      notFoundDesc: newsData.detail[`notFoundDesc${suffix}` as keyof typeof newsData.detail] as string
-    },
-    readMore: newsData[`readMore${suffix}` as keyof typeof newsData] as string,
-    noNews: newsData[`noNews${suffix}` as keyof typeof newsData] as string,
-    items: newsData.items
-      .filter(item => !item.isHide)
-      .map(item => ({
+  // Keep static news data and map with translations
+  const newsItems = computed(() => {
+    return newsData.items
+      .filter((item) => !item.isHide)
+      .map((item) => ({
         id: item.id,
         date: item.date,
-        title: item[`title${suffix}` as keyof typeof item] as string,
-        category: item[`category${suffix}` as keyof typeof item] as string,
-        excerpt: item[`excerpt${suffix}` as keyof typeof item] as string,
-        content: item[`content${suffix}` as keyof typeof item] as string,
+        title: t(`news.items.${item.id}.title`),
+        category: t(`news.items.${item.id}.category`),
+        excerpt: t(`news.items.${item.id}.excerpt`),
         image: item.image,
-        images: item.images
-      }))
-  }
-})
+        images: item.images,
+      }));
+  });
 
-// Pagination settings
-const itemsPerPage = 6
-const currentPage = ref(1)
+  // Pagination settings
+  const itemsPerPage = 6;
+  const currentPage = ref(1);
 
-const totalPages = computed(() => Math.ceil(data.value.items.length / itemsPerPage))
+  const totalPages = computed(() =>
+    Math.ceil(newsItems.value.length / itemsPerPage)
+  );
 
-const paginatedNews = computed(() => {
-  const start = (currentPage.value - 1) * itemsPerPage
-  const end = start + itemsPerPage
-  return data.value.items.slice(start, end)
-})
+  const paginatedNews = computed(() => {
+    const start = (currentPage.value - 1) * itemsPerPage;
+    const end = start + itemsPerPage;
+    return newsItems.value.slice(start, end);
+  });
 
-const onPageChange = (page: number) => {
-  currentPage.value = page
-  window.scrollTo({ top: 400, behavior: 'smooth' })
-}
+  const onPageChange = (page: number) => {
+    currentPage.value = page;
+    window.scrollTo({ top: 400, behavior: "smooth" });
+  };
 
-// Get first image (handles both images array and single image)
-const getFirstImage = (item: any) => {
-  if (item.images && item.images.length > 0) {
-    return item.images[0]
-  }
-  return item.image || null
-}
+  // Get first image (handles both images array and single image)
+  const getFirstImage = (item: any) => {
+    if (item.images && item.images.length > 0) {
+      return item.images[0];
+    }
+    return item.image || null;
+  };
 
-// Category color rotation (3 colors)
-const categoryColors = [
-  { bg: 'bg-emerald-500/90', text: 'text-white' },
-  { bg: 'bg-blue-500/90', text: 'text-white' },
-  { bg: 'bg-purple-500/90', text: 'text-white' },
-]
+  // Category color rotation (3 colors)
+  const categoryColors = [
+    { bg: "bg-emerald-500/90", text: "text-white" },
+    { bg: "bg-blue-500/90", text: "text-white" },
+    { bg: "bg-purple-500/90", text: "text-white" },
+  ];
 
-const getCategoryColor = (category: string): { bg: string; text: string } => {
-  // Use category string hash to get consistent color for same category
-  let hash = 0
-  for (let i = 0; i < category.length; i++) {
-    hash = category.charCodeAt(i) + ((hash << 5) - hash)
-  }
-  const index = Math.abs(hash) % categoryColors.length
-  return categoryColors[index]!
-}
+  const getCategoryColor = (category: string): { bg: string; text: string } => {
+    // Use category string hash to get consistent color for same category
+    let hash = 0;
+    for (let i = 0; i < category.length; i++) {
+      hash = category.charCodeAt(i) + ((hash << 5) - hash);
+    }
+    const index = Math.abs(hash) % categoryColors.length;
+    return categoryColors[index]!;
+  };
 
-// Format date
-const formatDate = (dateStr: string) => {
-  const date = new Date(dateStr)
-  if (locale.value === 'zh') {
-    return date.toLocaleDateString('zh-TW', { year: 'numeric', month: 'long', day: 'numeric' })
-  }
-  return date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })
-}
+  // Format date
+  const formatDate = (dateStr: string) => {
+    const date = new Date(dateStr);
+    if (locale.value === "zh") {
+      return date.toLocaleDateString("zh-TW", {
+        year: "numeric",
+        month: "long",
+        day: "numeric",
+      });
+    }
+    return date.toLocaleDateString("en-US", {
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+    });
+  };
 
-// SEO
-useSeoMeta({
-  title: computed(() => data.value.seo.title),
-  description: computed(() => data.value.seo.description),
-})
+  // SEO
+  useSeoMeta({
+    title: computed(() => t("news.seo.title")),
+    description: computed(() => t("news.seo.description")),
+  });
 </script>
 
 <template>
   <div class="min-h-screen">
     <!-- Hero Section -->
     <PageHero
-      :title="data.hero.title"
-      :subtitle="data.hero.subtitle"
+      :title="t('news.hero.title')"
+      :subtitle="t('news.hero.subtitle')"
       background-image=""
     />
 
@@ -121,9 +110,11 @@ useSeoMeta({
             :key="item.id"
             :to="`/news/${item.id}`"
             class="group relative block overflow-hidden rounded-2xl backdrop-blur-sm transition-all duration-300 hover:border-emerald-500/50 hover:shadow-xl hover:shadow-emerald-500/10"
-            :class="themeStore.isDark
-              ? 'border border-gray-800 bg-gray-900/50 hover:bg-gray-800/50'
-              : 'border border-gray-200 bg-white/80 shadow-lg hover:bg-white'"
+            :class="
+              themeStore.isDark
+                ? 'border border-gray-800 bg-gray-900/50 hover:bg-gray-800/50'
+                : 'border border-gray-200 bg-white/80 shadow-lg hover:bg-white'
+            "
           >
             <!-- Image -->
             <div
@@ -139,13 +130,20 @@ useSeoMeta({
               <div
                 v-else
                 class="flex h-full w-full items-center justify-center"
-                :class="themeStore.isDark ? 'bg-gradient-to-br from-gray-800 via-gray-850 to-gray-900' : 'bg-gray-100'"
+                :class="
+                  themeStore.isDark
+                    ? 'bg-gradient-to-br from-gray-800 via-gray-850 to-gray-900'
+                    : 'bg-gray-100'
+                "
               >
                 <div
                   class="flex h-16 w-16 items-center justify-center rounded-full"
                   :class="themeStore.isDark ? 'bg-gray-700/50' : 'bg-gray-100'"
                 >
-                  <Icon name="ph:article-duotone" class="h-8 w-8 text-emerald-500/70" />
+                  <Icon
+                    name="ph:article-duotone"
+                    class="h-8 w-8 text-emerald-500/70"
+                  />
                 </div>
               </div>
               <!-- Category Badge -->
@@ -155,7 +153,7 @@ useSeoMeta({
                   :class="[
                     'rounded-full px-3 py-1 text-xs font-medium',
                     getCategoryColor(item.category ?? '').bg,
-                    getCategoryColor(item.category ?? '').text
+                    getCategoryColor(item.category ?? '').text,
                   ]"
                 >
                   {{ item.category }}
@@ -191,9 +189,14 @@ useSeoMeta({
               </p>
 
               <!-- Read More -->
-              <span class="inline-flex items-center gap-2 text-sm font-medium text-emerald-500 transition-colors group-hover:text-emerald-600">
-                {{ data.readMore }}
-                <Icon name="ph:arrow-right" class="h-4 w-4 transition-transform group-hover:translate-x-1" />
+              <span
+                class="inline-flex items-center gap-2 text-sm font-medium text-emerald-500 transition-colors group-hover:text-emerald-600"
+              >
+                {{ t("news.readMore") }}
+                <Icon
+                  name="ph:arrow-right"
+                  class="h-4 w-4 transition-transform group-hover:translate-x-1"
+                />
               </span>
             </div>
           </NuxtLink>
@@ -207,9 +210,18 @@ useSeoMeta({
         />
 
         <!-- Empty State -->
-        <div v-if="data.items.length === 0" class="text-center py-20">
-          <Icon name="ph:newspaper" class="mx-auto mb-4 h-16 w-16" :class="themeStore.isDark ? 'text-gray-600' : 'text-gray-400'" />
-          <p class="text-lg" :class="themeStore.isDark ? 'text-gray-400' : 'text-gray-500'">{{ data.noNews }}</p>
+        <div v-if="newsItems.length === 0" class="text-center py-20">
+          <Icon
+            name="ph:newspaper"
+            class="mx-auto mb-4 h-16 w-16"
+            :class="themeStore.isDark ? 'text-gray-600' : 'text-gray-400'"
+          />
+          <p
+            class="text-lg"
+            :class="themeStore.isDark ? 'text-gray-400' : 'text-gray-500'"
+          >
+            {{ t("news.noNews") }}
+          </p>
         </div>
       </div>
     </section>
@@ -217,10 +229,10 @@ useSeoMeta({
 </template>
 
 <style scoped>
-.line-clamp-3 {
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-}
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
 </style>

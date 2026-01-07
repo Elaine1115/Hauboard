@@ -1,0 +1,102 @@
+{
+  "items": [
+    {
+      "id": "0009",
+      "date": "2025-09-24",
+      "isHide": false,
+      "images": ["/assets/images/news/0009/gms_corporate_2025.webp"],
+      "videos": [
+        {
+          "videoId": "HWKPC6mVHFY"
+        }
+      ]
+    },
+    {
+      "id": "0001",
+      "date": "2025-05-15",
+      "isHide": false,
+      "images": [
+        "/assets/images/news/0001/2025_new_colors.webp",
+        "/assets/images/news/0001/A01.webp",
+        "/assets/images/news/0001/A02.webp",
+        "/assets/images/news/0001/AZ3.webp",
+        "/assets/images/news/0001/B06.webp"
+      ]
+    },
+    {
+      "id": "0002",
+      "date": "2024-11-20",
+      "isHide": true,
+      "image": "/assets/images/partner/gms-1.webp"
+    },
+    {
+      "id": "0003",
+      "date": "2024-10-05",
+      "isHide": true,
+      "image": "/assets/images/partner/gms-1.webp"
+    },
+    {
+      "id": "0004",
+      "date": "2024-01-18",
+      "isHide": true,
+      "image": "/assets/images/partner/gms-1.webp"
+    },
+    {
+      "id": "0008",
+      "date": "2021-11-10",
+      "isHide": false,
+      "images": [
+        "/assets/images/news/0008/saviola_holding-regenerative_manufacturing.webp"
+      ],
+      "downloads": [
+        {
+          "name_zh": "EME-OUTLOOK",
+          "name_en": "EME-OUTLOOK",
+          "url": "/assets/documents/news/0008/EME-OUTLOOK.pdf",
+          "size": "2.83 MB",
+          "type": "PDF"
+        }
+      ]
+    },
+    {
+      "id": "0007",
+      "date": "2021-02-12",
+      "isHide": false,
+      "images": ["/assets/images/news/0007/copertina_furniture.webp"],
+      "downloads": [
+        {
+          "name_zh": "Furniture Today 雜誌",
+          "name_en": "Furniture Today Magzine",
+          "url": "/assets/documents/news/0007/furniture-today_magazine_Composad.pdf",
+          "size": "3.08 MB",
+          "type": "PDF"
+        }
+      ]
+    },
+    {
+      "id": "0005",
+      "date": "2020-08-10",
+      "isHide": false,
+      "images": [
+        "/assets/images/news/0005/upgrade-1.webp",
+        "/assets/images/news/0005/upgrade-2.webp",
+        "/assets/images/news/0005/upgrade-3.webp"
+      ]
+    },
+    {
+      "id": "0006",
+      "date": "2018-04-10",
+      "isHide": false,
+      "images": ["/assets/images/news/0006/GMS_invito_newsletter-1.webp"],
+      "downloads": [
+        {
+          "name_zh": "2018 年米蘭設計邀請函",
+          "name_en": "2018 Milan Design Invitation",
+          "url": "/assets/documents/news/0006/GMS_invite_newsletter.webp",
+          "size": "87 KB",
+          "type": "WEBP"
+        }
+      ]
+    }
+  ]
+}

@@ -122,23 +122,5 @@
         "category": "fabric"
       }
     ]
-  },
-  "seo": {
-    "title_zh": "產品展示 | Hauboard",
-    "title_en": "Products - Hauboard",
-    "description_zh": "瀏覽我們多樣化的裝飾板材產品系列，包括木紋板、大理石紋板及純色板。",
-    "description_en": "Browse our diverse range of decorative panel products, including wood grain, marble, and solid color panels."
-  },
-  "hero": {
-    "title_zh": "產品展示",
-    "title_en": "Products",
-    "subtitle_zh": "探索我們精選的塑合板材系列",
-    "subtitle_en": "Explore Our Curated MFC Collection"
-  },
-  "gallery": {
-    "title_zh": "產品圖庫",
-    "title_en": "Product Gallery",
-    "subtitle_zh": "點擊圖片查看完整尺寸",
-    "subtitle_en": "Click on images to view full size"
   }
 }

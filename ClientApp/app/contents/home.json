@@ -1,0 +1,98 @@
+{
+  "common": {
+    "cta": {
+      "videos": ["51QXM7Ysx-g", "L-Tg7b6suNk"]
+    },
+    "hero": {
+      "cards": [
+        {
+          "image": "/assets/images/home/melanimici.webp"
+        },
+        {
+          "image": "/assets/images/home/bordi.webp"
+        },
+        {
+          "image": "/assets/images/home/grezzi.webp"
+        }
+      ],
+      "stats": [{ "value": "100%" }, { "value": "50+" }, { "value": "F1" }]
+    },
+    "applications": {
+      "image": "/assets/images/home/furniture.webp"
+    },
+    "specifications": {
+      "image": "/assets/images/home/panel.webp"
+    },
+    "gallery": {
+      "items": [
+        { "image": "/assets/images/featured-design/49H.webp" },
+        { "image": "/assets/images/featured-design/DT8.webp" },
+        { "image": "/assets/images/featured-design/P20.webp" },
+        { "image": "/assets/images/featured-design/P53.webp" }
+      ]
+    }
+  },
+  "features": {
+    "items": [
+      {
+        "icon": "ph:palette-duotone"
+      },
+      {
+        "icon": "ph:star-duotone"
+      },
+      {
+        "icon": "ph:globe-duotone"
+      },
+      {
+        "icon": "ph:wrench-duotone"
+      },
+      {
+        "icon": "ph:shield-check-duotone"
+      },
+      {
+        "icon": "ph:handshake-duotone"
+      }
+    ]
+  },
+  "applications": {
+    "items": [
+      {
+        "icon": "ph:cooking-pot-duotone"
+      },
+      {
+        "icon": "ph:couch-duotone"
+      },
+      {
+        "icon": "ph:desk-duotone"
+      },
+      {
+        "icon": "ph:wall-duotone"
+      },
+      {
+        "icon": "ph:door-duotone"
+      },
+      {
+        "icon": "ph:storefront-duotone"
+      }
+    ]
+  },
+  "specifications": {
+    "items": [
+      {
+        "thickness": "8mm",
+        "uses_zh": ["牆面裝飾", "門片貼皮", "輕量層板"],
+        "uses_en": ["Wall Panels", "Door Veneers", "Light Shelves"]
+      },
+      {
+        "thickness": "18mm",
+        "uses_zh": ["廚房櫥櫃", "衣櫃", "書櫃", "辦公桌"],
+        "uses_en": ["Kitchen Cabinets", "Wardrobes", "Bookcases", "Desks"]
+      },
+      {
+        "thickness": "25mm",
+        "uses_zh": ["桌面檯面", "承重層架", "商業櫃檯"],
+        "uses_en": ["Tabletops", "Heavy Shelving", "Commercial Counters"]
+      }
+    ]
+  }
+}

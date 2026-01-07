@@ -1,190 +1,200 @@
 <script setup lang="ts">
-import { ref, computed, watch } from 'vue'
-import newsData from '../../../i18n/locales/news.json'
+  import { ref, computed, watch } from "vue";
+  import newsData from "../../contents/news.json";
 
-const route = useRoute()
-const { locale } = useI18n()
-const themeStore = useThemeStore()
+  const route = useRoute();
+  const { t, locale } = useI18n();
+  const themeStore = useThemeStore();
 
-// Get data based on locale
-const data = computed(() => {
-  const lang = locale.value as 'zh' | 'en'
-  const suffix = `_${lang}`
-
-  return {
-    detail: {
-      backToNews: newsData.detail[`backToNews${suffix}` as keyof typeof newsData.detail] as string,
-      notFound: newsData.detail[`notFound${suffix}` as keyof typeof newsData.detail] as string,
-      notFoundDesc: newsData.detail[`notFoundDesc${suffix}` as keyof typeof newsData.detail] as string,
-      downloadTitle: newsData.detail[`downloadTitle${suffix}` as keyof typeof newsData.detail] as string,
-      downloadDesc: newsData.detail[`downloadDesc${suffix}` as keyof typeof newsData.detail] as string
-    },
-    items: newsData.items
-      .filter(item => !item.isHide)
-      .map(item => ({
+  // Keep static news data and map with translations
+  const newsItems = computed(() => {
+    return newsData.items
+      .filter((item) => !item.isHide)
+      .map((item: any) => ({
         id: item.id,
         date: item.date,
-        title: item[`title${suffix}` as keyof typeof item] as string,
-        category: item[`category${suffix}` as keyof typeof item] as string,
-        excerpt: item[`excerpt${suffix}` as keyof typeof item] as string,
-        content: item[`content${suffix}` as keyof typeof item] as string,
+        title: t(`news.items.${item.id}.title`),
+        category: t(`news.items.${item.id}.category`),
+        excerpt: t(`news.items.${item.id}.excerpt`),
+        content: t(`news.items.${item.id}.content`),
         image: item.image,
         images: item.images,
-        downloads: (item as any).downloads?.map((download: any) => ({
-          name: download[`name${suffix}`],
-          url: download.url,
-          size: download.size,
-          type: download.type
-        })) || [],
-        videos: (item as any).videos?.map((video: any) => ({
-          videoId: video.videoId,
-          title: video[`title${suffix}`],
-          description: video[`description${suffix}`]
-        })) || []
-      }))
-  }
-})
+        downloads:
+          item.downloads?.map((download: any, idx: number) => ({
+            name: t(`news.items.${item.id}.downloads.${idx}.name`),
+            url: download.url,
+            size: download.size,
+            type: download.type,
+          })) || [],
+        videos:
+          item.videos?.map((video: any, idx: number) => ({
+            videoId: video.videoId,
+            title: t(`news.items.${item.id}.videos.${idx}.title`),
+            description: t(`news.items.${item.id}.videos.${idx}.description`),
+          })) || [],
+      }));
+  });
 
-// Find the news item by ID
-const newsItem = computed(() => {
-  const id = route.params.id as string
-  return data.value.items.find(item => item.id === id)
-})
+  // Find the news item by ID
+  const newsItem = computed(() => {
+    const id = route.params.id as string;
+    return newsItems.value.find((item) => item.id === id);
+  });
 
-// Get all images (handles both images array and single image)
-const newsImages = computed(() => {
-  if (!newsItem.value) return []
-  const item = newsItem.value as any
-  if (item.images && Array.isArray(item.images) && item.images.length > 0) {
-    return item.images as string[]
-  }
-  if (item.image) {
-    return [item.image] as string[]
-  }
-  return []
-})
-
-// Carousel state
-const currentImageIndex = ref(0)
-
-// Reset index when news item changes
-watch(() => newsItem.value?.id, () => {
-  currentImageIndex.value = 0
-})
-
-const prevImage = () => {
-  if (currentImageIndex.value > 0) {
-    currentImageIndex.value--
-  } else {
-    currentImageIndex.value = newsImages.value.length - 1
-  }
-}
-
-const nextImage = () => {
-  if (currentImageIndex.value < newsImages.value.length - 1) {
-    currentImageIndex.value++
-  } else {
-    currentImageIndex.value = 0
-  }
-}
-
-const goToImage = (index: number) => {
-  currentImageIndex.value = index
-}
-
-// Touch/swipe support for mobile
-const touchStartX = ref(0)
-const touchEndX = ref(0)
-
-const handleTouchStart = (e: TouchEvent) => {
-  touchStartX.value = e.touches[0]?.clientX || 0
-}
-
-const handleTouchMove = (e: TouchEvent) => {
-  touchEndX.value = e.touches[0]?.clientX || 0
-}
-
-const handleTouchEnd = () => {
-  const swipeThreshold = 50
-  const diff = touchStartX.value - touchEndX.value
-
-  if (Math.abs(diff) > swipeThreshold) {
-    if (diff > 0) {
-      // Swiped left - go to next image
-      nextImage()
-    } else {
-      // Swiped right - go to previous image
-      prevImage()
+  // Get all images (handles both images array and single image)
+  const newsImages = computed(() => {
+    if (!newsItem.value) return [];
+    const item = newsItem.value as any;
+    if (item.images && Array.isArray(item.images) && item.images.length > 0) {
+      return item.images as string[];
     }
-  }
+    if (item.image) {
+      return [item.image] as string[];
+    }
+    return [];
+  });
 
-  // Reset values
-  touchStartX.value = 0
-  touchEndX.value = 0
-}
+  // Carousel state
+  const currentImageIndex = ref(0);
 
-// Category color rotation (3 colors)
-const categoryColors = [
-  { bg: 'bg-emerald-500/20', text: 'text-emerald-400' },
-  { bg: 'bg-blue-500/20', text: 'text-blue-400' },
-  { bg: 'bg-purple-500/20', text: 'text-purple-400' },
-]
+  // Reset index when news item changes
+  watch(
+    () => newsItem.value?.id,
+    () => {
+      currentImageIndex.value = 0;
+    }
+  );
 
-const getCategoryColor = (category: string): { bg: string; text: string } => {
-  // Use category string hash to get consistent color for same category
-  let hash = 0
-  for (let i = 0; i < category.length; i++) {
-    hash = category.charCodeAt(i) + ((hash << 5) - hash)
-  }
-  const index = Math.abs(hash) % categoryColors.length
-  return categoryColors[index] ?? { bg: 'bg-emerald-500/20', text: 'text-emerald-400' }
-}
+  const prevImage = () => {
+    if (currentImageIndex.value > 0) {
+      currentImageIndex.value--;
+    } else {
+      currentImageIndex.value = newsImages.value.length - 1;
+    }
+  };
 
-// Get category color for current news item
-const currentCategoryColor = computed(() => {
-  return getCategoryColor(newsItem.value?.category || '')
-})
+  const nextImage = () => {
+    if (currentImageIndex.value < newsImages.value.length - 1) {
+      currentImageIndex.value++;
+    } else {
+      currentImageIndex.value = 0;
+    }
+  };
 
-// Format date
-const formatDate = (dateStr: string) => {
-  const date = new Date(dateStr)
-  if (locale.value === 'zh') {
-    return date.toLocaleDateString('zh-TW', { year: 'numeric', month: 'long', day: 'numeric' })
-  }
-  return date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })
-}
+  const goToImage = (index: number) => {
+    currentImageIndex.value = index;
+  };
 
-// Get file icon based on type
-const getFileIcon = (fileType: string) => {
-  const type = fileType.toUpperCase()
-  const imageTypes = ['WEBP', 'JPG', 'JPEG', 'PNG', 'GIF', 'SVG', 'BMP']
+  // Touch/swipe support for mobile
+  const touchStartX = ref(0);
+  const touchEndX = ref(0);
 
-  if (imageTypes.includes(type)) {
-    return 'ph:file-image'
-  } else if (type === 'PDF') {
-    return 'ph:file-pdf'
-  } else if (['DOC', 'DOCX'].includes(type)) {
-    return 'ph:file-doc'
-  } else if (['XLS', 'XLSX'].includes(type)) {
-    return 'ph:file-xls'
-  } else if (['ZIP', 'RAR', '7Z'].includes(type)) {
-    return 'ph:file-zip'
-  } else {
-    return 'ph:file'
-  }
-}
+  const handleTouchStart = (e: TouchEvent) => {
+    touchStartX.value = e.touches[0]?.clientX || 0;
+  };
 
-// Format content with line breaks
-const formattedContent = computed(() => {
-  if (!newsItem.value?.content) return ''
-  return newsItem.value.content.split('\n').filter(line => line.trim())
-})
+  const handleTouchMove = (e: TouchEvent) => {
+    touchEndX.value = e.touches[0]?.clientX || 0;
+  };
 
-// SEO
-useSeoMeta({
-  title: computed(() => newsItem.value ? `${newsItem.value.title} - Hauboard` : data.value.detail.notFound),
-  description: computed(() => newsItem.value?.excerpt || ''),
-})
+  const handleTouchEnd = () => {
+    const swipeThreshold = 50;
+    const diff = touchStartX.value - touchEndX.value;
+
+    if (Math.abs(diff) > swipeThreshold) {
+      if (diff > 0) {
+        // Swiped left - go to next image
+        nextImage();
+      } else {
+        // Swiped right - go to previous image
+        prevImage();
+      }
+    }
+
+    // Reset values
+    touchStartX.value = 0;
+    touchEndX.value = 0;
+  };
+
+  // Category color rotation (3 colors)
+  const categoryColors = [
+    { bg: "bg-emerald-500/20", text: "text-emerald-400" },
+    { bg: "bg-blue-500/20", text: "text-blue-400" },
+    { bg: "bg-purple-500/20", text: "text-purple-400" },
+  ];
+
+  const getCategoryColor = (category: string): { bg: string; text: string } => {
+    // Use category string hash to get consistent color for same category
+    let hash = 0;
+    for (let i = 0; i < category.length; i++) {
+      hash = category.charCodeAt(i) + ((hash << 5) - hash);
+    }
+    const index = Math.abs(hash) % categoryColors.length;
+    return (
+      categoryColors[index] ?? {
+        bg: "bg-emerald-500/20",
+        text: "text-emerald-400",
+      }
+    );
+  };
+
+  // Get category color for current news item
+  const currentCategoryColor = computed(() => {
+    return getCategoryColor(newsItem.value?.category || "");
+  });
+
+  // Format date
+  const formatDate = (dateStr: string) => {
+    const date = new Date(dateStr);
+    if (locale.value === "zh") {
+      return date.toLocaleDateString("zh-TW", {
+        year: "numeric",
+        month: "long",
+        day: "numeric",
+      });
+    }
+    return date.toLocaleDateString("en-US", {
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+    });
+  };
+
+  // Get file icon based on type
+  const getFileIcon = (fileType: string) => {
+    const type = fileType.toUpperCase();
+    const imageTypes = ["WEBP", "JPG", "JPEG", "PNG", "GIF", "SVG", "BMP"];
+
+    if (imageTypes.includes(type)) {
+      return "ph:file-image";
+    } else if (type === "PDF") {
+      return "ph:file-pdf";
+    } else if (["DOC", "DOCX"].includes(type)) {
+      return "ph:file-doc";
+    } else if (["XLS", "XLSX"].includes(type)) {
+      return "ph:file-xls";
+    } else if (["ZIP", "RAR", "7Z"].includes(type)) {
+      return "ph:file-zip";
+    } else {
+      return "ph:file";
+    }
+  };
+
+  // Format content with line breaks
+  const formattedContent = computed(() => {
+    if (!newsItem.value?.content) return "";
+    return newsItem.value.content.split("\n").filter((line) => line.trim());
+  });
+
+  // SEO
+  useSeoMeta({
+    title: computed(() =>
+      newsItem.value
+        ? `${newsItem.value.title} - Hauboard`
+        : t("news.detail.notFound")
+    ),
+    description: computed(() => newsItem.value?.excerpt || ""),
+  });
 </script>
 
 <template>
@@ -201,16 +211,18 @@ useSeoMeta({
             <!-- Header -->
             <header
               class="mb-8 rounded-2xl p-6 backdrop-blur-sm md:p-8"
-              :class="themeStore.isDark
-                ? 'border border-gray-800 bg-gray-900/80'
-                : 'border border-gray-200 bg-white/80 shadow-lg'"
+              :class="
+                themeStore.isDark
+                  ? 'border border-gray-800 bg-gray-900/80'
+                  : 'border border-gray-200 bg-white/80 shadow-lg'
+              "
             >
               <!-- Category -->
               <span
                 :class="[
                   'mb-4 inline-block rounded-full px-3 py-1 text-sm font-medium',
                   currentCategoryColor.bg,
-                  currentCategoryColor.text
+                  currentCategoryColor.text,
                 ]"
               >
                 {{ newsItem?.category }}
@@ -231,7 +243,9 @@ useSeoMeta({
               >
                 <div class="flex items-center gap-2">
                   <Icon name="ph:calendar" class="h-5 w-5" />
-                  <time :datetime="newsItem.date">{{ formatDate(newsItem.date) }}</time>
+                  <time :datetime="newsItem.date">{{
+                    formatDate(newsItem.date)
+                  }}</time>
                 </div>
               </div>
             </header>
@@ -277,14 +291,19 @@ useSeoMeta({
                   </button>
 
                   <!-- Image Counter -->
-                  <div class="absolute bottom-4 right-4 rounded-full bg-black/50 px-3 py-1 text-sm text-white backdrop-blur-sm">
+                  <div
+                    class="absolute bottom-4 right-4 rounded-full bg-black/50 px-3 py-1 text-sm text-white backdrop-blur-sm"
+                  >
                     {{ currentImageIndex + 1 }} / {{ newsImages.length }}
                   </div>
                 </template>
               </div>
 
               <!-- Dot Indicators (only show if multiple images) -->
-              <div v-if="newsImages.length > 1" class="mt-4 flex justify-center gap-2">
+              <div
+                v-if="newsImages.length > 1"
+                class="mt-4 flex justify-center gap-2"
+              >
                 <button
                   v-for="(_, index) in newsImages"
                   :key="index"
@@ -295,19 +314,24 @@ useSeoMeta({
                       ? 'w-6 bg-emerald-500'
                       : themeStore.isDark
                         ? 'w-2 bg-gray-600 hover:bg-gray-500'
-                        : 'w-2 bg-gray-300 hover:bg-gray-400'
+                        : 'w-2 bg-gray-300 hover:bg-gray-400',
                   ]"
                 />
               </div>
             </div>
 
             <!-- Videos Section -->
-            <div v-if="newsItem.videos && newsItem.videos.length > 0" class="mb-8">
+            <div
+              v-if="newsItem.videos && newsItem.videos.length > 0"
+              class="mb-8"
+            >
               <div
                 class="rounded-2xl p-6 md:p-8"
-                :class="themeStore.isDark
-                  ? 'border border-gray-800 bg-gray-900/80'
-                  : 'border border-gray-200 bg-white shadow-lg'"
+                :class="
+                  themeStore.isDark
+                    ? 'border border-gray-800 bg-gray-900/80'
+                    : 'border border-gray-200 bg-white shadow-lg'
+                "
               >
                 <div class="space-y-6">
                   <div
@@ -318,7 +342,9 @@ useSeoMeta({
                     <!-- Video Title -->
                     <h3
                       class="text-xl font-bold"
-                      :class="themeStore.isDark ? 'text-white' : 'text-gray-900'"
+                      :class="
+                        themeStore.isDark ? 'text-white' : 'text-gray-900'
+                      "
                     >
                       {{ video.title }}
                     </h3>
@@ -327,18 +353,31 @@ useSeoMeta({
                     <p
                       v-if="video.description"
                       class="text-sm"
-                      :class="themeStore.isDark ? 'text-gray-400' : 'text-gray-500'"
+                      :class="
+                        themeStore.isDark ? 'text-gray-400' : 'text-gray-500'
+                      "
                     >
                       {{ video.description }}
                     </p>
 
                     <!-- YouTube Embed -->
-                    <div class="relative w-full overflow-hidden rounded-lg" style="padding-bottom: 56.25%;">
+                    <div
+                      class="relative w-full overflow-hidden rounded-lg"
+                      style="padding-bottom: 56.25%"
+                    >
                       <iframe
                         :src="`https://www.youtube.com/embed/${video.videoId}`"
                         :title="video.title"
                         frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allow="
+                          accelerometer;
+                          autoplay;
+                          clipboard-write;
+                          encrypted-media;
+                          gyroscope;
+                          picture-in-picture;
+                          web-share;
+                        "
                         referrerpolicy="strict-origin-when-cross-origin"
                         allowfullscreen
                         class="absolute left-0 top-0 h-full w-full"
@@ -350,37 +389,55 @@ useSeoMeta({
             </div>
 
             <!-- Article Content -->
-            <div :class="themeStore.isDark ? 'prose prose-invert prose-emerald' : 'prose prose-emerald'" class="max-w-none">
+            <div
+              :class="
+                themeStore.isDark
+                  ? 'prose prose-invert prose-emerald'
+                  : 'prose prose-emerald'
+              "
+              class="max-w-none"
+            >
               <div
                 class="space-y-4 leading-relaxed"
                 :class="themeStore.isDark ? 'text-gray-300' : 'text-gray-600'"
               >
-                <p v-for="(paragraph, index) in formattedContent" :key="index" class="text-lg">
+                <p
+                  v-for="(paragraph, index) in formattedContent"
+                  :key="index"
+                  class="text-lg"
+                >
                   {{ paragraph }}
                 </p>
               </div>
             </div>
 
             <!-- Downloads Section -->
-            <div v-if="newsItem.downloads && newsItem.downloads.length > 0" class="mt-12">
+            <div
+              v-if="newsItem.downloads && newsItem.downloads.length > 0"
+              class="mt-12"
+            >
               <div
                 class="rounded-2xl p-6 md:p-8"
-                :class="themeStore.isDark
-                  ? 'border border-gray-800 bg-gray-900/80'
-                  : 'border border-gray-200 bg-white shadow-lg'"
+                :class="
+                  themeStore.isDark
+                    ? 'border border-gray-800 bg-gray-900/80'
+                    : 'border border-gray-200 bg-white shadow-lg'
+                "
               >
                 <div class="mb-6">
                   <h2
                     class="mb-2 text-2xl font-bold"
                     :class="themeStore.isDark ? 'text-white' : 'text-gray-900'"
                   >
-                    {{ data.detail.downloadTitle }}
+                    {{ t("news.detail.downloadTitle") }}
                   </h2>
                   <p
                     class="text-sm"
-                    :class="themeStore.isDark ? 'text-gray-400' : 'text-gray-500'"
+                    :class="
+                      themeStore.isDark ? 'text-gray-400' : 'text-gray-500'
+                    "
                   >
-                    {{ data.detail.downloadDesc }}
+                    {{ t("news.detail.downloadDesc") }}
                   </p>
                 </div>
 
@@ -391,19 +448,29 @@ useSeoMeta({
                     :href="download.url"
                     :download="download.name"
                     class="flex items-center gap-4 rounded-lg p-4 transition-all hover:scale-[1.02]"
-                    :class="themeStore.isDark
-                      ? 'bg-gray-800/50 hover:bg-gray-800 border border-gray-700'
-                      : 'bg-gray-50 hover:bg-gray-100 border border-gray-200'"
+                    :class="
+                      themeStore.isDark
+                        ? 'bg-gray-800/50 hover:bg-gray-800 border border-gray-700'
+                        : 'bg-gray-50 hover:bg-gray-100 border border-gray-200'
+                    "
                   >
                     <!-- File Icon -->
                     <div
                       class="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-lg"
-                      :class="themeStore.isDark ? 'bg-emerald-500/20' : 'bg-emerald-100'"
+                      :class="
+                        themeStore.isDark
+                          ? 'bg-emerald-500/20'
+                          : 'bg-emerald-100'
+                      "
                     >
                       <Icon
                         :name="getFileIcon(download.type)"
                         class="h-6 w-6"
-                        :class="themeStore.isDark ? 'text-emerald-400' : 'text-emerald-600'"
+                        :class="
+                          themeStore.isDark
+                            ? 'text-emerald-400'
+                            : 'text-emerald-600'
+                        "
                       />
                     </div>
 
@@ -411,13 +478,17 @@ useSeoMeta({
                     <div class="flex-1 min-w-0">
                       <p
                         class="font-medium truncate"
-                        :class="themeStore.isDark ? 'text-white' : 'text-gray-900'"
+                        :class="
+                          themeStore.isDark ? 'text-white' : 'text-gray-900'
+                        "
                       >
                         {{ download.name }}
                       </p>
                       <p
                         class="text-sm"
-                        :class="themeStore.isDark ? 'text-gray-400' : 'text-gray-500'"
+                        :class="
+                          themeStore.isDark ? 'text-gray-400' : 'text-gray-500'
+                        "
                       >
                         {{ download.type }} · {{ download.size }}
                       </p>
@@ -428,7 +499,9 @@ useSeoMeta({
                       <Icon
                         name="ph:download-simple"
                         class="h-5 w-5"
-                        :class="themeStore.isDark ? 'text-gray-400' : 'text-gray-500'"
+                        :class="
+                          themeStore.isDark ? 'text-gray-400' : 'text-gray-500'
+                        "
                       />
                     </div>
                   </a>
@@ -439,17 +512,23 @@ useSeoMeta({
             <!-- Back to News -->
             <div
               class="mt-12 pt-8"
-              :class="themeStore.isDark ? 'border-t border-gray-800' : 'border-t border-gray-200'"
+              :class="
+                themeStore.isDark
+                  ? 'border-t border-gray-800'
+                  : 'border-t border-gray-200'
+              "
             >
               <NuxtLink
                 to="/news"
                 class="inline-flex items-center gap-2 rounded-lg px-6 py-3 font-medium transition-all hover:border-emerald-500"
-                :class="themeStore.isDark
-                  ? 'border border-gray-700 bg-gray-800 text-white hover:bg-gray-700'
-                  : 'border border-gray-300 bg-white text-gray-700 hover:bg-gray-100'"
+                :class="
+                  themeStore.isDark
+                    ? 'border border-gray-700 bg-gray-800 text-white hover:bg-gray-700'
+                    : 'border border-gray-300 bg-white text-gray-700 hover:bg-gray-100'
+                "
               >
                 <Icon name="ph:arrow-left" class="h-5 w-5" />
-                {{ data.detail.backToNews }}
+                {{ t("news.detail.backToNews") }}
               </NuxtLink>
             </div>
           </article>
@@ -472,17 +551,21 @@ useSeoMeta({
           <h1
             class="mb-4 text-3xl font-bold"
             :class="themeStore.isDark ? 'text-white' : 'text-gray-900'"
-          >{{ data.detail.notFound }}</h1>
+          >
+            {{ t("news.detail.notFound") }}
+          </h1>
           <p
             class="mb-8"
             :class="themeStore.isDark ? 'text-gray-400' : 'text-gray-500'"
-          >{{ data.detail.notFoundDesc }}</p>
+          >
+            {{ t("news.detail.notFoundDesc") }}
+          </p>
           <NuxtLink
             to="/news"
             class="inline-flex items-center gap-2 rounded-lg bg-emerald-500 px-6 py-3 font-medium text-white transition-all hover:bg-emerald-600"
           >
             <Icon name="ph:arrow-left" class="h-5 w-5" />
-            {{ data.detail.backToNews }}
+            {{ t("news.detail.backToNews") }}
           </NuxtLink>
         </div>
       </section>

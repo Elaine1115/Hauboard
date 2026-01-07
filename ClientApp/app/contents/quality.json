@@ -32,27 +32,5 @@
         "size": "1.2 MB"
       }
     ]
-  },
-  "seo": {
-    "title_zh": "品質標準 | Hauboard",
-    "title_en": "Quality Standards - Hauboard",
-    "description_zh": "查看我們的品質認證文件和標準",
-    "description_en": "View our quality certification documents and standards"
-  },
-  "hero": {
-    "title_zh": "品質標準",
-    "title_en": "Quality Standards",
-    "subtitle_zh": "我們的產品符合國際品質標準與認證",
-    "subtitle_en": "Our products meet international quality standards and certifications"
-  },
-  "documents": {
-    "title_zh": "認證文件",
-    "title_en": "Certification Documents",
-    "subtitle_zh": "點擊檢視或下載我們的品質認證文件",
-    "subtitle_en": "Click to view or download our quality certification documents",
-    "view_zh": "檢視",
-    "view_en": "View",
-    "download_zh": "下載",
-    "download_en": "Download"
   }
 }

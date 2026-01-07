@@ -14,5 +14,469 @@
     "phone": "04-2565-4955",
     "fax": "04-2569-3235",
     "email": "hau.board{'@'}hinent.net"
+  },
+  "menu": {
+    "aboutUs": "About Us",
+    "news": "News",
+    "provider": "Provider",
+    "product": "Product",
+    "virtualDesign": "Virtual Design",
+    "quality": "Quality",
+    "woodGrain": "Wood Grain",
+    "fabric": "Fabric",
+    "classic": "Classic",
+    "marble": "Marble",
+    "solid": "Solid"
+  },
+  "home": {
+    "seo": {
+      "title": "Hauboard - Ready-To-Assemble Furniture Panel Distributor",
+      "description": "Provides a variety of laminated panels, including wood grain, marble patterns, and solid colors, to meet your design needs."
+    },
+    "hero": {
+      "title": "Green & Healthy Furniture Materials",
+      "subtitle": "Create an ideal living space at home",
+      "description": "HAU BOARD offers laminated panels in various textures, adding unique charm to your space.",
+      "browseProducts": "Browse Products",
+      "aboutUs": "About Us",
+      "cards": {
+        "melamine": {
+          "badge": "Premium",
+          "title": "Melamine Panels",
+          "description": "Decorative excellence for modern interiors"
+        },
+        "edges": {
+          "badge": "Edges",
+          "title": "Edge Banding",
+          "description": "Perfect finishing touch"
+        },
+        "raw": {
+          "badge": "Raw",
+          "title": "Raw Chipboard",
+          "description": "Industrial grade panels"
+        }
+      },
+      "stats": {
+        "recycledWood": "Recycled Wood",
+        "decorOptions": "Decor Options",
+        "emissionClass": "Emission Class"
+      }
+    },
+    "features": {
+      "title": "Why Choose Hauboard?",
+      "subtitle": "We are committed to providing the finest decorative panel products and services.",
+      "diverseDesigns": {
+        "title": "Diverse Designs",
+        "description": "Offering wood grain, marble, and solid color options to meet various design requirements."
+      },
+      "superiorQuality": {
+        "title": "Superior Quality",
+        "description": "Rigorous quality control processes ensuring every panel meets the highest standards."
+      },
+      "ecoFriendly": {
+        "title": "Eco-Friendly",
+        "description": "Manufactured with eco-friendly materials meeting international environmental standards."
+      },
+      "easyInstallation": {
+        "title": "Easy Installation",
+        "description": "Simple installation system significantly reducing construction time and costs."
+      },
+      "durableStrong": {
+        "title": "Durable & Strong",
+        "description": "High-strength materials that are wear-resistant, moisture-proof, and deformation-resistant."
+      },
+      "professionalService": {
+        "title": "Professional Service",
+        "description": "Professional team providing comprehensive pre-sales consultation and after-sales support."
+      }
+    },
+    "products": {
+      "title": "Product Range",
+      "subtitle": "Explore our carefully designed decorative panel collections.",
+      "learnMore": "Learn More",
+      "woodGrainPanels": {
+        "title": "Wood Grain Panels",
+        "description": "Natural wood grain texture creating warm and comfortable spaces."
+      },
+      "marblePanels": {
+        "title": "Marble Panels",
+        "description": "Luxurious marble patterns showcasing elegant taste and quality."
+      },
+      "solidColorPanels": {
+        "title": "Solid Color Panels",
+        "description": "Minimalist solid colors perfect for modern minimalist spaces."
+      }
+    },
+    "applications": {
+      "title": "Everyday Applications",
+      "subtitle": "Discover the versatile applications of melamine chipboard in various spaces.",
+      "kitchenCabinets": {
+        "title": "Kitchen Cabinets",
+        "description": "Moisture-resistant, heat-resistant, and easy to clean – ideal for kitchen spaces."
+      },
+      "wardrobesStorage": {
+        "title": "Wardrobes & Storage",
+        "description": "Various wood grains and colors to create personalized storage solutions."
+      },
+      "officeFurniture": {
+        "title": "Office Furniture",
+        "description": "Wear-resistant and scratch-proof surfaces for high-traffic office environments."
+      },
+      "wallDecoration": {
+        "title": "Wall Decoration",
+        "description": "Quick installation and elegant appearance for stylish wall designs."
+      },
+      "doorsPartitions": {
+        "title": "Doors & Partitions",
+        "description": "Excellent stability and deformation resistance for doors and room dividers."
+      },
+      "commercialSpaces": {
+        "title": "Commercial Spaces",
+        "description": "Cost-effective solutions for display shelves, counters, and retail fitouts."
+      }
+    },
+    "specifications": {
+      "title": "Common Specifications",
+      "subtitle": "Multiple thickness options to meet different application requirements.",
+      "8mm": {
+        "title": "Thin Panel",
+        "description": "Ideal for wall decoration, door veneering, and lightweight shelving."
+      },
+      "18mm": {
+        "title": "Standard Panel",
+        "description": "The most commonly used thickness, suitable for most furniture and cabinetry."
+      },
+      "25mm": {
+        "title": "Heavy-Duty Panel",
+        "description": "High strength and stability for tabletops and load-bearing structures."
+      },
+      "uses": {
+        "wallPanels": "Wall Panels",
+        "doorVeneers": "Door Veneers",
+        "lightShelves": "Light Shelves",
+        "kitchenCabinets": "Kitchen Cabinets",
+        "wardrobes": "Wardrobes",
+        "bookcases": "Bookcases",
+        "desks": "Desks",
+        "tabletops": "Tabletops",
+        "heavyShelving": "Heavy Shelving",
+        "commercialCounters": "Commercial Counters"
+      }
+    },
+    "gallery": {
+      "title": "Featured Designs",
+      "subtitle": "Explore our featured designs and see panels in real-world applications.",
+      "viewAll": "View All Designs",
+      "modernOfficeSpace": {
+        "title": "Modern Office Space",
+        "category": "Commercial"
+      },
+      "luxuryResidentialDesign": {
+        "title": "Luxury Residential Design",
+        "category": "Residential"
+      },
+      "boutiqueHotelLobby": {
+        "title": "Boutique Hotel Lobby",
+        "category": "Hospitality"
+      },
+      "fashionRetailStore": {
+        "title": "Fashion Retail Store",
+        "category": "Commercial"
+      }
+    }
+  },
+  "products": {
+    "seo": {
+      "title": "Products - Hauboard",
+      "description": "Browse our diverse range of decorative panel products, including wood grain, marble, and solid color panels."
+    },
+    "hero": {
+      "title": "Products",
+      "subtitle": "Explore Our Curated MFC Collection"
+    },
+    "gallery": {
+      "title": "Product Gallery",
+      "subtitle": "Click on images to view full size"
+    }
+  },
+  "aboutUs": {
+    "seo": {
+      "title": "About Us | Hauboard",
+      "description": "Learn about Hauboard's story, mission, and vision. We are committed to providing high-quality decorative panel solutions."
+    },
+    "hero": {
+      "title": "About Us",
+      "subtitle": "Your Professional Partner in Creating Quality Living Spaces"
+    },
+    "introduction": {
+      "title": "Company Introduction",
+      "content": "In recent years, rapid social changes and industrial growth have led to increasing depletion of global resources. As a result, sustainable resource use and environmental protection have become key concerns, encouraging society to reduce its impact on nature. While traditional solid-wood furniture is valued for its texture and character, the rising awareness of environmental sustainability has prompted many consumers to choose system furniture made from recycled wood materials.\n\nSince its establishment in 2003, Hauboard has grown steadily for more than 15 years, driven by our commitment to environmentally friendly building materials. We continue to stay aligned with design trends, offering products that meet modern lifestyle needs. Hauboard is currently the exclusive distributor in Taiwan for Italy's Gruppo Mauro Saviola, providing system-furniture panels that are fully manufactured in Europe and exclusively sold in Taiwan. Our materials feature low formaldehyde, non-toxic, moisture-resistant, and flame-retardant properties, and are certified by leading international standards including the EU IDROLEB, Japan's JIS F★★★★, and Taiwan's SGS."
+    },
+    "founder": {
+      "title": "Message from the Founder",
+      "subtitle": "MAURO SAVIOLA\nTaiwan Exclusive Distributor",
+      "content": "In 2003, I made the decision to establish HAU Board Industrial. Before starting the company, I had already spent many years in the board materials industry, beginning from the most fundamental role as a sales representative. I visited countless construction sites and design studios, and through every collaboration and setback, I gained a clearer understanding of what the market truly needed. Throughout this journey, I realized that a good board is not just about appearance—it directly affects the health, safety, and quality of life of the people who live with it.\nIn the early days, we mainly distributed 4×8 Malaysian boards, which were popular in the market at the time. However, I always believed that there was still room for improvement in both quality and specifications. This pushed me to search for more advanced and diverse product lines, eventually turning my attention to Europe. Among them, the design, texture, and stability of Italian 7×9 large panels deeply impressed me and strengthened our determination to upgrade and transform.\nThrough years of economic fluctuations, logistical challenges, and changing market demands, I have held firmly to one belief: the materials we provide must be healthier for people and more responsible for the environment. For this reason, we have focused on importing ultra-low-formaldehyde boards and environmentally conscious products, hoping to bring Taiwan interior materials that not only look good but also allow people to live with peace of mind.\nFrom the day I started this business until now, this belief has never changed. Instead, it has become the driving force that continues to lead HAU Board forward."
+    },
+    "mission": {
+      "title": "Our Mission",
+      "content": [
+        "Provide the highest quality decorative panel products to meet diverse customer design needs.",
+        "Adhere to environmental principles by selecting eco-friendly materials that meet international standards.",
+        "Provide professional consultation services to help customers realize their ideal spaces."
+      ]
+    },
+    "values": {
+      "title": "Core Values",
+      "qualityFirst": {
+        "title": "Quality First",
+        "description": "Strictly control the quality of every panel to ensure the highest standards."
+      },
+      "customerFirst": {
+        "title": "Customer First",
+        "description": "Start with customer needs and provide tailored solutions."
+      },
+      "continuousInnovation": {
+        "title": "Continuous Innovation",
+        "description": "Continuously introduce new technologies and products to maintain market leadership."
+      },
+      "environmentalResponsibility": {
+        "title": "Environmental Responsibility",
+        "description": "Value environmental protection, select eco-friendly materials, and contribute to sustainable development."
+      }
+    },
+    "contact": {
+      "title": "Contact Us",
+      "description": "Feel free to contact us and let us provide you with professional services."
+    },
+    "timeline": {
+      "title": "Our Journey",
+      "subtitle": "Witness our growth and progress",
+      "2003": {
+        "title": "Company Founded",
+        "description": "HAU BOARD was established in Taichung, and became the exclusive agent of imported system furniture panels."
+      },
+      "2011": {
+        "title": "European Partnership",
+        "description": "Became the exclusive agent of European imported system furniture panels - laminated boards."
+      },
+      "2016": {
+        "title": "Business Expansion",
+        "description": "Service coverage expanded nationwide, becoming a well-known brand in the industry."
+      },
+      "2017": {
+        "title": "Quality Certification",
+        "description": "Mauro Saviola obtained multiple international certifications, including FSC, PEFC, and 4STARS."
+      },
+      "2024": {
+        "title": "Continuous Innovation",
+        "description": "Introduced products with the latest embossing technology, providing customers with more diverse options."
+      }
+    }
+  },
+  "news": {
+    "seo": {
+      "title": "News - Hauboard",
+      "description": "Stay updated with Hauboard's latest news and announcements"
+    },
+    "hero": {
+      "title": "Latest News",
+      "subtitle": "Stay updated with our latest news, product updates and industry insights"
+    },
+    "detail": {
+      "backToNews": "Back to News",
+      "notFound": "News Not Found",
+      "notFoundDesc": "The news article you are looking for does not exist or has been removed",
+      "downloadTitle": "Downloads",
+      "downloadDesc": "Click the files below to download"
+    },
+    "readMore": "Read More",
+    "noNews": "No news available at the moment",
+    "items": {
+      "0009": {
+        "title": "Gruppo Mauro Saviola Launches New Company Introduction Video",
+        "category": "Corporate News",
+        "excerpt": "Gruppo Mauro Saviola releases a brand-new company introduction video, showcasing the group's innovative technology and sustainability vision in eco-friendly panel manufacturing.",
+        "content": "Gruppo Mauro Saviola releases a brand-new company introduction video, showcasing the group's innovative technology and sustainability vision in eco-friendly panel manufacturing.\n\nAs a leading European eco-friendly panel manufacturer, Gruppo Mauro Saviola has always been committed to promoting circular economy and sustainable development. This newly released corporate introduction video takes viewers on a journey to understand the group's core values and technological advantages.\n\nVideo Highlights:\n\n• Company history and corporate vision\n• Eco-friendly melamine chipboard production technology\n• Circular utilization of 100% recycled wood\n• Innovative surface treatment processes\n• Sustainable development and environmental protection commitment\n• Global market presence and partnerships\n\nGruppo Mauro Saviola's Core Philosophy:\n\n• Committed to using 100% recycled wood as raw material\n• Practicing 'cradle-to-cradle' circular economy model\n• Continuous investment in R&D and innovative technology\n• Providing high-quality eco-friendly panel solutions\n• Contributing to global sustainable development\n\nAs the exclusive distributor of Gruppo Mauro Saviola in Taiwan, Hauboard is honored to partner with such a visionary and socially responsible enterprise. Through this corporate introduction video, we hope to help more Taiwanese customers understand Gruppo Mauro Saviola's brand value and product advantages, working together towards environmental sustainability.\n\nWe invite you to watch the video and get to know this leading brand that is shaping the European eco-friendly panel industry.",
+        "videos": {
+          "0": {
+            "title": "Gruppo Mauro Saviola Company Introduction",
+            "description": "Discover Gruppo Mauro Saviola's corporate philosophy, production technology and environmental commitment"
+          }
+        }
+      },
+      "0001": {
+        "title": "2025 Product Catalog Update",
+        "category": "Product Update",
+        "excerpt": "We are pleased to announce that our 2024 product catalog has been updated with new eco-friendly materials to meet your various design needs.",
+        "content": "We are pleased to announce that the 2025 product catalog has been updated, featuring a variety of special material boards to meet all your design needs.\n\nHighlights of this update – Brand new special surface treatment technology\n\nWe remain committed to providing our customers with the highest-quality board products. You are welcome to download the latest catalog or contact our sales team for more information."
+      },
+      "0002": {
+        "title": "FSC Certification Achieved",
+        "category": "Company News",
+        "excerpt": "Hauboard has officially received FSC Forest Stewardship Council certification, demonstrating our commitment to sustainability.",
+        "content": "Hauboard has officially received FSC Forest Stewardship Council certification, demonstrating our commitment to sustainability.\n\nFSC (Forest Stewardship Council) is an international non-profit organization dedicated to promoting responsible forest management.\n\nThis certification represents:\n\n• Our raw materials are traceable and legally sourced\n• Production processes meet environmental protection standards\n• Support for sustainable forest management\n• Products can obtain FSC labels\n\nWe will continue to adhere to environmental principles and contribute to the sustainable development of our planet."
+      },
+      "0003": {
+        "title": "Attending 2024 International Building Materials Exhibition",
+        "category": "Exhibition",
+        "excerpt": "Hauboard will participate in the International Building Materials Exhibition in October. Welcome to visit our booth to see our latest products.",
+        "content": "Hauboard will participate in the International Building Materials Exhibition in October. Welcome to visit our booth to see our latest products.\n\nExhibition Information:\n\n• Date: October 15-18, 2024\n• Venue: Taipei Nangang Exhibition Center\n• Booth Number: Zone A, No. 125\n\nOn-site Display:\n\n• Latest woodgrain series samples\n• Eco-friendly material product line\n• Virtual design application showcase\n• Professional consultation services\n\nWe sincerely invite you to visit. Our professional team will provide you with detailed product introductions and solutions."
+      },
+      "0004": {
+        "title": "New Woodgrain Series Launch",
+        "category": "Product Update",
+        "excerpt": "Our new woodgrain series is now available, offering more natural and refined texture options.",
+        "content": "Our new woodgrain series is now available, offering more natural and refined texture options.\n\nNew Series Features:\n\n• Advanced printing technology for more realistic textures\n• Synchronized embossing process for a more natural feel\n• Rich color options\n• Excellent weather resistance\n\nApplications:\n\n• Interior decoration\n• Furniture manufacturing\n• Commercial space design\n• Display cabinet production\n\nFeel free to request samples or contact our sales team for more information."
+      },
+      "0008": {
+        "title": "Gruppo Saviola Regenerative Manufacturing: From Recycling to Upcycling",
+        "category": "Sustainability",
+        "excerpt": "Saviola Holding demonstrates its commitment to circular economy through its Composad furniture division, operating exclusively with 100% recycled wood and transforming waste into higher-value products.",
+        "content": "Saviola Holding demonstrates its commitment to circular economy through its Composad furniture division, operating exclusively with 100% recycled wood and transforming waste into higher-value products.\n\nNicola Negri, Senior Managing Director at Saviola Holding, explains the company's approach with an insightful analogy: \"It's not like recycling a bottle to make another bottle – we take that bottle, and we upcycle it to make a ring of diamonds.\"\n\nCore Principles of Regenerative Manufacturing:\n\n• 100% recycled wood production\n• Practicing 'upcycling' rather than simple recycling\n• Transforming waste materials into higher-value products\n• Vertically integrated private enterprise model\n\nSustainability Commitment:\n\n• Fully aligned with circular economy principles\n• Focus on quality furniture design and manufacturing\n• Business strategy centered on eco-ethical values\n• Demonstrating Italian leadership in sustainability\n\nAs the exclusive distributor of Gruppo Mauro Saviola in Taiwan, Hauboard is honored to bring such forward-thinking environmental concepts to the Taiwan market. Saviola Holding's regenerative manufacturing model not only demonstrates technical innovation but also reflects a profound corporate commitment to environmental stewardship.\n\nThis 'upcycling' philosophy transcends traditional recycling concepts. Through innovative technology and design, seemingly discarded materials are transformed into products of higher value. This is the true essence of sustainable development – not merely reducing waste, but creating value.",
+        "downloads": {
+          "0": {
+            "name": "EME-OUTLOOK"
+          }
+        }
+      },
+      "0007": {
+        "title": "Composad Ready to Break Into U.S. RTA Market",
+        "category": "Industry News",
+        "excerpt": "Italian ready-to-assemble furniture manufacturer Composad, part of Saviola Holding, is making its entry into the U.S. RTA market with Italian design and quality excellence.",
+        "content": "Italian ready-to-assemble furniture manufacturer Composad, part of Saviola Holding, is making its entry into the U.S. RTA market with Italian design and quality excellence.\n\nComposad, based in Viadana (approximately two hours south of Milan), is a specialized ready-to-assemble furniture manufacturer. As a member of the Saviola Holding group, Composad perfectly combines Italian design aesthetics with Gruppo Mauro Saviola's eco-friendly panel technology, bringing unique product advantages to the U.S. market.\n\nProduct Range:\n\n• Master and youth bedroom collections\n• Kitchen furniture series\n• Occasional furniture pieces\n• Home office solutions\n\nMarket Positioning & Advantages:\n\n• Contemporary Italian design aesthetics\n• High-quality eco-friendly panel applications\n• Competitive pricing strategy\n• Comprehensive ready-to-assemble furniture solutions\n\nAs the exclusive distributor of Gruppo Mauro Saviola in Taiwan, Hauboard closely follows the group's global development. Composad's successful entry into the U.S. market demonstrates Saviola Holding's influence in the global furniture industry and the perfect integration of Italian manufacturing with eco-friendly panel technology.\n\nThis market expansion initiative not only reflects the group's internationalization strategy but also proves the competitive advantage of high-quality eco-friendly panels in the global market. We look forward to continuously bringing these international experiences and innovative concepts to the Taiwan market.",
+        "downloads": {
+          "0": {
+            "name": "Furniture Today Magzine"
+          }
+        }
+      },
+      "0005": {
+        "title": "Eco-friendly Production Line Upgrade Complete",
+        "category": "Company News",
+        "excerpt": "Our production line has completed an eco-friendly upgrade, reducing carbon emissions by 30%.",
+        "content": "Our production line has completed an eco-friendly upgrade, reducing carbon emissions by 30%.\n\nUpgrade Contents:\n\n• Introduced energy-saving equipment to reduce energy consumption\n• Optimized production processes to reduce material waste\n• Installed exhaust gas treatment systems\n• Implemented water resource recycling\n\nEnvironmental Results:\n\n• 30% reduction in carbon emissions\n• 25% reduction in energy consumption\n• Waste recycling rate increased to 95%\n• 40% improvement in water resource efficiency\n\nWe will continue to invest in environmental facility upgrades and contribute more to sustainable development."
+      },
+      "0006": {
+        "title": "Gruppo Mauro Saviola at Milano Design Week 2018",
+        "category": "Exhibition",
+        "excerpt": "Our partner Gruppo Mauro Saviola showcased innovative panel solutions at Milano Design Week 2018, demonstrating sustainable design and exceptional quality.",
+        "content": "Our partner Gruppo Mauro Saviola showcased innovative panel solutions at Milano Design Week 2018, demonstrating sustainable design and exceptional quality.\n\nMilano Design Week is one of the world's most important design events, attracting designers, architects, and industry professionals from around the globe each year. As a leading European eco-friendly panel manufacturer, Gruppo Mauro Saviola presented their latest product innovations and design concepts at this prestigious event.\n\nEvent Highlights:\n\n• Showcased the latest eco-friendly melamine chipboard series\n• Presented innovative surface treatment technologies\n• Shared sustainable production and circular economy concepts\n• Demonstrated diverse design application cases\n\nAs the exclusive distributor of Gruppo Mauro Saviola in Taiwan, Hauboard is committed to bringing these innovative products and sustainable concepts to the Taiwan market. We believe that by choosing eco-friendly materials and innovative designs, we can create better living spaces for our customers while contributing to environmental protection.\n\nMilano Design Week is not only a platform for product showcasing but also an important occasion for exploring future design trends and establishing international collaborations. Gruppo Mauro Saviola's continued participation in this international event demonstrates its leadership and innovative energy in the eco-friendly panel industry.",
+        "downloads": {
+          "0": {
+            "name": "2018 Milan Design Invitation"
+          }
+        }
+      }
+    }
+  },
+  "quality": {
+    "seo": {
+      "title": "Quality Standards - Hauboard",
+      "description": "View our quality certification documents and standards"
+    },
+    "hero": {
+      "title": "Quality Standards",
+      "subtitle": "Our products meet international quality standards and certifications"
+    },
+    "documents": {
+      "title": "Certification Documents",
+      "subtitle": "Click to view or download our quality certification documents",
+      "view": "View",
+      "download": "Download"
+    }
+  },
+  "vendorIntroduction": {
+    "seo": {
+      "title": "Vendor Introduction | Hauboard",
+      "description": "Learn about our partners and suppliers providing premium European MFC particleboard and decorative panels."
+    },
+    "hero": {
+      "title": "Vendor Introduction",
+      "subtitle": "Partnering with World-Class Brands for Quality Products"
+    },
+    "introduction": {
+      "title": "Our Suppliers",
+      "subtitle": "We partner with renowned European brands to ensure the highest quality decorative panel products.",
+      "content": [
+        "Hauboard has established long-term stable partnerships with several top European panel manufacturers, ensuring product quality and supply stability.",
+        "Our suppliers all comply with international environmental standards, with products certified by FSC, CARB, and other international certifications.",
+        "Through partnerships with quality suppliers, we can offer customers diverse product choices to meet different design needs."
+      ]
+    },
+    "partners": {
+      "title": "GRUPPO MAURO SAVIOLA",
+      "supplier": {
+        "name": "European MFC Panel Suppliers",
+        "description": "Providing high-quality MDF and particleboard with excellent durability and aesthetics.",
+        "features": [
+          "Complies with Taiwan CNS F1 formaldehyde emission standards",
+          "A variety of surface textures available",
+          "Moisture-resistant and flame-retardant high-performance panels",
+          "Environmentally friendly recycled material technology"
+        ]
+      }
+    },
+    "quality": {
+      "title": "Quality Assurance",
+      "subtitle": "Our suppliers adhere to the highest quality standards",
+      "content": [
+        "All products undergo rigorous quality testing to ensure compliance with international standards.",
+        "Regular product testing and quality audits to maintain consistent product quality.",
+        "Provide complete product certification documents and test reports."
+      ]
+    },
+    "story": {
+      "title": "Brand Story",
+      "subtitle": "Our commitment to quality through partnerships with suppliers",
+      "largeScaleProduction": {
+        "title": "Large-Scale Production Facilities",
+        "description": "Our partners operate state-of-the-art large-scale production facilities capable of producing thousands of high-quality panels daily. Professional production teams and advanced automated equipment ensure every panel meets strict quality standards."
+      },
+      "advancedProductionLines": {
+        "title": "Advanced Production Lines",
+        "description": "Utilizing Europe's most advanced fully automated production lines, from raw material processing to finished product manufacturing, all controlled by computer monitoring. Precise process control ensures product stability, significantly enhancing production efficiency and quality consistency."
+      },
+      "rigorousQualityTesting": {
+        "title": "Rigorous Quality Testing",
+        "description": "Every panel undergoes rigorous quality testing procedures, with precision instruments measuring thickness, density, and surface flatness. Professional quality control teams ensure all products meet international standards, providing customers with the most reliable quality assurance."
+      },
+      "completeTransportationSystem": {
+        "title": "Complete Transportation System",
+        "description": "With a complete logistics distribution system and professional transportation team, ensuring products are delivered safely and quickly to customers worldwide."
+      },
+      "internationalExhibitionParticipation": {
+        "title": "International Exhibition Participation",
+        "description": "Actively participating in major international building materials and furniture exhibitions worldwide, showcasing the latest panel products and technological innovations. Through international exhibition platforms, we engage with global clients, understand market trends, and continuously enhance product competitiveness and brand recognition."
+      }
+    },
+    "certifications": {
+      "title": "Certification Standards",
+      "fsc": {
+        "title": "FSC Forest Stewardship Council Certification",
+        "description": "Ensures wood sources meet sustainable forest management standards."
+      },
+      "carb": {
+        "title": "CARB California Air Resources Board Certification",
+        "description": "Formaldehyde emissions meet strict environmental standards."
+      },
+      "ce": {
+        "title": "CE European Conformity Certification",
+        "description": "Products meet EU safety, health, and environmental requirements."
+      },
+      "iso": {
+        "title": "ISO International Standards Certification",
+        "description": "Quality management systems comply with international standards."
+      }
+    }
+  },
+  "virtualDesign": {
+    "seo": {
+      "title": "Virtual Design - Hauboard",
+      "description": "Explore our virtual design portfolio"
+    },
+    "hero": {
+      "title": "Virtual Design",
+      "subtitle": "Explore our virtual design portfolio"
+    }
   }
 }

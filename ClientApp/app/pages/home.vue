@@ -1,105 +1,140 @@
 <script setup lang="ts">
-import homeData from '../../i18n/locales/home.json'
+  import homeData from "../contents/home.json";
 
-const { locale } = useI18n()
-const themeStore = useThemeStore()
+  const { t, locale } = useI18n();
+  const themeStore = useThemeStore();
 
-const home = computed(() => {
-  const lang = locale.value as 'zh' | 'en'
-  const suffix = `_${lang}`
+  // Applications items
+  const applicationsItems = computed(() => {
+    const appKeys = [
+      "kitchenCabinets",
+      "wardrobesStorage",
+      "officeFurniture",
+      "wallDecoration",
+      "doorsPartitions",
+      "commercialSpaces",
+    ];
+    return appKeys.map((key, index) => ({
+      icon: homeData.applications.items[index]?.icon || "",
+      title: String(t(`home.applications.${key}.title`)),
+      description: String(t(`home.applications.${key}.description`)),
+    }));
+  });
 
-  return {
-    seo: {
-      title: homeData.seo[`title${suffix}` as keyof typeof homeData.seo] as string,
-      description: homeData.seo[`description${suffix}` as keyof typeof homeData.seo] as string
-    },
-    hero: {
-      title: homeData.hero[`title${suffix}` as keyof typeof homeData.hero] as string,
-      subtitle: homeData.hero[`subtitle${suffix}` as keyof typeof homeData.hero] as string,
-      description: homeData.hero[`description${suffix}` as keyof typeof homeData.hero] as string,
-      buttons: {
-        browseProducts: homeData.hero.buttons[`browseProducts${suffix}` as keyof typeof homeData.hero.buttons] as string,
-        aboutUs: homeData.hero.buttons[`aboutUs${suffix}` as keyof typeof homeData.hero.buttons] as string
+  const specificationsItems = computed(() => {
+    const specKeys = ["8mm", "18mm", "25mm"];
+
+    return specKeys.map((key, index) => {
+      const item = homeData.specifications.items[index];
+      const usesKey = locale.value === 'zh' ? 'uses_zh' : 'uses_en';
+
+      return {
+        thickness: item?.thickness || "",
+        title: String(t(`home.specifications.${key}.title`)),
+        description: String(t(`home.specifications.${key}.description`)),
+        uses: item?.[usesKey] || [],
+      };
+    });
+  });
+
+  const home = computed(() => {
+    return {
+      seo: {
+        title: t("home.seo.title"),
+        description: t("home.seo.description"),
       },
-      cards: homeData.hero.cards.map((card, index) => ({
-        image: homeData.common.hero.cards[index]?.image || '',
-        badge: card[`badge${suffix}` as keyof typeof card] as string,
-        title: card[`title${suffix}` as keyof typeof card] as string,
-        description: card[`description${suffix}` as keyof typeof card] as string
-      })),
-      stats: homeData.hero.stats.map((stat, index) => ({
-        value: homeData.common.hero.stats[index]?.value || '',
-        label: stat[`label${suffix}` as keyof typeof stat] as string
-      }))
-    },
-    features: {
-      title: homeData.features[`title${suffix}` as keyof typeof homeData.features] as string,
-      subtitle: homeData.features[`subtitle${suffix}` as keyof typeof homeData.features] as string,
-      items: homeData.features.items.map(item => ({
-        icon: item.icon,
-        title: item[`title${suffix}` as keyof typeof item] as string,
-        description: item[`description${suffix}` as keyof typeof item] as string
-      }))
-    },
-    applications: {
-      title: homeData.applications[`title${suffix}` as keyof typeof homeData.applications] as string,
-      subtitle: homeData.applications[`subtitle${suffix}` as keyof typeof homeData.applications] as string,
-      image: homeData.common.applications.image,
-      items: homeData.applications.items.map(item => ({
-        icon: item.icon,
-        title: item[`title${suffix}` as keyof typeof item] as string,
-        description: item[`description${suffix}` as keyof typeof item] as string
-      }))
-    },
-    specifications: {
-      title: homeData.specifications[`title${suffix}` as keyof typeof homeData.specifications] as string,
-      subtitle: homeData.specifications[`subtitle${suffix}` as keyof typeof homeData.specifications] as string,
-      image: homeData.common.specifications.image,
-      items: homeData.specifications.items.map(item => ({
-        thickness: item.thickness,
-        title: item[`title${suffix}` as keyof typeof item] as string,
-        description: item[`description${suffix}` as keyof typeof item] as string,
-        uses: item[`uses${suffix}` as keyof typeof item] as string[]
-      }))
-    },
-    gallery: {
-      title: homeData.gallery[`title${suffix}` as keyof typeof homeData.gallery] as string,
-      subtitle: homeData.gallery[`subtitle${suffix}` as keyof typeof homeData.gallery] as string,
-      viewAll: homeData.gallery[`viewAll${suffix}` as keyof typeof homeData.gallery] as string,
-      items: homeData.gallery.items.map((item, index) => ({
-        image: homeData.common.gallery.items[index]?.image || '',
-        title: item[`title${suffix}` as keyof typeof item] as string,
-        category: item[`category${suffix}` as keyof typeof item] as string
-      }))
-    },
-    cta: {
-      videos: homeData.common.cta.videos
-    }
-  }
-})
+      hero: {
+        title: t("home.hero.title"),
+        subtitle: t("home.hero.subtitle"),
+        description: t("home.hero.description"),
+        buttons: {
+          browseProducts: t("home.hero.browseProducts"),
+          aboutUs: t("home.hero.aboutUs"),
+        },
+        cards: ["melamine", "edges", "raw"].map((key, index) => ({
+          image: homeData.common.hero.cards[index]?.image || "",
+          badge: t(`home.hero.cards.${key}.badge`),
+          title: t(`home.hero.cards.${key}.title`),
+          description: t(`home.hero.cards.${key}.description`),
+        })),
+        stats: ["recycledWood", "decorOptions", "emissionClass"].map(
+          (key, index) => ({
+            value: homeData.common.hero.stats[index]?.value || "",
+            label: t(`home.hero.stats.${key}`),
+          })
+        ),
+      },
+      features: {
+        title: t("home.features.title"),
+        subtitle: t("home.features.subtitle"),
+        items: [
+          "diverseDesigns",
+          "superiorQuality",
+          "ecoFriendly",
+          "easyInstallation",
+          "durableStrong",
+          "professionalService",
+        ].map((key, index) => ({
+          icon: homeData.features.items[index]?.icon || "",
+          title: t(`home.features.${key}.title`),
+          description: t(`home.features.${key}.description`),
+        })),
+      },
+      applications: {
+        title: t("home.applications.title"),
+        subtitle: t("home.applications.subtitle"),
+        image: homeData.common.applications.image,
+        items: applicationsItems.value,
+      },
+      specifications: {
+        title: t("home.specifications.title"),
+        subtitle: t("home.specifications.subtitle"),
+        image: homeData.common.specifications.image,
+        items: specificationsItems.value,
+      },
+      gallery: {
+        title: t("home.gallery.title"),
+        subtitle: t("home.gallery.subtitle"),
+        viewAll: t("home.gallery.viewAll"),
+        items: [
+          "modernOfficeSpace",
+          "luxuryResidentialDesign",
+          "boutiqueHotelLobby",
+          "fashionRetailStore",
+        ].map((key, index) => ({
+          image: homeData.common.gallery.items[index]?.image || "",
+          title: t(`home.gallery.${key}.title`),
+          category: t(`home.gallery.${key}.category`),
+        })),
+      },
+      cta: {
+        videos: homeData.common.cta.videos,
+      },
+    };
+  });
 
-useSeoMeta({
-  title: computed(() => home.value.seo.title),
-  ogTitle: computed(() => home.value.seo.title),
-  description: computed(() => home.value.seo.description),
-  ogDescription: computed(() => home.value.seo.description),
-});
+  useSeoMeta({
+    title: computed(() => home.value.seo.title),
+    ogTitle: computed(() => home.value.seo.title),
+    description: computed(() => home.value.seo.description),
+    ogDescription: computed(() => home.value.seo.description),
+  });
 
-// Track which videos have been activated (clicked to play)
-const activeVideos = ref<Set<number>>(new Set())
+  // Track which videos have been activated (clicked to play)
+  const activeVideos = ref<Set<number>>(new Set());
 
-const playVideo = (index: number) => {
-  activeVideos.value.add(index)
-}
+  const playVideo = (index: number) => {
+    activeVideos.value.add(index);
+  };
 
-const isVideoActive = (index: number) => {
-  return activeVideos.value.has(index)
-}
+  const isVideoActive = (index: number) => {
+    return activeVideos.value.has(index);
+  };
 
-// Get YouTube thumbnail URL
-const getThumbnail = (videoId: string) => {
-  return `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`
-}
+  // Get YouTube thumbnail URL
+  const getThumbnail = (videoId: string) => {
+    return `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`;
+  };
 </script>
 
 <template>
@@ -107,7 +142,11 @@ const getThumbnail = (videoId: string) => {
     <!-- Hero Section - Bento Grid -->
     <section
       class="-mt-20 md:-mt-24 pt-20 md:pt-24 relative overflow-hidden"
-      :class="themeStore.isDark ? 'bg-gray-950' : 'bg-gradient-to-br from-emerald-50 via-white to-teal-50'"
+      :class="
+        themeStore.isDark
+          ? 'bg-gray-950'
+          : 'bg-gradient-to-br from-emerald-50 via-white to-teal-50'
+      "
     >
       <div class="max-w-7xl mx-auto px-4 md:px-6 py-16 md:py-24 w-full">
         <!-- Two Column Layout -->
@@ -117,50 +156,153 @@ const getThumbnail = (videoId: string) => {
             <!-- Content Card -->
             <div
               class="flex-1 relative rounded-3xl backdrop-blur-sm p-8 md:p-10 flex flex-col justify-center overflow-hidden group"
-              :class="themeStore.isDark
-                ? 'bg-gradient-to-br from-gray-800/80 to-gray-900/80 border border-gray-700/50'
-                : 'bg-white/80 border border-gray-200 shadow-xl shadow-emerald-500/10'"
+              :class="
+                themeStore.isDark
+                  ? 'bg-gradient-to-br from-gray-800/80 to-gray-900/80 border border-gray-700/50'
+                  : 'bg-white/80 border border-gray-200 shadow-xl shadow-emerald-500/10'
+              "
             >
               <!-- PageHero-style decorative background -->
               <div class="absolute inset-0 overflow-hidden pointer-events-none">
                 <!-- Grid pattern -->
                 <div
                   class="absolute inset-0"
-                  :class="themeStore.isDark ? 'opacity-[0.03]' : 'opacity-[0.5]'"
-                  :style="themeStore.isDark
-                    ? 'background-image: linear-gradient(rgba(255,255,255,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.5) 1px, transparent 1px); background-size: 40px 40px;'
-                    : 'background-image: linear-gradient(rgba(16,185,129,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(16,185,129,0.1) 1px, transparent 1px); background-size: 40px 40px;'"
+                  :class="
+                    themeStore.isDark ? 'opacity-[0.03]' : 'opacity-[0.5]'
+                  "
+                  :style="
+                    themeStore.isDark
+                      ? 'background-image: linear-gradient(rgba(255,255,255,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.5) 1px, transparent 1px); background-size: 40px 40px;'
+                      : 'background-image: linear-gradient(rgba(16,185,129,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(16,185,129,0.1) 1px, transparent 1px); background-size: 40px 40px;'
+                  "
                 ></div>
 
                 <!-- Ring shape top-right -->
-                <div :class="themeStore.isDark ? 'border-emerald-400/20' : 'border-emerald-500/30'" class="absolute -top-16 -right-16 w-48 h-48 rounded-full border-2"></div>
-                <div :class="themeStore.isDark ? 'border-emerald-400/10' : 'border-emerald-500/20'" class="absolute -top-12 -right-12 w-40 h-40 rounded-full border"></div>
+                <div
+                  :class="
+                    themeStore.isDark
+                      ? 'border-emerald-400/20'
+                      : 'border-emerald-500/30'
+                  "
+                  class="absolute -top-16 -right-16 w-48 h-48 rounded-full border-2"
+                ></div>
+                <div
+                  :class="
+                    themeStore.isDark
+                      ? 'border-emerald-400/10'
+                      : 'border-emerald-500/20'
+                  "
+                  class="absolute -top-12 -right-12 w-40 h-40 rounded-full border"
+                ></div>
 
                 <!-- Ring shape bottom-left -->
-                <div :class="themeStore.isDark ? 'border-teal-400/15' : 'border-teal-500/25'" class="absolute -bottom-20 -left-20 w-56 h-56 rounded-full border-2"></div>
-                <div :class="themeStore.isDark ? 'border-teal-400/10' : 'border-teal-500/15'" class="absolute -bottom-16 -left-16 w-48 h-48 rounded-full border"></div>
+                <div
+                  :class="
+                    themeStore.isDark
+                      ? 'border-teal-400/15'
+                      : 'border-teal-500/25'
+                  "
+                  class="absolute -bottom-20 -left-20 w-56 h-56 rounded-full border-2"
+                ></div>
+                <div
+                  :class="
+                    themeStore.isDark
+                      ? 'border-teal-400/10'
+                      : 'border-teal-500/15'
+                  "
+                  class="absolute -bottom-16 -left-16 w-48 h-48 rounded-full border"
+                ></div>
 
                 <!-- Diagonal lines -->
-                <svg class="absolute inset-0 w-full h-full" preserveAspectRatio="none">
-                  <line x1="0%" y1="100%" x2="40%" y2="0%" :stroke="themeStore.isDark ? 'rgba(52, 211, 153, 0.15)' : 'rgba(16, 185, 129, 0.2)'" stroke-width="1" />
-                  <line x1="60%" y1="100%" x2="100%" y2="20%" :stroke="themeStore.isDark ? 'rgba(45, 212, 191, 0.1)' : 'rgba(20, 184, 166, 0.15)'" stroke-width="1" />
+                <svg
+                  class="absolute inset-0 w-full h-full"
+                  preserveAspectRatio="none"
+                >
+                  <line
+                    x1="0%"
+                    y1="100%"
+                    x2="40%"
+                    y2="0%"
+                    :stroke="
+                      themeStore.isDark
+                        ? 'rgba(52, 211, 153, 0.15)'
+                        : 'rgba(16, 185, 129, 0.2)'
+                    "
+                    stroke-width="1"
+                  />
+                  <line
+                    x1="60%"
+                    y1="100%"
+                    x2="100%"
+                    y2="20%"
+                    :stroke="
+                      themeStore.isDark
+                        ? 'rgba(45, 212, 191, 0.1)'
+                        : 'rgba(20, 184, 166, 0.15)'
+                    "
+                    stroke-width="1"
+                  />
                 </svg>
 
                 <!-- Small floating dots -->
-                <div :class="themeStore.isDark ? 'bg-emerald-400/40' : 'bg-emerald-500/50'" class="absolute top-[15%] right-[20%] w-2 h-2 rounded-full"></div>
-                <div :class="themeStore.isDark ? 'bg-teal-400/50' : 'bg-teal-500/60'" class="absolute top-[60%] right-[15%] w-1.5 h-1.5 rounded-full"></div>
-                <div :class="themeStore.isDark ? 'bg-emerald-400/30' : 'bg-emerald-500/40'" class="absolute bottom-[25%] left-[25%] w-2 h-2 rounded-full"></div>
-                <div :class="themeStore.isDark ? 'bg-white/40' : 'bg-emerald-600/30'" class="absolute top-[30%] left-[10%] w-1 h-1 rounded-full"></div>
+                <div
+                  :class="
+                    themeStore.isDark
+                      ? 'bg-emerald-400/40'
+                      : 'bg-emerald-500/50'
+                  "
+                  class="absolute top-[15%] right-[20%] w-2 h-2 rounded-full"
+                ></div>
+                <div
+                  :class="
+                    themeStore.isDark ? 'bg-teal-400/50' : 'bg-teal-500/60'
+                  "
+                  class="absolute top-[60%] right-[15%] w-1.5 h-1.5 rounded-full"
+                ></div>
+                <div
+                  :class="
+                    themeStore.isDark
+                      ? 'bg-emerald-400/30'
+                      : 'bg-emerald-500/40'
+                  "
+                  class="absolute bottom-[25%] left-[25%] w-2 h-2 rounded-full"
+                ></div>
+                <div
+                  :class="
+                    themeStore.isDark ? 'bg-white/40' : 'bg-emerald-600/30'
+                  "
+                  class="absolute top-[30%] left-[10%] w-1 h-1 rounded-full"
+                ></div>
 
                 <!-- Glowing orbs -->
-                <div :class="themeStore.isDark ? 'bg-emerald-500/20' : 'bg-emerald-400/30'" class="absolute -top-10 -right-10 w-32 h-32 rounded-full blur-3xl"></div>
-                <div :class="themeStore.isDark ? 'bg-teal-500/15' : 'bg-teal-400/25'" class="absolute -bottom-10 -left-10 w-40 h-40 rounded-full blur-3xl"></div>
+                <div
+                  :class="
+                    themeStore.isDark
+                      ? 'bg-emerald-500/20'
+                      : 'bg-emerald-400/30'
+                  "
+                  class="absolute -top-10 -right-10 w-32 h-32 rounded-full blur-3xl"
+                ></div>
+                <div
+                  :class="
+                    themeStore.isDark ? 'bg-teal-500/15' : 'bg-teal-400/25'
+                  "
+                  class="absolute -bottom-10 -left-10 w-40 h-40 rounded-full blur-3xl"
+                ></div>
               </div>
 
               <div class="relative z-10">
                 <div class="flex items-center gap-3 mb-6">
                   <div class="h-px w-8 bg-emerald-500"></div>
-                  <span :class="themeStore.isDark ? 'text-emerald-400' : 'text-emerald-600'" class="text-sm font-medium tracking-widest uppercase">Saviola Group</span>
+                  <span
+                    :class="
+                      themeStore.isDark
+                        ? 'text-emerald-400'
+                        : 'text-emerald-600'
+                    "
+                    class="text-sm font-medium tracking-widest uppercase"
+                    >Saviola Group</span
+                  >
                 </div>
                 <h1
                   class="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 leading-tight"
@@ -185,23 +327,42 @@ const getThumbnail = (videoId: string) => {
                 </div>
               </div>
               <!-- Hover glow -->
-              <div :class="themeStore.isDark ? 'bg-emerald-500/20' : 'bg-emerald-400/30'" class="absolute -bottom-20 -right-20 w-40 h-40 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div
+                :class="
+                  themeStore.isDark ? 'bg-emerald-500/20' : 'bg-emerald-400/30'
+                "
+                class="absolute -bottom-20 -right-20 w-40 h-40 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+              ></div>
             </div>
 
             <!-- Stats Card -->
             <div
               class="relative rounded-3xl backdrop-blur-sm p-6 flex items-center justify-around overflow-hidden"
-              :class="themeStore.isDark
-                ? 'bg-gradient-to-r from-emerald-900/40 to-teal-900/40 border border-emerald-500/20'
-                : 'bg-gradient-to-r from-emerald-50/60 to-teal-50/60 border border-emerald-200'"
+              :class="
+                themeStore.isDark
+                  ? 'bg-gradient-to-r from-emerald-900/40 to-teal-900/40 border border-emerald-500/20'
+                  : 'bg-gradient-to-r from-emerald-50/60 to-teal-50/60 border border-emerald-200'
+              "
             >
-              <template v-for="(stat, index) in home.hero.stats" :key="stat.value">
+              <template
+                v-for="(stat, index) in home.hero.stats"
+                :key="stat.value"
+              >
                 <div class="text-center">
                   <div
                     class="text-3xl md:text-4xl font-bold mb-1"
                     :class="themeStore.isDark ? 'text-white' : 'text-gray-800'"
-                  >{{ stat.value }}</div>
-                  <div :class="themeStore.isDark ? 'text-gray-400' : 'text-gray-600'" class="text-sm">{{ stat.label }}</div>
+                  >
+                    {{ stat.value }}
+                  </div>
+                  <div
+                    :class="
+                      themeStore.isDark ? 'text-gray-400' : 'text-gray-600'
+                    "
+                    class="text-sm"
+                  >
+                    {{ stat.label }}
+                  </div>
                 </div>
                 <div
                   v-if="index < home.hero.stats.length - 1"
@@ -213,13 +374,15 @@ const getThumbnail = (videoId: string) => {
           </div>
 
           <!-- Right Column: Image Cards -->
-          <div class="grid grid-cols-2 gap-4 md:gap-5 auto-rows-[180px] md:auto-rows-[200px]">
+          <div
+            class="grid grid-cols-2 gap-4 md:gap-5 auto-rows-[180px] md:auto-rows-[200px]"
+          >
             <div
               v-for="(card, index) in home.hero.cards"
               :key="card.title"
               :class="[
                 'relative rounded-3xl overflow-hidden group cursor-pointer shadow-lg',
-                index === 0 ? 'row-span-2' : ''
+                index === 0 ? 'row-span-2' : '',
               ]"
             >
               <img
@@ -229,27 +392,49 @@ const getThumbnail = (videoId: string) => {
               />
               <div
                 class="absolute inset-0"
-                :class="themeStore.isDark
-                  ? 'bg-gradient-to-t from-gray-900 via-gray-900/40 to-transparent'
-                  : 'bg-gradient-to-t from-gray-900/80 via-transparent to-transparent'"
+                :class="
+                  themeStore.isDark
+                    ? 'bg-gradient-to-t from-gray-900 via-gray-900/40 to-transparent'
+                    : 'bg-gradient-to-t from-gray-900/80 via-transparent to-transparent'
+                "
               ></div>
-              <div :class="['absolute inset-0 flex flex-col justify-between', index === 0 ? 'p-6' : 'p-5']">
+              <div
+                :class="[
+                  'absolute inset-0 flex flex-col justify-between',
+                  index === 0 ? 'p-6' : 'p-5',
+                ]"
+              >
                 <span
                   :class="[
                     'self-start text-white text-xs font-semibold rounded-full',
                     index === 0 ? 'px-3 py-1.5 bg-emerald-500/90' : 'px-3 py-1',
                     index === 1 ? 'bg-teal-500/90' : '',
-                    index === 2 ? 'bg-cyan-500/90' : ''
+                    index === 2 ? 'bg-cyan-500/90' : '',
                   ]"
                 >
                   {{ card.badge }}
                 </span>
                 <div>
-                  <h3 :class="['text-white font-bold', index === 0 ? 'text-xl mb-2' : 'text-lg']">{{ card.title }}</h3>
-                  <p v-if="index === 0" class="text-white text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300">{{ card.description }}</p>
+                  <h3
+                    :class="[
+                      'text-white font-bold',
+                      index === 0 ? 'text-xl mb-2' : 'text-lg',
+                    ]"
+                  >
+                    {{ card.title }}
+                  </h3>
+                  <p
+                    v-if="index === 0"
+                    class="text-white text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                  >
+                    {{ card.description }}
+                  </p>
                 </div>
               </div>
-              <div v-if="index === 0" class="absolute inset-0 bg-gradient-to-tr from-transparent via-white/10 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
+              <div
+                v-if="index === 0"
+                class="absolute inset-0 bg-gradient-to-tr from-transparent via-white/10 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"
+              ></div>
             </div>
           </div>
         </div>
@@ -257,10 +442,7 @@ const getThumbnail = (videoId: string) => {
     </section>
 
     <!-- Features Section -->
-    <section
-      class="py-20"
-      :class="themeStore.isDark ? '' : 'bg-gray-50'"
-    >
+    <section class="py-20" :class="themeStore.isDark ? '' : 'bg-gray-50'">
       <div class="mx-auto max-w-6xl px-4 md:px-6">
         <div class="text-center mb-16">
           <h2
@@ -282,9 +464,11 @@ const getThumbnail = (videoId: string) => {
             v-for="feature in home.features.items"
             :key="feature.title"
             class="backdrop-blur-sm rounded-xl p-6 hover:border-emerald-500/50 transition-all duration-300 hover:transform hover:-translate-y-1"
-            :class="themeStore.isDark
-              ? 'bg-gray-800/50 border border-gray-700/50'
-              : 'bg-white/80 border border-gray-200 shadow-lg'"
+            :class="
+              themeStore.isDark
+                ? 'bg-gray-800/50 border border-gray-700/50'
+                : 'bg-white/80 border border-gray-200 shadow-lg'
+            "
           >
             <div class="h-12 w-12 mb-4">
               <Icon :name="feature.icon" class="h-12 w-12 text-emerald-500" />
@@ -292,21 +476,22 @@ const getThumbnail = (videoId: string) => {
             <h3
               class="text-xl font-semibold mb-3"
               :class="themeStore.isDark ? 'text-white' : 'text-gray-900'"
-            >{{ feature.title }}</h3>
+            >
+              {{ feature.title }}
+            </h3>
             <p
               class="leading-relaxed"
               :class="themeStore.isDark ? 'text-gray-300' : 'text-gray-600'"
-            >{{ feature.description }}</p>
+            >
+              {{ feature.description }}
+            </p>
           </div>
         </div>
       </div>
     </section>
 
     <!-- Applications Section -->
-    <section
-      class="py-20"
-      :class="themeStore.isDark ? '' : 'bg-gray-50'"
-    >
+    <section class="py-20" :class="themeStore.isDark ? '' : 'bg-gray-50'">
       <div class="mx-auto max-w-6xl px-4 md:px-6">
         <ClientOnly>
           <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
@@ -324,8 +509,12 @@ const getThumbnail = (videoId: string) => {
                 />
               </div>
               <!-- Decorative Element -->
-              <div class="absolute -bottom-4 -right-4 w-24 h-24 bg-emerald-500/20 rounded-2xl -z-10"></div>
-              <div class="absolute -top-4 -left-4 w-16 h-16 bg-emerald-500/10 rounded-xl -z-10"></div>
+              <div
+                class="absolute -bottom-4 -right-4 w-24 h-24 bg-emerald-500/20 rounded-2xl -z-10"
+              ></div>
+              <div
+                class="absolute -top-4 -left-4 w-16 h-16 bg-emerald-500/10 rounded-xl -z-10"
+              ></div>
             </div>
 
             <!-- Content Side -->
@@ -348,9 +537,11 @@ const getThumbnail = (videoId: string) => {
                   v-for="app in home.applications.items"
                   :key="app.title"
                   class="flex items-center gap-4 p-4 rounded-xl transition-colors hover:border-emerald-500/30"
-                  :class="themeStore.isDark
-                    ? 'bg-gray-800/30 border border-gray-700/50'
-                    : 'bg-white/80 border border-gray-200 shadow'"
+                  :class="
+                    themeStore.isDark
+                      ? 'bg-gray-800/30 border border-gray-700/50'
+                      : 'bg-white/80 border border-gray-200 shadow'
+                  "
                 >
                   <div class="flex-shrink-0 h-8 w-8">
                     <Icon :name="app.icon" class="h-8 w-8 text-emerald-500" />
@@ -358,12 +549,20 @@ const getThumbnail = (videoId: string) => {
                   <div>
                     <h3
                       class="font-semibold mb-1"
-                      :class="themeStore.isDark ? 'text-white' : 'text-gray-900'"
-                    >{{ app.title }}</h3>
+                      :class="
+                        themeStore.isDark ? 'text-white' : 'text-gray-900'
+                      "
+                    >
+                      {{ app.title }}
+                    </h3>
                     <p
                       class="text-sm"
-                      :class="themeStore.isDark ? 'text-gray-400' : 'text-gray-500'"
-                    >{{ app.description }}</p>
+                      :class="
+                        themeStore.isDark ? 'text-gray-400' : 'text-gray-500'
+                      "
+                    >
+                      {{ app.description }}
+                    </p>
                   </div>
                 </div>
               </div>
@@ -374,10 +573,7 @@ const getThumbnail = (videoId: string) => {
     </section>
 
     <!-- Specifications Section -->
-    <section
-      class="py-20"
-      :class="themeStore.isDark ? '' : 'bg-gray-50'"
-    >
+    <section class="py-20" :class="themeStore.isDark ? '' : 'bg-gray-50'">
       <div class="mx-auto max-w-6xl px-4 md:px-6">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <!-- Content Side -->
@@ -400,13 +596,17 @@ const getThumbnail = (videoId: string) => {
                 v-for="spec in home.specifications.items"
                 :key="spec.thickness"
                 class="relative p-6 rounded-xl transition-colors hover:border-emerald-500/30"
-                :class="themeStore.isDark
-                  ? 'bg-gray-800/50 border border-gray-700/50'
-                  : 'bg-white/80 border border-gray-200 shadow-lg'"
+                :class="
+                  themeStore.isDark
+                    ? 'bg-gray-800/50 border border-gray-700/50'
+                    : 'bg-white/80 border border-gray-200 shadow-lg'
+                "
               >
                 <!-- Thickness Badge -->
                 <div class="absolute -top-3 left-6">
-                  <span class="px-4 py-1 bg-emerald-500 text-white text-sm font-bold rounded-full">
+                  <span
+                    class="px-4 py-1 bg-emerald-500 text-white text-sm font-bold rounded-full"
+                  >
                     {{ spec.thickness }}
                   </span>
                 </div>
@@ -415,11 +615,17 @@ const getThumbnail = (videoId: string) => {
                   <h3
                     class="text-xl font-semibold mb-2"
                     :class="themeStore.isDark ? 'text-white' : 'text-gray-900'"
-                  >{{ spec.title }}</h3>
+                  >
+                    {{ spec.title }}
+                  </h3>
                   <p
                     class="mb-4"
-                    :class="themeStore.isDark ? 'text-gray-400' : 'text-gray-500'"
-                  >{{ spec.description }}</p>
+                    :class="
+                      themeStore.isDark ? 'text-gray-400' : 'text-gray-500'
+                    "
+                  >
+                    {{ spec.description }}
+                  </p>
 
                   <!-- Use Cases Tags -->
                   <div class="flex flex-wrap gap-2">
@@ -427,9 +633,11 @@ const getThumbnail = (videoId: string) => {
                       v-for="use in spec.uses"
                       :key="use"
                       class="px-3 py-1 text-sm rounded-full"
-                      :class="themeStore.isDark
-                        ? 'bg-gray-700/50 text-gray-300'
-                        : 'bg-gray-100 text-gray-600'"
+                      :class="
+                        themeStore.isDark
+                          ? 'bg-gray-700/50 text-gray-300'
+                          : 'bg-gray-100 text-gray-600'
+                      "
                     >
                       {{ use }}
                     </span>
@@ -450,27 +658,29 @@ const getThumbnail = (videoId: string) => {
                 alt="Panel Specifications"
                 class="absolute inset-0 w-full h-full object-cover"
                 loading="eager"
-                @error="($event.target as HTMLImageElement).src = 'https://placehold.co/800x600/1f2937/6b7280?text=Specifications'"
+                @error="
+                  ($event.target as HTMLImageElement).src =
+                    'https://placehold.co/800x600/1f2937/6b7280?text=Specifications'
+                "
               />
             </div>
             <!-- Decorative Element -->
-            <div class="absolute -bottom-4 -left-4 w-24 h-24 bg-emerald-500/20 rounded-2xl -z-10"></div>
-            <div class="absolute -top-4 -right-4 w-16 h-16 bg-emerald-500/10 rounded-xl -z-10"></div>
+            <div
+              class="absolute -bottom-4 -left-4 w-24 h-24 bg-emerald-500/20 rounded-2xl -z-10"
+            ></div>
+            <div
+              class="absolute -top-4 -right-4 w-16 h-16 bg-emerald-500/10 rounded-xl -z-10"
+            ></div>
           </div>
         </div>
       </div>
     </section>
 
     <!-- Design Gallery Section -->
-    <section
-      class="py-20"
-      :class="themeStore.isDark ? '' : 'bg-gray-50'"
-    >
+    <section class="py-20" :class="themeStore.isDark ? '' : 'bg-gray-50'">
       <div class="mx-auto max-w-6xl px-4 md:px-6">
         <div class="text-center mb-16">
-          <h2
-            class="text-3xl md:text-4xl font-bold mb-4 text-white"
-          >
+          <h2 class="text-3xl md:text-4xl font-bold mb-4 text-white">
             {{ home.gallery.title }}
           </h2>
           <p
@@ -495,7 +705,10 @@ const getThumbnail = (videoId: string) => {
                 :src="project.image"
                 :alt="project.title"
                 class="w-full h-full object-cover"
-                @error="($event.target as HTMLImageElement).src = 'https://placehold.co/400x300/1f2937/6b7280?text=Project'"
+                @error="
+                  ($event.target as HTMLImageElement).src =
+                    'https://placehold.co/400x300/1f2937/6b7280?text=Project'
+                "
               />
               <!-- Overlay (dark mode only) -->
               <div
@@ -510,12 +723,17 @@ const getThumbnail = (videoId: string) => {
             >
               <span
                 class="text-xs font-medium"
-                :class="themeStore.isDark ? 'text-emerald-400' : 'text-emerald-600'"
-              >{{ project.category }}</span>
+                :class="
+                  themeStore.isDark ? 'text-emerald-400' : 'text-emerald-600'
+                "
+                >{{ project.category }}</span
+              >
               <h3
                 class="font-semibold text-sm group-hover:text-emerald-500 transition-colors truncate"
                 :class="themeStore.isDark ? 'text-white' : 'text-gray-900'"
-              >{{ project.title }}</h3>
+              >
+                {{ project.title }}
+              </h3>
             </div>
           </div>
         </div>
@@ -534,10 +752,7 @@ const getThumbnail = (videoId: string) => {
     </section>
 
     <!-- Video Section -->
-    <section
-      class="py-20"
-      :class="themeStore.isDark ? '' : 'bg-gray-50'"
-    >
+    <section class="py-20" :class="themeStore.isDark ? '' : 'bg-gray-50'">
       <div class="mx-auto max-w-6xl px-4 md:px-6">
         <!-- Video Grid -->
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
@@ -545,9 +760,11 @@ const getThumbnail = (videoId: string) => {
             v-for="(videoId, index) in home.cta.videos"
             :key="index"
             class="group relative overflow-hidden rounded-2xl transition-all duration-300 hover:border-emerald-500/30 shadow-xl hover:shadow-emerald-500/10"
-            :class="themeStore.isDark
-              ? 'bg-gray-800/50 border border-gray-700/50 shadow-black/20'
-              : 'bg-white/80 border border-gray-200 shadow-gray-200/50'"
+            :class="
+              themeStore.isDark
+                ? 'bg-gray-800/50 border border-gray-700/50 shadow-black/20'
+                : 'bg-white/80 border border-gray-200 shadow-gray-200/50'
+            "
           >
             <!-- Video Container with 16:9 Aspect Ratio -->
             <div class="relative w-full aspect-video">
@@ -564,10 +781,14 @@ const getThumbnail = (videoId: string) => {
                   class="w-full h-full object-cover rounded-2xl"
                 />
                 <!-- Dark Overlay -->
-                <div class="absolute inset-0 bg-black/30 rounded-2xl transition-all duration-300 group-hover:bg-black/20"></div>
+                <div
+                  class="absolute inset-0 bg-black/30 rounded-2xl transition-all duration-300 group-hover:bg-black/20"
+                ></div>
                 <!-- Play Button -->
                 <div class="absolute inset-0 flex items-center justify-center">
-                  <div class="flex h-20 w-20 items-center justify-center rounded-full bg-red-600 text-white play-button shadow-lg transition-all duration-300 group-hover:scale-110 group-hover:bg-red-500">
+                  <div
+                    class="flex h-20 w-20 items-center justify-center rounded-full bg-red-600 text-white play-button shadow-lg transition-all duration-300 group-hover:scale-110 group-hover:bg-red-500"
+                  >
                     <Icon name="ph:play-fill" class="h-8 w-8 ml-1" />
                   </div>
                 </div>
@@ -579,7 +800,15 @@ const getThumbnail = (videoId: string) => {
                 :title="`Video ${index + 1}`"
                 class="absolute inset-0 w-full h-full rounded-2xl"
                 frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allow="
+                  accelerometer;
+                  autoplay;
+                  clipboard-write;
+                  encrypted-media;
+                  gyroscope;
+                  picture-in-picture;
+                  web-share;
+                "
                 referrerpolicy="strict-origin-when-cross-origin"
                 allowfullscreen
               ></iframe>

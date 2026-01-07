@@ -5,6 +5,421 @@
     "contactUs": "聯繫我們",
     "allProducts": "所有產品"
   },
+  "home": {
+    "seo": {
+      "title": "HAU BOARD-系統家具板材代理商",
+      "description": "提供各式紋理的塑合板材，包括木紋、大理石紋、素色，滿足您的設計需求"
+    },
+    "hero": {
+      "title": "綠色健康傢俱建材",
+      "subtitle": "打造居家生活理想空間",
+      "description": "HAU BOARD 提供各式紋理的塑合板材，為您的空間增添獨特魅力。",
+      "browseProducts": "精選花色",
+      "aboutUs": "關於我們",
+      "cards": {
+        "melamine": {
+          "badge": "精選",
+          "title": "塑合板",
+          "description": "系統家具的卓越選擇"
+        },
+        "edges": {
+          "badge": "封邊",
+          "title": "封邊條",
+          "description": "完美的收邊處理"
+        },
+        "raw": {
+          "badge": "素板",
+          "title": "素板",
+          "description": "工業級面板"
+        }
+      },
+      "stats": {
+        "recycledWood": "回收木材",
+        "decorOptions": "花色選擇",
+        "emissionClass": "環保等級"
+      }
+    },
+    "features": {
+      "title": "為什麼選擇 Hauboard？",
+      "subtitle": "我們致力於提供最優質的裝飾板材產品與服務。",
+      "diverseDesigns": {
+        "title": "多樣化設計",
+        "description": "提供木紋、大理石紋及純色等多種款式，滿足各種設計需求。"
+      },
+      "superiorQuality": {
+        "title": "卓越品質",
+        "description": "嚴格的品質控管流程，確保每一片板材都達到最高標準。"
+      },
+      "ecoFriendly": {
+        "title": "環保材料",
+        "description": "採用環保材料製造，符合國際環保標準，為地球盡一份心力。"
+      },
+      "easyInstallation": {
+        "title": "易於安裝",
+        "description": "設計簡便的安裝系統，大幅縮短施工時間，降低成本。"
+      },
+      "durableStrong": {
+        "title": "耐用堅固",
+        "description": "高強度材質，耐磨、防潮、抗變形，使用壽命長。"
+      },
+      "professionalService": {
+        "title": "專業服務",
+        "description": "專業團隊提供完整的售前諮詢與售後服務支持。"
+      }
+    },
+    "products": {
+      "title": "產品系列",
+      "subtitle": "探索我們精心設計的裝飾板材系列。",
+      "learnMore": "了解更多",
+      "woodGrainPanels": {
+        "title": "木紋板",
+        "description": "自然木紋質感，打造溫馨舒適的空間氛圍。"
+      },
+      "marblePanels": {
+        "title": "大理石紋板",
+        "description": "奢華大理石紋理，展現高雅品味與質感。"
+      },
+      "solidColorPanels": {
+        "title": "純色板",
+        "description": "簡約純色設計，適合現代極簡風格空間。"
+      }
+    },
+    "applications": {
+      "title": "日常應用",
+      "subtitle": "美耐板在各種空間中的廣泛應用，為您的生活增添品質與美感。",
+      "kitchenCabinets": {
+        "title": "廚房櫥櫃",
+        "description": "防潮、耐熱、易清潔，是廚房空間的理想選擇。"
+      },
+      "wardrobesStorage": {
+        "title": "衣櫃與收納",
+        "description": "多樣化的木紋與色彩，打造個性化的衣物收納空間。"
+      },
+      "officeFurniture": {
+        "title": "辦公家具",
+        "description": "耐磨、抗刮的表面，適合高頻率使用的辦公環境。"
+      },
+      "wallDecoration": {
+        "title": "牆面裝飾",
+        "description": "快速施工、美觀大方，輕鬆打造風格牆面。"
+      },
+      "doorsPartitions": {
+        "title": "門片與隔間",
+        "description": "穩定性佳、不易變形，適用於各種門片與隔間設計。"
+      },
+      "commercialSpaces": {
+        "title": "商業空間",
+        "description": "展示架、櫃檯、店面裝潢的經濟實惠解決方案。"
+      }
+    },
+    "specifications": {
+      "title": "常見規格",
+      "subtitle": "提供多種厚度選擇，滿足不同應用場景的需求。",
+      "8mm": {
+        "title": "薄型板材",
+        "description": "適用於牆面裝飾、門片貼皮、輕量隔板等應用。"
+      },
+      "18mm": {
+        "title": "標準板材",
+        "description": "最常用的厚度，適合大多數家具與櫥櫃製作。"
+      },
+      "25mm": {
+        "title": "加厚板材",
+        "description": "高強度與穩定性，適用於桌面與承重結構。"
+      },
+      "uses": {
+        "wallPanels": "牆面裝飾",
+        "doorVeneers": "門片貼皮",
+        "lightShelves": "輕量層板",
+        "kitchenCabinets": "廚房櫥櫃",
+        "wardrobes": "衣櫃",
+        "bookcases": "書櫃",
+        "desks": "辦公桌",
+        "tabletops": "桌面檯面",
+        "heavyShelving": "承重層架",
+        "commercialCounters": "商業櫃檯"
+      }
+    },
+    "gallery": {
+      "title": "精選設計",
+      "subtitle": "探索我們的精彩設計，見證板材美學的生活應用。",
+      "viewAll": "查看全部設計",
+      "modernOfficeSpace": {
+        "title": "現代辦公空間",
+        "category": "商業空間"
+      },
+      "luxuryResidentialDesign": {
+        "title": "豪華住宅設計",
+        "category": "住宅空間"
+      },
+      "boutiqueHotelLobby": {
+        "title": "精品酒店大廳",
+        "category": "飯店空間"
+      },
+      "fashionRetailStore": {
+        "title": "時尚零售店面",
+        "category": "商業空間"
+      }
+    }
+  },
+  "aboutUs": {
+    "seo": {
+      "title": "關於我們 | Hauboard",
+      "description": "了解豪板實業的故事、使命與願景，我們致力於提供高品質的裝飾板材解決方案。"
+    },
+    "hero": {
+      "title": "關於我們",
+      "subtitle": "打造優質生活空間的專業夥伴"
+    },
+    "introduction": {
+      "title": "公司簡介",
+      "content": "近年來社會快速變遷，各產業蓬勃發展，地球資源也隨之日益匱乏。因此，永續利用與環保意識愈加受到重視，鼓勵人們降低對自然環境的負擔。對多數民眾而言，傳統實木家具具備質感與風味，但在環保趨勢的推動下，愈來愈多人選擇以再生木材製成的系統家具。\n\n豪板自 2003 年成立至今已超過 15 年，我們始終堅持使用環保建材，使品牌得以穩健成長。同時，我們也積極掌握設計潮流，推出符合大眾需求與風格的產品。目前豪板為義大利 Gruppo Mauro Saviola 的台灣總代理，產品為歐洲原裝進口的系統家具專用板材，並於台灣獨家銷售。所有板材皆採用低甲醛、無毒、防潮、防焰的環保配方，並通過歐盟 IDROLEB、日本 JIS F★★★★、台灣 SGS 等多項認證。"
+    },
+    "founder": {
+      "title": "創辦人的話",
+      "subtitle": "MAURO SAVIOLA\n台灣總代理",
+      "content": "2003 年，我決定成立豪板實業。其實在創業之前，我已在板材產業裡打滾多年，從最基層的業務做起，跑遍大小工地與設計公司，也在一次次的合作與挫折中，看清市場真正的需求。一路走來，我深刻體會到，一塊好的板材，不只是外觀漂亮而已，更關係到居住者的健康、安全與生活品質。\n\n創業初期，我們主要代理馬來西亞 4×8 尺的板材，那時市場接受度高，但我始終覺得品質與規格仍然有進步空間。於是，我開始尋找更高階、更多元的產品線，最終把目光放在歐洲。其中，義大利 7×9 尺大板的設計、質感與穩定性，都讓我深受震撼，也更堅定了我們轉型升級的決心。\n\n在這些年面對景氣起伏、物流挑戰與市場變化時，我始終堅持一件事：我們提供的板材一定要對人體更友善、對環境更負責。因此，多年來我們專注引進超低甲醛、具環保理念的產品，希望讓台灣的室內裝修，不僅好看、更能住得安心。\n\n從創業到今天，這份初衷從未改變，反而成為豪板持續前進的力量。"
+    },
+    "timeline": {
+      "title": "發展歷程",
+      "subtitle": "見證我們的成長與進步",
+      "2003": {
+        "title": "公司成立",
+        "description": "HAU BOARD在台中成立，開始獨家代理進口的系統家具專用板材"
+      },
+      "2011": {
+        "title": "歐洲合作夥伴",
+        "description": "獨家代理歐洲進口的系統家具專用 - 塑合板材"
+      },
+      "2016": {
+        "title": "業務擴展",
+        "description": "服務範圍擴展至全台，成為業界知名品牌"
+      },
+      "2017": {
+        "title": "品質認證",
+        "description": "Mauro Saviola獲得多項國際認證，包含FSC、PEFC、4STARS"
+      },
+      "2024": {
+        "title": "持續創新",
+        "description": "引進最新壓模技術的產品，為客戶提供更多元的選擇"
+      }
+    }
+  },
+  "news": {
+    "seo": {
+      "title": "最新消息 - Hauboard",
+      "description": "了解 Hauboard 的最新動態與公告"
+    },
+    "hero": {
+      "title": "最新消息",
+      "subtitle": "了解我們的最新動態、產品更新與行業資訊"
+    },
+    "detail": {
+      "backToNews": "返回最新消息",
+      "notFound": "找不到此文章",
+      "notFoundDesc": "您要查找的文章不存在或已被移除",
+      "downloadTitle": "下載資料",
+      "downloadDesc": "點擊以下檔案進行下載"
+    },
+    "readMore": "閱讀更多",
+    "noNews": "目前沒有最新消息",
+    "items": {
+      "0009": {
+        "title": "Gruppo Mauro Saviola 全新企業介紹影片發布",
+        "category": "企業動態",
+        "excerpt": "Gruppo Mauro Saviola 推出全新企業介紹影片，完整呈現集團在環保板材領域的創新技術與永續發展願景。",
+        "content": "Gruppo Mauro Saviola 推出全新企業介紹影片，完整呈現集團在環保板材領域的創新技術與永續發展願景。\n\n作為歐洲領先的環保板材製造商，Gruppo Mauro Saviola 始終致力於推動循環經濟與永續發展。這支全新發布的企業介紹影片，帶領觀眾深入了解集團的核心價值與技術優勢。\n\n影片重點內容：\n\n• 集團歷史與企業願景\n• 環保塑合板材生產技術\n• 100% 回收木材的循環利用\n• 創新的表面處理工藝\n• 永續發展與環境保護承諾\n• 全球市場布局與合作夥伴\n\nGruppo Mauro Saviola 的核心理念：\n\n• 堅持使用 100% 回收木材作為原料\n• 實踐「從搖籃到搖籃」的循環經濟模式\n• 持續投入研發創新技術\n• 提供高品質環保板材解決方案\n• 為全球永續發展做出貢獻\n\n作為 Gruppo Mauro Saviola 在台灣的獨家代理商，Hauboard 深感榮幸能夠與這樣具有遠見與社會責任的企業合作。透過這支企業介紹影片，我們期望讓更多台灣的客戶了解 Gruppo Mauro Saviola 的品牌價值與產品優勢，共同為環境永續發展努力。\n\n歡迎觀看影片，深入認識這個引領歐洲環保板材產業的領導品牌。",
+        "videos": {
+          "0": {
+            "title": "Gruppo Mauro Saviola 企業介紹",
+            "description": "深入了解 Gruppo Mauro Saviola 的企業理念、生產技術與環保承諾"
+          }
+        }
+      },
+      "0001": {
+        "title": "2025 年度產品目錄更新",
+        "category": "產品更新",
+        "excerpt": "我們很高興地宣布 2025 年度產品目錄已經更新，新增多款環保材質板材，滿足您的各種設計需求。",
+        "content": "我們很高興地宣布 2025 年度產品目錄已經更新，新增多款特殊材質板材，滿足您的各種設計需求。\n\n本次更新亮點 - 全新特殊表面處理技術\n\n我們持續致力於為客戶提供最優質的板材產品，歡迎下載最新目錄或聯繫我們的業務團隊了解更多詳情。"
+      },
+      "0002": {
+        "title": "榮獲 FSC 森林認證",
+        "category": "公司新聞",
+        "excerpt": "Hauboard 正式獲得 FSC 森林管理委員會認證，證明我們對永續發展的承諾。",
+        "content": "Hauboard 正式獲得 FSC 森林管理委員會認證，證明我們對永續發展的承諾。\n\nFSC（Forest Stewardship Council）森林管理委員會是一個國際性的非營利組織，致力於推動負責任的森林管理。\n\n獲得此認證代表：\n\n• 我們的原材料來源可追溯且合法\n• 生產過程符合環境保護標準\n• 支持永續森林經營\n• 產品可獲得 FSC 標籤\n\n我們將繼續堅持環保理念，為地球的永續發展貢獻心力。"
+      },
+      "0003": {
+        "title": "參加 2024 國際建材展",
+        "category": "展覽活動",
+        "excerpt": "Hauboard 將於 10 月參加國際建材展覽會，歡迎蒞臨我們的展位參觀最新產品。",
+        "content": "Hauboard 將於 10 月參加國際建材展覽會，歡迎蒞臨我們的展位參觀最新產品。\n\n展覽資訊：\n\n• 日期：2024 年 10 月 15-18 日\n• 地點：台北南港展覽館\n• 攤位號碼：A區 125 號\n\n現場展示內容：\n\n• 最新木紋系列樣品\n• 環保材質產品線\n• 虛擬設計應用展示\n• 專業諮詢服務\n\n誠摯邀請您蒞臨參觀，我們的專業團隊將為您提供詳細的產品介紹與解決方案。"
+      },
+      "0004": {
+        "title": "新款木紋系列上市",
+        "category": "產品更新",
+        "excerpt": "全新木紋系列產品正式上市，提供更自然、更細緻的紋理選擇。",
+        "content": "全新木紋系列產品正式上市，提供更自然、更細緻的紋理選擇。\n\n新系列特色：\n\n• 採用先進印刷技術，紋理更逼真\n• 同步壓紋工藝，觸感更自然\n• 豐富的色系選擇\n• 優異的耐候性能\n\n適用範圍：\n\n• 室內裝潢\n• 傢俱製造\n• 商業空間設計\n• 展示櫃製作\n\n歡迎索取樣品或聯繫我們的業務團隊了解更多資訊。"
+      },
+      "0008": {
+        "title": "Gruppo Saviola 再生製造：從回收到升級利用",
+        "category": "永續發展",
+        "excerpt": "Saviola Holding 透過旗下 Composad 家具部門，展現對循環經濟的承諾，專注於使用 100% 回收木材，並將廢料升級轉化為更高價值的產品。",
+        "content": "Saviola Holding 透過旗下 Composad 家具部門，展現對循環經濟的承諾，專注於使用 100% 回收木材，並將廢料升級轉化為更高價值的產品。\n\nSaviola Holding 的資深董事總經理 Nicola Negri 以精闢的比喻說明公司的理念：「這不像是回收一個瓶子來製作另一個瓶子——我們拿起那個瓶子，將它升級利用，製作成一枚鑽石戒指。」\n\n再生製造核心理念：\n\n• 100% 使用回收木材生產\n• 實踐「升級利用」而非單純回收\n• 將廢棄材料轉化為更高價值產品\n• 垂直整合的私營企業模式\n\n永續發展承諾：\n\n• 完全符合循環經濟原則\n• 專注於高品質家具設計與製造\n• 以環保倫理為核心的商業策略\n• 展現義大利企業的永續領導地位\n\n作為 Gruppo Mauro Saviola 在台灣的獨家代理商，Hauboard 深感榮幸能夠將這樣具有前瞻性的環保理念引進台灣市場。Saviola Holding 的再生製造模式不僅展現了技術創新，更體現了企業對地球環境的深刻承諾。\n\n這種「升級利用」的理念超越了傳統的回收概念，透過創新技術與設計，將看似廢棄的材料轉化為具有更高價值的產品。這正是永續發展的真諦——不僅僅是減少浪費，更要創造價值。",
+        "downloads": {
+          "0": {
+            "name": "EME-OUTLOOK"
+          }
+        }
+      },
+      "0007": {
+        "title": "Composad 進軍美國組裝家具市場",
+        "category": "產業動態",
+        "excerpt": "義大利組裝家具製造商 Composad 作為 Saviola Holding 旗下企業，正式進軍美國即裝家具市場，展現義式設計與品質優勢。",
+        "content": "義大利組裝家具製造商 Composad 作為 Saviola Holding 旗下企業，正式進軍美國即裝家具市場，展現義式設計與品質優勢。\n\nComposad 位於義大利 Viadana（米蘭南方約兩小時車程），是一家專業的組裝式家具製造商。作為 Saviola Holding 集團的一員，Composad 將義大利的設計美學與 Gruppo Mauro Saviola 的環保板材技術完美結合，為美國市場帶來獨特的產品優勢。\n\n產品系列包括：\n\n• 主臥室與青少年臥室系列\n• 廚房家具系列\n• 休閒家具系列\n• 居家辦公解決方案\n\n市場定位與優勢：\n\n• 義大利當代設計美學\n• 高品質環保板材應用\n• 具競爭力的價格定位\n• 完整的組裝式家具解決方案\n\n作為 Gruppo Mauro Saviola 在台灣的獨家代理商，Hauboard 密切關注集團的全球發展動態。Composad 進軍美國市場的成功經驗，展現了 Saviola Holding 集團在全球家具產業的影響力，以及義大利製造與環保板材技術的完美結合。\n\n這項市場擴展計畫不僅體現了集團的國際化戰略，更證明了高品質環保板材在全球市場的競爭優勢。我們期待將這些國際經驗與創新理念持續引進台灣市場。",
+        "downloads": {
+          "0": {
+            "name": "Furniture Today 雜誌"
+          }
+        }
+      },
+      "0005": {
+        "title": "環保生產線升級完成",
+        "category": "公司新聞",
+        "excerpt": "我們的生產線已完成環保升級，減少 30% 碳排放，為地球盡一份心力。",
+        "content": "我們的生產線已完成環保升級，減少 30% 碳排放，為地球盡一份心力。\n\n升級內容包括：\n\n• 引進節能設備，降低能源消耗\n• 優化生產流程，減少原料浪費\n• 安裝廢氣處理系統\n• 實施水資源回收再利用\n\n環保成效：\n\n• 碳排放減少 30%\n• 能源消耗降低 25%\n• 廢料回收率提升至 95%\n• 水資源使用效率提升 40%\n\n我們將持續投入環保設施的升級，為永續發展貢獻更多心力。"
+      },
+      "0006": {
+        "title": "Gruppo Mauro Saviola 參展米蘭設計週 2018",
+        "category": "展覽活動",
+        "excerpt": "我們的合作夥伴 Gruppo Mauro Saviola 於 2018 年米蘭設計週展示創新板材解決方案，展現永續設計與卓越品質。",
+        "content": "我們的合作夥伴 Gruppo Mauro Saviola 於 2018 年米蘭設計週展示創新板材解決方案，展現永續設計與卓越品質。\n\n米蘭設計週（Milano Design Week）是全球最重要的設計盛會之一，每年吸引來自世界各地的設計師、建築師與業界專業人士。Gruppo Mauro Saviola 作為歐洲領先的環保板材製造商，在此次展會中展示了最新的產品創新與設計理念。\n\n展會亮點：\n\n• 展示最新環保塑合板材系列\n• 呈現創新的表面處理技術\n• 分享永續生產與循環經濟理念\n• 展現多樣化的設計應用案例\n\n作為 Gruppo Mauro Saviola 在台灣的獨家代理商，Hauboard 致力於將這些創新產品與永續理念引進台灣市場。我們相信，透過選用環保材質與創新設計，可以為客戶創造更美好的生活空間，同時為地球環境盡一份心力。\n\n米蘭設計週不僅是展示產品的平台，更是探索未來設計趨勢與建立國際合作的重要場合。Gruppo Mauro Saviola 持續參與這項國際盛會，展現其在環保板材領域的領導地位與創新能量。",
+        "downloads": {
+          "0": {
+            "name": "2018 年米蘭設計邀請函"
+          }
+        }
+      }
+    }
+  },
+  "menu": {
+    "aboutUs": "關於我們",
+    "news": "最新消息",
+    "provider": "供應商",
+    "product": "產品",
+    "virtualDesign": "虛擬設計",
+    "quality": "品質",
+    "woodGrain": "木紋",
+    "fabric": "布紋",
+    "classic": "經典",
+    "marble": "大理石",
+    "solid": "素色"
+  },
+  "products": {
+    "seo": {
+      "title": "產品 - Hauboard",
+      "description": "瀏覽我們多樣化的裝飾板材產品，包括木紋、大理石紋及純色板材。"
+    },
+    "hero": {
+      "title": "產品",
+      "subtitle": "探索我們精選的 MFC 系列"
+    },
+    "gallery": {
+      "title": "產品畫廊",
+      "subtitle": "點擊圖片查看完整尺寸"
+    }
+  },
+  "quality": {
+    "seo": {
+      "title": "品質標準 - Hauboard",
+      "description": "查看我們的品質認證文件與標準"
+    },
+    "hero": {
+      "title": "品質標準",
+      "subtitle": "我們的產品符合國際品質標準與認證"
+    },
+    "documents": {
+      "title": "認證文件",
+      "subtitle": "點擊查看或下載我們的品質認證文件",
+      "view": "查看",
+      "download": "下載"
+    }
+  },
+  "vendorIntroduction": {
+    "seo": {
+      "title": "供應商介紹 | Hauboard",
+      "description": "了解我們的合作夥伴與供應商，提供歐洲優質 MFC 粒片板與裝飾板材。"
+    },
+    "hero": {
+      "title": "供應商介紹",
+      "subtitle": "與歐洲品牌合作，提供優質產品"
+    },
+    "partners": {
+      "title": "GRUPPO MAURO SAVIOLA",
+      "supplier": {
+        "name": "歐洲 MFC 板材供應商",
+        "description": "提供高品質的塑合板，具有優異的耐用性與美觀性",
+        "features": [
+          "符合中華民國國家標準（CNS） F1 甲醛釋出標準",
+          "多樣化表面壓紋可供選擇",
+          "防潮、防焰的優質板材性能",
+          "友善環境的再生技術"
+        ]
+      }
+    },
+    "story": {
+      "title": "品牌故事",
+      "subtitle": "我們與供應商攜手共創的品質承諾",
+      "largeScaleProduction": {
+        "title": "大規模生產設備",
+        "description": "Mauro Saviola擁有現代化的大型生產設備，每日可生產數千片高品質板材。專業的生產團隊與先進的自動化設備，確保每一片板材都符合嚴格的品質標準。"
+      },
+      "advancedProductionLines": {
+        "title": "先進生產線",
+        "description": "採用歐洲最先進的全自動化生產線，從原料處理到成品加工，全程電腦監控。精密的製程控制確保產品穩定性，大幅提升生產效率與品質一致性。"
+      },
+      "rigorousQualityTesting": {
+        "title": "嚴格品質檢測",
+        "description": "每一片板材都經過嚴格的品質檢測流程，使用精密儀器測量厚度、密度與表面平整度。專業的品管團隊確保所有產品都符合國際標準，為客戶提供最可靠的品質保證。"
+      },
+      "completeTransportationSystem": {
+        "title": "完善運輸系統",
+        "description": "擁有完整的物流配送系統與專業的運輸團隊，確保產品安全快速地送達全球各地的客戶手中。"
+      },
+      "internationalExhibitionParticipation": {
+        "title": "國際展覽參與",
+        "description": "積極參與世界各地的重要建材與傢俱展覽，展示最新的板材產品與技術創新。透過國際展覽平台，與全球客戶交流，了解市場趨勢，持續提升產品競爭力與品牌知名度。"
+      }
+    },
+    "certifications": {
+      "title": "認證標準",
+      "fsc": {
+        "title": "FSC 森林管理委員會認證",
+        "description": "確保木材來源符合永續森林管理標準。"
+      },
+      "carb": {
+        "title": "CARB 加州空氣資源委員會認證",
+        "description": "甲醛釋放量符合嚴格的環保標準。"
+      },
+      "ce": {
+        "title": "CE 歐盟合格認證",
+        "description": "產品符合歐盟安全、健康與環境要求。"
+      },
+      "iso": {
+        "title": "ISO 國際標準認證",
+        "description": "品質管理系統符合國際標準。"
+      }
+    }
+  },
+  "virtualDesign": {
+    "seo": {
+      "title": "虛擬設計 - Hauboard",
+      "description": "探索我們的虛擬設計作品集"
+    },
+    "hero": {
+      "title": "虛擬設計",
+      "subtitle": "探索我們的虛擬設計作品集"
+    }
+  },
   "footer": {
     "description": "Hau Board專注於高品質室內系統傢俱與建材，代理歐洲 MFC 粒片板，致力於提供耐用且美觀的產品，服務住宅與商業空間的設計需求。",
     "contactTitle": "聯絡我們",

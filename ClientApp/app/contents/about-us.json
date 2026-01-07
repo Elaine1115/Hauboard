@@ -1,0 +1,14 @@
+{
+  "founder": {
+    "image": "/assets/images/about-us/agent_certification.webp"
+  },
+  "timeline": {
+    "events": [
+      { "year": "2003" },
+      { "year": "2011" },
+      { "year": "2016" },
+      { "year": "2017" },
+      { "year": "2024" }
+    ]
+  }
+}
