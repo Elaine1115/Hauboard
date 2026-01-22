@@ -109,7 +109,7 @@
             v-for="item in paginatedNews"
             :key="item.id"
             :to="`/news/${item.id}`"
-            class="group relative block overflow-hidden rounded-2xl backdrop-blur-sm transition-all duration-300 hover:border-emerald-500/50 hover:shadow-xl hover:shadow-emerald-500/10"
+            class="group relative flex flex-col overflow-hidden rounded-2xl backdrop-blur-sm transition-all duration-300 hover:border-emerald-500/50 hover:shadow-xl hover:shadow-emerald-500/10"
             :class="
               themeStore.isDark
                 ? 'border border-gray-800 bg-gray-900/50 hover:bg-gray-800/50'
@@ -162,7 +162,7 @@
             </div>
 
             <!-- Content -->
-            <div class="p-6">
+            <div class="p-6 flex flex-col flex-grow">
               <!-- Date -->
               <div
                 class="mb-3 flex items-center gap-2 text-sm"
@@ -174,7 +174,7 @@
 
               <!-- Title -->
               <h2
-                class="mb-3 text-xl font-bold transition-colors group-hover:text-emerald-500"
+                class="mb-3 text-xl font-bold transition-colors group-hover:text-emerald-500 line-clamp-2 min-h-[3.5rem]"
                 :class="themeStore.isDark ? 'text-white' : 'text-gray-900'"
               >
                 {{ item.title }}
@@ -182,7 +182,7 @@
 
               <!-- Excerpt -->
               <p
-                class="mb-4 line-clamp-3"
+                class="mb-4 line-clamp-3 min-h-[4.5rem]"
                 :class="themeStore.isDark ? 'text-gray-400' : 'text-gray-600'"
               >
                 {{ item.excerpt }}
@@ -190,7 +190,7 @@
 
               <!-- Read More -->
               <span
-                class="inline-flex items-center gap-2 text-sm font-medium text-emerald-500 transition-colors group-hover:text-emerald-600"
+                class="mt-auto inline-flex items-center gap-2 text-sm font-medium text-emerald-500 transition-colors group-hover:text-emerald-600"
               >
                 {{ t("news.readMore") }}
                 <Icon
@@ -229,6 +229,12 @@
 </template>
 
 <style scoped>
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
   .line-clamp-3 {
     display: -webkit-box;
     -webkit-line-clamp: 3;

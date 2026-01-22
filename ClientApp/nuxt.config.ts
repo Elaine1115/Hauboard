@@ -59,5 +59,14 @@ export default defineNuxtConfig({
   },
   routeRules: {
     '/': { prerender: true }
+  },
+  icon: {
+    mode: 'svg',
+    serverBundle: 'local',
+    provider: 'iconify',
+    clientBundle: {
+      scan: true,
+      sizeLimitKb: 512
+    }
   }
 })
