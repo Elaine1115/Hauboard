@@ -366,7 +366,7 @@
                       style="padding-bottom: 56.25%"
                     >
                       <iframe
-                        :src="`https://www.youtube.com/embed/${video.videoId}`"
+                        :src="`https://www.youtube-nocookie.com/embed/${video.videoId}`"
                         :title="video.title"
                         frameborder="0"
                         allow="

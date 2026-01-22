@@ -141,7 +141,7 @@
 
       <!-- Gallery Grid -->
       <ClientOnly>
-        <LightGalleryGrid
+        <PhotoSwipe
           :images="paginatedImages"
           :show-alt="true"
           aspect-ratio="square"

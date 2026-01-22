@@ -63,7 +63,7 @@
     >
       <div class="container mx-auto px-4 md:px-6">
         <!-- Gallery Grid -->
-        <LightGalleryGrid
+        <PhotoSwipe
           :images="paginatedImages"
           :show-alt="false"
           aspect-ratio="4/3"

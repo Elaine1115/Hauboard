@@ -236,100 +236,13 @@ html:not(.theme-ready) body * {
 }
 
 /* ==========================================
-   LightGallery Overlay
+   PhotoSwipe Customization
    ========================================== */
 
-/* Hide scrollbar when gallery is open */
-html.lg-on,
-body.lg-on {
-  overflow: hidden !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  height: 100% !important;
-}
-
-/* Ensure gallery covers entire viewport including scrollbar area */
-.lg-backdrop {
-  position: fixed !important;
-  top: 0 !important;
-  left: 0 !important;
-  right: 0 !important;
-  bottom: 0 !important;
-  width: 100vw !important;
-  height: 100vh !important;
-  z-index: 10000 !important;
-}
-
-.lg-outer {
-  position: fixed !important;
-  top: 0 !important;
-  left: 0 !important;
-  right: 0 !important;
-  bottom: 0 !important;
-  width: 100vw !important;
-  height: 100vh !important;
-  z-index: 10001 !important;
-}
-
-.lg-container {
-  position: fixed !important;
-  top: 0 !important;
-  left: 0 !important;
-  width: 100vw !important;
-  height: 100vh !important;
-  z-index: 10000 !important;
-}
-
-/* Force show toolbar buttons on mobile */
-.lg-toolbar {
-  display: flex !important;
-  visibility: visible !important;
-  opacity: 1 !important;
-  justify-content: flex-end !important;
-  flex-direction: row !important;
-}
-
-/* Ensure close button is always visible on mobile */
-.lg-close,
-.lg-download {
-  display: block !important;
-  visibility: visible !important;
-  opacity: 1 !important;
-}
-
-/* Align all toolbar items to the right */
-.lg-toolbar .lg-group {
-  margin-left: auto !important;
-  display: flex !important;
-  flex-direction: row !important;
-}
-
-/* Put download and close buttons at the far right */
-.lg-toolbar .lg-download {
-  order: 98 !important;
-}
-
-.lg-toolbar .lg-close {
-  order: 99 !important;
-}
-
-/* Make toolbar buttons larger and more touch-friendly on mobile */
-@media (max-width: 768px) {
-  .lg-toolbar .lg-icon {
-    width: 44px !important;
-    height: 44px !important;
-    font-size: 20px !important;
-    line-height: 44px !important;
-  }
-
-  .lg-actions .lg-next,
-  .lg-actions .lg-prev {
-    width: 44px !important;
-    height: 44px !important;
-  }
-
-  /* Hide counter on mobile */
-  .lg-counter {
-    display: none !important;
-  }
+/* PhotoSwipe custom counter styling */
+.pswp__custom-counter {
+  font-size: 14px;
+  color: #fff;
+  opacity: 0.85;
+  margin: 0 10px;
 }
